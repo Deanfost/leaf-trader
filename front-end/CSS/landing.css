@@ -1,0 +1,56 @@
+/* Sign in button */
+.landing-btn-1{
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 5px;
+    margin-top: 2.2%;
+}
+
+/* Sign up button */
+.landing-btn-2{
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 5px; 
+    background-color: white;
+    margin-top: 2.2%;
+    margin-right: 3.4%;
+    color: black;
+}
+
+/* Overview section */
+.topmost{
+    height:100vh;
+    min-height:400px;
+    background-size:cover;
+    background-image:url('/front-end/img/landing-header.jpg');
+}
+
+/* Features section */
+.features{
+    height:140vh;
+    min-height:400px;
+    background-color: white;
+}
+
+/* Feature tiles */
+.feature-tile{
+    margin-top: 1.5%;
+    margin-bottom: 5%;
+}
+
+/* Team section */
+.team{
+    height: 150vh;
+    min-height: 400px;
+    background-color: #F5F5F5;
+}
+
+/* Footer section */
+.footer{
+    height: 25vh;
+    background-color: #1E1E1E;
+}
