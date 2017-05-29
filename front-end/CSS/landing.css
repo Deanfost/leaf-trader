@@ -31,7 +31,7 @@
 
 /* Features section */
 .features{
-    height:140vh;
+    height:130vh;
     min-height:400px;
     background-color: white;
 }
@@ -39,7 +39,7 @@
 /* Feature tiles */
 .feature-tile{
     margin-top: 1.5%;
-    margin-bottom: 5%;
+    margin-bottom: 2.5%;
 }
 
 /* Team section */
