@@ -19,7 +19,18 @@
         <!--On DOM ready -->
         <script>
             $(document).ready(function(){
-                
+                window.onscroll = function (e) {  
+                    //Add elevation to navbar on scroll
+                    var navbar = document.getElementById("navbar");
+                    if($(window).scrollTop() == 0 || $(window).scrollTop() == $(document).height()- $(window).height()) {
+                        //If scroll is at top, remove elevation
+                        navbar.className = "nav-extended green z-depth-0";
+                    }
+                    else{
+                        //Add the elevation
+                        navbar.className = "nav-extended green z-depth-1"
+                    }
+                } 
             });
         </script>
         <link rel="stylesheet" type="text/css" href="screener.css">
@@ -28,7 +39,7 @@
     <body>
         <!-- Nav bar -->
         <nav class="navbar-fixed">
-            <nav class="nav-extended green z-depth-0">
+            <nav class="nav-extended green darken-1 z-depth-0" id="navbar">
                 <div class="nav-wrapper">
                   <a href="#" class="brand-logo" style="padding-left:3%;">Trader</a>
     <!--              <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>-->
@@ -50,54 +61,21 @@
         
         <div class="row">
             <!-- Side menu -->
-            <div class="col s3 z-depth-1" style="height:100vh; position:fixed;">
+            <div class="col s3 z-depth-1" style="height:100vh; position:fixed; text-align:center;">
                 
             </div>
             
-            <!-- Content section -->
-            <div class="col s9 push-s3 height:100vh;">
-                <!-- Header -->
-                <div class="row" style="width:73.95vw; margin-left:-1.1%;">
-                    <div class="col s12" style="height:15vh; background-color:#43a047;">
-                        <h5 style="color:#fff; margin-top:3.1%; margin-left:3%; font-size:2em;">Custom Screener</h5>
-                    </div>
-                </div>
-            
-                <!-- Content -->
-                <div class="row">
-                    <!-- Left card column -->
-                    <div class="col s5 push-s1">
-                        <!-- Sectors card -->
-                        <div class="z-depth-1" style="height:60vh; width:20vw; float:left;">
-                            <div class="col s10 push-s1">
-
-                            </div>
-                        </div>
-
-                        <!-- Price range card -->
-                        <div class="z-depth-1" style="height:60vh; width:20vw; float:left; margin-top: 5%;">
-                            <div class="col s10 push-s1">
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- Right card column -->
-                    <div class="col s5 push-s1">
-                        <!-- Ratios card -->
-                        <div class="z-depth-1" style="height:60vh; width:20vw; float:right;">
-
-                        </div>
-
-                        <!-- Market cap card -->
-                        <div class="z-depth-1" style="height:60vh; width:20vw; float:right; margin-top:5%;">
-
-                        </div>
-
-                    </div>
-                </div>
+            <!-- Header -->
+            <div class="col s9 push-s3 z-depth-1 green" style="height:20vh;">
+                <h5 style="font-size:2.7em; color:white; margin-top:4%; margin-left:2%;">Custom Screener</h5>
             </div>
+        </div>
         
+        <!-- Cards and contents -->
+        <div class="row">
+            <div class="col s9 push-s3">
+                
+            </div>
         </div>
         
     </body>
