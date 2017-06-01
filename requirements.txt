@@ -1,0 +1,5 @@
+django-registration 
+django-csvimport
+django==1.7 
+googlefinance
+beautifulsoup4
