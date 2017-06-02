@@ -19,7 +19,21 @@
         <!--On DOM ready -->
         <script>
             $(document).ready(function(){
-                
+                $(window).resize(function() {
+                    //Change col classes for top nav elements on window resize
+                    if($(window).width() <= 1000){
+                        $('#nav-left-group').removeClass("col s5");
+                        $('#nav-right-group').removeClass("col s7");
+                        $('#nav-left-group').addClass("col s2");
+                        $('#nav-right-group').addClass("col s10");
+                    } 
+                    else {
+                        $('#nav-left-group').removeClass("col s2");
+                        $('#nav-right-group').removeClass("col s10");
+                        $('#nav-left-group').addClass("col s5");
+                        $('#nav-right-group').addClass("col s7");
+                    }$
+                });
             });
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/landing.css">
@@ -27,155 +41,23 @@
     
     <body>
         <!-- Top section -->
-        <section class="topmost z-depth-1">
-            <!-- Navbar -->
+        <section class="top-section">
             <div class="row">
-            <div class="col s1" style="margin-left:2%; color:white; margin-top:1%;"><h5>Trader</h5></div>
-            <div class="col s1 landing-btn-2" style="margin-left:2.6%; float:right;"><h6>Sign up</h6></div>
-            <div class="col s1 landing-btn-1" style="margin-left:.6%; float:right; color:white;"><h6>Sign in</h6></div>
-            <div class="col s1 nav-button" style="float:right;"><a style="color:#fff;">Team</a></div>
-            <div class="col s1 nav-button" style="float:right;"><a style="color:#fff;">Features</a></div>
-            <div class="col s1 nav-button" style="float:right;"><a style="color:#fff;">Overview</a></div>
-            </div>
-            
-            <!-- Topmost content -->    
-            <div class="row">
-                <div class="container" style="text-align:center;">
-                    <h4 style="color:white; text-align:center; margin-top:12%;">Dip your toes in the water.</h4>
-                    <h5 style="text-align:center; color:white; margin-top:3%; padding-left:3%; padding-right:3%;">Before you make the leap into the market, see what it's like first. Learn the essentials of trading and get real, applicable experience - without risking a single dime.</h5>
-                    <div class="col s12" style="margin-top:20%;">
-                         <a class="waves-effect waves-light btn-large green z-depth-0" style="text-transform: none; width:25%;">Get started</a>
-                    </div>
+                <div class="col s5" id="nav-left-group" style="padding-left:1.5%;">
+                    <h5 style="font-size:1.8em; color:white;">Trader</h5>
+                </div>
+                <div class="col s7" id="nav-right-group" style="padding-top:1%; display:inline; text-align:right; padding-right:2%;">
+                    <a class="waves-effect waves-light btn-flat top-nav">Overview</a>
+                    <a class="waves-effect waves-light btn-flat top-nav">Features</a>
+                    <a class="waves-effect waves-light btn-flat top-nav">Team</a>
+                    <a class="waves-effect waves-light btn-flat top-nav landing-btn-1">Sign in</a>
+                    <a class="waves-effect waves-black btn landing-btn-2 z-depth-0 white">Sign up</a>
                 </div>
             </div>
+            
         </section>
         
-        <!-- Features content -->
-        <section class="features">
-            <div class="row">
-                <h4 style="text-align:center; margin-top:5%;">Features</h4>
-                 <div class="col s1 push-s5" style="background-color:#4caf50; height:.25vh; margin-left:4.15%;"></div>
-            </div>
-            
-            <!-- First feature row -->
-                <div class="row" style="margin-left:15%; margin-top:2%;">
-                    <div class="col s2 feature-tile">
-                        <div class="card-panel white z-depth-2">
-                            <img class="responsive-img" src="/front-end/img/Stocks-green.png" alt="Trader">
-                        </div>
-                    </div>
-                    <div class="col s8">
-                        <h4 style="padding-top:5%; padding-left:2%; color:#3B3B3B;">Paper Trader</h4>
-                        <h5 style="padding-left: 2%; color:#3B3B3B; font-size:1.45em;">Stock trading made risk-free. Trade with regularly updated stock information, and a starting fund of your choice. Learn your way around the market 
-                        as if you were really there.</h5>
-                    </div>
-                </div>
-                
-                <!-- Second feature row -->
-                <div class="row" style="margin-left:15%;">
-                    <div class="col s2 feature-tile">
-                        <div class="card-panel white z-depth-2">
-                            <img class="responsive-img" src="/front-end/img/pie-chart.png" alt="Screener">
-                        </div>
-                    </div>
-                    <div class="col s8">
-                        <h4 style="padding-top:5%; padding-left:2%; color:#3B3B3B;">Stock Screener</h4>
-                        <h5 style="padding-left: 2%; color:#3B3B3B; font-size:1.45em;">Get right down to trading simply and easily. Specify in-depth filters and parameters to view stocks that are right for you.</h5>
-                    </div>
-                </div>
-                
-                <!-- Third feature row -->
-                <div class="row" style="margin-left:15%;">
-                    <div class="col s2 feature-tile">
-                        <div class="card-panel white z-depth-2">
-                            <img class="responsive-img" src="/front-end/img/book-shelf.png" alt="Tutorials">
-                        </div>
-                    </div>
-                    <div class="col s8">
-                        <h4 style="padding-top:5%; padding-left:2%; color:#3B3B3B;">Helpful Tutorials</h4>
-                        <h5 style="padding-left: 2%; color:#3B3B3B; font-size:1.45em;">Learning doesn't have to be hard. Tutorials placed at every step along the way guide you toward the creation of a successful portfolio.</h5>
-                    </div>
-                </div>
-        </section>
         
-        <!-- Team content -->
-        <section class="team" style="padding-top:3%;">
-             <div class="row">
-                <h4 style="text-align:center;">Team</h4>
-                 <div class="col s1 push-s5" style="background-color:#4caf50; height:.28vh; margin-left:4.15%;"></div>
-            </div>
-            
-            <!-- Team promotional table -->
-            <div class="container">
-                <div class="row" style="margin-top:5%;">
-                    <div class="col s4">
-                        <div class="row" style="text-align:center;">
-                            <img class="responsive-img circle z-depth-1" src="/front-end/img/User-96%20(1).png" style="height:35vh;"> 
-                            <div class="row">
-                                <h5 style="font-size:2.2em; color:#4caf50;">Rishub<br>Nahar</h5>
-                            </div>
-                            <div class="row" style="margin-top:9.5%;">
-                                <h6 style="font-size:1.2em;">Description</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s4" style="text-align:center;">
-                        <div class="row">
-                            <img class="responsive-img circle z-depth-1" src="/front-end/img/User-96%20(1).png" style="height:35vh;"> 
-                            <div class="row">
-                                <h5 style="font-size:2.2em; color:#4caf50;">Dean<br>Foster</h5>
-                            </div>
-                            <div class="row" style="margin-top:9.5%;">
-                                <h6 style="font-size:1.2em;">Description</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s4" style="text-align:center;">
-                        <div class="row">
-                            <img class="responsive-img circle z-depth-1" src="/front-end/img/User-96%20(1).png" style="height:35vh;"> 
-                        </div>
-                        <div class="row">
-                            <h5 style="font-size:2.2em; color:#4caf50;">Suhail<br>Jawahardeen</h5>
-                        </div>
-                        <div class="row" style="margin-top:2%;">
-                            <h6 style="font-size:1.2em;">Description</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row" style="text-align:center; margin-top:20%;">
-                <a class="waves-effect waves-light btn-large green" style="text-transform: none;">Back to top</a>
-            </div>
-        </section>
-    </body>
-    
-    <footer>
-        <!-- Footer -->
-        <section class="footer-section">
-            <div class="row">
-                <div class="col s2 push-s1">
-                    <h5 style="color:white; margin-top:30%;">Framework</h5>
-                </div>
-                <div class="col s2 push-s1">
-                    <h5 style="color:white; margin-top:30%; margin-left:13%;">Icons</h5>
-                </div>
-                <div class="col s2 push-s1">
-                    <h5 style="color:white; margin-top:30%;">API</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s2 push-s1">
-                    <h6 style="color:white; margin-top:-10%;">Materializecss.com</h6>
-                </div>
-                <div class="col s2 push-s1">
-                    <h6 style="color:white; margin-top:-10%; margin-left:13%;">icons8.com</h6>
-                </div>
-                <div class="col s2 push-s1">
-                    <h6 style="color:white; margin-top:-10%;">https://www.tradingview.com/widget/</h6>
-                </div>
-            </div>
-        </section>
-    </footer>
-    
+        
+    </body> 
 </html>

@@ -1,3 +1,7 @@
+body{
+    min-width: 800px;
+}
+
 /* Sign in button */
 .landing-btn-1{
     text-align: center;
@@ -5,7 +9,6 @@
     border-width: 1px;
     border-color: white;
     border-radius: 5px;
-    margin-top: 2%;
 }
 
 /* Sign up button */
@@ -16,47 +19,31 @@
     border-color: white;
     border-radius: 5px; 
     background-color: white;
-    margin-top: 2%;
-    margin-right: 3.4%;
     color: black;
+    text-transform: none;
+    margin-left: 4%;
 }
 
-/* Nav buttons */
-.nav-button{
-    margin-top: 2.2%;
-    text-align: center;
-    color: white;
+/* Other nav buttons */
+.top-nav{
+    text-transform: none;
+    color:white;
 }
 
-/* Overview section */
-.topmost{
-    height:100vh;
-    min-height:400px;
-    background-size:cover;
-    background-image:url('/front-end/img/landing-header.jpg');
+/* Top section */
+.top-section{
+    background-image: url("/front-end/img/landing-header.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    max-height: 1200px;
+    min-height: 600px;
+    font-size: 16px;
 }
 
-/* Features section */
-.features{
-    height:130vh;
-    min-height:400px;
-    background-color: white;
-}
-
-/* Feature tiles */
-.feature-tile{
-    margin-bottom: 2.5%;
-}
-
-/* Team section */
-.team{
-    height: 150vh;
-    min-height: 400px;
-    background-color: #F5F5F5;
-}
-
-/* Footer section */
-.footer-section{
-    height: 25vh;
-    background-color: #1E1E1E;
+/* Media queries */
+@media only screen and (max-width: 1000px){
+    /* Change nav element's sizes */
+    
 }
