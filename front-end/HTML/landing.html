@@ -19,21 +19,7 @@
         <!--On DOM ready -->
         <script>
             $(document).ready(function(){
-                $(window).resize(function() {
-                    //Change col classes for top nav elements on window resize
-                    if($(window).width() <= 1000){
-                        $('#nav-left-group').removeClass("col s5");
-                        $('#nav-right-group').removeClass("col s7");
-                        $('#nav-left-group').addClass("col s2");
-                        $('#nav-right-group').addClass("col s10");
-                    } 
-                    else {
-                        $('#nav-left-group').removeClass("col s2");
-                        $('#nav-right-group').removeClass("col s10");
-                        $('#nav-left-group').addClass("col s5");
-                        $('#nav-right-group').addClass("col s7");
-                    }$
-                });
+
             });
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/landing.css">
@@ -43,10 +29,10 @@
         <!-- Top section -->
         <section class="top-section">
             <div class="row">
-                <div class="col s5" id="nav-left-group" style="padding-left:1.5%;">
+                <div class="col s2" id="nav-left-group" style="padding-left:1.5%;">
                     <h5 style="font-size:1.8em; color:white;">Trader</h5>
                 </div>
-                <div class="col s7" id="nav-right-group" style="padding-top:1%; display:inline; text-align:right; padding-right:2%;">
+                <div class="col s10" id="nav-right-group" style="padding-top:1%; display:inline; text-align:right; padding-right:2%;">
                     <a class="waves-effect waves-light btn-flat top-nav">Overview</a>
                     <a class="waves-effect waves-light btn-flat top-nav">Features</a>
                     <a class="waves-effect waves-light btn-flat top-nav">Team</a>
@@ -54,7 +40,13 @@
                     <a class="waves-effect waves-black btn landing-btn-2 z-depth-0 white">Sign up</a>
                 </div>
             </div>
-            
+            <div class="row" style="margin-top:10%; text-align:center; color:white;">
+                <h3 style="font-size:2.6em;">Dip your toes in the water.</h3>
+                <h6 style="font-size:1.5em; width:65%; margin: 0 auto;">Before you make the leap into the market, see what it's like first. Learn essentials of trading and get real, applicable experience - without risking a single dime.</h6>
+            </div>
+            <div class="row" style="text-align:center; margin-top:12%;">
+                <a class="waves-effect waves-light btn-large get-started-btn z-depth-0">Get started</a>
+            </div>
         </section>
         
         
