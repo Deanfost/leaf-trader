@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Screener - Trader</title>
+        <title>Screener</title>
 
         <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -19,62 +19,39 @@
         <!--On DOM ready -->
         <script>
             $(document).ready(function(){
-                window.onscroll = function (e) {  
-                    //Add elevation to navbar on scroll
-                    var navbar = document.getElementById("navbar");
-                    if($(window).scrollTop() == 0 || $(window).scrollTop() == $(document).height()- $(window).height()) {
-                        //If scroll is at top, remove elevation
-                        navbar.className = "nav-extended green z-depth-0";
-                    }
-                    else{
-                        //Add the elevation
-                        navbar.className = "nav-extended green z-depth-1"
-                    }
-                } 
+               
             });
         </script>
-        <link rel="stylesheet" type="text/css" href="screener.css">
+        <link rel="stylesheet" type="text/css" href="/front-end/CSS/screener.css">
     </head>
     
     <body>
-        <!-- Nav bar -->
-        <nav class="navbar-fixed">
-            <nav class="nav-extended green darken-1 z-depth-0" id="navbar">
-                <div class="nav-wrapper">
-                  <a href="#" class="brand-logo" style="padding-left:3%;">Trader</a>
-    <!--              <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>-->
-                  <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Trader</a></li>
-                    <li class="active"><a href="badges.html">Screener</a></li>
-                    <li><a href="collapsible.html">Dashboard</a></li>
-                  </ul>
-    <!--
-                  <ul class="side-nav" id="mobile-demo">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">JavaScript</a></li>
-                  </ul>
-    -->
-                </div>
-            </nav>
-        </nav>
         
         <div class="row">
             <!-- Side menu -->
-            <div class="col s3 z-depth-1" style="height:100vh; position:fixed; text-align:center;">
+            <div class="col s3 z-depth-1" style="height:100vh; position:fixed; text-align:center; min-width:200px; max-width:500px;">
                 
             </div>
             
-            <!-- Header -->
-            <div class="col s9 push-s3 z-depth-1 green" style="height:20vh;">
-                <h5 style="font-size:2.7em; color:white; margin-top:4%; margin-left:2%;">Custom Screener</h5>
+            <!-- Toggle bar -->
+            <div class="col s9 push-s3 z-depth-1 orange valign-wrapper" style="height:15vh; min-height:100px;">
+                <!-- Left toggle button -->
+                <div class="toggle-active valign-wrapper" style="margin-left:20%;">
+                    <h5 class="toggle-text" style="margin: 0 auto; color:#4B4B4B;">Saved</h5>
+                </div>
+                <!-- Right toggle button -->
+                <div class="toggle-inactive valign-wrapper">
+                    <h5 class="toggle-text" style=" margin: 0 auto; color:#fff;">Create</h5>
+                </div>
             </div>
         </div>
         
-        <!-- Cards and contents -->
+        <!-- Card -->
         <div class="row">
-            <div class="col s9 push-s3">
-                
+            <div class="container z-depth-1" style="margin-left:27.5%; height:70vh;">
+                <div style="height:25%;">
+                    
+                </div>
             </div>
         </div>
         
