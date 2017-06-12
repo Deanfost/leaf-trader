@@ -9,7 +9,7 @@ body{
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     width: 30%;
-    height: 60%;
+    height: 50%;
     
 }
 
@@ -20,55 +20,100 @@ body{
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     width: 30%;
-    height: 60%;
-    
+    height: 50%;
+}
+
+.card{
+    border-bottom: solid;
+    border-radius: 5px;
+    border-top-color: #ffa726;
+    border-bottom-color: white;
+}
+
+.card-header{
+    border-top: solid;
+    border-top-color: #ffa726;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#card-title{
+    color:white;
+    padding-left: 4%;
+    padding-top: 3%;
 }
 
 /* Media queries - scale font size of top toggle buttons*/
 @media only screen and (max-width:800px){
      .toggle-text{
-        font-size:16px;
+        font-size:14px;
+    }
+    #card-title{
+        font-size:24px;
+        
     }
 }
 
 @media only screen and (min-width: 801px) and (max-width: 950px){
      .toggle-text{
-        font-size:17px;
+        font-size:15px;
+    }
+    #card-title{
+        font-size:26px;
     }
 }
 
 @media only screen and (min-width: 951px) and (max-width: 1100px){
      .toggle-text{
-        font-size:18px;
+        font-size:16px;
+    }
+    #card-title{
+        font-size:28px;
     }
 }
 
 @media only screen and (min-width: 1101px) and (max-width: 1250px){
      .toggle-text{
-        font-size:19px;
+        font-size:17px;
+    }
+    #card-title{
+        font-size:30px;
     }
 }
 
 @media only screen and (min-width: 1251px) and (max-width: 1400px){
      .toggle-text{
-        font-size:20px;
+        font-size:18px;
+    }
+    #card-title{
+        font-size:32px;
+        
     }
 }
 
 @media only screen and (min-width: 1401px) and (max-width: 1550px){
      .toggle-text{
-        font-size:21px;
+        font-size:20px;
+    }
+    #card-title{
+        font-size:34px;
     }
 }
 
 @media only screen and (min-width: 1551px) and (max-width: 1700px){
      .toggle-text{
-        font-size:22px;
+        font-size:21px;
+    }
+    #card-title{
+        font-size:34px;
     }
 }
 
 @media only screen and (min-width: 1701px){
      .toggle-text{
-        font-size:24px;
+        font-size:23px; 
+    }
+    #card-title{
+        font-size:38px;
     }
 }

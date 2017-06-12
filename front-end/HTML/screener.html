@@ -19,7 +19,11 @@
         <!--On DOM ready -->
         <script>
             $(document).ready(function(){
-               
+                //Horizontally scroll the fixed side nav correctly
+                var origPos = $('#side-nav').position();
+                $(window).scroll(function(){
+                    $('#side-nav').css('left', origPos.left - $(this).scrollLeft());
+                });
             });
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/screener.css">
@@ -28,8 +32,8 @@
     <body>
         
         <div class="row">
-            <!-- Side menu -->
-            <div class="col s3 z-depth-1" style="height:100vh; position:fixed; text-align:center; min-width:200px; max-width:500px;">
+            <!-- Side nav -->
+            <div class="col s3 z-depth-1" style="height:100vh;text-align:center; position: fixed; min-width:200px; max-width:500px;" id="side-nav">
                 
             </div>
             
@@ -44,16 +48,20 @@
                     <h5 class="toggle-text" style=" margin: 0 auto; color:#fff;">Create</h5>
                 </div>
             </div>
-        </div>
-        
-        <!-- Card -->
-        <div class="row">
-            <div class="container z-depth-1" style="margin-left:27.5%; height:70vh;">
-                <div style="height:25%;">
-                    
+            
+            <!-- Card -->
+            <div class="col s9 push-s3">
+                <div class="z-depth-1 card" style="height:80vh; margin-top:2vh;">
+                    <div class="orange lighten-1 card-header" style="height:20%; min-height:80px;">
+                        <div class="valign-wrapper" style="height:100%;">
+                            <h4 id="card-title">Your Screeners</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        
+        
         
     </body>
 </html>
