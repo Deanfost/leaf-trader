@@ -28,6 +28,8 @@ body{
     border-radius: 5px;
     border-top-color: #ffa726;
     border-bottom-color: white;
+    height: 80vh;
+    margin-top: 2vh;
 }
 
 .card-header{
@@ -35,12 +37,24 @@ body{
     border-top-color: #ffa726;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    height: 20%;
+    min-height: 80px;
 }
 
 #card-title{
     color:white;
-    padding-left: 4%;
+    padding-left: 3%;
     padding-top: 3%;
+    float: left;
+    width: 100%;
+}
+
+.content-list{
+    
+}
+
+.list-item{
+    
 }
 
 /* Media queries - scale font size of top toggle buttons*/
@@ -50,7 +64,6 @@ body{
     }
     #card-title{
         font-size:24px;
-        
     }
 }
 
