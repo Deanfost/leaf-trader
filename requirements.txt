@@ -5,3 +5,4 @@ googlefinance
 beautifulsoup4
 jsonfield # beware this is going to uninstall your django 1.7 and replace it with django 1.11, just make sure to pip install django==1.7 again after you install this jsonfield
 python-social-auth
+lxml
