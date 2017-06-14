@@ -54,19 +54,26 @@ body{
     width: 100%;
 }
 
+.item-type{
+    color: #757575;
+}
+
+.item-last-used{
+    color: #757575;
+}
 /* Media queries - scale font size of top toggle buttons*/
 @media only screen and (max-width:800px){
      .toggle-text{
         font-size:14px;
     }
     #card-title{
-        font-size:24px;
+        font-size:20px;
     }
     .item-title{
-        font-size: 20px;
+        font-size: 18px;
     }
     .item-type{
-        font-size: 12px;
+        font-size: 16px;
     }
     .item-last-used{
         font-size: 16px;
@@ -78,13 +85,13 @@ body{
         font-size:15px;
     }
     #card-title{
-        font-size:26px;
+        font-size:22px;
     }
     .item-title{
-        font-size: 20px;
+        font-size: 18px;
     }
     .item-type{
-        font-size: 12px;
+        font-size: 16px;
     }
     .item-last-used{
         font-size: 16px;
@@ -96,16 +103,16 @@ body{
         font-size:16px;
     }
     #card-title{
-        font-size:28px;
+        font-size:24px;
     }
     .item-title{
-        font-size: 23px;
+        font-size: 21px;
     }
     .item-type{
-        font-size: 12px;
+        font-size: 18px;
     }
     .item-last-used{
-        font-size: 16px;
+        font-size: 18px;
     }
 }
 
@@ -114,16 +121,16 @@ body{
         font-size:17px;
     }
     #card-title{
-        font-size:30px;
+        font-size:26px;
     }
     .item-title{
-        font-size: 25px;
+        font-size: 23px;
     }
     .item-type{
-        font-size: 14px;
+        font-size: 20px;
     }
     .item-last-used{
-        font-size: 16px;
+        font-size: 20px;
     }
 }
 
@@ -132,16 +139,16 @@ body{
         font-size:18px;
     }
     #card-title{
-        font-size:32px;
+        font-size:28px;
     }
     .item-title{
-        font-size: 26px;
+        font-size: 24px;
     }
     .item-type{
-        font-size: 14px;
+        font-size: 22px;
     }
     .item-last-used{
-        font-size: 16px;
+        font-size: 22px;
     }
 }
 
@@ -151,16 +158,16 @@ body{
         font-size:20px;
     }
     #card-title{
-        font-size:34px;
+        font-size:30px;
     }
     .item-title{
-        font-size: 27px;
+        font-size: 25px;
     }
     .item-type{
-        font-size: 14px;
+        font-size: 21px;
     }
     .item-last-used{
-        font-size: 18px;
+        font-size: 21px;
     }
 }
 
@@ -169,16 +176,16 @@ body{
         font-size:21px;
     }
     #card-title{
-        font-size:34px;
+        font-size:30px;
     }
     .item-title{
-        font-size: 28px;
+        font-size: 26px;
     }
     .item-type{
-        font-size: 14px;
+        font-size: 22px;
     }
     .item-last-used{
-        font-size: 20px;
+        font-size: 22px;
     }
 }
 
@@ -187,13 +194,13 @@ body{
         font-size:23px; 
     }
     #card-title{
-        font-size:38px;
+        font-size:34px;
     }
     .item-title{
-        font-size: 29px;
+        font-size: 27px;
     }
     .item-type{
-        font-size: 15px;
+        font-size: 23px;
     }
     .item-last-used{
         font-size: 23px;
