@@ -28,8 +28,10 @@ body{
     border-radius: 5px;
     border-top-color: #ffa726;
     border-bottom-color: white;
-    height: 80vh;
     margin-top: 2vh;
+    min-height: 200px;
+    height: auto;
+    display: block;
 }
 
 .card-header{
@@ -50,6 +52,20 @@ body{
     width: 100%;
 }
 
+.list-item{
+    height: auto;
+    display: block;
+    min-height: 100px;
+}
+
+.item-type{
+    color: #616161;
+}
+
+.item-last-used{
+    color: #616161;
+}
+
 /* Media queries - scale font size of top toggle buttons*/
 @media only screen and (max-width:800px){
      .toggle-text{
@@ -58,9 +74,14 @@ body{
     #card-title{
         font-size:24px;
     }
-    #item-title{
-        font-size:20px;
-        margin-top: 22%;
+    .item-title{
+        font-size: 20px;
+    }
+    .item-type{
+        font-size: 12px;
+    }
+    .item-last-used{
+        font-size: 16px;
     }
 }
 
@@ -71,9 +92,14 @@ body{
     #card-title{
         font-size:26px;
     }
-    #item-title{
-        font-size:21px;
-        margin-top: 22%;
+    .item-title{
+        font-size: 20px;
+    }
+    .item-type{
+        font-size: 12px;
+    }
+    .item-last-used{
+        font-size: 16px;
     }
 }
 
@@ -84,9 +110,14 @@ body{
     #card-title{
         font-size:28px;
     }
-    #item-title{
-        font-size:25px;
-        margin-top: 22%;
+    .item-title{
+        font-size: 23px;
+    }
+    .item-type{
+        font-size: 12px;
+    }
+    .item-last-used{
+        font-size: 16px;
     }
 }
 
@@ -97,12 +128,15 @@ body{
     #card-title{
         font-size:30px;
     }
-    #item-title{
-        font-size:29px;
-        margin-top: 22%;
+    .item-title{
+        font-size: 25px;
+    }
+    .item-type{
+        font-size: 14px;
     }
 }
 
+/* My breakpoint */
 @media only screen and (min-width: 1251px) and (max-width: 1400px){
      .toggle-text{
         font-size:18px;
@@ -110,9 +144,11 @@ body{
     #card-title{
         font-size:32px;
     }
-    #item-title{
-        font-size:30px;
-        margin-top: 21%;
+    .item-title{
+        font-size: 26px;
+    }
+    .item-type{
+        font-size: 14px;
     }
 }
 
@@ -123,9 +159,11 @@ body{
     #card-title{
         font-size:34px;
     }
-    #item-title{
-        font-size:31px;
-        margin-top: 21%;
+    .item-title{
+        font-size: 27px;
+    }
+    .item-type{
+        font-size: 14px;
     }
 }
 
@@ -136,9 +174,11 @@ body{
     #card-title{
         font-size:34px;
     }
-    #item-title{
-        font-size:32px;
-        margin-top: 20%;
+    .item-title{
+        font-size: 28px;
+    }
+    .item-type{
+        font-size: 14px;
     }
 }
 
@@ -149,8 +189,10 @@ body{
     #card-title{
         font-size:38px;
     }
-    #item-title{
-        font-size:34px;
-        margin-top: 19%;
+    .item-title{
+        font-size: 29px;
+    }
+    .item-type{
+        font-size: 15px;
     }
 }

@@ -33,7 +33,7 @@
         
         <div class="row">
             <!-- Side nav -->
-            <div class="col s3 z-depth-1" style="height:100vh;text-align:center; position: fixed; min-width:200px; max-width:500px;" id="side-nav">
+            <div class="col s3 z-depth-1" style="height:100vh;text-align:center; position: fixed; min-width:200px; max-width:500px; overflow:hidden;" id="side-nav">
                 
             </div>
             
@@ -58,35 +58,43 @@
                             <h4 id="card-title">Your Screeners</h4>
                         </div>
                         <div class="col s2 valign-wrapper" style="height:100%;">
-                            <img class="responsive-img" src="/front-end/img/help.png" style="height:40%; margin-top:17%; margin-left:55%;">
+                            <img class="responsive-img" src="/front-end/img/help.png" style="height:40%; margin-top:17%; margin-left:5.5vw;">
                         </div>
                     </div>
                     <!-- Card content - screener items go in here -->
-                    <div id="list-container">
-                        <div class="row">
-                            <div class="col s2" style="position:relative; padding:4%;">
+                    <div class="row" id="list-container" style="padding-top:1.5%;">
+                        <div class="list-item col s12">
+                            <div class="col s1 valign-wrapper" style="height:10vh; min-height:100px; text-align:center; padding: 3%;">
+                                <img class="responsive-img" src="/front-end/img/active-marker-orange.png" id="item-active">
+                            </div>
+                            <div class="col s2 valign-wrapper" style="padding:4%; height:10vh; min-height:100px; margin-left:-3%;">
                                 <img class="responsive-img" src="/front-end/img-circle/bullish-green-circle.png" id="item-img">
                             </div>
-                            <div class="col s4 truncate">
-                                <h5 id="item-title" class="truncate">Finances Screener</h5>
-                                <div class="row" style="margin-top: -1vh; margin-left: .5%;">
-                                    <h6 id="#mode-text">Custom - Active</h6> <!-- TODO - Make solution for styling this text -->
+                            <div class="col s4 valign-wrapper" style="height:10vh; min-height:100px;">
+                                <div>
+                                    <h5 class="item-title truncate" id="item-title-box" style="margin-left:-1.5vw; width:25vw;">Finance Screener</h5>
+                                    <h6 class="item-type" id="item-type-box" style="margin-top:-3%; margin-left:-1.4vw;">Custom</h6>
                                 </div>
                             </div>
-                            <div class="col s4">
-
+                            <div class="col s4 valign-wrapper" style="height:10vh; min-height:100px;">
+                                <div>
+                                    <h5 class="item-last-used" style="margin-left:-1.5vw; width:25vw;" id="item-last-used-box">Last used - 6/6/2017</h5>
+                                    <!-- Empty box used as a reverse 'sandbag' -->
+                                    <h6 class="item-type" style="margin-top:-3%; margin-left:-1.4vw; color:white;">Custom</h6>
+                                </div>
+                                
                             </div>
-                            <div class="col s2">
+                            <div class="col s1 valign-wrapper" style="height:10vh; min-height:100px;">
 
                             </div>
                         </div>
+                        
+                        
                         
                     </div>
                 </div>
             </div>
         </div>
-        
-        
         
     </body>
 </html>
