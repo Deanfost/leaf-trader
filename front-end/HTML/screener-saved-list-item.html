@@ -1,49 +1,24 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Screener</title>
-
-        <!--Import Google Icon Font-->
-        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-        <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"  media="screen,projection"/>
-
-        <!--Let browser know website is optimized for mobile-->
-<!--        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
-    
-        <!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-        <!--On DOM ready -->
-        <script>
-            $(document).ready(function(){
-                
-            });
-        </script>
-        <link rel="stylesheet" type="text/css" href="/front-end/CSS/screener-saved-list-item.css">
-    </head>
-
-    <body>
-        <div class="row">
-            <div class="col s2">
-                <img class="responsive-img circle" src="/front-end//img//bullish-green.png">
-            </div>
-            <div class="col s4">
-            
-            </div>
-            <div class="col s5">
-            
-            </div>
-            <div class="col s1">
-            
-            </div>
-            
+<div class="list-item col s12">
+    <div class="col s1 valign-wrapper" style="height:10vh; min-height:100px; text-align:center; padding: 3%;">
+        <img class="responsive-img" src="/front-end/img/active-marker-orange.png" id="item-active">
+    </div>
+    <div class="col s2 valign-wrapper" style="padding:4%; height:10vh; min-height:100px; margin-left:-3%;">
+        <img class="responsive-img" src="/front-end/img-circle/bullish-green-circle.png" id="item-img">
+    </div>
+    <div class="col s4 valign-wrapper" style="height:10vh; min-height:100px;">
+        <div>
+            <h5 class="item-title truncate" id="item-title-box" style="margin-left:-1.5vw; width:25vw;">Finance Screener</h5>
+            <h6 class="item-type" id="item-type-box" style="margin-top:-3%; margin-left:-1.4vw;">Custom</h6>
         </div>
-    
-    
-    
-    
-    </body>
-</html>
+    </div>
+    <div class="col s4 valign-wrapper" style="height:10vh; min-height:100px;">
+        <div>
+            <h5 class="item-last-used" style="margin-left:-1.5vw; width:25vw; text-align:center;" id="item-last-used-box">Last used - 6/6/2017</h5>
+                <!-- Empty box used as a reverse 'sandbag' -->
+            <h6 class="item-type" style="margin-top:-3%; margin-left:-1.4vw; color:white;">Custom</h6>
+        </div>
+    </div>
+    <div class="col s1 valign-wrapper" style="height:10vh; min-height:100px; text-align:center; padding:2%;">
+        <img class="responsive-img" src="/front-end/img/more.png" id="item-more">
+    </div>
+</div>

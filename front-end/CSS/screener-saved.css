@@ -1,3 +1,5 @@
+/* .item-title, .item-type, and .item-last-used are classes that get applied to list-item html when it is appended inside #list-container */
+
 body{
     min-width: 800px;
 }
@@ -50,20 +52,6 @@ body{
     padding-top: 3%;
     float: left;
     width: 100%;
-}
-
-.list-item{
-    height: auto;
-    display: block;
-    min-height: 100px;
-}
-
-.item-type{
-    color: #616161;
-}
-
-.item-last-used{
-    color: #616161;
 }
 
 /* Media queries - scale font size of top toggle buttons*/
@@ -134,9 +122,11 @@ body{
     .item-type{
         font-size: 14px;
     }
+    .item-last-used{
+        font-size: 16px;
+    }
 }
 
-/* My breakpoint */
 @media only screen and (min-width: 1251px) and (max-width: 1400px){
      .toggle-text{
         font-size:18px;
@@ -150,8 +140,12 @@ body{
     .item-type{
         font-size: 14px;
     }
+    .item-last-used{
+        font-size: 16px;
+    }
 }
 
+/* My breakpoint */
 @media only screen and (min-width: 1401px) and (max-width: 1550px){
      .toggle-text{
         font-size:20px;
@@ -164,6 +158,9 @@ body{
     }
     .item-type{
         font-size: 14px;
+    }
+    .item-last-used{
+        font-size: 18px;
     }
 }
 
@@ -180,6 +177,9 @@ body{
     .item-type{
         font-size: 14px;
     }
+    .item-last-used{
+        font-size: 20px;
+    }
 }
 
 @media only screen and (min-width: 1701px){
@@ -194,5 +194,8 @@ body{
     }
     .item-type{
         font-size: 15px;
+    }
+    .item-last-used{
+        font-size: 23px;
     }
 }
