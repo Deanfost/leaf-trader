@@ -24,7 +24,7 @@
                 $(window).scroll(function(){
                     $('#side-nav').css('left', origPos.left - $(this).scrollLeft());
                 });
-//                $('#list-container').load('/front-end/HTML/no-screeners.html');
+                $('#list-container').load('/front-end/HTML/screener-saved-list-item.html');
             });
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/screener-saved.css">
@@ -33,8 +33,14 @@
     <body>
         <div class="row">
             <!-- Side nav -->
-            <div class="col s3 z-depth-1" style="height:100vh;text-align:center; position: fixed; min-width:237px; max-width:500px; overflow:hidden;" id="side-nav">
-                
+            <div class="col s3 z-depth-1 sidenav" style="height:100vh; position: fixed; min-width:237px; max-width:500px; overflow:hidden; padding: 0;" id="side-nav">
+                <div class="col s12 sidenav-top valign-wrapper" style="text-align:center; min-height:160px;">
+                    <div style="height: 90%; width: 90%; margin:0 auto;">
+                        <img class="responsive-img" src="/front-end/img/logo-orange.png" style="height:50%;">
+                        <h5 style="color:white;">Leaf Trader</h5>
+                    </div>
+                   
+                </div>
             </div>
             
             <!-- Toggle bar -->
@@ -53,16 +59,16 @@
             <div class="col s9 push-s3">
                 <div class="z-depth-1 card">
                     <!-- Card header -->
-                    <div class="orange lighten-1 card-header">
+                    <div class="orange lighten-1 card-header" style="padding-left:2%; padding-right:2%;">
                         <div class="col s10 valign-wrapper" style="height:100%;">
                             <h4 id="card-title">Your Screeners</h4>
                         </div>
                         <div class="col s2 valign-wrapper" style="height:100%;">
-                            <img class="responsive-img" id="card-help" src="/front-end/img/help.png" style="margin-top:17%; margin-left:5.5vw;">
+                            <img class="responsive-img" id="card-help" src="/front-end/img/help.png" style="margin-left:82%;">
                         </div>
                     </div>
                     <!-- Card content - screener items go in here -->
-                    <div class="row" id="list-container" style="padding-top:1.5%;">
+                    <div class="row" id="list-container" style="padding-top:1.5%; padding-left:1%; padding-right:1%;">
                         
                     </div>
                 </div>
