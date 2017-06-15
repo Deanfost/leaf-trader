@@ -1,7 +1,7 @@
 /* .item-title, .item-type, and .item-last-used are classes that get applied to list-item html when it is appended inside #list-container */
 
 body{
-    min-width: 800px;
+    min-width: 950px;
 }
 
 .toggle-active{
@@ -61,31 +61,39 @@ body{
 .item-last-used{
     color: #757575;
 }
-/* Media queries - scale font size of top toggle buttons*/
-@media only screen and (max-width:800px){
+@media only screen and (max-width: 950px){
      .toggle-text{
-        font-size:14px;
+        font-size:12px;
+    }
+    #card-title{
+        font-size:18px;
+    }
+    #card-help{
+        height:25%;
+    }
+    .item-title{
+        font-size: 16px;
+    }
+    .item-type{
+        font-size: 14px;
+    }
+    .item-last-used{
+        font-size: 14px;
+    }
+    #item-more-wrapper{
+        padding: 2.7%;
+    }
+}
+
+@media only screen and (min-width: 951px), (max-width: 1100px){
+    .toggle-text{
+        font-size:13px;
     }
     #card-title{
         font-size:20px;
     }
-    .item-title{
-        font-size: 18px;
-    }
-    .item-type{
-        font-size: 16px;
-    }
-    .item-last-used{
-        font-size: 16px;
-    }
-}
-
-@media only screen and (min-width: 801px) and (max-width: 950px){
-     .toggle-text{
-        font-size:15px;
-    }
-    #card-title{
-        font-size:22px;
+    #card-help{
+        height:30%;
     }
     .item-title{
         font-size: 18px;
@@ -96,113 +104,128 @@ body{
     .item-last-used{
         font-size: 16px;
     }
-}
-
-@media only screen and (min-width: 951px) and (max-width: 1100px){
-     .toggle-text{
-        font-size:16px;
-    }
-    #card-title{
-        font-size:24px;
-    }
-    .item-title{
-        font-size: 21px;
-    }
-    .item-type{
-        font-size: 18px;
-    }
-    .item-last-used{
-        font-size: 18px;
+    #item-more-wrapper{
+        padding: 2.7%;
     }
 }
 
 @media only screen and (min-width: 1101px) and (max-width: 1250px){
-     .toggle-text{
-        font-size:17px;
+    .toggle-text{
+        font-size:14px;
     }
     #card-title{
-        font-size:26px;
+        font-size:22px;
+    }
+    #card-help{
+        height:35%;
     }
     .item-title{
-        font-size: 23px;
+        font-size: 20px;
     }
     .item-type{
-        font-size: 20px;
+        font-size: 18px;
     }
     .item-last-used{
-        font-size: 20px;
+        font-size: 18px;
+    }
+    #item-more-wrapper{
+        padding: 2.7%;
     }
 }
 
 @media only screen and (min-width: 1251px) and (max-width: 1400px){
-     .toggle-text{
-        font-size:18px;
+    .toggle-text{
+        font-size:14px;
     }
     #card-title{
-        font-size:28px;
+        font-size:22px;
+    }
+    #card-help{
+        height:35%;
     }
     .item-title{
-        font-size: 24px;
+        font-size: 20px;
     }
     .item-type{
-        font-size: 22px;
+        font-size: 18px;
     }
     .item-last-used{
-        font-size: 22px;
+        font-size: 18px;
+    }
+    #item-more-wrapper{
+        padding: 2.7%;
     }
 }
 
 /* My breakpoint */
 @media only screen and (min-width: 1401px) and (max-width: 1550px){
-     .toggle-text{
-        font-size:20px;
+    .toggle-text{
+        font-size:16px;
     }
     #card-title{
-        font-size:30px;
+        font-size:24px;
+    }
+    #card-help{
+        height:35%;
     }
     .item-title{
-        font-size: 25px;
+        font-size: 22px;
     }
     .item-type{
-        font-size: 21px;
+        font-size: 20px;
     }
     .item-last-used{
-        font-size: 21px;
+        font-size: 20px;
+    }
+    #item-more-wrapper{
+        padding: 2.7%;
     }
 }
 
 @media only screen and (min-width: 1551px) and (max-width: 1700px){
-     .toggle-text{
-        font-size:21px;
+    .toggle-text{
+        font-size:17px;
     }
     #card-title{
-        font-size:30px;
+        font-size:31px;
     }
-    .item-title{
-        font-size: 26px;
-    }
-    .item-type{
-        font-size: 22px;
-    }
-    .item-last-used{
-        font-size: 22px;
-    }
-}
-
-@media only screen and (min-width: 1701px){
-     .toggle-text{
-        font-size:23px; 
-    }
-    #card-title{
-        font-size:34px;
+    #card-help{
+        height:35%;
     }
     .item-title{
         font-size: 27px;
     }
     .item-type{
-        font-size: 23px;
+        font-size: 25px;
     }
     .item-last-used{
-        font-size: 23px;
+        font-size: 25px;
+    }
+    #item-more-wrapper{
+        padding: 2.7%;
+    }
+}
+
+@media only screen and (min-width: 1701px){
+    .toggle-text{
+        font-size:24px; 
+    }
+    #card-title{
+        font-size:34px;
+    }
+    #card-help{
+        height:40%;
+    }
+    .item-title{
+        font-size: 28px;
+    }
+    .item-type{
+        font-size: 26px;
+    }
+    .item-last-used{
+        font-size: 26px;
+    }
+    #item-more-wrapper{
+        padding: 2.5%;
     }
 }

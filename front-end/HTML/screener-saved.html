@@ -24,7 +24,7 @@
                 $(window).scroll(function(){
                     $('#side-nav').css('left', origPos.left - $(this).scrollLeft());
                 });
-                $('#list-container').load('/front-end/HTML/screener-saved-list-item.html');
+//                $('#list-container').load('/front-end/HTML/no-screeners.html');
             });
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/screener-saved.css">
@@ -33,7 +33,7 @@
     <body>
         <div class="row">
             <!-- Side nav -->
-            <div class="col s3 z-depth-1" style="height:100vh;text-align:center; position: fixed; min-width:200px; max-width:500px; overflow:hidden;" id="side-nav">
+            <div class="col s3 z-depth-1" style="height:100vh;text-align:center; position: fixed; min-width:237px; max-width:500px; overflow:hidden;" id="side-nav">
                 
             </div>
             
@@ -58,7 +58,7 @@
                             <h4 id="card-title">Your Screeners</h4>
                         </div>
                         <div class="col s2 valign-wrapper" style="height:100%;">
-                            <img class="responsive-img" src="/front-end/img/help.png" style="height:35%; margin-top:17%; margin-left:5.5vw;">
+                            <img class="responsive-img" id="card-help" src="/front-end/img/help.png" style="margin-top:17%; margin-left:5.5vw;">
                         </div>
                     </div>
                     <!-- Card content - screener items go in here -->
