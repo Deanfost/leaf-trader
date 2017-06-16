@@ -36,11 +36,6 @@ body{
     min-height: 60px;
 }
 
-#sidenav-title{
-    width: 100%;
-    text-align: left;
-}
-
 .card{
     border-bottom: solid;
     border-radius: 5px;
@@ -82,6 +77,7 @@ body{
     }
     #sidenav-title{
         font-size: 19px;
+        width: 110px;
     }
     #card-title{
         font-size: 18px;
@@ -110,6 +106,7 @@ body{
     }
     #sidenav-title{
         font-size: 20px;
+        width: 110px;
     }
     #card-title{
         font-size: 20px;
@@ -138,6 +135,7 @@ body{
     }
     #sidenav-title{
         font-size: 21px;
+        width: 115px;
     }
     #card-title{
         font-size: 22px;
@@ -166,6 +164,7 @@ body{
     }
     #sidenav-title{
         font-size: 21px;
+        width: 120px;
     }
     #card-title{
         font-size: 22px;
@@ -195,6 +194,7 @@ body{
     }
     #sidenav-title{
         font-size: 24px;
+        width: 135px;
     }
     #card-title{
         font-size: 24px;
@@ -223,6 +223,7 @@ body{
     }
     #sidenav-title{
         font-size: 25px;
+        width: 140px;
     }
     #card-title{
         font-size: 31px;
