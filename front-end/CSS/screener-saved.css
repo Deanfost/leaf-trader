@@ -29,8 +29,16 @@ body{
 }
 
 .sidenav-top{
-    background-color: #ff9800;
-    height: 30%;
+    height: 20%;
+}
+
+#sidenav-img{
+    min-height: 60px;
+}
+
+#sidenav-title{
+    width: 100%;
+    text-align: left;
 }
 
 .card{
@@ -69,8 +77,11 @@ body{
 }
 
 @media only screen and (max-width: 950px){
-     .toggle-text{
+    .toggle-text{
         font-size:12px;
+    }
+    #sidenav-title{
+        font-size: 19px;
     }
     #card-title{
         font-size: 18px;
@@ -97,6 +108,9 @@ body{
     .toggle-text{
         font-size:13px;
     }
+    #sidenav-title{
+        font-size: 20px;
+    }
     #card-title{
         font-size: 20px;
     }
@@ -122,6 +136,9 @@ body{
     .toggle-text{
         font-size:14px;
     }
+    #sidenav-title{
+        font-size: 21px;
+    }
     #card-title{
         font-size: 22px;
     }
@@ -146,6 +163,9 @@ body{
 @media only screen and (min-width: 1251px) and (max-width: 1400px){
     .toggle-text{
         font-size:14px;
+    }
+    #sidenav-title{
+        font-size: 21px;
     }
     #card-title{
         font-size: 22px;
@@ -173,6 +193,9 @@ body{
     .toggle-text{
         font-size:16px;
     }
+    #sidenav-title{
+        font-size: 24px;
+    }
     #card-title{
         font-size: 24px;
     }
@@ -197,6 +220,9 @@ body{
 @media only screen and (min-width: 1551px) and (max-width: 1700px){
     .toggle-text{
         font-size:17px;
+    }
+    #sidenav-title{
+        font-size: 25px;
     }
     #card-title{
         font-size: 31px;
@@ -223,6 +249,9 @@ body{
     .toggle-text{
         font-size:19px; 
     }
+    #sidenav-title{
+        font-size: 26px;
+    }
     #card-title{
         font-size:32px;
     }
@@ -247,6 +276,9 @@ body{
 @media only screen and (min-width: 2000px) {
     .toggle-text{
         font-size: .8vw; 
+    }
+    #sidenav-title{
+        font-size: 2.4vw;
     }
     #card-title{
         font-size: 2vw;
