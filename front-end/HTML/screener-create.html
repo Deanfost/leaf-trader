@@ -33,6 +33,19 @@
                     
                     
                 });
+                //Carousel
+                $('.carousel').carousel({
+                    dist: 0, 
+                    padding: 100,
+                });
+                //Move the carousel
+                $('#carousel-left').click(function(){
+                    $('.carousel').carousel('prev');
+                    
+                });
+                $('#carousel-right').click(function(){
+                    $('.carousel').carousel('next');
+                });
             });
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/screener-create.css">
@@ -104,7 +117,7 @@
             </div>
             
             <!-- Toggle bar -->
-            <div class="col s9 push-s3 z-depth-1 orange valign-wrapper" style="height:15vh; min-height:100px;">
+            <div class="col s9 push-s3 z-depth-1 orange valign-wrapper" style="height:15vh; min-height:100px; margin-bottom: 2vh;">
                 <!-- Left toggle button -->
                 <a class="toggle-inactive valign-wrapper" style="margin-left:20%;" href="screener-saved.html">
                     <h5 class="toggle-text" style="margin: 0 auto; color:#fff;">Saved</h5>
@@ -127,16 +140,42 @@
                             <img class="responsive-img" id="preset-card-help" src="/front-end/img/help.png" style="margin-left:82%; cursor: pointer; height:45%;">
                         </div>
                     </div>
-                    <!-- Card content - screener items go in here -->
+                    <!-- Card content - presets -->
                     <div class="row" id="list-container" style="padding-top:1.5%; padding-left:1%; padding-right:1%;">
+                        <!-- Left arrow -->
                         <div class="col s2" style="text-align:center;">
-                            <img class="responsive-img" src="/front-end/img/arrow-left.png" style="cursor: pointer; height:8vh; transform: translateY(180%);">
+                            <img class="responsive-img" src="/front-end/img/arrow-left.png" style="cursor: pointer; height:8vh; transform: translateY(180%);" id="carousel-left">
                         </div>
+                        <!-- Carousel -->
                         <div class="carousel col s8" style="height:40vh;">
-                            
+                            <div class="carousel-item white z-depth-1" href="#one!" style="border-radius:5px;">
+                                <div class="row" style="height:60%; text-align:center; padding-top:10%;">
+                                    <img class="responsive-img" src="/front-end/img/bullish-green.png" style="width:50%;">
+                                </div>
+                                <div class="row" style="height:30%; padding-top:1%;">
+                                    <h6 style="text-align:center; font-size:18px;">Finance</h6>
+                                </div>
+                            </div>
+                            <div class="carousel-item white z-depth-1" href="#two!" style="border-radius:5px;">
+                              <div class="row" style="height:60%; text-align:center; padding-top:10%;">
+                                    <img class="responsive-img" src="/front-end/img/pill-red.png" style="width:50%;">
+                                </div>
+                                <div class="row" style="height:30%; padding-top:1%;">
+                                    <h6 style="text-align:center; font-size:18px;">Medicine</h6>
+                                </div>
+                            </div>
+                            <div class="carousel-item white z-depth-1" href="#three!" style="border-radius:5px;">
+                              <div class="row" style="height:60%; text-align:center; padding-top:10%;">
+                                    <img class="responsive-img" src="/front-end/img/smartphone-blue.png" style="width:50%;">
+                                </div>
+                                <div class="row" style="height:30%; padding-top:1%;">
+                                    <h6 style="text-align:center; font-size:18px;">Technology</h6>
+                                </div>
+                            </div>
                         </div>
+                        <!-- Right arrow -->
                         <div class="col s2" style="text-align:center;">
-                            <img class="responsive-img" src="/front-end/img/arrow-right.png" style="cursor: pointer; height:8vh; transform: translateY(180%);">
+                            <img class="responsive-img" src="/front-end/img/arrow-right.png" style="cursor: pointer; height:8vh; transform: translateY(180%);" id="carousel-right">
                         </div>
                     </div>
                 </div>
@@ -153,9 +192,40 @@
                             <img class="responsive-img" id="custom-card-help" src="/front-end/img/help.png" style="margin-left:82%; cursor: pointer; height:45%;">
                         </div>
                     </div>
-                    <!-- Card content - screener items go in here -->
-                    <div class="row" id="list-container" style="padding-top:1.5%; padding-left:1%; padding-right:1%;">
-                        
+                    <!-- Card content - screener fields -->
+                    <div class="row" id="list-container" style="padding-top:1.5%; padding-left:5%; padding-right:5%; padding-top:3%;">
+                        <div class="field-card row">
+                            <div class="col s3">
+
+                            </div>
+                            <div class="col s9">
+
+                            </div>
+                        </div>
+                        <div class="field-card row">
+                            <div class="col s3">
+
+                            </div>
+                            <div class="col s9">
+
+                            </div>
+                        </div>
+                        <div class="field-card row">
+                            <div class="col s3">
+
+                            </div>
+                            <div class="col s9">
+
+                            </div>
+                        </div>
+                        <div class="field-card row">
+                            <div class="col s3">
+
+                            </div>
+                            <div class="col s9">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

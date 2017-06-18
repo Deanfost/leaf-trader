@@ -59,12 +59,9 @@ body{
     width: 100%;
 }
 
-.item-type{
-    color: #757575;
-}
-
-.item-last-used{
-    color: #757575;
+.field-card{
+    border-radius: 5px;
+    height: auto;
 }
 
 @media only screen and (max-width: 950px){
@@ -94,19 +91,6 @@ body{
     }
     #card-title{
         font-size: 17px;
-    }
-
-    .item-title{
-        font-size: 16px;
-    }
-    .item-type{
-        font-size: 14px;
-    }
-    .item-last-used{
-        font-size: 14px;
-    }
-    #item-more-wrapper{
-        padding: 2.7%;
     }
 }
 
@@ -138,19 +122,6 @@ body{
     #card-title{
         font-size: 19px;
     }
-
-    .item-title{
-        font-size: 18px;
-    }
-    .item-type{
-        font-size: 16px;
-    }
-    .item-last-used{
-        font-size: 16px;
-    }
-    #item-more-wrapper{
-        padding: 2.7%;
-    }
 }
 
 @media only screen and (min-width: 1101px) and (max-width: 1250px){
@@ -181,19 +152,6 @@ body{
     #card-title{
         font-size: 21px;
     }
-
-    .item-title{
-        font-size: 20px;
-    }
-    .item-type{
-        font-size: 18px;
-    }
-    .item-last-used{
-        font-size: 18px;
-    }
-    #item-more-wrapper{
-        padding: 2.7%;
-    }
 }
 
 @media only screen and (min-width: 1251px) and (max-width: 1400px){
@@ -223,19 +181,6 @@ body{
     }
     #card-title{
         font-size: 21px;
-    }
- 
-    .item-title{
-        font-size: 20px;
-    }
-    .item-type{
-        font-size: 18px;
-    }
-    .item-last-used{
-        font-size: 18px;
-    }
-    #item-more-wrapper{
-        padding: 2.7%;
     }
 }
 
@@ -268,19 +213,6 @@ body{
     #card-title{
         font-size: 23px;
     }
-
-    .item-title{
-        font-size: 22px;
-    }
-    .item-type{
-        font-size: 20px;
-    }
-    .item-last-used{
-        font-size: 20px;
-    }
-    #item-more-wrapper{
-        padding: 2.7%;
-    }
 }
 
 @media only screen and (min-width: 1551px) and (max-width: 1700px){
@@ -311,19 +243,6 @@ body{
     #card-title{
         font-size: 30px;
     }
-
-    .item-title{
-        font-size: 27px;
-    }
-    .item-type{
-        font-size: 25px;
-    }
-    .item-last-used{
-        font-size: 25px;
-    }
-    #item-more-wrapper{
-        padding: 2.7%;
-    }
 }
 
 @media only screen and (min-width: 1701px) and (max-width: 2000){
@@ -353,19 +272,6 @@ body{
     #card-title{
         font-size:31px;
     }
-
-    .item-title{
-        font-size: 28px;
-    }
-    .item-type{
-        font-size: 26px;
-    }
-    .item-last-used{
-        font-size: 26px;
-    }
-    #item-more-wrapper{
-        padding: 2.5%;
-    }
 }
 
 @media only screen and (min-width: 2000px) {
@@ -394,18 +300,5 @@ body{
     }
     #card-title{
         font-size: 1.8vw;
-    }
-
-    .item-title{
-        font-size: 1.4vw;
-    }
-    .item-type{
-        font-size: 1.2vw;
-    }
-    .item-last-used{
-        font-size: 1.2vw;
-    }
-    #item-more-wrapper{
-        padding: 2.3%;
     }
 }
