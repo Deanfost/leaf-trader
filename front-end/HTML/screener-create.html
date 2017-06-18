@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Saved Screeners</title>
+        <title>Create a screener</title>
 
         <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -24,15 +24,18 @@
                 $(window).scroll(function(){
                     $('#side-nav').css('left', origPos.left - $(this).scrollLeft());
                 });
-                $('#list-container').load('/front-end/HTML/screener-saved-list-item.html');
-                //Display modal when clicking on card help button
-                $('#card-help').click(function(){
+                //Display modal when clicking on card help buttons
+                $('#preset-card-help').click(function(){
+                    
+                    
+                });
+                $('#custom-card-help').click(function(){
                     
                     
                 });
             });
         </script>
-        <link rel="stylesheet" type="text/css" href="/front-end/CSS/screener-saved.css">
+        <link rel="stylesheet" type="text/css" href="/front-end/CSS/screener-create.css">
     </head>
     
     <body>
@@ -103,25 +106,45 @@
             <!-- Toggle bar -->
             <div class="col s9 push-s3 z-depth-1 orange valign-wrapper" style="height:15vh; min-height:100px;">
                 <!-- Left toggle button -->
-                <a class="toggle-active valign-wrapper" style="margin-left:20%;" href="screener-saved.html">
-                    <h5 class="toggle-text" style="margin: 0 auto; color:#4B4B4B;">Saved</h5>
+                <a class="toggle-inactive valign-wrapper" style="margin-left:20%;" href="screener-saved.html">
+                    <h5 class="toggle-text" style="margin: 0 auto; color:#fff;">Saved</h5>
                 </a>
                 <!-- Right toggle button -->
-                <a class="toggle-inactive valign-wrapper" href="screener-create.html">
-                    <h5 class="toggle-text" style="margin: 0 auto; color:#fff;">Create</h5>
+                <a class="toggle-active valign-wrapper" href="screener-create.html">
+                    <h5 class="toggle-text" style="margin: 0 auto; color:#4B4B4B;">Create</h5>
                 </a>
             </div>
             
-            <!-- Card -->
+            <!-- Presets card -->
             <div class="col s9 push-s3">
                 <div class="z-depth-1 card">
                     <!-- Card header -->
                     <div class="orange lighten-1 card-header" style="padding-left:2%; padding-right:2%;">
                         <div class="col s10 valign-wrapper" style="height:100%;">
-                            <h4 id="card-title">Your Screeners</h4>
+                            <h4 id="card-title">Presets</h4>
                         </div>
                         <div class="col s2 valign-wrapper" style="height:100%;">
-                            <img class="responsive-img" id="card-help" src="/front-end/img/help.png" style="margin-left:82%; cursor: pointer;">
+                            <img class="responsive-img" id="preset-card-help" src="/front-end/img/help.png" style="margin-left:82%; cursor: pointer; height:45%;">
+                        </div>
+                    </div>
+                    <!-- Card content - screener items go in here -->
+                    <div class="row" id="list-container" style="padding-top:1.5%; padding-left:1%; padding-right:1%;">
+                        <div class="carousel" style="height:40vh;">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Custom card -->
+            <div class="col s9 push-s3">
+                <div class="z-depth-1 card">
+                    <!-- Card header -->
+                    <div class="orange lighten-1 card-header" style="padding-left:2%; padding-right:2%;">
+                        <div class="col s10 valign-wrapper" style="height:100%;">
+                            <h4 id="card-title">Custom</h4>
+                        </div>
+                        <div class="col s2 valign-wrapper" style="height:100%;">
+                            <img class="responsive-img" id="custom-card-help" src="/front-end/img/help.png" style="margin-left:82%; cursor: pointer; height:45%;">
                         </div>
                     </div>
                     <!-- Card content - screener items go in here -->
