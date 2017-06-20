@@ -8,7 +8,7 @@ python-social-auth
 lxml==3.8.0
 oauthlib==2.0.2
 psycopg2==2.7.1
-celery 
+celery==3.1.18 # most current version of celery is not compatiable with django 1.7 
 # brew install rabbitmq 
 redis 
 
