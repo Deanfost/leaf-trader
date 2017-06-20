@@ -2,7 +2,11 @@ django-registration
 django-csvimport
 django==1.7 
 googlefinance
-beautifulsoup4
+beautifulsoup4==4.6.0
 jsonfield # beware this is going to uninstall your django 1.7 and replace it with django 1.11, just make sure to pip install django==1.7 again after you install this jsonfield
 python-social-auth
-lxml
+lxml==3.8.0
+oauthlib==2.0.2
+psycopg2==2.7.1
+celery 
+
