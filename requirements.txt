@@ -10,5 +10,6 @@ oauthlib==2.0.2
 psycopg2==2.7.1
 celery 
 # brew install rabbitmq 
+redis 
 
 
