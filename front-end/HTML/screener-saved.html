@@ -19,17 +19,37 @@
         <!--On DOM ready -->
         <script>
             $(document).ready(function(){
-                //Horizontally scroll the fixed side nav correctly
-                var origPos = $('#side-nav').position();
+                //Resize the toggle bar on DOM ready
+                var windowWidth = window.innerWidth;
+                    if(windowWidth > 1376){
+                        var toggleBarWidth = $('#toggle-bar').width();
+                        var diff = windowWidth - toggleBarWidth - 355;
+                        $('#toggle-bar').width(toggleBarWidth + diff);
+                    }
+                //Resize the toggle bar on resize
+                $(window).resize(function() {
+                    var windowWidth = window.innerWidth;
+                    if(windowWidth > 1376){
+                        var toggleBarWidth = $('#toggle-bar').width();
+                        var diff = windowWidth - toggleBarWidth - 355;
+                        $('#toggle-bar').width(toggleBarWidth + diff);
+                    }
+                });
+                //Horizontally scroll the fixed side nav and toggle bar correctly
+                var origPos1 = $('#side-nav').position();
                 $(window).scroll(function(){
-                    $('#side-nav').css('left', origPos.left - $(this).scrollLeft());
+                    $('#side-nav').css('left', origPos1.left - $(this).scrollLeft());
+                });
+                var origPos2 = $('#toggle-bar').position();
+                $(window).scroll(function(){
+                    $('#toggle-bar').css('left', origPos2.left - $(this).scrollLeft());
                 });
                 $('#list-container').load('/front-end/HTML/screener-saved-list-item.html');
                 //Display modal when clicking on card help button
                 $('#card-help').click(function(){
                     
                     
-                });
+                }); 
             });
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/screener-saved.css">
@@ -38,13 +58,13 @@
     <body>
         <div class="row">
             <!-- Side nav -->
-            <div class="col s3 z-depth-1 sidenav" style="height:100vh; position: fixed; min-width:237px; max-width:500px; overflow:hidden; padding: 0;" id="side-nav">
+            <div class="z-depth-1 sidenav" style="height:100vh; width:355px; position: fixed; overflow:hidden; padding: 0;" id="side-nav">
                 <!-- Sidenav header -->
                 <div class="col s12 sidenav-top orange z-depth-1" style="text-align:center;">
                     <div class="valign-wrapper" style="display:inline-block; position:realtive; transform:translateY(47%); width:auto;">
                         <a href="landing.html">
                             <div class="valign-wrapper">
-                                <img class="responsive-img circle z-depth-1" src="/front-end/img/logo-orange.png" style="height:10vh; margin-right:2%;" id="sidenav-img">
+                                <img class="responsive-img circle z-depth-1" src="/front-end/img/logo-orange.png" style="height:10vh; margin-right:4%;" id="sidenav-img">
                                 <h5 style="color:white;" id="sidenav-title">Leaf Trader</h5>
                             </div>
                         </a>
@@ -54,7 +74,7 @@
                 <div class="col s12" style="text-align:center; height:55%; padding-top:6%;">
                     <div class="valign-wrapper" style="display:inline-block; width:100%; margin-bottom:10%;">
                         <a>
-                            <div class="valign-wrapper sidenav-item-wrapper">
+                            <div class="valign-wrapper sidenav-item-wrapper" style="cursor:pointer;">
                                 <img class="responsive-img sidenav-item-img" src="/front-end/img/bullish.png" style="margin-right:10%;">
                                 <h5 class="sidenav-item">Dashboard</h5>
                             </div>
@@ -62,7 +82,7 @@
                     </div>
                     <div class="valign-wrapper" style="display:inline-block; width:100%; margin-bottom:10%;">
                         <a>
-                            <div class="valign-wrapper sidenav-item-wrapper">
+                            <div class="valign-wrapper sidenav-item-wrapper" style="cursor:pointer;">
                                 <img class="responsive-img sidenav-item-img" src="/front-end/img/money.png" style="margin-right:10%;">
                                 <h5 class="sidenav-item">Trader</h5>
                             </div>
@@ -70,7 +90,7 @@
                     </div>
                     <div class="valign-wrapper" style="display:inline-block; width:100%; margin-bottom:10%;">
                         <a>
-                            <div class="valign-wrapper sidenav-item-wrapper">
+                            <div class="valign-wrapper sidenav-item-wrapper" style="cursor:pointer;">
                                 <img class="responsive-img sidenav-item-img" src="/front-end/img/filter-orange.png" style="margin-right:10%;">
                                 <h5 class="sidenav-item" id="sidenav-active" style="color:#ffa726;">Screener</h5>
                             </div>
@@ -78,7 +98,7 @@
                     </div>
                     <div class="valign-wrapper" style="display:inline-block; width:100%; margin-bottom:10%;">
                         <a>
-                            <div class="valign-wrapper sidenav-item-wrapper">
+                            <div class="valign-wrapper sidenav-item-wrapper" style="cursor:pointer;">
                                 <img class="responsive-img sidenav-item-img" src="/front-end/img/bullish.png" style="margin-right:10%;">
                                 <h5 class="sidenav-item">Sign out</h5>
                             </div>
@@ -99,35 +119,35 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Toggle bar -->
-            <div class="col s9 push-s3 z-depth-1 orange valign-wrapper" style="height:15vh; min-height:100px;">
-                <!-- Left toggle button -->
-                <a class="toggle-active valign-wrapper" style="margin-left:20%;" href="screener-saved.html">
-                    <h5 class="toggle-text" style="margin: 0 auto; color:#4B4B4B;">Saved</h5>
-                </a>
-                <!-- Right toggle button -->
-                <a class="toggle-inactive valign-wrapper" href="screener-create.html">
-                    <h5 class="toggle-text" style="margin: 0 auto; color:#fff;">Create</h5>
-                </a>
-            </div>
-            
-            <!-- Card -->
-            <div class="col s9 push-s3">
-                <div class="z-depth-1 card">
-                    <!-- Card header -->
-                    <div class="orange lighten-1 card-header" style="padding-left:2%; padding-right:2%;">
-                        <div class="col s10 valign-wrapper" style="height:100%;">
-                            <h4 id="card-title">Your Screeners</h4>
-                        </div>
-                        <div class="col s2 valign-wrapper" style="height:100%;">
-                            <img class="responsive-img" id="card-help" src="/front-end/img/help.png" style="margin-left:82%; cursor: pointer;">
-                        </div>
+        </div>
+        
+        <!-- Toggle bar -->
+        <div class="z-depth-1 orange valign-wrapper row" style="height:15vh; min-height:100px; margin-left:355px; width:1024px; position:fixed; top: 0; z-index: 100;" id="toggle-bar">
+            <!-- Left toggle button -->
+            <a class="toggle-active valign-wrapper" style="margin-left:25%;" href="screener-saved.html">
+                <h5 class="toggle-text" style="margin: 0 auto; color:#4B4B4B;">Saved</h5>
+            </a>
+            <!-- Right toggle button -->
+            <a class="toggle-inactive valign-wrapper" href="screener-create.html">
+               <h5 class="toggle-text" style="margin: 0 auto; color:#fff;">Create</h5>
+            </a>
+        </div>
+        
+        <!-- Card -->
+        <div style="margin-left:355px; padding-left:2vw; padding-right:2vw; padding-bottom:2vh; margin-top:18vh; z-index: 10;">
+            <div class="z-depth-1 card">
+                <!-- Card header -->
+                <div class="orange lighten-1 card-header row" style="padding-left:2%; padding-right:2%;">
+                    <div class="col s10 valign-wrapper" style="height:100%;">
+                        <h4 id="card-title">Your Screeners</h4>
                     </div>
-                    <!-- Card content - screener items go in here -->
-                    <div class="row" id="list-container" style="padding-top:1.5%; padding-left:1%; padding-right:1%;">
+                    <div class="col s2 valign-wrapper" style="height:100%;">
+                        <img class="responsive-img" id="card-help" src="/front-end/img/help.png" style="margin-left:82%; cursor: pointer;">
+                    </div>
+                </div>
+                <!-- Card content - screener items go in here -->
+                <div class="row" id="list-container" style="padding-left:1%; padding-right:1%;">
                         
-                    </div>
                 </div>
             </div>
         </div>

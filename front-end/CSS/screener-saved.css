@@ -1,7 +1,7 @@
 /* .item-title, .item-type, and .item-last-used are classes that get applied to list-item html when it is appended inside #list-container */
 
 body{
-    min-width: 950px;
+    min-width: 1024px;
 }
 
 .toggle-active{
@@ -10,7 +10,7 @@ body{
     background-color: white;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    width: 30%;
+    width: 25%;
     height: 50%;
 }
 
@@ -20,7 +20,7 @@ body{
     background-color: #FFB74D;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    width: 30%;
+    width: 25%;
     height: 50%;
 }
 
@@ -39,6 +39,7 @@ body{
     border-bottom-color: white;
     margin-top: 2vh;
     min-height: 200px;
+    min-width: 970px;
     height: auto;
     display: block;
 }
@@ -67,369 +68,62 @@ body{
     color: #757575;
 }
 
-@media only screen and (max-width: 950px){
-    .toggle-text{
-        font-size:12px;
-    }
-    #sidenav-title{
-        font-size: 19px;
-        width: 110px;
-    }
-    .sidenav-item-wrapper{
-        padding-left: 15%;
-        padding-right: 15%;
-    }
-    .sidenav-item-img{
-        height: 5vh !important;
-    }
-    .sidenav-item{
-        font-size: 18px;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 4vh !important;
-    }
-    #sidenav-attr{
-        font-size: 17px;
-    }
-    #card-title{
-        font-size: 18px;
-    }
-    #card-help{
-        height: 25%;
-/*        margin-left: 5vw;*/
-    }
-    .item-title{
-        font-size: 16px;
-    }
-    .item-type{
-        font-size: 14px;
-    }
-    .item-last-used{
-        font-size: 14px;
-    }
-    #item-more-wrapper{
-        padding: 2.7%;
-    }
+.toggle-text{
+    font-size: 15px;
 }
 
-@media only screen and (min-width: 951px), (max-width: 1100px){
-    .toggle-text{
-        font-size:13px;
-    }
-    #sidenav-title{
-        font-size: 20px;
-        width: 110px;
-    }
-    .sidenav-item-wrapper{
-        padding-left: 15%;
-        padding-right: 15%;
-    }
-    .sidenav-item-img{
-        height: 5vh !important;
-    }
-    .sidenav-item{
-        font-size: 18px;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 4vh !important;
-    }
-    #sidenav-attr{
-        font-size: 17px;
-    }
-    #card-title{
-        font-size: 20px;
-    }
-    #card-help{
-        height: 30%;
-/*        margin-left: 5.5vw;*/
-    }
-    .item-title{
-        font-size: 18px;
-    }
-    .item-type{
-        font-size: 16px;
-    }
-    .item-last-used{
-        font-size: 16px;
-    }
-    #item-more-wrapper{
-        padding: 2.7%;
-    }
+#sidenav-title{
+    font-size: 20px;
+    width: 110px;
 }
 
-@media only screen and (min-width: 1101px) and (max-width: 1250px){
-    .toggle-text{
-        font-size:14px;
-    }
-    #sidenav-title{
-        font-size: 21px;
-        width: 115px;
-    }
-    .sidenav-item-wrapper{
-        padding-left: 20%;
-        padding-right: 20%;
-    }
-    .sidenav-item-img{
-        height: 6vh !important;
-    }
-    .sidenav-item{
-        font-size: 18px;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 5vh !important;
-    }
-    #sidenav-attr{
-        font-size: 17px;
-    }
-    #card-title{
-        font-size: 22px;
-    }
-    #card-help{
-        height: 35%;
-/*        margin-left: 6vw;*/
-    }
-    .item-title{
-        font-size: 20px;
-    }
-    .item-type{
-        font-size: 18px;
-    }
-    .item-last-used{
-        font-size: 18px;
-    }
-    #item-more-wrapper{
-        padding: 2.7%;
-    }
+.sidenav-item-wrapper{
+    padding-left: 25%;
+    padding-right: 25%;
 }
 
-@media only screen and (min-width: 1251px) and (max-width: 1400px){
-    .toggle-text{
-        font-size:14px;
-    }
-    #sidenav-title{
-        font-size: 21px;
-        width: 120px;
-    }
-    .sidenav-item-wrapper{
-        padding-left: 25%;
-        padding-right: 25%;
-    }
-    .sidenav-item-img{
-        height: 7vh !important;
-    }
-    .sidenav-item{
-        font-size: 19px;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 6vh !important;
-    }
-    #sidenav-attr{
-        font-size: 18px;
-    }
-    #card-title{
-        font-size: 22px;
-    }
-    #card-help{
-        height: 35%;
-/*        margin-left: 6.5vw;*/
-    }
-    .item-title{
-        font-size: 20px;
-    }
-    .item-type{
-        font-size: 18px;
-    }
-    .item-last-used{
-        font-size: 18px;
-    }
-    #item-more-wrapper{
-        padding: 2.7%;
-    }
+.sidenav-item-img{
+    height: 6vh !important;
 }
 
-/* My breakpoint */
-@media only screen and (min-width: 1401px) and (max-width: 1550px){
-    .toggle-text{
-        font-size:16px;
-    }
-    #sidenav-title{
-        font-size: 24px;
-        width: 135px;
-    }
-    .sidenav-item-wrapper{
-        padding-left: 25%;
-        padding-right: 25%;
-    }
-    .sidenav-item-img{
-        height: 7vh !important;
-    }
-    .sidenav-item{
-        font-size: 19px;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 6vh !important;
-    }
-    #sidenav-attr{
-        font-size: 18px;
-    }
-    #card-title{
-        font-size: 24px;
-    }
-    #card-help{
-        height: 30%;
-/*        margin-left: 6.5vw;*/
-    }
-    .item-title{
-        font-size: 22px;
-    }
-    .item-type{
-        font-size: 20px;
-    }
-    .item-last-used{
-        font-size: 20px;
-    }
-    #item-more-wrapper{
-        padding: 2.7%;
-    }
+.sidenav-item{
+    font-size: 18px;
+    color: #4b4b4b;
 }
 
-@media only screen and (min-width: 1551px) and (max-width: 1700px){
-    .toggle-text{
-        font-size:17px;
-    }
-    #sidenav-title{
-        font-size: 25px;
-        width: 140px;
-    }
-    .sidenav-item-wrapper{
-        padding-left: 30%;
-        padding-right: 30%;
-    }
-    .sidenav-item-img{
-        height: 7vh !important;
-    }
-    .sidenav-item{
-        font-size: 19px;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 6vh !important;
-    }
-    #sidenav-attr{
-        font-size: 18px;
-    }
-    #card-title{
-        font-size: 31px;
-    }
-    #card-help{
-        height: 35%;
-/*        margin-left: 7vw;*/
-    }
-    .item-title{
-        font-size: 27px;
-    }
-    .item-type{
-        font-size: 25px;
-    }
-    .item-last-used{
-        font-size: 25px;
-    }
-    #item-more-wrapper{
-        padding: 2.7%;
-    }
+#sidenav-attr-img{
+    height: 4vh !important;
 }
 
-@media only screen and (min-width: 1701px) and (max-width: 2000){
-    .toggle-text{
-        font-size:19px; 
-    }
-    #sidenav-title{
-        font-size: 26px;
-    }
-    .sidenav-item-wrapper{
-        padding-left: 35%;
-        padding-right: 35%;
-    }
-    .sidenav-item-img{
-        height: 8vh !important;
-    }
-    .sidenav-item{
-        font-size: 20px;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 7vh !important;
-    }
-    #sidenav-attr{
-        font-size: 19px;
-    }
-    #card-title{
-        font-size:32px;
-    }
-    #card-help{
-        height:35%;
-/*        margin-left: 7.5vw;*/
-    }
-    .item-title{
-        font-size: 28px;
-    }
-    .item-type{
-        font-size: 26px;
-    }
-    .item-last-used{
-        font-size: 26px;
-    }
-    #item-more-wrapper{
-        padding: 2.5%;
-    }
+#sidenav-attr{
+    font-size: 17px;
 }
 
-@media only screen and (min-width: 2000px) {
-    .toggle-text{
-        font-size: .8vw; 
-    }
-    #sidenav-title{
-        font-size: 2.4vw;
-    }
-    .sidenav-item-wrapper{
-        padding-left: 40%;
-        padding-right: 40%;
-    }
-    .sidenav-item-img{
-        height: 9vh !important;
-    }
-    .sidenav-item{
-        font-size: 1.5vw;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 8vh !important;
-    }
-    #sidenav-attr{
-        font-size: 19px;
-    }
-    #card-title{
-        font-size: 2vw;
-    }
-    #card-help{
-        height:40%;
-/*        margin-left: 7.5vw;*/
-    }
-    .item-title{
-        font-size: 1.4vw;
-    }
-    .item-type{
-        font-size: 1.2vw;
-    }
-    .item-last-used{
-        font-size: 1.2vw;
-    }
-    #item-more-wrapper{
-        padding: 2.3%;
-    }
+#card-title{
+    font-size: 24px;
+}
+
+#card-help{
+    height: 30%;
+/*  margin-left: 5.5vw;*/
+}
+
+.item-title{
+    font-size: 20px;
+}
+
+.item-type{
+    font-size: 17px;
+}
+
+.item-last-used{
+    font-size: 17px;
+}
+
+#item-more-wrapper{
+    padding: 2.7%;
+}
+
+@media only screen and (min-width: 1024px), (max-width: 1100px){
+  
 }
