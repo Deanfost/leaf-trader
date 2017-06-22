@@ -21,20 +21,35 @@
             $(document).ready(function(){
                 //Resize the toggle bar on DOM ready
                 var windowWidth = window.innerWidth;
-                    if(windowWidth > 1376){
-                        var toggleBarWidth = $('#toggle-bar').width();
-                        var diff = windowWidth - toggleBarWidth - 355;
-                        $('#toggle-bar').width(toggleBarWidth + diff);
-                    }
-                //Resize the toggle bar on resize
+                if(windowWidth > 1376){
+                    var toggleBarWidth = $('#toggle-bar').width();
+                    var diff = windowWidth - toggleBarWidth - 355;
+                    $('#toggle-bar').width(toggleBarWidth + diff);
+                }
+                //Give proper horizontal padding to card-container on DOM ready
+                if(windowWidth > 1376){
+                        var bodyWidth = windowWidth - 355;
+                        var horiMargins = bodyWidth / 30;
+                        $('#card-container').css('padding-left', horiMargins);
+                        $('#card-container').css('padding-right', horiMargins);
+                }
                 $(window).resize(function() {
+                    //Resize the toggle bar on resize
                     var windowWidth = window.innerWidth;
                     if(windowWidth > 1376){
                         var toggleBarWidth = $('#toggle-bar').width();
                         var diff = windowWidth - toggleBarWidth - 355;
                         $('#toggle-bar').width(toggleBarWidth + diff);
                     }
+                    //Give the proper amount of padding to the card container(but only if above 1376px wide) on resize
+                    if(windowWidth > 1376){
+                        var bodyWidth = windowWidth - 355;
+                        var horiMargins = bodyWidth / 25;
+                        $('#card-container').css('padding-left', horiMargins);
+                        $('#card-container').css('padding-right', horiMargins);
+                    }
                 });
+                
                 //Horizontally scroll the fixed side nav and toggle bar correctly
                 var origPos1 = $('#side-nav').position();
                 $(window).scroll(function(){
@@ -44,7 +59,9 @@
                 $(window).scroll(function(){
                     $('#toggle-bar').css('left', origPos2.left - $(this).scrollLeft());
                 });
+                
                 $('#list-container').load('/front-end/HTML/screener-saved-list-item.html');
+                
                 //Display modal when clicking on card help button
                 $('#card-help').click(function(){
                     
@@ -122,7 +139,7 @@
         </div>
         
         <!-- Toggle bar -->
-        <div class="z-depth-1 orange valign-wrapper row" style="height:15vh; min-height:100px; margin-left:355px; width:1024px; position:fixed; top: 0; z-index: 100;" id="toggle-bar">
+        <div class="z-depth-1 orange valign-wrapper row" style="height:100px; margin-left:355px; width:1024px; position:fixed; top: 0; z-index: 100;" id="toggle-bar">
             <!-- Left toggle button -->
             <a class="toggle-active valign-wrapper" style="margin-left:25%;" href="screener-saved.html">
                 <h5 class="toggle-text" style="margin: 0 auto; color:#4B4B4B;">Saved</h5>
@@ -134,7 +151,7 @@
         </div>
         
         <!-- Card -->
-        <div style="margin-left:355px; padding-left:2vw; padding-right:2vw; padding-bottom:2vh; margin-top:18vh; z-index: 10;">
+        <div style="margin-left:355px; padding-bottom:2vh; margin-top:130px; z-index: 10;" id="card-container">
             <div class="z-depth-1 card">
                 <!-- Card header -->
                 <div class="orange lighten-1 card-header row" style="padding-left:2%; padding-right:2%;">
