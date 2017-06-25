@@ -32,6 +32,32 @@ body{
     min-height: 60px;
 }
 
+#sidenav-title{
+    font-size: 20px;
+    width: 110px;
+}
+
+.sidenav-item-wrapper{
+    width: 145px;
+}
+
+.sidenav-item-img{
+    height: 6vh !important;
+}
+
+.sidenav-item{
+    font-size: 18px;
+    color: #4b4b4b;
+}
+
+#sidenav-attr-img{
+    height: 4vh !important;
+}
+
+#sidenav-attr{
+    font-size: 17px;
+}
+
 .card{
     border-bottom: solid;
     border-radius: 5px;
@@ -69,32 +95,6 @@ body{
 
 .toggle-text{
     font-size: 15px;
-}
-
-#sidenav-title{
-    font-size: 20px;
-    width: 110px;
-}
-
-.sidenav-item-wrapper{
-    width: 145px;
-}
-
-.sidenav-item-img{
-    height: 6vh !important;
-}
-
-.sidenav-item{
-    font-size: 18px;
-    color: #4b4b4b;
-}
-
-#sidenav-attr-img{
-    height: 4vh !important;
-}
-
-#sidenav-attr{
-    font-size: 17px;
 }
 
 #card-container{
