@@ -12,6 +12,7 @@ body{
     border-bottom-left-radius: 5px;
     width: 25%;
     height: 50%;
+    margin-left:25%;
 }
 
 .toggle-inactive{
@@ -25,11 +26,11 @@ body{
 }
 
 .sidenav-top{
-    height: 20%;
+    height: 150px;
 }
 
 #sidenav-img{
-    min-height: 60px;
+    height: 70px;
 }
 
 #sidenav-title{
@@ -39,10 +40,11 @@ body{
 
 .sidenav-item-wrapper{
     width: 145px;
+    height: 80px;
 }
 
 .sidenav-item-img{
-    height: 6vh !important;
+    height: 40px !important;
 }
 
 .sidenav-item{
@@ -51,7 +53,7 @@ body{
 }
 
 #sidenav-attr-img{
-    height: 4vh !important;
+    height:25px !important;
 }
 
 #sidenav-attr{
@@ -66,7 +68,6 @@ body{
     min-height: 200px;
     height: auto;
     display: block;
-    max-width: 1200px;
 }
 
 .card-header{
@@ -132,8 +133,20 @@ body{
     
 }
 
-/* Large displays wider than 1824 */
-@media only screen and (min-width: 1824px){
-    
+/* Large displays wider than 1710 */
+@media only screen and (min-width: 1710px){
+    #card-container{
+        width: 1200px;
+        left: 50%;
+    }
+    .item-title{
+        padding-left: .7vw;
+    }
+    .toggle-active{
+        margin-left: 30%;
+        width: 20%;
+    }
+    .toggle-inactive{
+        width: 20%;
+    }
 }
-
