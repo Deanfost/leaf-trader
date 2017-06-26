@@ -55,12 +55,13 @@
                     
                 }); 
                 //Mouse over sidenav events
-                $('.sidenav-menu-option').mouseenter(function(){
-                    
+                $('.sidenav-option').mouseenter(function(){                    
                     $(this).addClass('grey lighten-4');
                 });
-                $('.sidenav-menu-option').mouseleave(function(){
-                    $(this).removeClass('grey lighten-4');
+                $('.sidenav-option').mouseleave(function(){
+                    if($(this).attr('id') !== 'current-option'){
+                        $(this).removeClass('grey lighten-4');
+                    }
                 });
             });
         </script>
@@ -83,7 +84,7 @@
                     </div>
                 </div>
                 <!-- Sidenav items -->
-                <div class="col s12" style="text-align:center; padding-right:0%; padding-left:0%;" id="sidenav-item-wrapper">
+                <div class="col s12" style="text-align:center; padding-right:0%; padding-left:0%; padding-top:.5%;" id="sidenav-item-wrapper">
                     <div class="valign-wrapper sidenav-option" style="width:100%; height:20%; padding-left:25%; cursor: pointer;">
                         <div class="valign-wrapper sidenav-item-wrapper">
                             <img class="responsive-img sidenav-item-img" src="/front-end/img/bullish.png" style="margin-right:10%;">
@@ -96,7 +97,7 @@
                             <h5 class="sidenav-item">Trader</h5>
                         </div>
                     </div>
-                    <div class="valign-wrapper grey lighten-4 sidenav-option" style="width:100%; height:20%; padding-left:25%; cursor: pointer;">
+                    <div class="valign-wrapper grey lighten-4 sidenav-option" style="width:100%; height:20%; padding-left:25%; cursor: pointer;" id="current-option">
                         <div class="valign-wrapper sidenav-item-wrapper">
                             <img class="responsive-img sidenav-item-img" src="/front-end/img/filter-orange.png" style="margin-right:10%;">
                             <h5 class="sidenav-item" style="color:#ffa726;">Screeners</h5>
@@ -141,7 +142,7 @@
                             <h4 id="card-title">Your Screeners</h4>
                         </div>
                         <div class="col s2 valign-wrapper" style="height:100%;">
-                            <img class="responsive-img" id="card-help" src="/front-end/img/help.png" style="margin-left:82%; cursor: pointer;">
+                            <img class="responsive-img" id="card-help" src="/front-end/img/Help.png" style="margin-left:82%; cursor: pointer;">
                         </div>
                     </div>
                     <!-- Card content - screener items go in here -->
