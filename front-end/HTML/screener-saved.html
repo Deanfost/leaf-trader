@@ -21,18 +21,32 @@
             $(document).ready(function(){
                 //Resize the toggle bar on DOM ready
                 var windowWidth = window.innerWidth;
-                if(windowWidth > 1376){
+                //Viewports greater than 1200px wide
+                if(windowWidth >= 1200){
                     var toggleBarWidth = $('#toggle-bar').width();
                     var diff = windowWidth - toggleBarWidth - 300;
                     $('#toggle-bar').width(toggleBarWidth + diff);
                 }
+                //Viewports smaller than 1200px wide
+                else{
+                    var toggleBarWidth = $('#toggle-bar').width();
+                    var diff = windowWidth - toggleBarWidth - 150;
+                    $('#toggle-bar').width(toggleBarWidth + diff);
+                }
                 
+                //Resize the toggle bar on resize
                 $(window).resize(function() {
-                    //Resize the toggle bar on resize
                     var windowWidth = window.innerWidth;
-                    if(windowWidth > 1376){
+                    //Viewports greater than 1200px wide
+                    if(windowWidth >= 1200){
                         var toggleBarWidth = $('#toggle-bar').width();
                         var diff = windowWidth - toggleBarWidth - 300;
+                        $('#toggle-bar').width(toggleBarWidth + diff);
+                    }
+                    //Viewports smaller than 1200px wide
+                    else{
+                        var toggleBarWidth = $('#toggle-bar').width();
+                        var diff = windowWidth - toggleBarWidth - 150;
                         $('#toggle-bar').width(toggleBarWidth + diff);
                     }
                 });
@@ -71,7 +85,7 @@
     <body>
         <div class="row">
             <!-- Side nav -->
-            <div class="z-depth-1 sidenav" style="height:100vh; width:300px; position: fixed; overflow:hidden; padding: 0;" id="side-nav">
+            <div class="z-depth-1" id="side-nav">
                 <!-- Sidenav header -->
                 <div class="col s12 sidenav-top orange z-depth-1" style="text-align:center;" id="sidenav-header">
                     <div class="valign-wrapper" style="display:inline-block; position:realtive; transform:translateY(50%); width:auto;">
@@ -85,25 +99,31 @@
                 </div>
                 <!-- Sidenav items -->
                 <div class="col s12" style="text-align:center; padding-right:0%; padding-left:0%; padding-top:.5%;" id="sidenav-item-wrapper">
-                    <div class="valign-wrapper sidenav-option" style="width:100%; height:20%; padding-left:25%; cursor: pointer;">
+                    <div class="valign-wrapper sidenav-option">
                         <div class="valign-wrapper sidenav-item-wrapper">
                             <img class="responsive-img sidenav-item-img" src="/front-end/img/bullish.png" style="margin-right:10%;">
                             <h5 class="sidenav-item">Dashboard</h5>
                         </div>
                     </div>
-                    <div class="valign-wrapper sidenav-option" style="width:100%; height:20%; padding-left:25%; cursor: pointer;">
+                    <div class="valign-wrapper sidenav-option">
                         <div class="valign-wrapper sidenav-item-wrapper">
                             <img class="responsive-img sidenav-item-img" src="/front-end/img/money.png" style="margin-right:10%;">
                             <h5 class="sidenav-item">Trader</h5>
                         </div>
                     </div>
-                    <div class="valign-wrapper grey lighten-4 sidenav-option" style="width:100%; height:20%; padding-left:25%; cursor: pointer;" id="current-option">
+                    <div class="valign-wrapper grey lighten-4 sidenav-option" id="current-option">
                         <div class="valign-wrapper sidenav-item-wrapper">
                             <img class="responsive-img sidenav-item-img" src="/front-end/img/filter-orange.png" style="margin-right:10%;">
                             <h5 class="sidenav-item" style="color:#ffa726;">Screeners</h5>
                         </div>
                     </div>
-                    <div class="valign-wrapper sidenav-option" style="width:100%; height:20%; padding-left:25%; cursor: pointer;">
+                    <div class="valign-wrapper sidenav-option">
+                        <div class="valign-wrapper sidenav-item-wrapper">
+                            <img class="responsive-img sidenav-item-img" src="/front-end/img/book.png" style="margin-right:10%;">
+                            <h5 class="sidenav-item">Tutorials</h5>
+                        </div>
+                    </div>
+                    <div class="valign-wrapper sidenav-option">
                         <div class="valign-wrapper sidenav-item-wrapper">
                             <img class="responsive-img sidenav-item-img" src="/front-end/img/user.png" style="margin-right:10%;">
                             <h5 class="sidenav-item">Sign out</h5>
@@ -121,7 +141,7 @@
         </div>
         
         <!-- Toggle bar -->
-        <div class="z-depth-1 orange valign-wrapper row" style="height:100px; margin-left:300px; width:1024px; position:fixed; top:0; z-index: 100;" id="toggle-bar">
+        <div class="z-depth-1 orange valign-wrapper row" id="toggle-bar">
             <!-- Left toggle button -->
             <a class="toggle-active valign-wrapper" href="screener-saved.html">
                 <h5 class="toggle-text" style="margin: 0 auto; color:#4B4B4B;">Saved</h5>

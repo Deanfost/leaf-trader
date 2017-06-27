@@ -1,9 +1,4 @@
 /* .item-title, .item-type, and .item-last-used are classes that get applied to list-item html when it is appended inside #list-container */
-
-body{
-    min-width: 1024px;
-}
-
 .toggle-active{
     border-style: solid;
     border-color: white;
@@ -25,6 +20,14 @@ body{
     height: 50%;
 }
 
+#side-nav{
+    height: 100vh;
+    width: 300px;
+    position: fixed;
+    overflow: hidden;
+    padding: 0;
+}
+
 .sidenav-top{
     height: 150px;
 }
@@ -36,6 +39,13 @@ body{
 #sidenav-title{
     font-size: 20px;
     width: 110px;
+}
+
+.sidenav-option{
+    width: 100%;
+    height 20%;
+    padding-left: 25%;
+    cursor: pointer;
 }
 
 .sidenav-item-wrapper{
@@ -58,6 +68,15 @@ body{
 
 #sidenav-attr{
     font-size: 17px;
+}
+
+#toggle-bar{
+    height: 100px;
+    margin-left: 300px;
+    width: 1024px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
 }
 
 .card{
@@ -128,9 +147,26 @@ body{
     padding: 2.7%;
 }
 
-/* Screens smaller than 1376 */
-@media only screen and (max-width: 1376px){
-    
+/* Screens smaller than 1200 */
+@media only screen and (max-width: 1200px){
+    body{
+        min-width: 800px;
+    }
+    #side-nav{
+        width: 150px;
+    }
+    #sidenav-title{
+        display: none;
+    }
+    .sidenav-item{
+        display: none;
+    }
+    #sidenav-attr{
+        display: none;
+    }
+    #toggle-bar{
+        margin-left: 150px;
+    }
 }
 
 /* Large displays wider than 1710 */
