@@ -1,16 +1,10 @@
-/* .item-title, .item-type, and .item-last-used are classes that get applied to list-item html when it is appended inside #list-container */
-
-body{
-    min-width: 950px;
-}
-
 .toggle-active{
     border-style: solid;
     border-color: white;
     background-color: white;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    width: 30%;
+    width: 25%;
     height: 50%;
 }
 
@@ -20,16 +14,88 @@ body{
     background-color: #FFB74D;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    width: 30%;
+    width: 25%;
     height: 50%;
+    margin-left:25%;
+}
+
+#side-nav{
+    height: 100vh;
+    width: 300px;
+    position: fixed;
+    overflow: hidden;
+    padding: 0;
 }
 
 .sidenav-top{
-    height: 20%;
+    height: 150px;
 }
 
 #sidenav-img{
-    min-height: 60px;
+    height: 70px;
+}
+
+#sidenav-title{
+    font-size: 20px;
+    width: 110px;
+}
+
+.sidenav-option{
+    width: 100%;
+    height 20%;
+    padding-left: 25%;
+    cursor: pointer;
+}
+
+.sidenav-item-wrapper{
+    width: 145px;
+    height: 80px;
+}
+
+.sidenav-item-img{
+    height: 40px !important;
+    margin-right: 10%;
+}
+
+.sidenav-item{
+    font-size: 18px;
+    color: #4b4b4b;
+}
+#sidenav-footer{
+    height: 70px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#sidenav-attr-img{
+    height:25px !important;
+}
+
+#sidenav-attr{
+    font-size: 17px;
+}
+
+#toggle-bar{
+    height: 100px;
+    margin-left: 300px;
+    width: 1024px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+#card-section{
+    margin-left: 300px;
+    padding-bottom: 2vh;
+    margin-top: 130px;
+    z-index: 10;
+}
+
+#card-container{
+    margin: 0 auto;
+    width: 85%;
 }
 
 .card{
@@ -37,7 +103,6 @@ body{
     border-radius: 5px;
     border-top-color: #ffa726;
     border-bottom-color: white;
-    margin-top: 2vh;
     min-height: 200px;
     height: auto;
     display: block;
@@ -48,9 +113,9 @@ body{
     border-top-color: #ffa726;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    height: 10vh;
+    height: 100px;
     max-height: 18vh;
-    min-height: 60px;
+    min-height: 80px;
 }
 
 #card-title{
@@ -59,246 +124,94 @@ body{
     width: 100%;
 }
 
-.field-card{
+.toggle-text{
+    font-size: 15px;
+}
+
+#card-title{
+    font-size: 24px;
+}
+
+#card-help{ 
+    height: 30%;
+/*  margin-left: 5.5vw;*/
+}
+
+.carousel{
+    height: 220px;
+}
+
+.carousel-card{
     border-radius: 5px;
-    height: auto;
 }
 
-@media only screen and (max-width: 950px){
-    .toggle-text{
-        font-size:12px;
-    }
-    #sidenav-title{
-        font-size: 19px;
-        width: 110px;
-    }
-    .sidenav-item-wrapper{
-        padding-left: 15%;
-        padding-right: 15%;
-    }
-    .sidenav-item-img{
-        height: 5vh !important;
-    }
-    .sidenav-item{
-        font-size: 18px;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 4vh !important;
-    }
-    #sidenav-attr{
-        font-size: 17px;
-    }
-    #card-title{
-        font-size: 17px;
-    }
+.carousel-arrow{
+    width: 35%;
+    margin-top: 55%;
+    cursor: pointer;
 }
-
-@media only screen and (min-width: 951px), (max-width: 1100px){
-    .toggle-text{
-        font-size:13px;
+/* Screens smaller than 1200 */
+@media only screen and (max-width: 1200px){
+    body{
+        min-width: 800px;
+        min-height: 600px;
+    }
+    #side-nav{
+        width: 150px;
     }
     #sidenav-title{
-        font-size: 20px;
-        width: 110px;
-    }
-    .sidenav-item-wrapper{
-        padding-left: 15%;
-        padding-right: 15%;
-    }
-    .sidenav-item-img{
-        height: 5vh !important;
+        display: none;
     }
     .sidenav-item{
-        font-size: 18px;
-        color: #4b4b4b;
+        display: none;
+    }
+    .sidenav-item-img{
+        margin-left: 15%;
+        height: 35px !important;
+    }
+    #sidenav-footer{
+        height: 50px;
     }
     #sidenav-attr-img{
-        height: 4vh !important;
+        margin-left: 20%;
     }
     #sidenav-attr{
-        font-size: 17px;
+        display: none;
     }
-    #card-title{
-        font-size: 19px;
+    #toggle-bar{
+        margin-left: 150px;
+    }
+    #card-section{
+        margin-left: 150px;
     }
 }
 
-@media only screen and (min-width: 1101px) and (max-width: 1250px){
-    .toggle-text{
-        font-size:14px;
+/* Large displays wider than 1710 */
+@media only screen and (min-width: 1710px) and (max-width: 2200px){
+    #card-container{
+        width: 1200px;
+        left: 50%;
     }
-    #sidenav-title{
-        font-size: 21px;
-        width: 115px;
+    .toggle-active{
+        width: 20%;
     }
-    .sidenav-item-wrapper{
-        padding-left: 20%;
-        padding-right: 20%;
-    }
-    .sidenav-item-img{
-        height: 6vh !important;
-    }
-    .sidenav-item{
-        font-size: 18px;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 5vh !important;
-    }
-    #sidenav-attr{
-        font-size: 17px;
-    }
-    #card-title{
-        font-size: 21px;
+    .toggle-inactive{
+        width: 20%;
+        margin-left: 30%;
     }
 }
 
-@media only screen and (min-width: 1251px) and (max-width: 1400px){
-    .toggle-text{
-        font-size:14px;
+/* Ultra large displays wider than 2200 */
+@media only screen and (min-width: 2200px){
+    #card-container{
+        width: 1200px;
+        left: 50%;
     }
-    #sidenav-title{
-        font-size: 21px;
-        width: 120px;
+    .toggle-active{
+        width: 10%;
     }
-    .sidenav-item-wrapper{
-        padding-left: 25%;
-        padding-right: 25%;
-    }
-    .sidenav-item-img{
-        height: 7vh !important;
-    }
-    .sidenav-item{
-        font-size: 19px;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 6vh !important;
-    }
-    #sidenav-attr{
-        font-size: 18px;
-    }
-    #card-title{
-        font-size: 21px;
-    }
-}
-
-/* My breakpoint */
-@media only screen and (min-width: 1401px) and (max-width: 1550px){
-    .toggle-text{
-        font-size:16px;
-    }
-    #sidenav-title{
-        font-size: 24px;
-        width: 135px;
-    }
-    .sidenav-item-wrapper{
-        padding-left: 25%;
-        padding-right: 25%;
-    }
-    .sidenav-item-img{
-        height: 7vh !important;
-    }
-    .sidenav-item{
-        font-size: 19px;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 6vh !important;
-    }
-    #sidenav-attr{
-        font-size: 18px;
-    }
-    #card-title{
-        font-size: 23px;
-    }
-}
-
-@media only screen and (min-width: 1551px) and (max-width: 1700px){
-    .toggle-text{
-        font-size:17px;
-    }
-    #sidenav-title{
-        font-size: 25px;
-        width: 140px;
-    }
-    .sidenav-item-wrapper{
-        padding-left: 30%;
-        padding-right: 30%;
-    }
-    .sidenav-item-img{
-        height: 7vh !important;
-    }
-    .sidenav-item{
-        font-size: 19px;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 6vh !important;
-    }
-    #sidenav-attr{
-        font-size: 18px;
-    }
-    #card-title{
-        font-size: 30px;
-    }
-}
-
-@media only screen and (min-width: 1701px) and (max-width: 2000){
-    .toggle-text{
-        font-size:19px; 
-    }
-    #sidenav-title{
-        font-size: 26px;
-    }
-    .sidenav-item-wrapper{
-        padding-left: 35%;
-        padding-right: 35%;
-    }
-    .sidenav-item-img{
-        height: 8vh !important;
-    }
-    .sidenav-item{
-        font-size: 20px;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 7vh !important;
-    }
-    #sidenav-attr{
-        font-size: 19px;
-    }
-    #card-title{
-        font-size:31px;
-    }
-}
-
-@media only screen and (min-width: 2000px) {
-    .toggle-text{
-        font-size: .8vw; 
-    }
-    #sidenav-title{
-        font-size: 2.4vw;
-    }
-    .sidenav-item-wrapper{
-        padding-left: 40%;
-        padding-right: 40%;
-    }
-    .sidenav-item-img{
-        height: 9vh !important;
-    }
-    .sidenav-item{
-        font-size: 1.5vw;
-        color: #4b4b4b;
-    }
-    #sidenav-attr-img{
-        height: 8vh !important;
-    }
-    #sidenav-attr{
-        font-size: 19px;
-    }
-    #card-title{
-        font-size: 1.8vw;
+    .toggle-inactive{
+        width: 10%;
+        margin-left: 40%;
     }
 }
