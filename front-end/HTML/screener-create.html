@@ -62,9 +62,12 @@
                 });
                 
                 //Display modal when clicking on card help button
-                $('#card-help').click(function(){
+                $('#card1-help').click(function(){
                     
                 }); 
+                $('#card2-help').click(function(){
+                     
+                });
                 
                 //Mouse over sidenav events
                 $('.sidenav-option').mouseenter(function(){                    
@@ -87,9 +90,10 @@
                 //Init carousel
                 $('.carousel').carousel({
                     dist: 0, 
-                    padding: 100 
+                    padding: 100
+                    
                 });
-                //Move the carousel an arbritrary amount to clear any initial card position problems
+                //Scroll the carousel once
                 $('.carousel').carousel('next'); 
             });
         </script>
@@ -176,47 +180,69 @@
                             <h4 id="card-title">Presets</h4>
                         </div>
                         <div class="col s2 valign-wrapper" style="height:100%;">
-                            <img class="responsive-img" id="card-help" src="/front-end/img/Help.png" style="margin-left:82%; cursor: pointer;">
+                            <img class="responsive-img card-help" id="card1-help" src="/front-end/img/Help.png" style="margin-left:82%; cursor: pointer;">
                         </div>
                     </div>
                     <!-- Card content - preset carousel -->
-                    <div class="row" style="height:250px;">
+                    <div class="row" style="height:210px;">
                         <!-- Left arrow -->
-                        <div class="col s2" style="text-align:center; padding-top:90px;">
+                        <div class="col s2" style="text-align:center; padding-top:75px;">
                             <img class="responsive-img carousel-arrow" src="/front-end/img/arrow-left.png" id="arrow-left">
                         </div>
                         <!-- Carousel items -->
                         <div class="carousel col s8">
-                            <a class="carousel-item z-depth-1 carousel-card" href="#one!">
+                            <div class="carousel-item z-depth-1 carousel-card" href="#one!">
                                 <div class="row" style="height:60%; text-align:center; padding-top:20%;">
                                     <img class="responsive-img carousel-card-img" src="/front-end/img/pill-red.png">
                                 </div>
                                 <div class="row" style="height:30%; padding-top:1%;">
                                     <h6 class="carousel-card-text">Medicine</h6>
                                 </div>
-                            </a>
-                            <a class="carousel-item z-depth-1 carousel-card" href="#two!">
+                            </div>
+                            <div class="carousel-item z-depth-1 carousel-card" href="#two!">
                                 <div class="row" style="height:60%; text-align:center; padding-top:20%;">
                                     <img class="responsive-img carousel-card-img" src="/front-end/img/bullish-green.png">
                                 </div>
                                 <div class="row" style="height:30%; padding-top:1%;">
                                     <h6 class="carousel-card-text">Finance</h6>
                                 </div>
-                            </a>
-                            <a class="carousel-item z-depth-1 carousel-card" href="#two!">
+                            </div>
+                            <div class="carousel-item z-depth-1 carousel-card" href="#three!">
                                 <div class="row" style="height:60%; text-align:center; padding-top:20%;">
                                     <img class="responsive-img carousel-card-img" src="/front-end/img/smartphone-blue.png">
                                 </div>
                                 <div class="row" style="height:30%; padding-top:1%;">
                                     <h6 class="carousel-card-text">Technology</h6>
                                 </div>
-                            </a>
-                            
+                            </div>
                         </div>
                         <!-- Right arrow -->
-                        <div class="col s2" style="text-align:center; padding-top:90px;">
-                            <img class="responsive-img carousel-arrow" src="/front-end/img/arrow-right.png" id="arrow-left">
+                        <div class="col s2" style="text-align:center; padding-top:75px;">
+                            <img class="responsive-img carousel-arrow" src="/front-end/img/arrow-right.png" id="arrow-right">
                         </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Custom card -->
+            <div id="card-container">
+                <div class="z-depth-1 card">
+                    <!-- Card header -->
+                    <div class="orange lighten-1 card-header row" style="padding-left:2%; padding-right:2%; text-align:initial;">
+                        <div class="col s10 valign-wrapper" style="height:100%;">
+                            <h4 id="card-title">Custom</h4>
+                        </div>
+                        <div class="col s2 valign-wrapper" style="height:100%;">
+                            <img class="responsive-img card-help" id="card2-help" src="/front-end/img/Help.png" style="margin-left:82%; cursor: pointer;">
+                        </div>
+                    </div>
+                    <!-- Card content - custom params -->
+                    <div class="row" style="height:400px;">
+                    
+                    
+                    
+                    
+                    
                     </div>
                 </div>
             </div>

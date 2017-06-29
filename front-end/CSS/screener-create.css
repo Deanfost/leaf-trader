@@ -103,8 +103,9 @@
     border-radius: 5px;
     border-top-color: #ffa726;
     border-bottom-color: white;
-    height: 365px;
     display: block;
+    margin-bottom: 35px;
+    height: auto;
 }
 
 .card-header{
@@ -129,19 +130,17 @@
     font-size: 24px;
 }
 
-#card-help{ 
-    height: 30%;
-/*  margin-left: 5.5vw;*/
+.card-help{ 
+    height: 30% !important;
 }
 
 .carousel{
-    height: 220px;
+    height: 210px;
 }
 
 .carousel-arrow{
     width: 35%;
     cursor: pointer;
-
 }
 
 .carousel-card{
