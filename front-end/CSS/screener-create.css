@@ -103,8 +103,7 @@
     border-radius: 5px;
     border-top-color: #ffa726;
     border-bottom-color: white;
-    min-height: 200px;
-    height: auto;
+    height: 365px;
     display: block;
 }
 
@@ -114,8 +113,6 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 100px;
-    max-height: 18vh;
-    min-height: 80px;
 }
 
 #card-title{
@@ -141,19 +138,29 @@
     height: 220px;
 }
 
-.carousel-card{
-    border-radius: 5px;
-}
-
 .carousel-arrow{
     width: 35%;
-    margin-top: 55%;
     cursor: pointer;
+
 }
+
+.carousel-card{
+    border-radius: 10px;
+}
+
+.carousel-card-img{
+    width: 40% !important;
+}
+
+.carousel-card-text{
+    color: #4B4B4B !important;
+    text-align: center !important;
+}
+
 /* Screens smaller than 1200 */
 @media only screen and (max-width: 1200px){
     body{
-        min-width: 800px;
+        min-width: 1000px;
         min-height: 600px;
     }
     #side-nav{

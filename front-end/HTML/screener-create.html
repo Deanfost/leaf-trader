@@ -19,12 +19,6 @@
         <!--On DOM ready -->
         <script>
             $(document).ready(function(){
-                //Init carousel
-                $('.carousel').carousel({
-                    dist: 0, 
-                    padding: 100 
-                });
-                
                 //Resize the toggle bar on DOM ready
                 var windowWidth = window.innerWidth;
                 //Viewports greater than 1200px wide
@@ -84,12 +78,19 @@
                 
                 //Scroll carousel left and right when arrows are clicked
                 $('#arrow-left').click(function(){
-                    $('.carousel').carousel('next');
-                });
-                $('#arrow-right').click(function(){
                     $('.carousel').carousel('prev');
                 });
+                $('#arrow-right').click(function(){
+                    $('.carousel').carousel('next');
+                });
                 
+                //Init carousel
+                $('.carousel').carousel({
+                    dist: 0, 
+                    padding: 100 
+                });
+                //Move the carousel an arbritrary amount to clear any initial card position problems
+                $('.carousel').carousel('next'); 
             });
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/screener-create.css">
@@ -179,19 +180,42 @@
                         </div>
                     </div>
                     <!-- Card content - preset carousel -->
-                    <div class="row">
+                    <div class="row" style="height:250px;">
                         <!-- Left arrow -->
-                        <div class="col s2" style="text-align:center;">
+                        <div class="col s2" style="text-align:center; padding-top:90px;">
                             <img class="responsive-img carousel-arrow" src="/front-end/img/arrow-left.png" id="arrow-left">
                         </div>
                         <!-- Carousel items -->
                         <div class="carousel col s8">
-                            <a class="carousel-item z-depth-1 carousel-card" href="#one!"></a>
+                            <a class="carousel-item z-depth-1 carousel-card" href="#one!">
+                                <div class="row" style="height:60%; text-align:center; padding-top:20%;">
+                                    <img class="responsive-img carousel-card-img" src="/front-end/img/pill-red.png">
+                                </div>
+                                <div class="row" style="height:30%; padding-top:1%;">
+                                    <h6 class="carousel-card-text">Medicine</h6>
+                                </div>
+                            </a>
+                            <a class="carousel-item z-depth-1 carousel-card" href="#two!">
+                                <div class="row" style="height:60%; text-align:center; padding-top:20%;">
+                                    <img class="responsive-img carousel-card-img" src="/front-end/img/bullish-green.png">
+                                </div>
+                                <div class="row" style="height:30%; padding-top:1%;">
+                                    <h6 class="carousel-card-text">Finance</h6>
+                                </div>
+                            </a>
+                            <a class="carousel-item z-depth-1 carousel-card" href="#two!">
+                                <div class="row" style="height:60%; text-align:center; padding-top:20%;">
+                                    <img class="responsive-img carousel-card-img" src="/front-end/img/smartphone-blue.png">
+                                </div>
+                                <div class="row" style="height:30%; padding-top:1%;">
+                                    <h6 class="carousel-card-text">Technology</h6>
+                                </div>
+                            </a>
                             
                         </div>
                         <!-- Right arrow -->
-                        <div class="col s2" style="text-align:center">
-                            <img class="responsive-img carousel-arrow" src="/front-end/img/arrow-right.png" id="arrow-right">
+                        <div class="col s2" style="text-align:center; padding-top:90px;">
+                            <img class="responsive-img carousel-arrow" src="/front-end/img/arrow-right.png" id="arrow-left">
                         </div>
                     </div>
                 </div>
