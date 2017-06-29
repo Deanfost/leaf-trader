@@ -1,3 +1,8 @@
+body{
+    min-width: 1000px;
+    min-height: 600px;
+}
+
 .toggle-active{
     border-style: solid;
     border-color: white;
@@ -158,10 +163,6 @@
 
 /* Screens smaller than 1200 */
 @media only screen and (max-width: 1200px){
-    body{
-        min-width: 1000px;
-        min-height: 600px;
-    }
     #side-nav{
         width: 150px;
     }
