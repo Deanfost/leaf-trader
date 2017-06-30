@@ -176,6 +176,7 @@ body{
     float: right;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
+    padding: 30px;
 }
 
 .card-side-content{
@@ -188,6 +189,27 @@ body{
 .card-side-title{
     color: #fff;
     font-size: 18px;
+}
+
+.checkbox-orange[type="checkbox"].filled-in:checked + label:after{
+     border: 2px solid #ffa726;
+     background-color: #ffa726;
+}
+
+.sector-label{
+    color: #7A7878;
+    font-size: 16px !important;
+}
+
+.sector-item{
+    display: inline-block;
+    width: 32.5%;
+    padding-right: 2%;
+}
+
+.sector-item-img{
+    width: 10%;
+    float: right;
 }
 
 /* Screens smaller than 1200 */
