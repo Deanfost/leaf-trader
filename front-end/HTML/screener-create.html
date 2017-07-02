@@ -237,7 +237,7 @@
                         </div>
                     </div>
                     <!-- Card content - custom params -->
-                    <div class="row" style="height:993px; padding-left:5%; padding-right:5%; padding-top:2%;">
+                    <div class="row" style="height:1000px; padding-left:5%; padding-right:5%; padding-top:2%;">
                         <!-- Sectors -->
                         <div class="rounded-card z-depth-1" style="height:280px; margin-bottom:30px;">
                             <div class="card-side-header orange lighten-1 valign-wrapper">
@@ -348,7 +348,7 @@
                             </div>          
                         </div>
                         <!-- Price Range -->
-                        <div class="rounded-card z-depth-1" style="height:160px; margin-bottom:30px;">
+                        <div class="rounded-card z-depth-1" style="height:150px; margin-bottom:30px;">
                             <div class="card-side-header orange lighten-1 valign-wrapper">
                                 <div class="card-side-content">
                                     <img class="responsive-img" src="/front-end/img/price-tag.png" style="width:30%;">
@@ -356,19 +356,49 @@
                                 </div>
                             </div>
                             <div class="card-body">
+                                <form>
+                                    <div class="row col s12">
+                                        <div class="input-field col s4 push-s1">
+                                            <input id="low" type="number">
+                                            <label for="low">Low</label>
+                                        </div>
+                                        <div class="col s2 push-s1 valign-wrapper" style="height:90px;">
+                                            <h6 style="margin:0 auto; color:#757575;">to</h6>
+                                        </div>
+                                        <div class="input-field col s4 push-s1">
+                                            <input id="high" type="number">
+                                            <label for="high">High</label>
+                                        </div>
+                                    </div>
+                                </form>
                             
                             </div>
                         </div>
                         <!-- Market Cap -->
-                        <div class="rounded-card z-depth-1" style="height:200px;">
+                        <div class="rounded-card z-depth-1" style="height:140px;">
                             <div class="card-side-header orange lighten-1 valign-wrapper">
                                 <div class="card-side-content">
                                     <img class="responsive-img" src="/front-end/img/lines.png" style="width:30%;">
                                     <h5 class="card-side-title">Market Cap</h5>
                                 </div>
                             </div>
-                            <div class="card-body">
-                            
+                            <div class="card-body valign-wrapper">
+                                <p class="col s3" style="text-align:center;">
+                                    <input class="with-gap large-radio-btn" name="small" type="radio" id="small"/>
+                                    <label for="small">Small</label>
+                                </p>
+                                <p class="col s3" style="text-align:center;">
+                                    <input class="with-gap large-radio-btn" name="medium" type="radio" id="medium"/>
+                                    <label for="medium">Medium</label>
+                                </p>
+                                <p class="col s3" style="text-align:center;">
+                                    <input class="with-gap large-radio-btn" name="large" type="radio" id="large"/>
+                                    <label for="large">Large</label>
+                                </p>
+                                <p class="col s3" style="text-align:center;">
+                                    <input class="with-gap large-radio-btn" name="mega" type="radio" id="mega"/>
+                                    <label for="mega">Mega</label>
+                                </p>
                             </div>
                         </div>
                         <!-- Create button -->

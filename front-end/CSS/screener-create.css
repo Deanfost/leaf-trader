@@ -221,15 +221,15 @@ body{
     color: #7A7878;
 }
 
- /* label focus color */
-   .input-field input[type=text]:focus + label {
-     color: #000 !important;
+/* label focus color */
+.input-field input:focus + label {
+    color: #ffa726 !important;
 }
 /* label underline focus color */
-   .input-field input[type=text]:focus {
-     border-bottom: 0px solid #000 !important;
-     box-shadow: 0 0px 0 0 #000 !important;
-   }
+.row .input-field input:focus {
+    border-bottom: 1px solid #ffa726 !important;
+    box-shadow: 0 1px 0 0 #ffa726 !important
+}
 
 #create-button{
     float: right;
