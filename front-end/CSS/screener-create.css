@@ -208,7 +208,7 @@ body{
 }
 
 .sector-item-img{
-    width: 10%;
+    width: 20px;
     float: right;
 }
 
@@ -221,24 +221,15 @@ body{
     color: #7A7878;
 }
 
-/* Override Materialize input styling */
-input[type=text]{
-    border-radius: 5px;
-    border-style: solid;
-    border-width: .1px;
-    border-right-color: #eeeeee;
-    border-left-color: #eeeeee;
-    border-top-color: #f5f5f5;
-    border-bottom-color: white;
-    border-right-width: 2px;
-    border-left-width: 2px;
-    box-shadow: 0px 5px 4px -2px #bdbdbd;
+ /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #000 !important;
 }
-
 /* label underline focus color */
-.input-field input[type=text]:focus {
-    border-bottom: 1px solid #ffa726;
-}
+   .input-field input[type=text]:focus {
+     border-bottom: 0px solid #000 !important;
+     box-shadow: 0 0px 0 0 #000 !important;
+   }
 
 #create-button{
     float: right;
