@@ -302,7 +302,7 @@
                             </div>
                         </div>    
                         <!-- Ratios -->
-                        <div class="rounded-card z-depth-1" style="height:200px; margin-bottom:30px;">
+                        <div class="rounded-card z-depth-1" style="height:250px; margin-bottom:30px;">
                             <div class="card-side-header orange lighten-1 valign-wrapper">
                                 <div class="card-side-content">
                                     <img class="responsive-img" src="/front-end/img/pie-chart.png" style="width:30%;">
@@ -310,43 +310,45 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <!-- 1st column -->
-                                <div class="col s4">
-                                    <!-- P/E -->
-                                    <div class="row">
-                                        <h6 class="ratio-label">P/E</h6>
+                                <form>
+                                    <!-- 1st column -->
+                                    <div class="col s4">
+                                        <!-- P/E -->
+                                        <div class="row ratio-wrapper">
+                                            <h6 class="ratio-label">P/E</h6>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" name="P/E" id="P/E">
+                                        </div>
+                                        <!-- P/S -->
+                                        <div class="row ratio-wrapper">
+                                            <h6 class="ratio-label">P/S</h6>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" name="P/S" id="P/S">
+                                        </div>
                                     </div>
-                                    <div class="row">
-                                    
+                                    <!-- 2nd column -->
+                                    <div class="col s4">
+                                        <!-- EPS -->
+                                        <div class="row ratio-wrapper">
+                                            <h6 class="ratio-label">EPS</h6>    
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" name="EPS" id="EPS">
+                                        </div>
                                     </div>
-                                    <!-- P/S -->
-                                    <div class="row">
-                                        <h6 class="ratio-label">P/S</h6>
+                                    <!-- 3rd column -->
+                                    <div class="col s4">
+                                        <!-- P/Book -->
+                                        <div class="row ratio-wrapper">
+                                            <h6 class="ratio-label">P/Book</h6>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" name="P/Book" id="P/Book">
+                                        </div>
                                     </div>
-                                    <div class="row">
-                                    
-                                    </div>
-                                </div>
-                                <!-- 2nd column -->
-                                <div class="col s4">
-                                    <!-- EPS -->
-                                    <div class="row">
-                                        <h6 class="ratio-label">EPS</h6>    
-                                    </div>
-                                    <div class="row">
-                                    
-                                    </div>
-                                </div>
-                                <!-- 3rd column -->
-                                <div class="col s4">
-                                    <!-- P/Book -->
-                                    <div class="row">
-                                        <h6 class="ratio-label">P/Book</h6>
-                                    </div>
-                                    <div class="row">
-                                    
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                         <!-- Price Range -->
