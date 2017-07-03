@@ -170,6 +170,16 @@ body{
     border-top-left-radius: 10px;
 }
 
+.card-side-content{
+    width: 100%;
+    text-align: center;
+}
+
+.card-side-img{
+    width: 28%;
+    margin: 0;
+}
+
 .card-body{
     width: 80%;
     height: 100%;
@@ -179,16 +189,10 @@ body{
     padding: 30px;
 }
 
-.card-side-content{
-    width: 100%;
-    text-align: center;
-    padding-top: 8%;
-    padding-bottom: 8%;
-}
-
 .card-side-title{
     color: #fff;
     font-size: 18px;
+    margin: 0;
 }
 
 .checkbox-orange[type="checkbox"].filled-in:checked + label:after{
@@ -199,6 +203,7 @@ body{
 .sector-label{
     color: #7A7878;
     font-size: 16px !important;
+    max-width: 85 %;
 }
 
 .sector-item{
@@ -229,6 +234,13 @@ body{
 .row .input-field input:focus {
     border-bottom: 1px solid #ffa726 !important;
     box-shadow: 0 1px 0 0 #ffa726 !important
+}
+
+/* Remove number input spinners */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 #create-button{
