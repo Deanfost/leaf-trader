@@ -79,6 +79,97 @@
                     }
                 });
                 
+                //Init carousel
+                var activeSlide = '#slide-one';
+                var scrollCount = 0;
+                var hasClicked = false;
+                $('.carousel').carousel({
+                    dist: 0, 
+                    padding: 100,   
+                    onCycleTo: function(data) {
+                        //After first scroll
+                        if(scrollCount > 0){
+                            //Change card images to inactive
+                            switch(activeSlide){
+                                case '#slide-one':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/star-grey.png');
+                                    break;
+                                case '#slide-two':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/lines-grey.png');
+                                    break;
+                                case '#slide-three':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/money.png');
+                                    break;
+                                case '#slide-four':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/growth.png');
+                                    break;
+                                case '#slide-five':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/bullish.png');
+                                    break;
+                                case '#slide-six':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/smartphone.png');
+                                    break;
+                                case '#slide-seven':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/bank-grey.png');
+                                    break;
+                                case '#slide-eight':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/pill.png');
+                                    break;
+                                case '#slide-nine':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/bolt.png');
+                                    break;
+                                case '#slide-ten':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/factory.png');
+                                    break;
+                            }
+                            
+                            //Apply/remove active border effects
+                            $(activeSlide).removeClass('carousel-card-active');
+                            activeSlide = '#' + data.attr('id');
+                            $(activeSlide).addClass('carousel-card-active');
+                            
+                            //Change card images to active, fill in descriptions
+                            switch(activeSlide){
+                                case '#slide-one':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/star-yellow.png');
+                                    break;
+                                case '#slide-two':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/lines-blue.png');
+                                    break;
+                                case '#slide-three':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/money-green.png');
+                                    break;
+                                case '#slide-four':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/growth-purple.png');
+                                    break;
+                                case '#slide-five':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/bullish-green.png');
+                                    break;
+                                case '#slide-six':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/smartphone-blue.png');
+                                    break;
+                                case '#slide-seven':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/bank-green.png');
+                                    break;
+                                case '#slide-eight':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/pill-red.png');
+                                    break;
+                                case '#slide-nine':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/bolt-yellow.png');
+                                    break;
+                                case '#slide-ten':
+                                    $(activeSlide).find('img').attr('src', '/front-end/img/factory-orange.png');
+                                    break;
+                            }
+                            
+                        }
+                        scrollCount ++;
+                    }
+                });
+                
+                //Scroll the carousel once
+                $('.carousel').carousel('next'); 
+                
                 //Scroll carousel left and right when arrows are clicked
                 $('#arrow-left').click(function(){
                     $('.carousel').carousel('prev');
@@ -87,13 +178,54 @@
                     $('.carousel').carousel('next');
                 });
                 
-                //Init carousel
-                $('.carousel').carousel({
-                    dist: 0, 
-                    padding: 100,   
+                //Detect carousel item click
+                $('.carousel-item').click(function(){
+                    //If this is the first carousel item click, then expand card,
+                    if(!hasClicked){
+                        hasClicked = true;
+                        
+                    }
                 });
-                //Scroll the carousel once
-                $('.carousel').carousel('next'); 
+                $('#slide-one').click(function(){
+                    //Load description and data
+                    
+                });
+                $('#slide-two').click(function(){
+                    //Load description and data
+                    
+                });
+                $('#slide-three').click(function(){
+                    //Load description and data
+                    
+                });
+                $('#slide-four').click(function(){
+                    //Load description and data
+                    
+                });
+                $('#slide-five').click(function(){
+                    //Load description and data
+                    
+                });
+                $('#slide-six').click(function(){
+                    //Load description and data
+                    
+                });
+                $('#slide-seven').click(function(){
+                    //Load description and data
+                    
+                });
+                $('#slide-eight').click(function(){
+                    //Load description and data
+                    
+                });
+                $('#slide-nine').click(function(){
+                    //Load description and data
+                    
+                });
+                $('#slide-ten').click(function(){
+                    //Load description and data
+                    
+                });
             });
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/screener-create.css">
@@ -125,7 +257,8 @@
                     <div class="valign-wrapper sidenav-option">
                         <div class="valign-wrapper sidenav-item-wrapper">
                             <img class="responsive-img sidenav-item-img" src="/front-end/img/money.png">
-                            <h5 class="sidenav-item">Trader</h5>
+                            <h5 class="sidenav-item">Trader</h5>:
+                                    
                         </div>
                     </div>
                     <div class="valign-wrapper grey lighten-4 sidenav-option" id="current-option">
@@ -183,88 +316,88 @@
                         </div>
                     </div>
                     <!-- Card content - preset carousel -->
-                    <div class="row" style="height:210px;">
+                    <div class="row" style="height:800px;">
                         <!-- Left arrow -->
                         <div class="col s2" style="text-align:center; padding-top:75px;">
                             <img class="responsive-img carousel-arrow" src="/front-end/img/arrow-left.png" id="arrow-left">
                         </div>
                         <!-- Carousel items -->
                         <div class="carousel col s8">
-                            <div class="carousel-item z-depth-1 rounded-card" href="#one!">
+                            <div class="carousel-item z-depth-1 rounded-card" id="slide-one">
                                 <div class="row" style="height:60%; text-align:center; padding-top:20%;">
-                                    <img class="responsive-img carousel-card-img" src="/front-end/img/pill-red.png">
+                                    <img class="responsive-img carousel-card-img" src="/front-end/img/star-grey.png">
                                 </div>
                                 <div class="row" style="height:30%; padding-top:1%;">
                                     <h6 class="carousel-card-text">Most Popular</h6>
                                 </div>
                             </div>
-                            <div class="carousel-item z-depth-1 rounded-card" href="#one!">
+                            <div class="carousel-item z-depth-1 rounded-card carousel-card-active" id="slide-two">
                                 <div class="row" style="height:60%; text-align:center; padding-top:20%;">
-                                    <img class="responsive-img carousel-card-img" src="/front-end/img/pill-red.png">
+                                    <img class="responsive-img carousel-card-img" src="/front-end/img/lines-blue.png">
                                 </div>
                                 <div class="row" style="height:30%; padding-top:1%;">
                                     <h6 class="carousel-card-text">Low Volitility</h6>
                                 </div>
                             </div>
-                            <div class="carousel-item z-depth-1 rounded-card" href="#one!">
+                            <div class="carousel-item z-depth-1 rounded-card" id="slide-three">
                                 <div class="row" style="height:60%; text-align:center; padding-top:20%;">
-                                    <img class="responsive-img carousel-card-img" src="/front-end/img/pill-red.png">
+                                    <img class="responsive-img carousel-card-img" src="/front-end/img/money.png">
                                 </div>
                                 <div class="row" style="height:30%; padding-top:1%;">
                                     <h6 class="carousel-card-text">Undervalued</h6>
                                 </div>
                             </div>
-                            <div class="carousel-item z-depth-1 rounded-card" href="#one!">
+                            <div class="carousel-item z-depth-1 rounded-card" id="slide-four">
                                 <div class="row" style="height:60%; text-align:center; padding-top:20%;">
-                                    <img class="responsive-img carousel-card-img" src="/front-end/img/pill-red.png">
+                                    <img class="responsive-img carousel-card-img" src="/front-end/img/growth.png">
                                 </div>
                                 <div class="row" style="height:30%; padding-top:1%;">
                                     <h6 class="carousel-card-text">Undervalued Growth</h6>
                                 </div>
                             </div>
-                            <div class="carousel-item z-depth-1 rounded-card" href="#one!">
+                            <div class="carousel-item z-depth-1 rounded-card" id="slide-five">
                                 <div class="row" style="height:60%; text-align:center; padding-top:20%;">
-                                    <img class="responsive-img carousel-card-img" src="/front-end/img/pill-red.png">
+                                    <img class="responsive-img carousel-card-img" src="/front-end/img/bullish.png">
                                 </div>
                                 <div class="row" style="height:30%; padding-top:1%;">
                                     <h6 class="carousel-card-text">High Growth</h6>
                                 </div>
                             </div>
-                            <div class="carousel-item z-depth-1 rounded-card" href="#one!">
+                            <div class="carousel-item z-depth-1 rounded-card" id="slide-six">
                                 <div class="row" style="height:60%; text-align:center; padding-top:20%;">
-                                    <img class="responsive-img carousel-card-img" src="/front-end/img/pill-red.png">
+                                    <img class="responsive-img carousel-card-img" src="/front-end/img/smartphone.png">
                                 </div>
                                 <div class="row" style="height:30%; padding-top:1%;">
                                     <h6 class="carousel-card-text">Technology</h6>
                                 </div>
                             </div>
-                            <div class="carousel-item z-depth-1 rounded-card" href="#one!">
+                            <div class="carousel-item z-depth-1 rounded-card" id="slide-seven">
                                 <div class="row" style="height:60%; text-align:center; padding-top:20%;">
-                                    <img class="responsive-img carousel-card-img" src="/front-end/img/pill-red.png">
+                                    <img class="responsive-img carousel-card-img" src="/front-end/img/bank-grey.png">
                                 </div>
                                 <div class="row" style="height:30%; padding-top:1%;">
                                     <h6 class="carousel-card-text">Wall Street</h6>
                                 </div>
                             </div>
-                            <div class="carousel-item z-depth-1 rounded-card" href="#one!">
+                            <div class="carousel-item z-depth-1 rounded-card" id="slide-eight">
                                 <div class="row" style="height:60%; text-align:center; padding-top:20%;">
-                                    <img class="responsive-img carousel-card-img" src="/front-end/img/pill-red.png">
+                                    <img class="responsive-img carousel-card-img" src="/front-end/img/pill.png">
                                 </div>
                                 <div class="row" style="height:30%; padding-top:1%;">
                                     <h6 class="carousel-card-text">Medicine</h6>
                                 </div>
                             </div>
-                            <div class="carousel-item z-depth-1 rounded-card" href="#one!">
+                            <div class="carousel-item z-depth-1 rounded-card" id="slide-nine">
                                 <div class="row" style="height:60%; text-align:center; padding-top:20%;">
-                                    <img class="responsive-img carousel-card-img" src="/front-end/img/pill-red.png">
+                                    <img class="responsive-img carousel-card-img" src="/front-end/img/bolt.png">
                                 </div>
                                 <div class="row" style="height:30%; padding-top:1%;">
                                     <h6 class="carousel-card-text">Energy</h6>
                                 </div>
                             </div>
-                            <div class="carousel-item z-depth-1 rounded-card" href="#one!">
+                            <div class="carousel-item z-depth-1 rounded-card" id="slide-ten">
                                 <div class="row" style="height:60%; text-align:center; padding-top:20%;">
-                                    <img class="responsive-img carousel-card-img" src="/front-end/img/pill-red.png">
+                                    <img class="responsive-img carousel-card-img" src="/front-end/img/factory.png">
                                 </div>
                                 <div class="row" style="height:30%; padding-top:1%;">
                                     <h6 class="carousel-card-text">Industry</h6>
@@ -275,6 +408,10 @@
                         <div class="col s2" style="text-align:center; padding-top:75px;">
                             <img class="responsive-img carousel-arrow" src="/front-end/img/arrow-right.png" id="arrow-right">
                         </div>
+                        
+                        <!-- Expanded card content -->
+                        
+                        
                     </div>
                 </div>
             </div>

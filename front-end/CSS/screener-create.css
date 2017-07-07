@@ -143,6 +143,10 @@ body{
     height: 210px;
 }
 
+.carousel-item{
+    cursor: pointer !important;
+}
+
 .carousel-arrow{
     width: 30%;
     cursor: pointer;
@@ -159,6 +163,12 @@ body{
 .carousel-card-text{
     color: #4B4B4B !important;
     text-align: center !important;
+}
+
+.carousel-card-active{
+    border-color: #ffa726 !important;
+    border-width: 1px !important;
+    border-style: solid;
 }
 
 /* Custom cards */
