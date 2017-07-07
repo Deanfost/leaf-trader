@@ -139,6 +139,11 @@ body{
     height: 30% !important;
 }
 
+.rounded-card{
+    border-radius: 10px;
+}
+
+/* Preset card */
 .carousel{
     height: 210px;
 }
@@ -155,10 +160,6 @@ body{
 .carousel-arrow{
     width: 30%;
     cursor: pointer;
-}
-
-.rounded-card{
-    border-radius: 10px;
 }
 
 .carousel-card-img{
@@ -196,6 +197,40 @@ body{
     float: right;
     height: 100%;
     display: inline-block;
+}
+
+.preset-help{
+    width: 35%;
+    margin-top: 10px;
+    cursor: pointer;
+    height: 100%;
+}
+
+.preset-description{
+    width: 85.5%;
+    text-align: left;
+    color: #4B4B4B;
+    font-size: 18px;
+    display: inline-block;
+    margin-top: -10px;
+    height: 160px;
+}
+
+.preset-header-loader-container{
+    width: 55%;
+    display: inline-block;
+    height: 100%;
+    margin-top: 10px;
+}
+
+.preset-header-short-container{
+    width: 35%;
+    padding-left: 7%;
+    margin-top: 40px;
+    height: 100%;
+    float: left;
+    display: inline-block;
+    min-width: 300px;
 }
 
 /* Custom cards */
