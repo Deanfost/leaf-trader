@@ -410,7 +410,7 @@
                         </div>
                     </div>
                     <!-- Expanded card content -->
-                    <div class="row" style="height:700px;">
+                    <div class="row" style="height:auto;">
                         <!-- Preset desc header -->
                         <div class="row">
                             <div class="preset-header-container">
@@ -434,15 +434,56 @@
                             <div class="preset-header-short-container">
                                 <h5 class="preset-header">Screener Results</h5>
                             </div>
-                            <div class="preset-header-loader-container">
-                                
+                            <div class="preset-header-loader-container preloader-wrapper small active">
+                                <div class="spinner-layer spinner-red-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="preset-help-container">
                                 <img class="responsive-img preset-help" src="/front-end/img/help-orange.png">
                             </div>
                         </div>
-                        
-                        
+                        <!-- Results table -->
+                        <div class="row" style="padding-left:7%;">
+                            <table class="striped responsive-table">
+                                <!-- Columns -->
+                                <thead>
+                                  <tr>
+                                    <th>Stock</th>
+                                    <th>Price</th>
+                                    <th>Change($)</th>
+                                    <th>Change(%)</th>
+                                    <th>Market Cap</th>
+                                  </tr>
+                                </thead>
+                                <!-- Rows -->
+                                <tbody>
+                                    <tr>
+                                        <td>Apple Inc. (APPL)</td>
+                                        <td>$197.08</td>
+                                        <td class="up-color">$2.49</td>
+                                        <td class="up-color">0.19%</td>
+                                        <td>$749.96B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Google Inc. (GOOG)</td>
+                                        <td>$897.24</td>
+                                        <td class="down-color">$8.38</td>
+                                        <td class="down-color">0.87%</td>
+                                        <td>$623.39B</td>
+                                    </tr>
+                                    
+                                </tbody>
+                              </table>
+                        </div>
                     </div>
                 </div>
             </div>

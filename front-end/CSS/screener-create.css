@@ -213,24 +213,45 @@ body{
     font-size: 18px;
     display: inline-block;
     margin-top: -10px;
-    height: 160px;
-}
-
-.preset-header-loader-container{
-    width: 55%;
-    display: inline-block;
-    height: 100%;
-    margin-top: 10px;
+    margin-bottom: 0px;
+    height: auto;
 }
 
 .preset-header-short-container{
-    width: 35%;
+    width: 32%;
     padding-left: 7%;
     margin-top: 40px;
     height: 100%;
     float: left;
     display: inline-block;
     min-width: 300px;
+    max-width: 340px;
+}
+
+.preset-header-loader-container{
+    width: 55%;
+    display: inline-block;
+    height: 100%;
+    margin-top: 49.6px;
+}
+
+/* Custom spinner color */
+.spinner-layer{
+    border-color: #ffa726 !important;
+}
+
+table{
+    width: 93%;
+    margin-top: 20px;
+}
+
+/* Colors for change column in table */
+.up-color{
+    color: #388E3C;
+}
+
+.down-color{
+    color: #D32F2F;
 }
 
 /* Custom cards */
