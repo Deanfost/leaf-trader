@@ -224,8 +224,8 @@ body{
     height: 100%;
     float: left;
     display: inline-block;
-    min-width: 300px;
-    max-width: 340px;
+    min-width: 340px;
+    max-width: 380px;
 }
 
 .preset-header-loader-container{
@@ -238,6 +238,11 @@ body{
 /* Custom spinner color */
 .spinner-layer{
     border-color: #ffa726 !important;
+}
+
+.table-arrow{
+    position: absolute;
+    width: 2%;
 }
 
 table{

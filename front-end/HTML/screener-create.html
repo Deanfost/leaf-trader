@@ -132,33 +132,43 @@
                             switch(activeSlide){
                                 case '#slide-one':
                                     $(activeSlide).find('img').attr('src', '/front-end/img/star-yellow.png');
+                                    $('#preset-desc-p').text("This screener contains a list of stocks with the highest trading volume for the day on the NASDAQ exchange. In short, these are the most popular stocks of the day.");
                                     break;
                                 case '#slide-two':
                                     $(activeSlide).find('img').attr('src', '/front-end/img/lines-blue.png');
+                                    $('#preset-desc-p').text("These stocks can serve as a stable foundation to any strong portfolio. They might not make the largest returns, but in general, they have the strongest financials and a healthy balance sheet. These stocks are chosen based off of Beta, which is a measure of the volatility of a stock relative to the rest of the market.");
                                     break;
                                 case '#slide-three':
                                     $(activeSlide).find('img').attr('src', '/front-end/img/money-green.png');
+                                    $('#preset-desc-p').text("Undervalued stocks are those that have not been given the proper value per share based off of their earnings and financials. These stocks have the potential to greatly increase in value, making them a good investment option while they are still low. These stocks are selected based off of their Price to Earnings and Price to Book ratios.");
                                     break;
                                 case '#slide-four':
                                     $(activeSlide).find('img').attr('src', '/front-end/img/growth-purple.png');
+                                    $('#preset-desc-p').text("While these have a slightly higher price than undervalued stocks, their potential for growth has been underestimated. These stocks are selected based on their Price to Earnings and Price to Earnings to Growth ratios.");
                                     break;
                                 case '#slide-five':
                                     $(activeSlide).find('img').attr('src', '/front-end/img/bullish-green.png');
+                                    $('#preset-desc-p').text("These stocks exhibit massive upside, as their revenue growth rates are on the order of 25% per year, which is far above market average. Include a couple of these in your portfolio to bolster your returns quickly. However, tread lightly, as these stocks can also be rather volatile.");
                                     break;
                                 case '#slide-six':
                                     $(activeSlide).find('img').attr('src', '/front-end/img/smartphone-blue.png');
+                                    $('#preset-desc-p').text("");
                                     break;
                                 case '#slide-seven':
                                     $(activeSlide).find('img').attr('src', '/front-end/img/bank-green.png');
+                                    $('#preset-desc-p').text("");
                                     break;
                                 case '#slide-eight':
                                     $(activeSlide).find('img').attr('src', '/front-end/img/pill-red.png');
+                                    $('#preset-desc-p').text("");
                                     break;
                                 case '#slide-nine':
                                     $(activeSlide).find('img').attr('src', '/front-end/img/bolt-yellow.png');
+                                    $('#preset-desc-p').text("");
                                     break;
                                 case '#slide-ten':
                                     $(activeSlide).find('img').attr('src', '/front-end/img/factory-orange.png');
+                                    $('#preset-desc-p').text("");
                                     break;
                             }
                             
@@ -185,46 +195,6 @@
                         hasClicked = true;
                         
                     }
-                });
-                $('#slide-one').click(function(){
-                    //Load description and data
-                    
-                });
-                $('#slide-two').click(function(){
-                    //Load description and data
-                    
-                });
-                $('#slide-three').click(function(){
-                    //Load description and data
-                    
-                });
-                $('#slide-four').click(function(){
-                    //Load description and data
-                    
-                });
-                $('#slide-five').click(function(){
-                    //Load description and data
-                    
-                });
-                $('#slide-six').click(function(){
-                    //Load description and data
-                    
-                });
-                $('#slide-seven').click(function(){
-                    //Load description and data
-                    
-                });
-                $('#slide-eight').click(function(){
-                    //Load description and data
-                    
-                });
-                $('#slide-nine').click(function(){
-                    //Load description and data
-                    
-                });
-                $('#slide-ten').click(function(){
-                    //Load description and data
-                    
                 });
             });
         </script>
@@ -422,11 +392,8 @@
                         </div>
                         <!-- Preset description -->
                         <div class="row" style="text-align: center;">
-                            <p class="preset-description">
-                                Undervalued stocks are those that have not been given the proper
-                                monetary value per share that they deserve. These stocks are often
-                                betted on by traders to greatly increase in value, thus making them a
-                                good choice to for investment now, while their price is still low. 
+                            <p class="preset-description" id="preset-desc-p">
+                                
                             </p>
                         </div>
                         <!-- Preset results header -->
@@ -453,7 +420,13 @@
                         </div>
                         <!-- Results table -->
                         <div class="row" style="padding-left:7%;">
-                            <table class="striped responsive-table">
+                            <!-- Arrow slots -->
+                            <div style="width:93%;">
+                                <img class="responsive-img table-arrow" src="/front-end/img/help-orange.png">
+                            </div>
+                            
+                            <!-- Table -->
+                            <table class="striped">
                                 <!-- Columns -->
                                 <thead>
                                   <tr>
