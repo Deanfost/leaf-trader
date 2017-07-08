@@ -240,9 +240,35 @@ body{
     border-color: #ffa726 !important;
 }
 
-.table-arrow{
-    position: absolute;
-    width: 2%;
+/* Table organization tabs */
+.tab-left{
+    border-style: solid;
+    border-color: white;
+    background-color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 25%;
+    height: 50%;
+}
+
+.tab-left-active{
+    
+}
+
+.tab-mid{
+    
+}
+
+.tab-mid-active{
+    
+}
+
+.tab-right{
+    
+}
+
+.tab-right-activeA{
+    
 }
 
 table{
