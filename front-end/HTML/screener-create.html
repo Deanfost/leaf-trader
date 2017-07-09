@@ -82,7 +82,6 @@
                 //Init carousel
                 var activeSlide = '#slide-one';
                 var scrollCount = 0;
-                var hasClicked = false;
                 $('.carousel').carousel({
                     dist: 0, 
                     padding: 100,   
@@ -189,6 +188,7 @@
                 });
                 
                 //Detect carousel item click, expand card
+                var hasClicked = false;
                 $('.carousel-item').click(function(){
                     //If this is the first carousel item click, then expand card
                     if(!hasClicked){
@@ -196,6 +196,17 @@
                         $('#preset-expanded').slideToggle(300, null);
                     }
                 });
+                
+                //Detect custom screener create button click
+                var hasClicked1 = false;
+                $('#create-button').click(function(){
+                    //Expand custom card
+                    if(!hasClicked1){
+                        hasClicked1 = true;
+                        $('#custom-expanded').slideToggle(300, null);
+                    }
+                });
+                
                 //Table tab clicks
                 $('#table-tab-1').click(function(){
                     //Apply and remove proper classes
@@ -449,20 +460,20 @@
                                 <h5 class="preset-header">Preset Description</h5>
                             </div>
                             <div class="preset-help-container">
-                                <img class="responsive-img preset-help" src="/front-end/img/help-orange.png">
+                                <img class="responsive-img extended-help" src="/front-end/img/help-orange.png">
                             </div>
                         </div>
                         <!-- Preset description -->
-                        <div class="row" style="text-align: center;" id="description-row">
+                        <div class="row" style="text-align: center;">
                             <p class="preset-description" id="preset-desc-p">
                             </p>
                         </div>
                         <!-- Preset results header -->
-                        <div class="row" id="results-header-row">
-                            <div class="preset-header-short-container">
+                        <div class="row">
+                            <div class="extended-header-short-container">
                                 <h5 class="preset-header">Screener Results</h5>
                             </div>
-                            <div class="preset-header-loader-container preloader-wrapper small active" id="spinner">
+                            <div class="preset-header-loader-container preloader-wrapper small active" id="preset-spinner">
                                 <div class="spinner-layer spinner-red-only">
                                     <div class="circle-clipper left">
                                         <div class="circle"></div>
@@ -476,11 +487,11 @@
                                 </div>
                             </div>
                             <div class="preset-help-container">
-                                <img class="responsive-img preset-help" src="/front-end/img/help-orange.png">
+                                <img class="responsive-img extended-help" src="/front-end/img/help-orange.png">
                             </div>
                         </div>
                         <!-- Results table -->
-                        <div class="row" style="padding-left:7%;" id="results-row">
+                        <div class="row" style="padding-left:7%;">
                             <!-- Table modes -->
                             <div class="row" style="width: 65%; float:left;">
                                 <!-- Make sure first tab has both classes so that it is first active and functions properly -->
@@ -513,20 +524,62 @@
                                   </tr>
                                 </thead>
                                 <!-- Rows -->
-                                <tbody>
+                                <tbody id="preset-tbody">
                                     <tr>
-                                        <td>Apple Inc. (APPL)</td>
+                                        <td class="truncate">Apple Inc.</td>
                                         <td>$197.08</td>
                                         <td class="up-color">$2.49</td>
                                         <td class="up-color">0.19%</td>
                                         <td>$749.96B</td>
                                     </tr>
                                     <tr>
-                                        <td>Google Inc. (GOOG)</td>
+                                        <td class="truncate">Google Inc.</td>
                                         <td>$897.24</td>
                                         <td class="down-color">$8.38</td>
                                         <td class="down-color">0.87%</td>
                                         <td>$623.39B</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="truncate">Google Inc.</td>
+                                        <td>$897.24</td>
+                                        <td class="down-color">$8.38</td>
+                                        <td class="down-color">0.87%</td>
+                                        <td>$623.39B</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="truncate">Google Inc.</td>
+                                        <td>$897.24</td>
+                                        <td class="down-color">$8.38</td>
+                                        <td class="down-color">0.87%</td>
+                                        <td>$623.39B</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="truncate">Microsoft Corporation</td>
+                                        <td>$897.24</td>
+                                        <td class="down-color">$8.38</td>
+                                        <td class="down-color">0.87%</td>
+                                        <td>$623.39B</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="truncate">Google Inc.</td>
+                                        <td>$897.24</td>
+                                        <td class="down-color">$8.38</td>
+                                        <td class="down-color">0.87%</td>
+                                        <td>$623.39B</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="truncate">Google Inc.</td>
+                                        <td>$897.24</td>
+                                        <td class="down-color">$8.38</td>
+                                        <td class="down-color">0.87%</td>
+                                        <td>$623.39B</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="truncate">Apple Inc.</td>
+                                        <td>$197.08</td>
+                                        <td class="up-color">$2.49</td>
+                                        <td class="up-color">0.19%</td>
+                                        <td>$749.96B</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -714,8 +767,134 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- Create button -->
+                        <!-- Create screener -->
+                        <form id="screener-name-container">
+                            <div class="input-field col s10">
+                                <input id="screener-name" type="text">
+                                <label for="screener-name">Screener name</label>
+                            </div>
+                        </form>
                         <a class="waves-effect waves-light btn-large orange lighten-1" id="create-button">Create</a>
+                    </div>
+                    
+                    <!-- Custom card extended content -->
+                    <div class="row" id="custom-expanded">
+                        <!-- Preset results header -->
+                        <div class="row" style="height: auto;">
+                            <div class="extended-header-short-container">
+                                <h5 class="preset-header">Screener Results</h5>
+                            </div>
+                            <div class="preset-header-loader-container preloader-wrapper small active" id="custom-spinner">
+                                <div class="spinner-layer spinner-red-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preset-help-container">
+                                <img class="responsive-img extended-help" src="/front-end/img/help-orange.png">
+                            </div>
+                        </div>
+                        <!-- Results table row -->
+                        <div class="row" style="padding-left:7%;">
+                            <!-- Table modes -->
+                            <div class="row" style="width: 65%; float:left;">
+                                <!-- Make sure first tab has both classes so that it is first active and functions properly -->
+                                <div class="tab-left tab-left-active" id="table-tab-1">
+                                    <p class="tab-text">Stock</p>
+                                </div>
+                                <div class="tab-mid" id="table-tab-2">
+                                    <p class="tab-text">Price</p>
+                                </div>
+                                <div class="tab-mid" id="table-tab-3">
+                                    <p class="tab-text">Change(%)</p>
+                                </div>
+                                <div class="tab-mid" id="table-tab-4">
+                                    <p class="tab-text">Change($)</p>
+                                </div>
+                                <div class="tab-right" id="table-tab-5">
+                                    <p class="tab-text">Market Cap</p>
+                                </div>
+                            </div>
+                            <!-- Table -->
+                            <table class="striped">
+                                <!-- Columns -->
+                                <thead>
+                                  <tr>
+                                    <th id="cat-stock">Stock</th>
+                                    <th id="cat-price">Price</th>
+                                    <th id="cat-change$">Change($)</th>
+                                    <th id="cat-change%">Change(%)</th>
+                                    <th id="cat-cap">Market Cap</th>
+                                  </tr>
+                                </thead>
+                                <!-- Rows -->
+                                <tbody id="custom-tbody">
+                                    <tr>
+                                        <td class="truncate">Apple Inc.</td>
+                                        <td>$197.08</td>
+                                        <td class="up-color">$2.49</td>
+                                        <td class="up-color">0.19%</td>
+                                        <td>$749.96B</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="truncate">Google Inc.</td>
+                                        <td>$897.24</td>
+                                        <td class="down-color">$8.38</td>
+                                        <td class="down-color">0.87%</td>
+                                        <td>$623.39B</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="truncate">Google Inc.</td>
+                                        <td>$897.24</td>
+                                        <td class="down-color">$8.38</td>
+                                        <td class="down-color">0.87%</td>
+                                        <td>$623.39B</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="truncate">Google Inc.</td>
+                                        <td>$897.24</td>
+                                        <td class="down-color">$8.38</td>
+                                        <td class="down-color">0.87%</td>
+                                        <td>$623.39B</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="truncate">Microsoft Corporation</td>
+                                        <td>$897.24</td>
+                                        <td class="down-color">$8.38</td>
+                                        <td class="down-color">0.87%</td>
+                                        <td>$623.39B</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="truncate">Google Inc.</td>
+                                        <td>$897.24</td>
+                                        <td class="down-color">$8.38</td>
+                                        <td class="down-color">0.87%</td>
+                                        <td>$623.39B</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="truncate">Google Inc.</td>
+                                        <td>$897.24</td>
+                                        <td class="down-color">$8.38</td>
+                                        <td class="down-color">0.87%</td>
+                                        <td>$623.39B</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="truncate">Apple Inc.</td>
+                                        <td>$197.08</td>
+                                        <td class="up-color">$2.49</td>
+                                        <td class="up-color">0.19%</td>
+                                        <td>$749.96B</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
