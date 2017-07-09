@@ -374,6 +374,7 @@ thread{
     width: 20%;
     font-size: 18px;
     border-radius: 10px;
+    margin-bottom: 2px;
 }
 
 /* Custom cards */

@@ -188,11 +188,36 @@
                     $('.carousel').carousel('next');
                 });
                 
-                //Detect carousel item click
+                //Initially set extended preset card HTML to no display
+                $('#preset-header-row').css('display', 'none');
+                $('#description-row').css('display', 'none');
+                $('#results-header-row').css('display', 'none');
+                $('#results-row').css('display', 'none');
+                $('#btn-use-preset').css('display', 'none');
+                
+                //Detect carousel item click, expand card
                 $('.carousel-item').click(function(){
-                    //If this is the first carousel item click, then expand card,
+                    //If this is the first carousel item click, then expand card
                     if(!hasClicked){
                         hasClicked = true;
+                        //Reveal description header
+                        $('#preset-header-row').css('display', '');
+                        //Reveal description
+                        setTimeout(function(){
+                            $('#description-row').css('display', '');
+                        }, 20);
+                        //Reveal results header
+                        setTimeout(function(){
+                            $('#results-header-row').css('display', '');
+                        }, 40);
+                        //Reveal table 
+                        setTimeout(function(){
+                            $('#results-row').css('display', '');
+                        }, 60);
+                        //Reveal positive button
+                        setTimeout(function(){
+                            $('#btn-use-preset').css('display', '');
+                        }, 80);
                     }
                 });
                 //Table tab clicks
@@ -289,7 +314,6 @@
                         <div class="valign-wrapper sidenav-item-wrapper">
                             <img class="responsive-img sidenav-item-img" src="/front-end/img/money.png">
                             <h5 class="sidenav-item">Trader</h5>
-                                    
                         </div>
                     </div>
                     <div class="valign-wrapper grey lighten-4 sidenav-option" id="current-option">
@@ -440,10 +464,11 @@
                             <img class="responsive-img carousel-arrow" src="/front-end/img/arrow-right.png" id="arrow-right">
                         </div>
                     </div>
+                    
                     <!-- Expanded card content -->
                     <div class="row" style="height:auto;">
                         <!-- Preset desc header -->
-                        <div class="row">
+                        <div class="row" id="preset-header-row">
                             <div class="preset-header-container">
                                 <h5 class="preset-header">Preset Description</h5>
                             </div>
@@ -452,16 +477,16 @@
                             </div>
                         </div>
                         <!-- Preset description -->
-                        <div class="row" style="text-align: center;">
+                        <div class="row" style="text-align: center;" id="description-row">
                             <p class="preset-description" id="preset-desc-p">
                             </p>
                         </div>
                         <!-- Preset results header -->
-                        <div class="row">
+                        <div class="row" id="results-header-row">
                             <div class="preset-header-short-container">
                                 <h5 class="preset-header">Screener Results</h5>
                             </div>
-                            <div class="preset-header-loader-container preloader-wrapper small active">
+                            <div class="preset-header-loader-container preloader-wrapper small active" id="spinner">
                                 <div class="spinner-layer spinner-red-only">
                                     <div class="circle-clipper left">
                                         <div class="circle"></div>
@@ -479,7 +504,7 @@
                             </div>
                         </div>
                         <!-- Results table -->
-                        <div class="row" style="padding-left:7%;">
+                        <div class="row" style="padding-left:7%;" id="results-row">
                             <!-- Table modes -->
                             <div class="row" style="width: 65%; float:left;">
                                 <!-- Make sure first tab has both classes so that it is first active and functions properly -->
