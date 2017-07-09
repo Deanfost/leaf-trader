@@ -241,39 +241,120 @@ body{
 }
 
 /* Table organization tabs */
+.tab-text{
+    margin-top: 3.5px;
+}
+
 .tab-left{
     border-style: solid;
-    border-color: white;
-    background-color: white;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    width: 25%;
-    height: 50%;
+    border-color: #ECECEC;
+    background-color: #ECECEC;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 19%;
+    height: 35px;
+    color: #4B4B4B;
+    text-align: center;
+    float: left;
+    cursor: pointer;
 }
 
 .tab-left-active{
-    
+    border-style: solid !important;
+    border-color: #ffa726 !important;
+    background-color: #ffa726 !important;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    width: 19% !important;
+    height: 35px !important;
+    color: #fff !important;
+    margin: 0 !important;
+    text-align: center !important;
+    float: left !important;
+    cursor: pointer !important;
 }
 
 .tab-mid{
-    
+    border-style: solid;
+    border-color: #ECECEC;
+    background-color: #ECECEC;
+    width: 19%;
+    height: 35px;
+    color: #4B4B4B;
+    margin: 0;
+    text-align: center;
+    float: left;
+    cursor: pointer;
 }
 
 .tab-mid-active{
-    
+    border-style: solid !important;
+    border-color: #ffa726 !important;
+    background-color: #ffa726 !important;
+    width: 19% !important;
+    height: 35px !important;
+    color: #fff !important;
+    margin: 0 !important;
+    text-align: center !important;
+    float: left !important;
+    cursor: pointer !important;
 }
 
 .tab-right{
-    
+    border-style: solid;
+    border-color: #ECECEC;
+    background-color: #ECECEC;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 19%;
+    height: 35px;
+    color: #4B4B4B;
+    margin: 0;
+    text-align: center;
+    float: left;
+    cursor: pointer;
 }
 
-.tab-right-activeA{
-    
+.tab-right-active{
+    border-style: solid !important;
+    border-color: #ffa726 !important;
+    background-color: #ffa726 !important;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px; !important
+    width: 19% !important;
+    height: 35px !important;
+    color: #fff !important;
+    margin: 0 !important;
+    text-align: center !important;
+    float: left !important;
+    cursor: pointer !important;
 }
 
 table{
     width: 93%;
     margin-top: 20px;
+    max-height: 400px;
+}
+
+tr{
+    height: 50px;
+}
+
+tbody{
+    display: block;
+    max-height: 350px;
+    overflow: auto;
+}
+
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+
+/* Remove scrollbar width from thread */
+thread{
+    width: calc(100% - 1em);
 }
 
 /* Colors for change column in table */
@@ -283,6 +364,16 @@ table{
 
 .down-color{
     color: #D32F2F;
+}
+
+/* Extended card positive button */
+.positive-button{
+    float: right;
+    margin-right: 6%;
+    text-transform: none;
+    width: 20%;
+    font-size: 18px;
+    border-radius: 10px;
 }
 
 /* Custom cards */
@@ -408,6 +499,9 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .carousel-arrow-container{
         padding-top: 85px !important;
+    }
+    .positive-button{
+        font-size: 16px;
     }
 }
 

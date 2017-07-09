@@ -61,7 +61,7 @@
                     $('#toggle-bar').css('left', origPos2.left - $(this).scrollLeft());
                 });
                 
-                //Display modal when clicking on card help button
+                //Display modal when clicking on help buttons
                 $('#card1-help').click(function(){
                     
                 }); 
@@ -193,10 +193,71 @@
                     //If this is the first carousel item click, then expand card,
                     if(!hasClicked){
                         hasClicked = true;
-                        
                     }
                 });
+                //Table tab clicks
+                $('#table-tab-1').click(function(){
+                    //Apply and remove proper classes
+                    tabClick(1);
+                });
+                $('#table-tab-2').click(function(){
+                    //Apply and remove proper classes
+                    tabClick(2);
+                });
+                $('#table-tab-3').click(function(){
+                    //Apply and remove proper classes
+                    tabClick(3);
+                });
+                $('#table-tab-4').click(function(){
+                    //Apply and remove proper classes
+                    tabClick(4);
+                });
+                $('#table-tab-5').click(function(){
+                    //Apply and remove proper classes
+                    tabClick(5);
+                });
             });
+            
+            //Adds and removes proper classes from table tabs
+            function tabClick(tab){
+                switch(tab){
+                    case 1:
+                        $('#table-tab-1').addClass('tab-left-active');
+                        $('#table-tab-2').removeClass('tab-mid-active');
+                        $('#table-tab-3').removeClass('tab-mid-active');
+                        $('#table-tab-4').removeClass('tab-mid-active');
+                        $('#table-tab-5').removeClass('tab-right-active');
+                        break;
+                    case 2:
+                        $('#table-tab-1').removeClass('tab-left-active');
+                        $('#table-tab-2').addClass('tab-mid-active');
+                        $('#table-tab-3').removeClass('tab-mid-active');
+                        $('#table-tab-4').removeClass('tab-mid-active');
+                        $('#table-tab-5').removeClass('tab-right-active');
+                        break;
+                    case 3:
+                        $('#table-tab-1').removeClass('tab-left-active');
+                        $('#table-tab-2').removeClass('tab-mid-active');
+                        $('#table-tab-3').addClass('tab-mid-active');
+                        $('#table-tab-4').removeClass('tab-mid-active');
+                        $('#table-tab-5').removeClass('tab-right-active');
+                        break;
+                    case 4:
+                        $('#table-tab-1').removeClass('tab-left-active');
+                        $('#table-tab-2').removeClass('tab-mid-active');
+                        $('#table-tab-3').removeClass('tab-mid-active');
+                        $('#table-tab-4').addClass('tab-mid-active');
+                        $('#table-tab-5').removeClass('tab-right-active');
+                        break;
+                    case 5:
+                        $('#table-tab-1').removeClass('tab-left-active');
+                        $('#table-tab-2').removeClass('tab-mid-active');
+                        $('#table-tab-3').removeClass('tab-mid-active');
+                        $('#table-tab-4').removeClass('tab-mid-active');
+                        $('#table-tab-5').addClass('tab-right-active');
+                        break;
+                }
+            }
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/screener-create.css">
     </head>
@@ -419,11 +480,25 @@
                         </div>
                         <!-- Results table -->
                         <div class="row" style="padding-left:7%;">
-                            <div class="row" style="width: 50%; float:left;">
-                                
+                            <!-- Table modes -->
+                            <div class="row" style="width: 65%; float:left;">
+                                <!-- Make sure first tab has both classes so that it is first active and functions properly -->
+                                <div class="tab-left tab-left-active" id="table-tab-1">
+                                    <p class="tab-text">Stock</p>
+                                </div>
+                                <div class="tab-mid" id="table-tab-2">
+                                    <p class="tab-text">Price</p>
+                                </div>
+                                <div class="tab-mid" id="table-tab-3">
+                                    <p class="tab-text">Change(%)</p>
+                                </div>
+                                <div class="tab-mid" id="table-tab-4">
+                                    <p class="tab-text">Change($)</p>
+                                </div>
+                                <div class="tab-right" id="table-tab-5">
+                                    <p class="tab-text">Market Cap</p>
+                                </div>
                             </div>
-                            
-                            
                             <!-- Table -->
                             <table class="striped">
                                 <!-- Columns -->
@@ -452,10 +527,11 @@
                                         <td class="down-color">0.87%</td>
                                         <td>$623.39B</td>
                                     </tr>
-                                    
                                 </tbody>
-                              </table>
+                            </table>
                         </div>
+                        <!-- Positive button -->
+                        <a class="waves-effect waves-light btn-large orange lighten-1 positive-button" id="btn-use-preset">Use Preset</a>
                     </div>
                 </div>
             </div>
