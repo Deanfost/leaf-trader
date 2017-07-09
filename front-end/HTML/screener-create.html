@@ -188,36 +188,12 @@
                     $('.carousel').carousel('next');
                 });
                 
-                //Initially set extended preset card HTML to no display
-                $('#preset-header-row').css('display', 'none');
-                $('#description-row').css('display', 'none');
-                $('#results-header-row').css('display', 'none');
-                $('#results-row').css('display', 'none');
-                $('#btn-use-preset').css('display', 'none');
-                
                 //Detect carousel item click, expand card
                 $('.carousel-item').click(function(){
                     //If this is the first carousel item click, then expand card
                     if(!hasClicked){
                         hasClicked = true;
-                        //Reveal description header
-                        $('#preset-header-row').css('display', '');
-                        //Reveal description
-                        setTimeout(function(){
-                            $('#description-row').css('display', '');
-                        }, 20);
-                        //Reveal results header
-                        setTimeout(function(){
-                            $('#results-header-row').css('display', '');
-                        }, 40);
-                        //Reveal table 
-                        setTimeout(function(){
-                            $('#results-row').css('display', '');
-                        }, 60);
-                        //Reveal positive button
-                        setTimeout(function(){
-                            $('#btn-use-preset').css('display', '');
-                        }, 80);
+                        $('#preset-expanded').slideToggle(300, null);
                     }
                 });
                 //Table tab clicks
@@ -360,7 +336,7 @@
         <!-- Presets Card -->
         <div id="card-section">
             <div id="card-container">
-                <div class="z-depth-1 card">
+                <div class="z-depth-1 card" style="overflow: hidden;">
                     <!-- Card header -->
                     <div class="orange lighten-1 card-header row" style="padding-left:2%; padding-right:2%; text-align:initial;">
                         <div class="col s10 valign-wrapper" style="height:100%;">
@@ -466,7 +442,7 @@
                     </div>
                     
                     <!-- Expanded card content -->
-                    <div class="row" style="height:auto;">
+                    <div class="row" style="height:auto;" id="preset-expanded">
                         <!-- Preset desc header -->
                         <div class="row" id="preset-header-row">
                             <div class="preset-header-container">

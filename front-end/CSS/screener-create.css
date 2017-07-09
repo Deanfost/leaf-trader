@@ -177,6 +177,11 @@ body{
     border-style: solid;
 }
 
+/* Intitially hide expanded preset card */
+#preset-expanded{
+    display: none;
+}
+
 .preset-header-container{
     width: 90%;
     padding-left: 7%;
