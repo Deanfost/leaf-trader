@@ -200,10 +200,15 @@
                 //Detect custom screener create button click
                 var hasClicked1 = false;
                 $('#create-button').click(function(){
-                    //Expand custom card
-                    if(!hasClicked1){
-                        hasClicked1 = true;
-                        $('#custom-expanded').slideToggle(300, null);
+                    //Expand custom card if needed, load in new data
+                    var screenerName = $('#screener-name').val();
+                    alert(screenerName);
+                    if(checkName(screenerName, 30)){
+                        if(!hasClicked1){
+                            hasClicked1 = true;
+                            $('#custom-expanded').slideToggle(300, null);
+                        }
+                        //Load in new data
                     }
                 });
                 
@@ -249,7 +254,7 @@
                     tabClick(5, 2);
                 });
             });
-            
+                
             //Adds and removes proper classes from table tabs
             function tabClick(tab, card){
                 if(card === 1){
@@ -329,6 +334,17 @@
                         $('#custom-table-tab-5').addClass('tab-right-active');
                         break;
                     }
+                }
+            }
+            
+            //Vet the custom screener name
+            function checkName(name, maxLen){
+                if(name.length <= maxLen){
+                    return true;
+                }
+                else{
+                    Materialize.toast('Name must be less than ' + maxLen.toString() + ' characters long', 4000)
+                    return false;
                 }
             }
         </script>
