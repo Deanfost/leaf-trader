@@ -202,7 +202,6 @@
                 $('#create-button').click(function(){
                     //Expand custom card if needed, load in new data
                     var screenerName = $('#screener-name').val();
-                    alert(screenerName);
                     if(checkName(screenerName, 30)){
                         if(!hasClicked1){
                             hasClicked1 = true;
@@ -340,10 +339,16 @@
             //Vet the custom screener name
             function checkName(name, maxLen){
                 if(name.length <= maxLen){
-                    return true;
+                    if(name.length > 0){
+                        return true;
+                    }
+                    else{
+                        Materialize.toast('Please name this screener', 4000);
+                        return false;
+                    }
                 }
                 else{
-                    Materialize.toast('Name must be less than ' + maxLen.toString() + ' characters long', 4000)
+                    Materialize.toast('Name must be less than ' + maxLen.toString() + ' characters long', 4000);
                     return false;
                 }
             }
