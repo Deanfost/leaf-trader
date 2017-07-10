@@ -182,6 +182,12 @@ body{
     display: none;
 }
 
+#collapse-arrow{
+    width: 3%;
+    margin-left: 7%;
+    cursor: pointer;
+}
+
 .preset-header-container{
     width: 90%;
     padding-left: 7%;

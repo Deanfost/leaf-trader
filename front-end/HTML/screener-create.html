@@ -188,23 +188,29 @@
                 });
                 
                 //Detect carousel item click, expand card
-                var hasClicked = false;
+                var canExpand = true;
                 $('.carousel-item').click(function(){
                     //If this is the first carousel item click, then expand card
-                    if(!hasClicked){
-                        hasClicked = true;
+                    if(canExpand){
+                        canExpand = false;
                         $('#preset-expanded').slideToggle(300, null);
                     }
                 });
                 
+                //Detect preset collapse arrow click
+                $('#collapse-arrow').click(function(){
+                    $('#preset-expanded').slideToggle(300, null);
+                    canExpand = true;
+                });
+                
                 //Detect custom screener create button click
-                var hasClicked1 = false;
+                var hasClicked = false;
                 $('#create-button').click(function(){
                     //Expand custom card if needed, load in new data
                     var screenerName = $('#screener-name').val();
                     if(checkName(screenerName, 30)){
-                        if(!hasClicked1){
-                            hasClicked1 = true;
+                        if(!hasClicked){
+                            hasClicked = true;
                             $('#custom-expanded').slideToggle(300, null);
                         }
                         //Load in new data
@@ -336,10 +342,11 @@
                 }
             }
             
-            //Vet the custom screener name
+            //Vet the custom screener name, change name label
             function checkName(name, maxLen){
                 if(name.length <= maxLen){
                     if(name.length > 0){
+                        $('#name-label').text('Screener - ' + name);
                         return true;
                     }
                     else{
@@ -536,8 +543,12 @@
                     
                     <!-- Expanded card content -->
                     <div class="row" style="height:auto;" id="preset-expanded">
+                        <!-- Preset card collapse arrow -->
+                        <div class="row" style="margin-top: 40px;">
+                            <img class="responsive-img" src="/front-end/img/arrow-top-light.png" id="collapse-arrow">
+                        </div>
                         <!-- Preset desc header -->
-                        <div class="row" style="margin-top:40px;">
+                        <div class="row" style="margin-top:10px;">
                             <div class="preset-header-container">
                                 <h5 class="preset-header">Preset Description</h5>
                             </div>
@@ -884,6 +895,10 @@
                         </div>
                         <!-- Results table row -->
                         <div class="row" style="padding-left:7%;">
+                            <div class="row" style="margin-bottom: 10px;">
+                                <h6 style="font-size: 18px; color: #505050;" id="name-label"></h6>
+                            </div>
+                            
                             <!-- Table modes -->
                             <div class="row" style="width: 65%; float:left;">
                                 <!-- Make sure first tab has both classes so that it is first active and functions properly -->
