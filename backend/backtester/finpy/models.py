@@ -9,23 +9,29 @@ from datetime import datetime
 
 
 class Stock(models.Model):
+
     ticker = models.CharField(max_length = 10)
     name = models.CharField(max_length = 128)
-    last_price = models.FloatField(default = 0.0)
-    market_cap = models.CharField(max_length = 20)
+    current_price = models.FloatField(default = 0.0, null = True)
+    previous_price = models.FloatField(default = 0.0, null = True) # this is how we are going to calculate the price change 
+    market_cap = models.CharField(max_length = 20, null = True)
     sector = models.CharField(max_length = 128)
-    PE_ratio = models.FloatField(default = 0.0)
-    EPS_ratio = models.FloatField(default = 0.0)
-    PS_ratio = models.FloatField(default = 0.0)
-    PBook_ratio = models.FloatField(default = 0.0)
-    Dividend_Yield = models.FloatField(default = 0.0) # we can get rid of this
-    Book_Value  = models.FloatField(default = 0.0) # also get rid of this
+    PE_ratio = models.FloatField(default = 0.0, null = True)
+    EPS_ratio = models.FloatField(default = 0.0, null = True)
+    PBook_ratio = models.FloatField(default = 0.0, null = True )
+
+    PEG_ratio = models.FloatField(default = 0.0 , null = True)  # these are the ones that we will have to make scrape calls for
+    current_ratio = models.FloatField(default = 0.0 , null = True)
+    profit_margin = models.FloatField(default = 0.0 , null = True)
+    debt_equity_ratio = models.FloatField(default = 0.0 , null = True)
+    return_on_assets  = models.FloatField(default = 0.0 , null = True)
+    cashflow = models.FloatField(default = 0.0 , null = True)
+    beta = models.FloatField(default = 5 , null = True)
+    revenueGrowth = models.FloatField(default = 0.0 , null = True) # revenue not earnings
+
     last_price_refresh = models.DateTimeField(default=datetime.now) # notice we are not putting datetime.now() with paranthesis. Plan on updating this every week
     last_ratio_refresh = models.DateTimeField(default = datetime.now) # Plan on updating the ratios every month
 
-
-
-    id = models.BigIntegerField(primary_key=True)
     class Meta :
         app_label = "finpy"
 
@@ -49,6 +55,7 @@ class UserProfile(models.Model):
     networth = models.IntegerField(default = 15000,)
     cash = models.IntegerField(default = 15000)
     holdingsdict = JSONField(default = dict)
+    history = JSONField(default = dict)
     created = models.DateTimeField(default=datetime.now) # notice we are not putting datetime.now() with paranthesis. Plan on updating this every week
 
 
@@ -58,10 +65,11 @@ class UserProfile(models.Model):
 class savedScreener(models.Model): # these belong to a specific user profile
     name = models.CharField(max_length = 100)
     user = models.ForeignKey(UserProfile)
-    sectors = models.CharField(max_length = 200) # later on we are going to have to split this string into a list
+    sectors = JSONField(default = dict, blank = True) # later on we are going to have to split this string into a list
     lower_limit = models.IntegerField(default = 0)
-    upper_limit = models.IntegerField(default = None)
-    ratios = JSONField(default = dict)
+    upper_limit = models.IntegerField(default = None, blank = True)
+    ratios = JSONField(default = dict, blank = True)
+    last_used = models.DateTimeField(default=datetime.now)
 
 
     def __str__(self):

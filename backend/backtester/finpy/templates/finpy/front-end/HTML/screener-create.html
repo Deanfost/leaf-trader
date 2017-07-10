@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Create Screener</title>
+
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
+
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+        <!--On DOM ready -->
+        <script>
+            $(document).ready(function(){
+                //Resize the toggle bar on DOM ready
+                var windowWidth = window.innerWidth;
+                //Viewports greater than 1200px wide
+                if(windowWidth >= 1200){
+                    var toggleBarWidth = $('#toggle-bar').width();
+                    var diff = windowWidth - toggleBarWidth - 300;
+                    $('#toggle-bar').width(toggleBarWidth + diff);
+                }
+                //Viewports smaller than 1200px wide
+                else if(windowWidth < 1200 & windowWidth >= 1000){
+                    var toggleBarWidth = $('#toggle-bar').width();
+                    var diff = windowWidth - toggleBarWidth - 150;
+                    $('#toggle-bar').width(toggleBarWidth + diff);
+                }
+
+                //Resize the toggle bar on resize
+                $(window).resize(function() {
+                    var windowWidth = window.innerWidth;
+                    //Viewports greater than 1200px wide
+                    if(windowWidth >= 1200){
+                        var toggleBarWidth = $('#toggle-bar').width();
+                        var diff = windowWidth - toggleBarWidth - 300;
+                        $('#toggle-bar').width(toggleBarWidth + diff);
+                    }
+                    //Viewports smaller than 1200px wide
+                    else if(windowWidth < 1200 & windowWidth >= 1000){
+                        var toggleBarWidth = $('#toggle-bar').width();
+                        var diff = windowWidth - toggleBarWidth - 150;
+                        $('#toggle-bar').width(toggleBarWidth + diff);
+                    }
+                });
+
+                //Horizontally scroll the fixed side nav and toggle bar correctly
+                var origPos1 = $('#side-nav').position();
+                $(window).scroll(function(){
+                    $('#side-nav').css('left', origPos1.left - $(this).scrollLeft());
+                });
+                var origPos2 = $('#toggle-bar').position();
+                $(window).scroll(function(){
+                    $('#toggle-bar').css('left', origPos2.left - $(this).scrollLeft());
+                });
+
+                //Display modal when clicking on card help button
+                $('#card1-help').click(function(){
+
+                });
+                $('#card2-help').click(function(){
+
+                });
+
+                //Mouse over sidenav events
+                $('.sidenav-option').mouseenter(function(){
+                    $(this).addClass('grey lighten-4');
+                });
+                $('.sidenav-option').mouseleave(function(){
+                    if($(this).attr('id') !== 'current-option'){
+                        $(this).removeClass('grey lighten-4');
+                    }
+                });
+
+                //Scroll carousel left and right when arrows are clicked
+                $('#arrow-left').click(function(){
+                    $('.carousel').carousel('prev');
+                });
+                $('#arrow-right').click(function(){
+                    $('.carousel').carousel('next');
+                });
+
+                //Init carousel
+                $('.carousel').carousel({
+                    dist: 0,
+                    padding: 100
+
+                });
+                //Scroll the carousel once
+                $('.carousel').carousel('next');
+            });
+        </script>
+        <link rel="stylesheet" type="text/css" href="{% static "css/screener-create.css" %}">
+    </head>
+
+    <body>
+        <div class="row">
+            <!-- Side nav -->
+            <div class="z-depth-1" id="side-nav">
+                <!-- Sidenav header -->
+                <div class="col s12 sidenav-top orange z-depth-1" style="text-align:center;" id="sidenav-header">
+                    <div class="valign-wrapper" style="display:inline-block; position:realtive; transform:translateY(50%); width:auto;">
+                        <a href="landing.html">
+                            <div class="valign-wrapper">
+                                <img class="responsive-img circle z-depth-1" src="{% static "images/logo-orange.png" %}" style="margin-right:4%;" id="sidenav-img">
+                                <h5 style="color:white;" id="sidenav-title">Leaf Trader</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Sidenav items -->
+                <div class="col s12" style="text-align:center; padding-right:0%; padding-left:0%; padding-top:.5%;" id="sidenav-item-wrapper">
+                    <div class="valign-wrapper sidenav-option">
+                        <div class="valign-wrapper sidenav-item-wrapper">
+                            <img class="responsive-img sidenav-item-img" src="{% static "images/bullish.png" %}">
+                            <h5 class="sidenav-item">Dashboard</h5>
+                        </div>
+                    </div>
+                    <div class="valign-wrapper sidenav-option">
+                        <div class="valign-wrapper sidenav-item-wrapper">
+                            <img class="responsive-img sidenav-item-img" src="{% static "images/money.png" %}">
+                            <h5 class="sidenav-item">Trader</h5>
+                        </div>
+                    </div>
+                    <div class="valign-wrapper grey lighten-4 sidenav-option" id="current-option">
+                        <div class="valign-wrapper sidenav-item-wrapper">
+                            <img class="responsive-img sidenav-item-img" src="{% static "images/filter-orange.png" %}">
+                            <h5 class="sidenav-item" style="color:#ffa726;">Screeners</h5>
+                        </div>
+                    </div>
+                    <div class="valign-wrapper sidenav-option">
+                        <div class="valign-wrapper sidenav-item-wrapper">
+                            <img class="responsive-img sidenav-item-img" src="{% static "images/book.png" %}">
+                            <h5 class="sidenav-item">Tutorials</h5>
+                        </div>
+                    </div>
+                    <div class="valign-wrapper sidenav-option">
+                        <div class="valign-wrapper sidenav-item-wrapper">
+                            <img class="responsive-img sidenav-item-img" src="{% static "images/user.png" %}">
+                            <h5 class="sidenav-item">Sign out</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sidenav footer -->
+                <div class="col s12 orange valign-wrapper" id="sidenav-footer">
+                    <div class="valign-wrapper" style="margin:auto; width:40%;" id="sidenav-attr-wrapper">
+                        <img class="responsive-img" src="{% static "images/note.png" %}" id="sidenav-attr-img" style="margin-right:2%;">
+                        <h5 id="sidenav-attr" style="color:white;">Attribution</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toggle bar -->
+        <div class="z-depth-1 orange valign-wrapper row" id="toggle-bar">
+            <!-- Left toggle button -->
+            <a class="toggle-inactive valign-wrapper" href="/finpy/screenerDash">
+                <h5 class="toggle-text" style="margin: 0 auto; color:#fff;">Saved</h5>
+            </a>
+            <!-- Right toggle button -->
+            <a class="toggle-active valign-wrapper" href="/finpy/screenerCreate">
+               <h5 class="toggle-text" style="margin: 0 auto; color:#4B4B4B;">Create</h5>
+            </a>
+        </div>
+
+        <!-- Card -->
+        <div id="card-section">
+            <div id="card-container">
+                <div class="z-depth-1 card">
+                    <!-- Card header -->
+                    <div class="orange lighten-1 card-header row" style="padding-left:2%; padding-right:2%; text-align:initial;">
+                        <div class="col s10 valign-wrapper" style="height:100%;">
+                            <h4 id="card-title">Presets</h4>
+                        </div>
+                        <div class="col s2 valign-wrapper" style="height:100%;">
+                            <img class="responsive-img card-help" id="card1-help" src="{% static "images/Help.png" %}" style="margin-left:82%; cursor: pointer;">
+                        </div>
+                    </div>
+                    <!-- Card content - preset carousel -->
+                    <div class="row" style="height:210px;">
+                        <!-- Left arrow -->
+                        <div class="col s2" style="text-align:center; padding-top:75px;">
+                            <img class="responsive-img carousel-arrow" src="{% static "images/arrow-left.png" %}" id="arrow-left">
+                        </div>
+                        <!-- Carousel items -->
+                        <div class="carousel col s8">
+                            <div class="carousel-item z-depth-1 carousel-card" href="#one!">
+                                <div class="row" style="height:60%; text-align:center; padding-top:20%;">
+                                    <img class="responsive-img carousel-card-img" src="{% static "images/pill-red.png" %}">
+                                </div>
+                                <div class="row" style="height:30%; padding-top:1%;">
+                                    <h6 class="carousel-card-text">Medicine</h6>
+                                </div>
+                            </div>
+                            <div class="carousel-item z-depth-1 carousel-card" href="#two!">
+                                <div class="row" style="height:60%; text-align:center; padding-top:20%;">
+                                    <img class="responsive-img carousel-card-img"src="{% static "images/bullish-green.png" %}">
+                                </div>
+                                <div class="row" style="height:30%; padding-top:1%;">
+                                    <h6 class="carousel-card-text">Finance</h6>
+                                </div>
+                            </div>
+                            <div class="carousel-item z-depth-1 carousel-card" href="#three!">
+                                <div class="row" style="height:60%; text-align:center; padding-top:20%;">
+                                    <img class="responsive-img carousel-card-img" src="{% static "images/smartphone-blue.png" %}">
+                                </div>
+                                <div class="row" style="height:30%; padding-top:1%;">
+                                    <h6 class="carousel-card-text">Technology</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right arrow -->
+                        <div class="col s2" style="text-align:center; padding-top:75px;">
+                            <img class="responsive-img carousel-arrow" src="{% static "images/arrow-right.png" %}" id="arrow-right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom card -->
+            <div id="card-container">
+                <div class="z-depth-1 card">
+                    <!-- Card header -->
+                    <div class="orange lighten-1 card-header row" style="padding-left:2%; padding-right:2%; text-align:initial;">
+                        <div class="col s10 valign-wrapper" style="height:100%;">
+                            <h4 id="card-title">Custom</h4>
+                        </div>
+                        <div class="col s2 valign-wrapper" style="height:100%;">
+                            <img class="responsive-img card-help" id="card2-help" src="{% static "images/Help.png" %}" style="margin-left:82%; cursor: pointer;">
+                        </div>
+                    </div>
+                    <!-- Card content - custom params -->
+                    <div class="row" style="height:400px;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

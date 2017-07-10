@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from collections import defaultdict
 import os
 import csv
-from finpy.models import Stock, test, UserProfile
+from finpy.models import Stock, test, UserProfile, savedScreener
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from scripts.screener import soup, screenerfunction
@@ -13,6 +13,9 @@ from googlefinance import getQuotes
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
+import random
+import cPickle as pickle
+
 
 #from scripts.simulate import newtotals
 
@@ -67,6 +70,12 @@ def practiceAjax(request):
     }
     return JsonResponse(data)
 
+def chart(request):
+    lister = [1,1,10]
+    labels = ["10clones1","10clones2", "10clones3"]
+
+    response = render(request, "finpy/chart.html", {"lister" : lister, "labels" : labels})
+    return response
 
 def socialogin(request):
 
@@ -143,12 +152,87 @@ def loggingout(request):
     logout(request)
 
     return redirect("landing_page")
+    ticker = models.CharField(max_length = 10)
+    name = models.CharField(max_length = 128)
+    last_price = models.FloatField(default = 0.0)
+    market_cap = models.FloatField(default = 0.0)
+    sector = models.CharField(max_length = 128)
+    PE_ratio = models.FloatField(default = 0.0)
+    EPS_ratio = models.FloatField(default = 0.0)
+    PBook_ratio = models.FloatField(default = 0.0)
+    PEG_ratio = models.FloatField(default = 0.0) # also get rid of this
+    beta = models.FloatField(default = 5)
+    revenueGrowth = models.FloatField(default = 0.0) # revenue not earnings
+    last_price_refresh = models.DateTimeField(default=datetime.now) # notice we are not putting datetime.now() with paranthesis. Plan on updating this every week
+    last_ratio_refresh = models.DateTimeField(default = datetime.now) # Plan on updating the ratios every month
 
 
 
 def landing_page(request):
     print request.user
     print "That was the user object request for the second time "
+
+    #stock = Stock(ticker = "YH",name = "Yahoo", last_price =  130.0, market_cap = "200", sector = "Technology",PE_ratio =  15.0, EPS_ratio =  12.0, PBook_ratio =  10.0, PEG_ratio = 11.0, beta = 3.0, revenueGrowth =  22.5, id = 1234556)
+    #stock.save()
+
+    # to update the stocks,
+
+
+    stock_dict = pickle.load(open("/Users/rishubnahar/Desktop/djangoprojects/paper-trader/backend/backtester/finpy/master_ratios.p", "rb"))
+    print stock_dict["MSFT"]
+
+    with open("/Users/rishubnahar/Desktop/djangoprojects/paper-trader/backend/backtester/finpy/s&P500.csv", "r") as spfile:
+        for line in spfile:
+            stock_line = line.split(",")
+            ID = random.randint(100000,999999)
+
+            Ticker = stock_line[0]
+            Name  = stock_line[1]
+            Sector = stock_line[2]
+            stock = Stock.objects.get(name = Name)
+            stock.previous_price = stock.current_price
+            stock.current_price = stock_dict[Ticker]["Price"]
+            stock.PE_ratio  = stock_dict[Ticker]["Price_Earnings"]
+            stock.EPS_ratio = stock_dict[Ticker]["EPS"]
+            stock.market_cap = stock_dict[Ticker]["Market Cap"]
+            stock.PBook_ratio = stock_dict[Ticker]["Price_Book"]
+            #stock = Stock(ticker = Ticker, name = Name, sector = Sector, last_price = Price, PE_ratio = Price_Earnings, EPS_ratio = Earnings_Share, market_cap = Market_Cap, PBook_ratio = Price_Book, id = ID )
+            try:
+                stock.PEG_ratio = stock_dict[Ticker]["Price_Earnings_Growth"]
+            except:
+                stock.PEG_ratio = None
+            try :
+                stock.current_ratio = stock_dict[Ticker]["Current_Ratio"]
+            except :
+                stock.current_ratio = None
+            try:
+                stock.profit_margin = stock_dict[Ticker]["Profit_Margin"]
+            except:
+                stock.profit_margin = None
+            try:
+                stock.debt_equity_ratio = stock_dict[Ticker]["Debt_Equity"]
+            except:
+                stock.debt_equity_ratio = None
+            try:
+                stock.return_on_assets = stock_dict[Ticker]["Return_Assets"]
+            except :
+                stock.return_on_assets = None
+            try:
+                stock.cashflow = stock_dict[Ticker]["Operating_Cash"]
+            except:
+                stock.cashflow = None
+            try:
+                stock.beta = stock_dict[Ticker]["Beta"]
+            except:
+                stock.beta = None
+            try:
+                stock.revenueGrowth = stock_dict[Ticker]["Quarterly_Growth"]
+            except:
+                stock.revenueGrowth = None
+
+            stock.save()
+            print "stocking up"
+
 
     if (request.user.is_authenticated()):
         print "UUSER"
@@ -169,67 +253,13 @@ def landing_page(request):
     #print str(lister2.AsyncResult(x.task_id).state)
 
 
-    with open("/Users/rishubnahar/Desktop/djangoprojects/paper-trader/backend/backend/finpy/s&P500.csv", "rU") as csvfile:
-
-        reader = csv.reader(csvfile)
-        for line in reader :
-
-            try :
-                #stock = Stock(ticker = line[0], name = line[1], PBook_ratio = float(line[13]), Dividend_Yield = float(line[4]), Book_Value = float(line[7]), PE_ratio = float(line[5]), market_cap = float(line[10]), last_price = float(line[3]), sector = line[2], PS_ratio = float(line[12]), EPS_ratio  = float(line[6]))
-                stock = Stock(ticker = "MSFT")
-                stock.save()
-            except:
-
-                print "SKIPPING" + str(line[1])
-                continue
     """
-    #    i = 0
-
-#        while i < 10:
-
-        #    row = next(reader)
-
-                 #print line
-            #     stock = Stock.objects.create(ticker = line[0], name = line[1], PBook_ratio = float(line[13]), Dividend_Yield = float(line[4]), Book_Value = float(line[7]), PE_ratio = float(line[5]), market_cap = float(line[10]), last_price = float(line[3]), sector = line[2], PS_ratio = float(line[12]), EPS_ratio  = float(line[6]))
-                # stock = Stock.objects.create(name = "AAPL")
-                # print stock.name
-                # stock.save()
-
-
-
-
 
 
     if request.method == "POST":
         stockquery = request.POST.get("stockquery")
         global ticker_list
         tickerlist.append(stockquery)
-"""
-    with open("/Users/rishubnahar/Desktop/djangoprojects/paper-trader/backend/backend/finpy/s&P500.csv", "rU") as csvfile:
-        reader = csv.reader(csvfile)
-
-        for line in reader :
-            i = 0
-            ticker = str(line[0])
-            current_price = getQuotes("AAPL")
-
-            current_price = float(current_price[0]["LastTradePrice"])
-            print current_price
-            break
-
-
-            while(i<2):
-                price = getQuotes(line[0])
-                price = price[0]["LastTradePrice"]
-                print price
-                i+=1
-
-
-"""
-
-    #for s in stock:
-    #    print s.name
-
 
 
 
@@ -247,9 +277,8 @@ def screener(request) :
     target_list = []
 
     # set every attribute to none as default
-    sector_name =  [None,None,None,None,None]
 
-    passed_dict = defaultdict(list)
+    passed_dict = {}
 
     if request.method == "POST":
 
@@ -265,24 +294,27 @@ def screener(request) :
 
         #for i in range(100000000):
             #print i
+        sector_name = []
+        final_sector = []
 
         print "testing this POST"
-        sector_name[0] = request.POST.get("Technology")
-        sector_name[1] = request.POST.get("Health Care")
-        sector_name[2] = request.POST.get("Finance")
-        sector_name[3] = request.POST.get("Consumer Services")
-        sector_name[4] = request.POST.get("Consumer Durables")
+        sector_name.append(request.POST.get("Technology"))
+        sector_name.append(request.POST.get("Health Care"))
+        sector_name.append(request.POST.get("Finance"))
+        sector_name.append(request.POST.get("Consumer Services"))
+        sector_name.append(request.POST.get("Consumer Durables"))
+        print "TRY"
+        print sector_name
         #market_cap = request.POST.get("market_cap")
-
-
         #print "THIS IS MARKET CAP" + str(market_cap)
-
         for sector in sector_name:
-            if sector is None:
-                sector_name.remove(sector)
+            if sector is not  None:
+                final_sector.append(sector)
 
 
-        passed_dict["sector_list"] = sector_name
+        passed_dict["sector_list"] = final_sector
+        print "TRY@xwxs"
+        print final_sector
         #passed_dict["marketcap"] = market_cap
         #target_list =  match_params("shortoutput.csv", passed_dict)
         screenerfunction(passed_dict)
@@ -294,6 +326,41 @@ def screener(request) :
     return response
 
 
+def screenerDash(request):
+    print "screeneruser"
+    print request.user.username
+
+
+    saved_screeners = savedScreener.objects.all()
+    passed_screeners = {}
+    passed_bul = True
+
+    for screener in saved_screeners:
+        print screener
+        passed_screeners[screener] = ["default"]
+        if str(screener.user) == str(request.user.username):
+            for sector in screener.sectors:
+                print "THIS is sector"
+                print screener.sectors[sector]
+                for part in screener.sectors[sector]:
+                    print "This is part"
+                    print part
+                    passed_screeners[screener].append(str(part))
+    print passed_screeners
+    if len(passed_screeners) > 0 : # if there is at least one screener that matches who ever the user happens to be at the time
+        passed_bul = False
+
+    practicedict = {"a" : [1,2,3], "b" : [3,4,5]}
+    print "*((((**))))"
+    print passed_screeners
+    print practicedict
+
+    response =  render(request,"finpy/front-end/HTML/screener-saved.html", {"passed_screeners" : passed_screeners, "passed_bul" : passed_bul, "practicedict" : practicedict})
+    return response
+
+def screenerCreate(request):
+    response = render(request, "finpy/front-end/HTML/screener-create.html")
+    return response
 
 
 

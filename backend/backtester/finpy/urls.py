@@ -14,6 +14,9 @@ urlpatterns = patterns( "",
         url(r'^loggingout/',views.loggingout, name = "loggingout"),
         url(r'^socialogin/',views.socialogin, name = "socialogin"),
         url(r'^practiceAjax/',views.practiceAjax, name = "practiceAjax"),
+        url(r'chart/', views.chart, name = "chart"),
+        url(r'screenerDash/', views.screenerDash, name = "screenerDash"),
+        url(r'screenerCreate/', views.screenerCreate, name = "screenerCreate")
 
 
 
