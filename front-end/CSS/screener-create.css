@@ -347,6 +347,15 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
+/* Change radio button color */
+[type="radio"].with-gap:checked + label:before {
+border: 2px solid #ffa726; }
+
+[type="radio"].with-gap:checked + label:after {
+    border: 2px solid #ffa726;
+    background-color: #ffa726;
+}
+
 #screener-name-container{
     width: 70%;
     float: left;
