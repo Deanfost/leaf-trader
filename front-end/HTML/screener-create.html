@@ -258,8 +258,45 @@
                     //Apply and remove proper classes
                     tabClick(5, 2);
                 });
-            });
                 
+                //Check for children modification of tables
+                var $tbody1 = $('#preset-tbody');
+                var $tbody2 = $('#custom-tbody');
+                var $thead1 = $('#thead-1');
+                var $thead2 = $('#thead-2');
+
+                //Check if total children heights add up to more than max-height of tables(overflow)
+                $tbody1.bind('DOMNodeInserted', function(){
+                    var childCount = $tbody1.children().length;
+                    if(childCount > 6){
+                        //Overflow, remove scrollbar width from thead
+                        $thead1.css('width', 'calc(100% - 1em)');
+                    }
+                });
+                $tbody1.bind('DOMNodeRemoved', function(){
+                    var childCount = $tbody1.children().length;
+                    if(childCount <= 6){
+                        //No overflow, add back width
+                        $thead1.css('width', '');
+                    }
+                });
+
+                $tbody2.bind('DOMNodeInserted', function(){
+                    var childCount = $tbody2.children().length;
+                    if(childCount > 6){
+                        //Overflow, remove scrollbar width from thead
+                        $thead2.css('width', 'calc(100% - 1em)');
+                    }
+                });
+                $tbody2.bind('DOMNodeRemoved', function(){
+                    var childCount = $tbody2.children().length;
+                    if(childCount <= 6){
+                        //No overflow, add back width
+                        $thead2.css('width', '');
+                    }
+                });
+            });
+            
             //Adds and removes proper classes from table tabs
             function tabClick(tab, card){
                 if(card === 1){
@@ -381,7 +418,7 @@
                 <!-- Sidenav items -->
                 <div class="col s12" style="text-align:center; padding-right:0%; padding-left:0%; padding-top:.5%;" id="sidenav-item-wrapper">
                     <div class="valign-wrapper sidenav-option">
-                        <div class="valign-wrapper sidenav-item-wrapper">
+                        <div class="valign-wrapper sidenav-item-wrapper"> 
                             <img class="responsive-img sidenav-item-img" src="/front-end/img/bullish.png">
                             <h5 class="sidenav-item">Dashboard</h5>
                         </div>
@@ -607,13 +644,13 @@
                             <!-- Table -->
                             <table class="striped">
                                 <!-- Columns -->
-                                <thead>
+                                <thead id="thead-1">
                                   <tr>
-                                    <th id="cat-stock" style="width: 19.5%;">Stock</th>
-                                    <th id="cat-price" style="width: 19.5%;">Price</th>
-                                    <th id="cat-change$" style="width: 19.5%;">Change($)</th>
-                                    <th id="cat-change%" style="width: 20%">Change(%)</th>
-                                    <th id="cat-cap">Market Cap</th>
+                                    <th>Stock</th>
+                                    <th>Price</th>
+                                    <th>Change($)</th>
+                                    <th>Change(%)</th>
+                                    <th>Market Cap</th>
                                   </tr>
                                 </thead>
                                 <!-- Rows -->
@@ -654,26 +691,14 @@
                                         <td>$623.39B</td>
                                     </tr>
                                     <tr>
-                                        <td class="truncate">Google Inc.</td>
+                                        <td class="truncate">Microsoft Corporation</td>
                                         <td>$897.24</td>
                                         <td class="down-color">$8.38</td>
                                         <td class="down-color">0.87%</td>
                                         <td>$623.39B</td>
                                     </tr>
-                                    <tr>
-                                        <td class="truncate">Google Inc.</td>
-                                        <td>$897.24</td>
-                                        <td class="down-color">$8.38</td>
-                                        <td class="down-color">0.87%</td>
-                                        <td>$623.39B</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="truncate">Apple Inc.</td>
-                                        <td>$197.08</td>
-                                        <td class="up-color">$2.49</td>
-                                        <td class="up-color">0.19%</td>
-                                        <td>$749.96B</td>
-                                    </tr>
+                                   
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -921,13 +946,13 @@
                             <!-- Table -->
                             <table class="striped">
                                 <!-- Columns -->
-                                <thead>
+                                <thead id="thead-2">
                                   <tr>
-                                    <th id="cat-stock" style="width: 19.5%;">Stock</th>
-                                    <th id="cat-price" style="width: 19.5%;">Price</th>
-                                    <th id="cat-change$" style="width: 19.5%;">Change($)</th>
-                                    <th id="cat-change%" style="width: 20%;">Change(%)</th>
-                                    <th id="cat-cap">Market Cap</th>
+                                    <th>Stock</th>
+                                    <th>Price</th>
+                                    <th>Change($)</th>
+                                    <th>Change(%)</th>
+                                    <th>Market Cap</th>
                                   </tr>
                                 </thead>
                                 <!-- Rows -->

@@ -484,11 +484,6 @@ thead, tbody tr {
     table-layout:fixed;
 }
 
-/* Remove scrollbar width from thread */
-thread{
-    width: calc(100% - 1em);
-}
-
 /* Colors for change column in table */
 .up-color{
     color: #388E3C;
