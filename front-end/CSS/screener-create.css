@@ -383,7 +383,7 @@ border: 2px solid #ffa726; }
     background-color: #ECECEC;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    width: 19%;
+    width: 17%;
     height: 35px;
     color: #4B4B4B;
     text-align: center;
@@ -397,7 +397,7 @@ border: 2px solid #ffa726; }
     background-color: #ffa726 !important;
     border-top-left-radius: 5px !important;
     border-bottom-left-radius: 5px !important;
-    width: 19% !important;
+    width: 17% !important;
     height: 35px !important;
     color: #fff !important;
     margin: 0 !important;
@@ -410,7 +410,7 @@ border: 2px solid #ffa726; }
     border-style: solid;
     border-color: #ECECEC;
     background-color: #ECECEC;
-    width: 19%;
+    width: 17%;
     height: 35px;
     color: #4B4B4B;
     margin: 0;
@@ -423,7 +423,7 @@ border: 2px solid #ffa726; }
     border-style: solid !important;
     border-color: #ffa726 !important;
     background-color: #ffa726 !important;
-    width: 19% !important;
+    width: 17% !important;
     height: 35px !important;
     color: #fff !important;
     margin: 0 !important;
@@ -438,7 +438,7 @@ border: 2px solid #ffa726; }
     background-color: #ECECEC;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    width: 19%;
+    width: 17%;
     height: 35px;
     color: #4B4B4B;
     margin: 0;
@@ -453,13 +453,28 @@ border: 2px solid #ffa726; }
     background-color: #ffa726 !important;
     border-top-right-radius: 5px !important;
     border-bottom-right-radius: 5px; !important
-    width: 19% !important;
+    width: 17% !important;
     height: 35px !important;
     color: #fff !important;
     margin: 0 !important;
     text-align: center !important;
     float: left !important;
     cursor: pointer !important;
+}
+
+.tab-toggle-container{
+    float: left;
+    width: 5%;
+    height: 35px;
+    margin-left: 3%;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #ffa726;
+}
+
+.tab-toggle-arrow{
+    width: 20px;
+    margin-top: 7.5px;
 }
 
 table{
