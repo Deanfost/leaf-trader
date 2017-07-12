@@ -191,7 +191,7 @@ body{
 .preset-header-container{
     width: 90%;
     padding-left: 7%;
-    height: 100%;
+    height: 50px;
     float: left;
     display: inline-block;
 }
@@ -201,16 +201,20 @@ body{
     font-size: 30px;
 }
 
+.meme{
+    
+}
+
 .preset-help-container{
     width: 10%;
     float: right;
-    height: 100%;
+    height: 50px;
     display: inline-block;
 }
 
 .extended-help{
-    width: 35%;
-    margin-top: 10px;
+    width: 40px;
+    margin-top: 5px;
     cursor: pointer;
     height: 100%;
 }
@@ -229,7 +233,7 @@ body{
 .extended-header-short-container{
     width: 32%;
     padding-left: 7%;
-    height: 100%;
+    height: 50px;
     float: left;
     display: inline-block;
     min-width: 340px;
@@ -239,7 +243,7 @@ body{
 .preset-header-loader-container{
     width: 55%;
     display: inline-block;
-    height: 100%;
+    height: 50px;
     margin-top: 9.6px;
 }
 
@@ -466,10 +470,11 @@ border: 2px solid #ffa726; }
     float: left;
     width: 5%;
     height: 35px;
-    margin-left: 3%;
+    margin-right: 2%;
     border-radius: 5px;
     text-align: center;
     background-color: #ffa726;
+    cursor: pointer;
 }
 
 .tab-toggle-arrow{

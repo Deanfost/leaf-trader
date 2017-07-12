@@ -218,6 +218,10 @@
                 });
                 
                 //Table tab clicks
+                $('#preset-tab-toggle').click(function(){
+                    //Apply and remove proper classes
+                    tabClick(0, 1);
+                });
                 $('#table-tab-1').click(function(){
                     //Apply and remove proper classes
                     tabClick(1, 1);
@@ -237,6 +241,10 @@
                 $('#table-tab-5').click(function(){
                     //Apply and remove proper classes
                     tabClick(5, 1);
+                });
+                $('#custom-tab-toggle').click(function(){
+                    //Apply and remove proper classes
+                    tabClick(0, 2);
                 });
                 $('#custom-table-tab-1').click(function(){
                     //Apply and remove proper classes
@@ -298,83 +306,110 @@
             });
             
             //Adds and removes proper classes from table tabs
+            //Track toggle button images
+            var img = 0;
+            var img1 = 0; 
             function tabClick(tab, card){
                 if(card === 1){
                     switch(tab){
-                    case 1:
-                        $('#table-tab-1').addClass('tab-left-active');
-                        $('#table-tab-2').removeClass('tab-mid-active');
-                        $('#table-tab-3').removeClass('tab-mid-active');
-                        $('#table-tab-4').removeClass('tab-mid-active');
-                        $('#table-tab-5').removeClass('tab-right-active');
-                        break;
-                    case 2:
-                        $('#table-tab-1').removeClass('tab-left-active');
-                        $('#table-tab-2').addClass('tab-mid-active');
-                        $('#table-tab-3').removeClass('tab-mid-active');
-                        $('#table-tab-4').removeClass('tab-mid-active');
-                        $('#table-tab-5').removeClass('tab-right-active');
-                        break;
-                    case 3:
-                        $('#table-tab-1').removeClass('tab-left-active');
-                        $('#table-tab-2').removeClass('tab-mid-active');
-                        $('#table-tab-3').addClass('tab-mid-active');
-                        $('#table-tab-4').removeClass('tab-mid-active');
-                        $('#table-tab-5').removeClass('tab-right-active');
-                        break;
-                    case 4:
-                        $('#table-tab-1').removeClass('tab-left-active');
-                        $('#table-tab-2').removeClass('tab-mid-active');
-                        $('#table-tab-3').removeClass('tab-mid-active');
-                        $('#table-tab-4').addClass('tab-mid-active');
-                        $('#table-tab-5').removeClass('tab-right-active');
-                        break;
-                    case 5:
-                        $('#table-tab-1').removeClass('tab-left-active');
-                        $('#table-tab-2').removeClass('tab-mid-active');
-                        $('#table-tab-3').removeClass('tab-mid-active');
-                        $('#table-tab-4').removeClass('tab-mid-active');
-                        $('#table-tab-5').addClass('tab-right-active');
-                        break;
+                        case 0: 
+                            if(img === 0){
+                                //Set img to down
+                                $('#preset-toggle-img').attr('src', '/front-end/img/arrow-white.png');  
+                                img = 1;
+                            }
+                            else{
+                                //Set img to up
+                                $('#preset-toggle-img').attr('src', '/front-end/img/arrow-top-white.png');   
+                                img = 0;
+                            }
+                            break;
+                        case 1:
+                            $('#table-tab-1').addClass('tab-left-active');
+                            $('#table-tab-2').removeClass('tab-mid-active');
+                            $('#table-tab-3').removeClass('tab-mid-active');
+                            $('#table-tab-4').removeClass('tab-mid-active');
+                            $('#table-tab-5').removeClass('tab-right-active');
+                            break;
+                        case 2:
+                            $('#table-tab-1').removeClass('tab-left-active');
+                            $('#table-tab-2').addClass('tab-mid-active');
+                            $('#table-tab-3').removeClass('tab-mid-active');
+                            $('#table-tab-4').removeClass('tab-mid-active');
+                            $('#table-tab-5').removeClass('tab-right-active');
+                            break;
+                        case 3:
+                            $('#table-tab-1').removeClass('tab-left-active');
+                            $('#table-tab-2').removeClass('tab-mid-active');
+                            $('#table-tab-3').addClass('tab-mid-active');
+                            $('#table-tab-4').removeClass('tab-mid-active');
+                            $('#table-tab-5').removeClass('tab-right-active');
+                            break;
+                        case 4:
+                            $('#table-tab-1').removeClass('tab-left-active');
+                            $('#table-tab-2').removeClass('tab-mid-active');
+                            $('#table-tab-3').removeClass('tab-mid-active');
+                            $('#table-tab-4').addClass('tab-mid-active');
+                            $('#table-tab-5').removeClass('tab-right-active');
+                            break;
+                        case 5:
+                            $('#table-tab-1').removeClass('tab-left-active');
+                            $('#table-tab-2').removeClass('tab-mid-active');
+                            $('#table-tab-3').removeClass('tab-mid-active');
+                            $('#table-tab-4').removeClass('tab-mid-active');
+                            $('#table-tab-5').addClass('tab-right-active');
+                            break;
                     }
                 }
                 else{
                     switch(tab){
-                    case 1:
-                        $('#custom-table-tab-1').addClass('tab-left-active');
-                        $('#custom-table-tab-2').removeClass('tab-mid-active');
-                        $('#custom-table-tab-3').removeClass('tab-mid-active');
-                        $('#custom-table-tab-4').removeClass('tab-mid-active');
-                        $('#custom-table-tab-5').removeClass('tab-right-active');
-                        break;
-                    case 2:
-                        $('#custom-table-tab-1').removeClass('tab-left-active');
-                        $('#custom-table-tab-2').addClass('tab-mid-active');
-                        $('#custom-table-tab-3').removeClass('tab-mid-active');
-                        $('#custom-table-tab-4').removeClass('tab-mid-active');
-                        $('#custom-table-tab-5').removeClass('tab-right-active');
-                        break;
-                    case 3:
-                        $('#custom-table-tab-1').removeClass('tab-left-active');
-                        $('#custom-table-tab-2').removeClass('tab-mid-active');
-                        $('#custom-table-tab-3').addClass('tab-mid-active');
-                        $('#custom-table-tab-4').removeClass('tab-mid-active');
-                        $('#custom-table-tab-5').removeClass('tab-right-active');
-                        break;
-                    case 4:
-                        $('#custom-table-tab-1').removeClass('tab-left-active');
-                        $('#custom-table-tab-2').removeClass('tab-mid-active');
-                        $('#custom-table-tab-3').removeClass('tab-mid-active');
-                        $('#custom-table-tab-4').addClass('tab-mid-active');
-                        $('#custom-table-tab-5').removeClass('tab-right-active');
-                        break;
-                    case 5:
-                        $('#custom-table-tab-1').removeClass('tab-left-active');
-                        $('#custom-table-tab-2').removeClass('tab-mid-active');
-                        $('#custom-table-tab-3').removeClass('tab-mid-active');
-                        $('#custom-table-tab-4').removeClass('tab-mid-active');
-                        $('#custom-table-tab-5').addClass('tab-right-active');
-                        break;
+                        case 0: 
+                            if(img1 === 0){
+                                    //Set img to down
+                                    $('#custom-toggle-img').attr('src', '/front-end/img/arrow-white.png');  
+                                    img1 = 1;
+                                }
+                                else{
+                                    //Set img to up
+                                    $('#custom-toggle-img').attr('src', '/front-end/img/arrow-top-white.png');   
+                                    img1 = 0;
+                                }   
+                            break;
+                        case 1:
+                            $('#custom-table-tab-1').addClass('tab-left-active');
+                            $('#custom-table-tab-2').removeClass('tab-mid-active');
+                            $('#custom-table-tab-3').removeClass('tab-mid-active');
+                            $('#custom-table-tab-4').removeClass('tab-mid-active');
+                            $('#custom-table-tab-5').removeClass('tab-right-active');
+                            break;
+                        case 2:
+                            $('#custom-table-tab-1').removeClass('tab-left-active');
+                            $('#custom-table-tab-2').addClass('tab-mid-active');
+                            $('#custom-table-tab-3').removeClass('tab-mid-active');
+                            $('#custom-table-tab-4').removeClass('tab-mid-active');
+                            $('#custom-table-tab-5').removeClass('tab-right-active');
+                            break;
+                        case 3:
+                            $('#custom-table-tab-1').removeClass('tab-left-active');
+                            $('#custom-table-tab-2').removeClass('tab-mid-active');
+                            $('#custom-table-tab-3').addClass('tab-mid-active');
+                            $('#custom-table-tab-4').removeClass('tab-mid-active');
+                            $('#custom-table-tab-5').removeClass('tab-right-active');
+                            break;
+                        case 4:
+                            $('#custom-table-tab-1').removeClass('tab-left-active');
+                            $('#custom-table-tab-2').removeClass('tab-mid-active');
+                            $('#custom-table-tab-3').removeClass('tab-mid-active');
+                            $('#custom-table-tab-4').addClass('tab-mid-active');
+                            $('#custom-table-tab-5').removeClass('tab-right-active');
+                            break;
+                        case 5:
+                            $('#custom-table-tab-1').removeClass('tab-left-active');
+                            $('#custom-table-tab-2').removeClass('tab-mid-active');
+                            $('#custom-table-tab-3').removeClass('tab-mid-active');
+                            $('#custom-table-tab-4').removeClass('tab-mid-active');
+                            $('#custom-table-tab-5').addClass('tab-right-active');
+                            break;
                     }
                 }
             }
@@ -586,10 +621,10 @@
                         </div>
                         <!-- Preset desc header -->
                         <div class="row" style="margin-top:10px;">
-                            <div class="preset-header-container">
+                            <div class="preset-header-container meme">
                                 <h5 class="preset-header">Preset Description</h5>
                             </div>
-                            <div class="preset-help-container">
+                            <div class="preset-help-container meme">
                                 <img class="responsive-img extended-help" src="/front-end/img/help-orange.png">
                             </div>
                         </div>
@@ -624,6 +659,9 @@
                         <div class="row" style="padding-left:7%;">
                             <!-- Table modes -->
                             <div class="row" style="width: 80%; float:left;">
+                                <div class="tab-toggle-container" id="preset-tab-toggle">
+                                    <img class="responsive-img tab-toggle-arrow" src="/front-end/img/arrow-top-white.png" id="preset-toggle-img">
+                                </div>
                                 <!-- Make sure first tab has both classes so that it is first active and functions properly -->
                                 <div class="tab-left tab-left-active" id="table-tab-1">
                                     <p class="tab-text">Stock</p>
@@ -640,11 +678,7 @@
                                 <div class="tab-right" id="table-tab-5">
                                     <p class="tab-text">Market Cap</p>
                                 </div>
-                                <div class="tab-toggle-container">
-                                    <img class="responsive-img tab-toggle-arrow" src="/front-end/img/arrow-top.png">
-                                </div>
                             </div>
-                            
                             
                             <!-- Table -->
                             <table class="striped">
@@ -930,7 +964,10 @@
                             </div>
                             
                             <!-- Table modes -->
-                            <div class="row" style="width: 65%; float:left;">
+                            <div class="row" style="width: 80%; float:left;">
+                                <div class="tab-toggle-container" id="custom-tab-toggle">
+                                    <img class="responsive-img tab-toggle-arrow" src="/front-end/img/arrow-top-white.png" id="custom-toggle-img">
+                                </div>
                                 <!-- Make sure first tab has both classes so that it is first active and functions properly -->
                                 <div class="tab-left tab-left-active" id="custom-table-tab-1">
                                     <p class="tab-text">Stock</p>
