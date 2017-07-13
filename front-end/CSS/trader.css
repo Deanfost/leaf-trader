@@ -5,7 +5,7 @@
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     width: 25%;
-    height: 50%;
+    height: 30%;
     margin-left:25%;
 }
 
@@ -16,11 +16,11 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     width: 25%;
-    height: 50%;
+    height: 30%;
 }
 
 #toggle-bar{
-    height: 85px;
+    height: 150px;
     margin-left: 300px;
     width: 1024px;
     position: fixed;
@@ -93,7 +93,7 @@
 #card-section{
     margin-left: 300px;
     padding-bottom: 2vh;
-    margin-top: 130px;
+    margin-top: 180px;
     z-index: 10;
 }
 
@@ -105,7 +105,7 @@
 .card{
     border-bottom: solid;
     border-radius: 5px;
-    border-top-color: #66bb6a;
+    border-top-color: #03a9f4;
     border-bottom-color: white;
     min-height: 200px;
     height: auto;
@@ -114,7 +114,7 @@
 
 .card-header{
     border-top: solid;
-    border-top-color: #66bb6a;
+    border-top-color: #03a9f4;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 100px;
