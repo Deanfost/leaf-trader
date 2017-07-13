@@ -19,19 +19,19 @@
         <!--On DOM ready -->
         <script>
             $(document).ready(function(){
-                //Resize the toggle bar on DOM ready
+                //Resize the top bars on DOM ready
                 var windowWidth = window.innerWidth;
                 //Viewports greater than 1200px wide
                 if(windowWidth >= 1200){
-                    var toggleBarWidth = $('#toggle-bar').width();
+                    var toggleBarWidth = $('#top-bar').width();
                     var diff = windowWidth - toggleBarWidth - 300;
-                    $('#toggle-bar').width(toggleBarWidth + diff);
+                    $('#top-bar').width(toggleBarWidth + diff);
                 }
                 //Viewports smaller than 1200px wide
                 else if(windowWidth < 1200 & windowWidth >= 800){
-                    var toggleBarWidth = $('#toggle-bar').width();
+                    var toggleBarWidth = $('.top-bar').width();
                     var diff = windowWidth - toggleBarWidth - 150;
-                    $('#toggle-bar').width(toggleBarWidth + diff);
+                    $('#top-bar').width(toggleBarWidth + diff);
                 }
                 
                 //Resize the toggle bar on resize
@@ -39,15 +39,15 @@
                     var windowWidth = window.innerWidth;
                     //Viewports greater than 1200px wide
                     if(windowWidth >= 1200){
-                        var toggleBarWidth = $('#toggle-bar').width();
+                        var toggleBarWidth = $('.top-bar').width();
                         var diff = windowWidth - toggleBarWidth - 300;
-                        $('#toggle-bar').width(toggleBarWidth + diff);
+                        $('#top-bar').width(toggleBarWidth + diff);
                     }
                     //Viewports smaller than 1200px wide
                     else if(windowWidth < 1200 & windowWidth >= 800){
-                        var toggleBarWidth = $('#toggle-bar').width();
+                        var toggleBarWidth = $('.top-bar').width();
                         var diff = windowWidth - toggleBarWidth - 150;
-                        $('#toggle-bar').width(toggleBarWidth + diff);
+                        $('#top-bar').width(toggleBarWidth + diff);
                     }
                 });
                 
@@ -56,9 +56,9 @@
                 $(window).scroll(function(){
                     $('#side-nav').css('left', origPos1.left - $(this).scrollLeft());
                 });
-                var origPos2 = $('#toggle-bar').position();
+                var origPos2 = $('.top-bar').position();
                 $(window).scroll(function(){
-                    $('#toggle-bar').css('left', origPos2.left - $(this).scrollLeft());
+                    $('#top-bar').css('left', origPos2.left - $(this).scrollLeft());
                 });
                 
                 //Display modal when clicking on card help button
@@ -105,11 +105,11 @@
             <!-- Side nav -->
             <div class="z-depth-1" id="side-nav">
                 <!-- Sidenav header -->
-                <div class="col s12 sidenav-top light-blue darken-1 z-depth-1" style="text-align:center;" id="sidenav-header">
+                <div class="col s12 sidenav-top green z-depth-1" style="text-align:center;" id="sidenav-header">
                     <div class="valign-wrapper" style="display:inline-block; position:realtive; transform:translateY(50%); width:auto;">
                         <a href="landing.html">
                             <div class="valign-wrapper">
-                                <img class="responsive-img circle z-depth-1" src="/front-end/img/logo-blue.png" style="margin-right:4%;" id="sidenav-img">
+                                <img class="responsive-img circle z-depth-1" src="/front-end/img/logo-green.png" style="margin-right:4%;" id="sidenav-img">
                                 <h5 style="color:white;" id="sidenav-title">Leaf Trader</h5>
                             </div>
                         </a>
@@ -125,8 +125,8 @@
                     </div>
                     <div class="valign-wrapper grey lighten-4 sidenav-option" id="nav-item-2">
                         <div class="valign-wrapper sidenav-item-wrapper">
-                            <img class="responsive-img sidenav-item-img" src="/front-end/img/money-blue.png">
-                            <h5 class="sidenav-item" style="color:#03a9f4;">Trader</h5>
+                            <img class="responsive-img sidenav-item-img" src="/front-end/img/money-green-light.png">
+                            <h5 class="sidenav-item" style="color:#66bb6a;">Trader</h5>
                         </div>
                     </div>
                     <div class="valign-wrapper sidenav-option" id="nav-item-3">
@@ -149,7 +149,7 @@
                     </div>
                 </div>  
                 <!-- Sidenav footer --> 
-                <div class="col s12 light-blue darken-1 valign-wrapper" id="sidenav-footer">
+                <div class="col s12 green valign-wrapper" id="sidenav-footer">
                     <div class="valign-wrapper" style="margin:auto; width:40%;" id="sidenav-attr-wrapper">
                         <img class="responsive-img" src="/front-end/img/note.png" id="sidenav-attr-img" style="margin-right:2%;">
                         <h5 id="sidenav-attr" style="color:white;">Attribution</h5>
@@ -158,24 +158,37 @@
             </div>
         </div>
         
-        <!-- Toggle bar -->
-        <div class="z-depth-1 light-blue darken-1 valign-wrapper row" id="toggle-bar">
-            <!-- Left toggle button -->
-            <a class="toggle-active valign-wrapper" href="screener-saved.html">
-                <h5 class="toggle-text" style="margin: 0 auto; color:#4B4B4B;">Saved</h5>
-            </a>
-            <!-- Right toggle button -->
-            <a class="toggle-inactive valign-wrapper" href="screener-create.html">
-               <h5 class="toggle-text" style="margin: 0 auto; color:#fff;">Create</h5>
-            </a>
+        <!-- Top bar -->
+        <div class="z-depth-1 green row top-bar" id="top-bar">
+            <div class="row valign-wrapper" style="height:100%;">
+                
+            </div>
         </div>
         
-        <!-- Card -->
+        <!-- Mode bar and card section -->
         <div id="card-section">
+            
+            <!-- Mode toggle buttons -->
+            <div class="row valign-wrapper" id="mode-tab-container">
+                <a class="tab-left-active valign-wrapper" id="mode-1">
+                    <h5 class="toggle-text" style="margin: 0 auto;">Holdings</h5>
+                </a>
+                <a class="tab-mid valign-wrapper" id="mode-2">
+                    <h5 class="toggle-text" style="margin: 0 auto;">Screener</h5>
+                </a>
+                <a class="tab-mid valign-wrapper" id="mode-3">
+                    <h5 class="toggle-text" style="margin: 0 auto;">Watchlist</h5>
+                </a>
+                <a class="tab-right valign-wrapper" id="mode-4">
+                    <h5 class="toggle-text" style="margin: 0 auto;">Related</h5>
+                </a>
+            </div>
+            
+            <!-- Card -->
             <div id="card-container">
                 <div class="z-depth-1 card">
                     <!-- Card header -->
-                    <div class="light-blue card-header row" style="padding-left:2%; padding-right:2%; text-align:initial;">
+                    <div class="green lighten-1 card-header row" style="padding-left:2%; padding-right:2%; text-align:initial;">
                         <div class="col s10 valign-wrapper" style="height:100%;">
                             <h4 class="card-header-text truncate">Stocks - Undervalued(Preset)</h4>
                         </div>
