@@ -70,9 +70,30 @@
                     $(this).addClass('grey lighten-4');
                 });
                 $('.sidenav-option').mouseleave(function(){
-                    if($(this).attr('id') !== 'current-option'){
+                    if($(this).attr('id') !== 'nav-item-3'){
                         $(this).removeClass('grey lighten-4');
                     }
+                });
+                //Detect sidenav item clicks
+                $('#nav-item-1').click(function(){
+                    //Go to dashboard
+                   
+                });
+                $('#nav-item-2').click(function(){
+                    //Go to trader
+                    window.location.href = "/front-end/HTML/trader.html";
+                });
+                $('#nav-item-3').click(function(){
+                    //Go to screener
+                    window.location.href = "/front-end/HTML/screener-saved.html";
+                });
+                $('#nav-item-4').click(function(){
+                    //Go to tutorials
+                    
+                });
+                $('#nav-item-5').click(function(){
+                    //Sign out
+                    
                 });
             });
         </script>
@@ -96,31 +117,31 @@
                 </div>
                 <!-- Sidenav items -->
                 <div class="col s12" style="text-align:center; padding-right:0%; padding-left:0%; padding-top:.5%;" id="sidenav-item-wrapper">
-                    <div class="valign-wrapper sidenav-option">
+                    <div class="valign-wrapper sidenav-option" id="nav-item-1">
                         <div class="valign-wrapper sidenav-item-wrapper">
                             <img class="responsive-img sidenav-item-img" src="/front-end/img/bullish.png">
                             <h5 class="sidenav-item">Dashboard</h5>
                         </div>
                     </div>
-                    <div class="valign-wrapper sidenav-option">
+                    <div class="valign-wrapper sidenav-option" id="nav-item-2">
                         <div class="valign-wrapper sidenav-item-wrapper">
                             <img class="responsive-img sidenav-item-img" src="/front-end/img/money.png">
                             <h5 class="sidenav-item">Trader</h5>
                         </div>
                     </div>
-                    <div class="valign-wrapper grey lighten-4 sidenav-option" id="current-option">
+                    <div class="valign-wrapper grey lighten-4 sidenav-option" id="nav-item-3">
                         <div class="valign-wrapper sidenav-item-wrapper">
                             <img class="responsive-img sidenav-item-img" src="/front-end/img/filter-orange.png">
                             <h5 class="sidenav-item" style="color:#ffa726;">Screeners</h5>
                         </div>
                     </div>
-                    <div class="valign-wrapper sidenav-option">
+                    <div class="valign-wrapper sidenav-option" id="nav-item-4">
                         <div class="valign-wrapper sidenav-item-wrapper">
                             <img class="responsive-img sidenav-item-img" src="/front-end/img/book.png">
                             <h5 class="sidenav-item">Tutorials</h5>
                         </div>
                     </div>
-                    <div class="valign-wrapper sidenav-option">
+                    <div class="valign-wrapper sidenav-option" id="nav-item-5">
                         <div class="valign-wrapper sidenav-item-wrapper">
                             <img class="responsive-img sidenav-item-img" src="/front-end/img/user.png">
                             <h5 class="sidenav-item">Sign out</h5>

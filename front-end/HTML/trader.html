@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Trader</title>
+        <title>Saved Screeners</title>
 
         <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,7 +11,7 @@
         <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"  media="screen,projection"/>
 
         <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
     
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -19,186 +19,174 @@
         <!--On DOM ready -->
         <script>
             $(document).ready(function(){
-                $('#search').click(function(){  
-                    if($('#search').val() === ""){
-                        $('#search').val("AAPL");
+                //Resize the toggle bar on DOM ready
+                var windowWidth = window.innerWidth;
+                //Viewports greater than 1200px wide
+                if(windowWidth >= 1200){
+                    var toggleBarWidth = $('#toggle-bar').width();
+                    var diff = windowWidth - toggleBarWidth - 300;
+                    $('#toggle-bar').width(toggleBarWidth + diff);
+                }
+                //Viewports smaller than 1200px wide
+                else if(windowWidth < 1200 & windowWidth >= 800){
+                    var toggleBarWidth = $('#toggle-bar').width();
+                    var diff = windowWidth - toggleBarWidth - 150;
+                    $('#toggle-bar').width(toggleBarWidth + diff);
+                }
+                
+                //Resize the toggle bar on resize
+                $(window).resize(function() {
+                    var windowWidth = window.innerWidth;
+                    //Viewports greater than 1200px wide
+                    if(windowWidth >= 1200){
+                        var toggleBarWidth = $('#toggle-bar').width();
+                        var diff = windowWidth - toggleBarWidth - 300;
+                        $('#toggle-bar').width(toggleBarWidth + diff);
                     }
+                    //Viewports smaller than 1200px wide
+                    else if(windowWidth < 1200 & windowWidth >= 800){
+                        var toggleBarWidth = $('#toggle-bar').width();
+                        var diff = windowWidth - toggleBarWidth - 150;
+                        $('#toggle-bar').width(toggleBarWidth + diff);
+                    }
+                });
+                
+                //Horizontally scroll the fixed side nav and toggle bar correctly
+                var origPos1 = $('#side-nav').position();
+                $(window).scroll(function(){
+                    $('#side-nav').css('left', origPos1.left - $(this).scrollLeft());
+                });
+                var origPos2 = $('#toggle-bar').position();
+                $(window).scroll(function(){
+                    $('#toggle-bar').css('left', origPos2.left - $(this).scrollLeft());
+                });
+                
+                //Display modal when clicking on card help button
+                $('#card-help').click(function(){
+                    
+                }); 
+                //Mouse over sidenav events
+                $('.sidenav-option').mouseenter(function(){                    
+                    $(this).addClass('grey lighten-4');
+                });
+                $('.sidenav-option').mouseleave(function(){
+                    if($(this).attr('id') !== 'nav-item-2'){
+                        $(this).removeClass('grey lighten-4');
+                    }
+                });
+                //Detect sidenav item clicks
+                $('#nav-item-1').click(function(){
+                    //Go to dashboard
+                   
+                });
+                $('#nav-item-2').click(function(){
+                    //Go to trader
+                    window.location.href = "/front-end/HTML/trader.html";
+                });
+                $('#nav-item-3').click(function(){
+                    //Go to screener
+                    window.location.href = "/front-end/HTML/screener-saved.html";
+                });
+                $('#nav-item-4').click(function(){
+                    //Go to tutorials
+                    
+                });
+                $('#nav-item-5').click(function(){
+                    //Sign out
+                    
                 });
             });
         </script>
-        <link rel="stylesheet" type="text/css" href="trader.css">
+        <link rel="stylesheet" type="text/css" href="/front-end/CSS/trader.css">
     </head>
     
     <body>
-        <!-- Navbar -->
-        <div class="navbar-fixed">
-            <nav>
-                <div class="nav-wrapper light-blue">
-                  <a href="#" class="brand-logo" style="margin-left:12px;">Logo</a>
-                  <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li class="active"><a href="collapsible.html">JavaScript</a></li>
-                  </ul>
-                </div>
-            </nav>
-        </div>
-        
-        <!-- Blue section -->
-        <div class="section light-blue lighten-1 z-depth-1" style="height:760px;">
-            <div class="container">
-                <nav class="white">
-                    <div class="nav-wrapper">
-                        <form>
-                            <div class="input-field">
-                                <input id="search" type="search" required>
-                                <label class="label-icon" for="search">
-                                    <i class="material-icons" style="color:#757575;">search</i>
-                                </label>
-                                <i class="material-icons">close</i>
+        <div class="row">
+            <!-- Side nav -->
+            <div class="z-depth-1" id="side-nav">
+                <!-- Sidenav header -->
+                <div class="col s12 sidenav-top green z-depth-1" style="text-align:center;" id="sidenav-header">
+                    <div class="valign-wrapper" style="display:inline-block; position:realtive; transform:translateY(50%); width:auto;">
+                        <a href="landing.html">
+                            <div class="valign-wrapper">
+                                <img class="responsive-img circle z-depth-1" src="/front-end/img/logo-green.png" style="margin-right:4%;" id="sidenav-img">
+                                <h5 style="color:white;" id="sidenav-title">Leaf Trader</h5>
                             </div>
-                        </form>
-                    </div>    
-                </nav>
-                
-                <!-- Headers -->
-                <div class="section">
-                    <h4 style="color:#ffffff;">Apple Inc. - AAPL</h4>
-                    <h5 style="color:#ffffff;">NASDAQ Exchange</h5>
-                </div>
-                
-                <!-- Chart widget -->
-                <div class="section" style="height:540px;">
-                    <!-- TradingView Widget BEGIN -->
-                    <script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
-                    <script type="text/javascript">
-                        new TradingView.widget({
-                          "autosize": true,
-                          "symbol": "NASDAQ:AAPL",
-                          "interval": "D",
-                          "timezone": "Etc/UTC",
-                          "theme": "White",
-                          "style": "1",
-                          "locale": "en",
-                          "toolbar_bg": "#ffffff",
-                          "enable_publishing": false,
-                          "hideideas": true
-                        });
-                    </script>
-                    <!-- TradingView Widget END -->
-                </div>
-                
-            </div>
-        </div>
-        
-        <!-- Total balance -->
-        <div class="section">
-            <div class="container z-depth-1">
-                <div class="section">
-                    <h4 class="center-align" style="color:#757575">Total balance</h4>
-                </div>
-                <div class="divider"></div>
-                <div class="section">
-                    <h5 class="center-align" style="color:#29b6f6;" id="total-balance">$14,405.45</h5>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Buy sell, and limit -->
-        <div class="section">
-            <div class="row">
-                <div class="container z-depth-1">
-                    <ul class="tabs" style="">
-                        <li class="tab col s4"><a class="active" href="#section-buy" style="color:#29b6f6;">Buy</a></li>
-                        <li class="tab col s4"><a href="#section-sell" style="color:#29b6f6;">Sell</a></li>
-                        <li class="tab col s4"><a href="#section-limit" style="color:#29b6f6;">Limit</a></li>
-                        <div class="indicator light-blue darken-1" style="z-index:1"></div>
-                    </ul>
-                </div>
-            </div>
-            <!-- Buy -->
-            <div class="section" id="section-buy">
-                <div class="container">
-                    <h5 style="color:#757575;">Buy shares</h5>
-                    <h6 style="color:#29b6f6;">Owned shares - 34</h6>
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s7">
-                                  <input id="buy-shares" type="text" class="validate">
-                                  <label for="buy-shares">Buying power - 102 shares</label>
-                            </div>
-                        </div>
-
-                         <div class="row">
-                            <div class="input-field col s7">
-                                <input id="total-amount" type="text" class="validate">
-                                <label for="total-amount">Total</label>
-                                <a class="waves-effect waves-light btn-large col s5 light-blue lighten-1">Buy</a>
-                            </div>
-                        </div>
-                    </form>    
-
-                </div>
-            </div>
-            <!-- Sell -->
-            <div class="section" id="section-sell">
-                <div class="container">
-                    <h5 style="color:#757575;">Sell shares</h5>
-                    <h6 style="color:#29b6f6;">Owned shares - 34</h6>
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s7">
-                                  <input id="buy-shares" type="text" class="validate">
-                                  <label for="buy-shares">Shares</label>
-                            </div>
-                        </div>
-
-                         <div class="row">
-                            <div class="input-field col s7">
-                                <input id="total-amount" type="text" class="validate">
-                                <label for="total-amount">Total</label>
-                                <a class="waves-effect waves-light btn-large col s5 light-blue lighten-1">Sell</a>
-                            </div>
-                        </div>
-                    </form>     
-                </div>
-            </div>
-            <!-- Limit order -->
-            <div class="section" id="section-limit">
-                <div class="container">
-                    <h5 style="color:#757575;">Limit order</h5>
-                    <div class="row">
-                        <h6 class="col s2" style="color:#757575;">Buy shares</h6>
-                        <h6 class="col s2 offset-s5" style="color:#757575;">Sell shares</h6>
+                        </a>
                     </div>
-
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s5">
-                                  <input id="buy-shares" type="text" class="validate">
-                                  <label for="buy-shares">Shares</label>
-                            </div>
-
-                            <div class="input-field col s5 offset-s2">
-                                  <input id="buy-shares" type="text" class="validate">
-                                  <label for="buy-shares">Shares</label>
-                            </div>
+                </div>
+                <!-- Sidenav items -->
+                <div class="col s12" style="text-align:center; padding-right:0%; padding-left:0%; padding-top:.5%;" id="sidenav-item-wrapper">
+                    <div class="valign-wrapper sidenav-option" id="nav-item-1">
+                        <div class="valign-wrapper sidenav-item-wrapper">
+                            <img class="responsive-img sidenav-item-img" src="/front-end/img/bullish.png">
+                            <h5 class="sidenav-item">Dashboard</h5>
                         </div>
-
-                         <div class="row">
-                            <div class="input-field col s5">
-                                <input id="total-amount" type="text" class="validate">
-                                <label for="total-amount">Total</label>
-                                <a class="waves-effect waves-light btn-large col s5 light-blue lighten-1">Buy</a>
-                            </div>
-
-                             <div class="input-field col s5 offset-s2">
-                                <input id="total-amount" type="text" class="validate">
-                                <label for="total-amount">Total</label>
-                                <a class="waves-effect waves-light btn-large col s5 light-blue lighten-1">Sell</a>
-                            </div>
+                    </div>
+                    <div class="valign-wrapper grey lighten-4 sidenav-option" id="nav-item-2">
+                        <div class="valign-wrapper sidenav-item-wrapper">
+                            <img class="responsive-img sidenav-item-img" src="/front-end/img/money-green-light.png">
+                            <h5 class="sidenav-item" style="color:#66bb6a;">Trader</h5>
                         </div>
-                    </form>     
+                    </div>
+                    <div class="valign-wrapper sidenav-option" id="nav-item-3">
+                        <div class="valign-wrapper sidenav-item-wrapper">
+                            <img class="responsive-img sidenav-item-img" src="/front-end/img/filter.png">
+                            <h5 class="sidenav-item">Screeners</h5>
+                        </div>
+                    </div>
+                    <div class="valign-wrapper sidenav-option" id="nav-item-4">
+                        <div class="valign-wrapper sidenav-item-wrapper">
+                            <img class="responsive-img sidenav-item-img" src="/front-end/img/book.png">
+                            <h5 class="sidenav-item">Tutorials</h5>
+                        </div>
+                    </div>
+                    <div class="valign-wrapper sidenav-option" id="nav-item-5">
+                        <div class="valign-wrapper sidenav-item-wrapper">
+                            <img class="responsive-img sidenav-item-img" src="/front-end/img/user.png">
+                            <h5 class="sidenav-item">Sign out</h5>
+                        </div>
+                    </div>
+                </div>  
+                <!-- Sidenav footer --> 
+                <div class="col s12 green valign-wrapper" id="sidenav-footer">
+                    <div class="valign-wrapper" style="margin:auto; width:40%;" id="sidenav-attr-wrapper">
+                        <img class="responsive-img" src="/front-end/img/note.png" id="sidenav-attr-img" style="margin-right:2%;">
+                        <h5 id="sidenav-attr" style="color:white;">Attribution</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Toggle bar -->
+        <div class="z-depth-1 green valign-wrapper row" id="toggle-bar">
+            <!-- Left toggle button -->
+            <a class="toggle-active valign-wrapper" href="screener-saved.html">
+                <h5 class="toggle-text" style="margin: 0 auto; color:#4B4B4B;">Saved</h5>
+            </a>
+            <!-- Right toggle button -->
+            <a class="toggle-inactive valign-wrapper" href="screener-create.html">
+               <h5 class="toggle-text" style="margin: 0 auto; color:#fff;">Create</h5>
+            </a>
+        </div>
+        
+        <!-- Card -->
+        <div id="card-section">
+            <div id="card-container">
+                <div class="z-depth-1 card">
+                    <!-- Card header -->
+                    <div class="green lighten-1 card-header row" style="padding-left:2%; padding-right:2%; text-align:initial;">
+                        <div class="col s10 valign-wrapper" style="height:100%;">
+                            <h4 class="card-header-text truncate">Stocks - Undervalued(Preset)</h4>
+                        </div>
+                        <div class="col s2 valign-wrapper" style="height:100%;">
+                            <img class="responsive-img card-help" src="/front-end/img/Help.png" style="margin-left:82%; cursor: pointer;">
+                        </div>
+                    </div>
+                    <!-- Card content - screener items -->
+                    <div class="row" id="list-container" style="padding-left:1%; padding-right:1%;">
+                        
+                    </div>
                 </div>
             </div>
         </div>
