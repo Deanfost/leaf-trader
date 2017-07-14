@@ -13,7 +13,7 @@ class Stock(models.Model):
     ticker = models.CharField(max_length = 10)
     name = models.CharField(max_length = 128)
     current_price = models.FloatField(default = 0.0, null = True)
-    previous_price = models.FloatField(default = 0.0, null = True) # this is how we are going to calculate the price change 
+    previous_price = models.FloatField(default = 0.0, null = True) # this is how we are going to calculate the price change
     market_cap = models.CharField(max_length = 20, null = True)
     sector = models.CharField(max_length = 128)
     PE_ratio = models.FloatField(default = 0.0, null = True)
@@ -40,6 +40,16 @@ class Stock(models.Model):
 
     def __unicode__(self):
         return self.ticker
+
+    def as_json(self):
+        return dict(
+            ticker = self.ticker,
+            name = self.name,
+            current_price = self.current_price,
+            previous_price = self.previous_price,
+            market_cap = self.market_cap, 
+
+        )
 
 class test(models.Model):
     name = models.CharField(max_length = 10 )

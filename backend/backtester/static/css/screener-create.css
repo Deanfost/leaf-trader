@@ -135,21 +135,31 @@ body{
     font-size: 24px;
 }
 
-.card-help{ 
+.card-help{
     height: 30% !important;
 }
 
+.rounded-card{
+    border-radius: 10px;
+}
+
+/* Preset card */
 .carousel{
     height: 210px;
 }
 
-.carousel-arrow{
-    width: 35%;
-    cursor: pointer;
+.carousel-item{
+    cursor: pointer !important;
 }
 
-.carousel-card{
-    border-radius: 10px;
+.carousel-arrow-container{
+    text-align: center !important;
+    padding-top: 75px !important;
+}
+
+.carousel-arrow{
+    width: 30%;
+    cursor: pointer;
 }
 
 .carousel-card-img{
@@ -159,6 +169,334 @@ body{
 .carousel-card-text{
     color: #4B4B4B !important;
     text-align: center !important;
+}
+
+.carousel-card-active{
+    border-color: #ffa726 !important;
+    border-width: 1px !important;
+    border-style: solid;
+}
+
+/* Intitially hide expanded preset card */
+#preset-expanded{
+    display: none;
+}
+
+#collapse-arrow{
+    width: 3%;
+    margin-left: 7%;
+    cursor: pointer;
+    color : black;
+}
+
+.preset-header-container{
+    width: 90%;
+    padding-left: 7%;
+    height: 100%;
+    float: left;
+    display: inline-block;
+}
+
+.preset-header{
+    color: #000;
+    font-size: 30px;
+}
+
+.preset-help-container{
+    width: 10%;
+    float: right;
+    height: 100%;
+    display: inline-block;
+}
+
+.extended-help{
+    width: 35%;
+    margin-top: 10px;
+    cursor: pointer;
+    height: 100%;
+}
+
+.preset-description{
+    width: 85.5%;
+    text-align: left;
+    color: #4B4B4B;
+    font-size: 18px;
+    display: inline-block;
+    margin-top: -10px;
+    margin-bottom: 0px;
+    height: auto;
+}
+
+.extended-header-short-container{
+    width: 32%;
+    padding-left: 7%;
+    height: 100%;
+    float: left;
+    display: inline-block;
+    min-width: 340px;
+    max-width: 380px;
+}
+
+.preset-header-loader-container{
+    width: 55%;
+    display: inline-block;
+    height: 100%;
+    margin-top: 9.6px;
+}
+
+/* Custom spinner color */
+.spinner-layer{
+    border-color: #ffa726 !important;
+}
+
+/* Extended card positive button */
+.positive-button{
+    float: right;
+    margin-right: 6%;
+    text-transform: none;
+    width: 20%;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-bottom: 2px;
+}
+
+/* Custom cards */
+#custom-expanded{
+    margin-top: 28px;
+    height: auto;
+    display: none;
+}
+
+.card-side-header{
+    width: 20%;
+    height: 100%;
+    float: left;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.card-side-content{
+    width: 100%;
+    text-align: center;
+}
+
+.card-side-img{
+    width: 28%;
+    margin: 0;
+}
+
+.card-body{
+    width: 80%;
+    height: 100%;
+    float: right;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 30px;
+}
+
+.card-side-title{
+    color: #fff;
+    font-size: 18px;
+    margin: 0;
+}
+
+.checkbox-orange[type="checkbox"].filled-in:checked + label:after{
+     border: 2px solid #ffa726;
+     background-color: #ffa726;
+}
+
+.sector-label{
+    color: #7A7878;
+    font-size: 16px !important;
+    max-width: 85%;
+}
+
+.sector-item{
+    display: inline-block;
+    width: 32.5%;
+    padding-right: 2%;
+}
+
+.sector-item-img{
+    width: 20px;
+    float: right;
+}
+
+.ratio-wrapper{
+    margin-bottom: 0px;
+}
+
+.ratio-label{
+    font-size: 14px;
+    color: #7A7878;
+}
+
+/* label focus color */
+.input-field input:focus + label {
+    color: #ffa726 !important;
+}
+/* label underline focus color */
+.row .input-field input:focus {
+    border-bottom: 1px solid #ffa726 !important;
+    box-shadow: 0 1px 0 0 #ffa726 !important
+}
+
+/* Remove number input spinners */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Change radio button color */
+[type="radio"].with-gap:checked + label:before {
+border: 2px solid #ffa726; }
+
+[type="radio"].with-gap:checked + label:after {
+    border: 2px solid #ffa726;
+    background-color: #ffa726;
+}
+
+#screener-name-container{
+    width: 70%;
+    float: left;
+    padding-top: 1.7%;
+    margin-bottom: 7px;
+}
+
+#create-button{
+    float: right;
+    margin-top: 25px;
+    width: 30%;
+    text-transform: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/* Table organization tabs */
+.tab-text{
+    margin-top: 3.5px;
+}
+
+.tab-left{
+    border-style: solid;
+    border-color: #ECECEC;
+    background-color: #ECECEC;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 19%;
+    height: 35px;
+    color: #4B4B4B;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+
+.tab-left-active{
+    border-style: solid !important;
+    border-color: #ffa726 !important;
+    background-color: #ffa726 !important;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    width: 19% !important;
+    height: 35px !important;
+    color: #fff !important;
+    margin: 0 !important;
+    text-align: center !important;
+    float: left !important;
+    cursor: pointer !important;
+}
+
+.tab-mid{
+    border-style: solid;
+    border-color: #ECECEC;
+    background-color: #ECECEC;
+    width: 19%;
+    height: 35px;
+    color: #4B4B4B;
+    margin: 0;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+
+.tab-mid-active{
+    border-style: solid !important;
+    border-color: #ffa726 !important;
+    background-color: #ffa726 !important;
+    width: 19% !important;
+    height: 35px !important;
+    color: #fff !important;
+    margin: 0 !important;
+    text-align: center !important;
+    float: left !important;
+    cursor: pointer !important;
+}
+
+.tab-right{
+    border-style: solid;
+    border-color: #ECECEC;
+    background-color: #ECECEC;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 19%;
+    height: 35px;
+    color: #4B4B4B;
+    margin: 0;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+
+.tab-right-active{
+    border-style: solid !important;
+    border-color: #ffa726 !important;
+    background-color: #ffa726 !important;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px; !important
+    width: 19% !important;
+    height: 35px !important;
+    color: #fff !important;
+    margin: 0 !important;
+    text-align: center !important;
+    float: left !important;
+    cursor: pointer !important;
+}
+
+table{
+    width: 93%;
+    margin-top: 20px;
+    max-height: 400px;
+}
+
+tr{
+    height: 50px;
+}
+
+tbody{
+    display: block;
+    max-height: 350px;
+    overflow: auto;
+}
+
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+
+/* Remove scrollbar width from thread */
+thread{
+    width: calc(100% - 1em);
+}
+
+/* Colors for change column in table */
+.up-color{
+    color: #388E3C;
+}
+
+.down-color{
+    color: #D32F2F;
 }
 
 /* Screens smaller than 1200 */
@@ -190,6 +528,12 @@ body{
     }
     #card-section{
         margin-left: 150px;
+    }
+    .carousel-arrow-container{
+        padding-top: 85px !important;
+    }
+    .positive-button{
+        font-size: 16px;
     }
 }
 

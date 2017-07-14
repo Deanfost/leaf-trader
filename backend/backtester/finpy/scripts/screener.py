@@ -34,6 +34,8 @@ def soup(ticker):
     only_span = SoupStrainer(["span", "td"])
     data = BeautifulSoup(content, "lxml", parse_only= only_span) # this is creating a BeautifulSoup object that we can enact BeautifulSoup methods on
 
+
+
     #print data.get_text()
     #find_string = data.get_text().find_all(text=re.compile('Trailing P/E'), limit=1)
     var = data.find(text = "Trailing P/E").findNext("td")
@@ -120,34 +122,21 @@ def screenerfunction(kwargs):
 
 ###### ratios are going to have to be passed in dict format
 
-    for key in kwargs:
-        if key == "sector_list":
-            sector_list = kwargs[key]
-            print sector_list
-        else:
-            sector_list = None
-        if key == "marketcap":
-            marketcap = kwargs[key] # should be list so user can specify more than one size
-        else:
-            marketcap = ["Mega","Large", "Small"] #default should be none in real life
-        if key == "price_range":
-            price_range == kwargs[key] # price must be passed as list
-        else:
-            price_range = [30.0, 170.0]
-            # price range will probably be a tuple value
-        if key == "ratio_dict":
-            ratio_dict == kwargs[key]
-        else:
-            ratio_dict = {"PE_ratio" : 16.0,
-                          "PEG_ratio" : 1.63,
-                          "Price_Book" : 3}
+    sector_list = kwargs["sector_list"]
+    marketcap = kwargs["market_cap"]
+    price_range = kwargs["price_range"]
+    ratio_dict = kwargs["ratio_dict"]
+
+
 
 
     if sector_list is not None:
         for stock in stocks:
             for sector in sector_list:
-                if stock.sector == sector:
+                if stock.sector == str(sector):
                     screened_sector_list.append(stock)
+        print ")))))))))))))))"
+
         print screened_sector_list
 
 
@@ -155,13 +144,13 @@ def screenerfunction(kwargs):
 
         # ratio_dict would have to be created in views such that there are no blanks can only be the ratios that the user inputs
         #ratio_list = soup(stock.ticker) # using BeautifulSoup to scrape the ratio values from yahoo finance
-        #if ratio_dict is not None:
-        #    for ratiokey in ratio_dict:
-        #        if ratio_dict[ratiokey] == vardict[ratiokey]:
-        #            screened_list.append(stock)
-        #        else:
-        #            if stock in screened_list:
-        #                screened_list = screened_list.remove(stock)
+    if ratio_dict is not None:
+        for ratiokey in ratio_dict:
+            if ratio_dict[ratiokey] == vardict[ratiokey]:
+                screened_list.append(stock)
+            else:
+                if stock in screened_list:
+                    screened_list = screened_list.remove(stock)
 
     if marketcap is not None:
 
@@ -225,8 +214,8 @@ def screenerfunction(kwargs):
                 for stock in joint_list:
                     time_delta = current_time - stock.last_price_refresh
 
-                    if(time_delta.total_seconds()  < 604800) :  # of seconds in a week
-                        if(float(stock.last_price) <= upper_limit and float(stock.last_price) >= lower_limit) :
+                    if(time_delta.total_seconds()  < 10000000000000) :  # of seconds in a week
+                        if(float(stock.current_price) <= upper_limit and float(stock.current_price) >= lower_limit) :
                             screened_price_list.append(stock)
                     else:
                         ticker  = stock.ticker

@@ -1,10 +1,31 @@
 from googlefinance import getQuotes
 
+import urllib2
+from bs4 import BeautifulSoup
+from bs4 import SoupStrainer
+
+url = "http://money.cnn.com/data/hotstocks/"
+content = urllib2.urlopen(url).read()
+only_span = SoupStrainer(["span", "td", "tr", "table", "tbody", "a"])
+data = BeautifulSoup(content, "lxml",parse_only = only_span)
+
+table = data.find("table", {"class" : "wsod_dataTable wsod_dataTableBigAlt" })
 
 
-with open("s&P500.csv", "r") as spfile:
-    for line in spfile:
-        stock_line = line.split(",")
+rows = table.find_all("tr")
 
-        Ticker = stock_line[0]
-        print (getQuotes(str(Ticker)))
+mostpop_list = []
+for row in rows[1:]:
+    td = row.find("td")
+    span = td.find("a")
+
+    mostpop_list.append(span.text)
+
+
+
+
+
+
+
+#for tr in var.find_all("tr")[2:]: # skips the first row
+    #print tr

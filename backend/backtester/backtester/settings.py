@@ -69,6 +69,7 @@ STATICFILES_DIRS = (
     STATIC_PATH,
 )
 
+STATIC_ROOT = STATIC_URL
 
 #BROKER_URL = "amqp://myuser:mypassword@localhost:5672/myvhost"
 """

@@ -13,8 +13,11 @@ from googlefinance import getQuotes
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
+from scripts.presetScreen import low_volatility, undervalued, mostpopular, undervalued_growth, high_growth, siliconValley, manufacturing, healthCare, finance, energy
 import random
 import cPickle as pickle
+import json
+
 
 
 #from scripts.simulate import newtotals
@@ -50,10 +53,6 @@ def signup(request):
 
 
 
-def practiceAjax(request):
-    print "CALLING AJAX"
-    data = {"message" : "AJax call"}
-    return data
 
 def validate_username(request):
     print "SENDING THIS AJAX CALL"
@@ -64,13 +63,118 @@ def validate_username(request):
     return JsonResponse(data)
 
 def practiceAjax(request):
-    username = request.GET.get("username", None)
     data = {
-        "name" : str(username + "AJAX")
+        "name" : str("AJjAX")
     }
     return JsonResponse(data)
 
+def lowVolatility(request):
+    results = []
+    data = {}
+    low_volatility_list = low_volatility()
+
+    for stock in low_volatility_list:
+        data[stock.name] = stock.as_json()
+    #results = [stock.as_json() for stock in low_volatility_list]
+    #data = {"low_volatility_list" : results}
+
+    return JsonResponse(data)
+
+def underValued(request):
+    results = []
+    data = {}
+    undervalued_list = undervalued()
+    print undervalued_list
+    for stock in undervalued_list:
+        data[stock.name] = stock.as_json()
+    return JsonResponse(data)
+
+def mostPopular(request):
+
+
+    results = []
+    data = {}
+    mostpop_list = mostpopular()
+    print mostpop_list
+    for tickername in mostpop_list:
+        try:
+            stock = Stock.objects.get(ticker = tickername)
+            data[stock.name] = stock.as_json()
+        except:
+            print "continue"
+            continue
+    return JsonResponse(data)
+
+def undervalued_Growth(request):
+    results = []
+    data = {}
+    undergrowth_list = undervalued_growth()
+    for stock in undergrowth_list:
+        data[stock.name] = stock.as_json()
+    print "LENGTH" + str(len(undergrowth_list))
+    return JsonResponse(data)
+
+def highGrowth(request):
+    results = []
+    data = {}
+    highgrowth_list= high_growth()
+    print highgrowth_list
+    for stock in highgrowth_list:
+        data[stock.name] = stock.as_json()
+    print "LENGTH" + str(len(highgrowth_list))
+    return JsonResponse(data)
+
+def silicon_Valley(request):
+    results = []
+    data = {}
+    silicon_list = siliconValley()
+    for stock in silicon_list:
+        data[stock.name] = stock.as_json()
+    print "LENGTH" + str(len(silicon_list))
+    return JsonResponse(data)
+
+def Manufacturing(request):
+    results = []
+    data = {}
+    manufacturing_list = manufacturing()
+    for stock in manufacturing_list:
+        data[stock.name] = stock.as_json()
+
+    print "LENGTH" + str(len(manufacturing_list))
+    return JsonResponse(data)
+
+def HealthCare(request):
+    results = []
+    data = {}
+    healthCare_list = healthCare()
+    for stock in healthCare_list:
+        data[stock.name] = stock.as_json()
+
+    print "LENGTH" + str(len(healthCare_list))
+    return JsonResponse(data)
+
+def Finance(request):
+    results = []
+    data = {}
+    finance_list = finance()
+    for stock in finance_list:
+        data[stock.name] = stock.as_json()
+
+    print "LENGTH" + str(len(finance_list))
+    return JsonResponse(data)
+
+def Energy(request):
+    results = []
+    data = {}
+    energy_list = energy()
+    for stock in energy_list:
+        data[stock.name] = stock.as_json()
+
+    return JsonResponse(data)
+
+
 def chart(request):
+
     lister = [1,1,10]
     labels = ["10clones1","10clones2", "10clones3"]
 
@@ -271,60 +375,95 @@ def plotter(request):
         get_adjusted_close(ticker_list, startDate, endDate)
 
 def screener(request) :
+        name = request.GET.get('name') # where none acts as the default value of username if none is passed
+        print "THIS IS the DATA"
+        print name
+        sectors = request.GET.get("sectors").split(",")
 
 
-    ticker_list = []
-    target_list = []
+        sectors = request.GET.get("sectors").split(",")
+        ratios = json.dumps(request.GET.get("ratios")) # this is a json object
+        prices = request.GET.get("prices").split(",")
+        marketcap = request.GET.get("marketcap").split(",")
 
-    # set every attribute to none as default
+        if str(marketcap[0]) == '':
+            marketcap = None
+        if str(sectors[0]) == '':
+            sectors = None
+        if ratios == '"{}"': # if ratio dict is empty
+            ratios = None
+            
+        data = {
+                 "sector_list" : sectors,
+                 "price_range" : prices,
+                 "ratio_dict" :ratios,
+                 "market_cap" : marketcap,
 
-    passed_dict = {}
+        }
 
-    if request.method == "POST":
-
-        #lister2.delay()
-        #x = lister2.delay()
-
-        print "************REQUESt***********"
-    #    print x.task_id
-    #    print x.backend
-
-    #    print str(lister2.AsyncResult(x.task_id).state)
-
-
-        #for i in range(100000000):
-            #print i
-        sector_name = []
-        final_sector = []
-
-        print "testing this POST"
-        sector_name.append(request.POST.get("Technology"))
-        sector_name.append(request.POST.get("Health Care"))
-        sector_name.append(request.POST.get("Finance"))
-        sector_name.append(request.POST.get("Consumer Services"))
-        sector_name.append(request.POST.get("Consumer Durables"))
-        print "TRY"
-        print sector_name
-        #market_cap = request.POST.get("market_cap")
-        #print "THIS IS MARKET CAP" + str(market_cap)
-        for sector in sector_name:
-            if sector is not  None:
-                final_sector.append(sector)
+        print data
 
 
-        passed_dict["sector_list"] = final_sector
-        print "TRY@xwxs"
-        print final_sector
-        #passed_dict["marketcap"] = market_cap
-        #target_list =  match_params("shortoutput.csv", passed_dict)
-        screenerfunction(passed_dict)
+        screenerfunction(data)
 
-        response  = render(request, "finpy/Frontend/html/screener.html", {"target_list" : target_list })
+        return HttpResponse(data)
+
+
+
+
+        """
+        ticker_list = []
+        target_list = []
+
+        # set every attribute to none as default
+
+        passed_dict = {}
+
+        if request.method == "POST":
+
+            #lister2.delay()
+            #x = lister2.delay()
+
+            print "************REQUESt***********"
+        #    print x.task_id
+        #    print x.backend
+
+        #    print str(lister2.AsyncResult(x.task_id).state)
+
+
+            #for i in range(100000000):
+                #print i
+            sector_name = []
+            final_sector = []
+
+            print "testing this POST"
+            sector_name.append(request.POST.get("Technology"))
+            sector_name.append(request.POST.get("Health Care"))
+            sector_name.append(request.POST.get("Finance"))
+            sector_name.append(request.POST.get("Consumer Services"))
+            sector_name.append(request.POST.get("Consumer Durables"))
+            print "TRY"
+            print sector_name
+            #market_cap = request.POST.get("market_cap")
+            #print "THIS IS MARKET CAP" + str(market_cap)
+            for sector in sector_name:
+                if sector is not  None:
+                    final_sector.append(sector)
+
+
+            passed_dict["sector_list"] = final_sector
+            print "TRY@xwxs"
+            print final_sector
+            #passed_dict["marketcap"] = market_cap
+            #target_list =  match_params("shortoutput.csv", passed_dict)
+            screenerfunction(passed_dict)
+
+            response  = render(request, "finpy/Frontend/html/screener.html", {"target_list" : target_list })
+            return response
+
+        response  = render(request, "finpy/Frontend/html/screener.html")
         return response
-
-    response  = render(request, "finpy/Frontend/html/screener.html")
-    return response
-
+        """
 
 def screenerDash(request):
     print "screeneruser"

@@ -16,7 +16,24 @@ urlpatterns = patterns( "",
         url(r'^practiceAjax/',views.practiceAjax, name = "practiceAjax"),
         url(r'chart/', views.chart, name = "chart"),
         url(r'screenerDash/', views.screenerDash, name = "screenerDash"),
-        url(r'screenerCreate/', views.screenerCreate, name = "screenerCreate")
+        url(r'screenerCreate/', views.screenerCreate, name = "screenerCreate"),
+        url(r'lowVolatility/',views.lowVolatility, name = "lowVolatility"),
+        url(r'undervalued/', views.underValued, name = "undervalued"),
+        url(r'mostPopular/', views.mostPopular, name = "mostPopular"),
+        url(r'undervaluedGrowth/', views.undervalued_Growth, name = "undervaluedGrowth"),
+        url(r'highGrowth/', views.highGrowth, name = "highGrowth"),
+        url(r'siliconValley/', views.silicon_Valley, name = "siliconValley"),
+        url(r'manufacturing/', views.Manufacturing, name = "manufacturing"),
+        url(r'healthCare/', views.HealthCare, name = "healthCare"),
+        url(r'finance/', views.Finance, name = "finance"),
+        url(r'energy/', views.Energy, name = "energy"),
+
+
+
+
+
+
+
 
 
 
