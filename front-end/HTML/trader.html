@@ -95,7 +95,51 @@
                     //Sign out
                     
                 });
+                
+                //Detect table mode button clicks
+                $('#mode-1').click(function(){
+                    modeClick(1);
+                });
+                $('#mode-2').click(function(){
+                    modeClick(2);
+                });
+                $('#mode-3').click(function(){
+                    modeClick(3);
+                });
+                $('#mode-4').click(function(){
+                    modeClick(4);
+                });
             });
+            
+            //Apply and remove proper classes to mode tabs
+            function modeClick(tab){
+                switch(tab){
+                    case 1:
+                        $('#mode-1').addClass('tab-left-active');
+                        $('#mode-2').removeClass('tab-mid-active');
+                        $('#mode-3').removeClass('tab-mid-active');
+                        $('#mode-4').removeClass('tab-right-active');
+                        break;
+                    case 2:
+                        $('#mode-1').removeClass('tab-left-active');
+                        $('#mode-2').addClass('tab-mid-active');
+                        $('#mode-3').removeClass('tab-mid-active');
+                        $('#mode-4').removeClass('tab-right-active');
+                        break;
+                    case 3:
+                        $('#mode-1').removeClass('tab-left-active');
+                        $('#mode-2').removeClass('tab-mid-active');
+                        $('#mode-3').addClass('tab-mid-active');
+                        $('#mode-4').removeClass('tab-right-active');
+                        break;
+                    case 4:
+                        $('#mode-1').removeClass('tab-left-active');
+                        $('#mode-2').removeClass('tab-mid-active');
+                        $('#mode-3').removeClass('tab-mid-active');
+                        $('#mode-4').addClass('tab-right-active');
+                        break;
+                }
+            }
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/trader.css">
     </head>
@@ -161,11 +205,23 @@
         <!-- Top bar -->
         <div class="z-depth-1 white row top-bar" id="top-bar">
             <div class="row valign-wrapper custom-green-dark" style="height:50%; margin: 0;">
-                
+                <!-- Search bar -->
+                <form class="col s12">
+                    <div class="input field col s8 search-bar-container">
+                        <div class="row search-inner-wrapper">
+                            <!-- Wrapper for search icon and input -->
+                            <div class="col s1 search-bar-icon-container">
+                                <img class="responsive-img search-bar-icon" src="/front-end/img/search.png">
+                            </div>
+                            <input id="search-bar" type="text" class="search-bar col s11">
+                            
+                        </div>
+                    </div>
+                </form>
             </div>
             <!-- Mode toggle buttons -->
             <div class="row valign-wrapper" id="mode-tab-container">
-                <a class="tab-left-active valign-wrapper" id="mode-1">
+                <a class="tab-left tab-left-active valign-wrapper" id="mode-1">
                     <h5 class="toggle-text" style="margin: 0 auto;">Holdings</h5>
                 </a>
                 <a class="tab-mid valign-wrapper" id="mode-2">
