@@ -1,10 +1,22 @@
+.custom-green-dark{
+    background-color: #00a82b;
+}
+
+.custom-green-light{
+    background-color: #00ba30;
+}
+
+.custom-green-accent{
+    background-color: #00d035;
+}
+
 .tab-left{
     border-style: solid;
     border-color: #ECECEC;
     background-color: #ECECEC;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    width: 20%;
+    width: 21%;
     height: 45px;
     color: #4B4B4B;
     text-align: center;
@@ -14,11 +26,11 @@
 
 .tab-left-active{
     border-style: solid !important;
-    border-color: #66bb6a !important;
-    background-color: #66bb6a !important;
+    border-color: #00ba30 !important;
+    background-color: #00ba30 !important;
     border-top-left-radius: 5px !important;
     border-bottom-left-radius: 5px !important;
-    width: 20% !important;
+    width: 21% !important;
     height: 45px !important;
     color: #fff !important;
     margin: 0 !important;
@@ -31,7 +43,7 @@
     border-style: solid;
     border-color: #ECECEC;
     background-color: #ECECEC;
-    width: 20%;
+    width: 21%;
     height: 45px;
     color: #4B4B4B;
     margin: 0;
@@ -42,9 +54,9 @@
 
 .tab-mid-active{
     border-style: solid !important;
-    border-color: #ffa726 !important;
-    background-color: #ffa726 !important;
-    width: 20% !important;
+    border-color: #00ba30 !important;
+    background-color: #00ba30 !important;
+    width: 21% !important;
     height: 45px !important;
     color: #fff !important;
     margin: 0 !important;
@@ -59,7 +71,7 @@
     background-color: #ECECEC;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    width: 20%;
+    width: 21%;
     height: 45px;
     color: #4B4B4B;
     margin: 0;
@@ -70,11 +82,11 @@
 
 .tab-right-active{
     border-style: solid !important;
-    border-color: #29b6f6 !important;
-    background-color: #29b6f6 !important;
+    border-color: #00ba30 !important;
+    background-color: #00ba30 !important;
     border-top-right-radius: 5px !important;
     border-bottom-right-radius: 5px; !important
-    width: 20% !important;
+    width: 21% !important;
     height: 45px !important;
     color: #fff !important;
     margin: 0 !important;
@@ -93,11 +105,11 @@
 }
 
 #mode-tab-container{
-    width: 100%;;
+    width: 100%;
     height: 60px;
     margin-top: 85px !important;
     text-align: center;
-    padding-left: 16.5%;
+    padding-left: 13.5%;
 }
 
 .toggle-text{
@@ -177,7 +189,7 @@
 .card{
     border-bottom: solid;
     border-radius: 5px;
-    border-top-color: #66bb6a;
+    border-top-color: #00ba30;
     border-bottom-color: white;
     min-height: 200px;
     height: auto;
@@ -186,7 +198,7 @@
 
 .card-header{
     border-top: solid;
-    border-top-color: #66bb6a;
+    border-top-color: #00ba30;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 100px;
