@@ -105,7 +105,7 @@
 }
 
 .search-bar-container{
-    margin-left: 6% !important;
+    margin-left: 5.5% !important;
 }
 
 .search-inner-wrapper{
@@ -120,13 +120,14 @@
 }
 
 .search-bar-icon{
-    width: 60%;
+    width: 27px !important;
     margin-top: 8px;
     margin-left: 26%;
 }
 
 .search-bar{
     margin: 0 !important;
+    height: 45px !important;
     border-style: solid !important;
     border-color: white !important;
     border-bottom-width: 1px !important;
@@ -305,6 +306,11 @@
     }
     .top-bar{
         margin-left: 150px;
+    }
+    .search-bar-icon{
+        width: 22px !important;
+        margin-top: 11px;
+        
     }
     #card-section{
         margin-left: 150px;
