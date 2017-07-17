@@ -28,7 +28,7 @@
                     $('#top-bar').width(toggleBarWidth + diff);
                 }
                 //Viewports smaller than 1200px wide
-                else if(windowWidth < 1200 & windowWidth >= 800){
+                else if(windowWidth < 1200 & windowWidth >= 815){
                     var toggleBarWidth = $('.top-bar').width();
                     var diff = windowWidth - toggleBarWidth - 150;
                     $('#top-bar').width(toggleBarWidth + diff);
@@ -44,7 +44,7 @@
                         $('#top-bar').width(toggleBarWidth + diff);
                     }
                     //Viewports smaller than 1200px wide
-                    else if(windowWidth < 1200 & windowWidth >= 800){
+                    else if(windowWidth < 1200 & windowWidth >= 815){
                         var toggleBarWidth = $('.top-bar').width();
                         var diff = windowWidth - toggleBarWidth - 150;
                         $('#top-bar').width(toggleBarWidth + diff);
@@ -205,9 +205,21 @@
         <!-- Top bar -->
         <div class="z-depth-1 white row top-bar" id="top-bar">
             <div class="row valign-wrapper custom-green-dark" style="height:50%; margin: 0;">
-                <!-- Search bar and button-->
-                <div class="search-bar-outer-wrapper">
-                    
+                <!-- Search bar and button -->
+                <div class="search-outer-wrapper">
+                    <!-- Search bar -->
+                    <div class="search-bar-wrapper">
+                        <div class="search-icon-wrapper">
+                            <img class="search-bar-icon" src="/front-end/img/search.png">
+                        </div>
+                        <form style="width: 100%;">
+                            <div class="search-bar-input-container">
+                                <div class="input field">
+                                    <input id="search" type="text" class="search-bar">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 
             </div>
@@ -228,9 +240,8 @@
             </div>
         </div>
         
-        <!-- Mode bar and card section -->
+        <!-- Card section -->
         <div id="card-section">
-        
             <!-- Card -->
             <div id="card-container">
                 <div class="z-depth-1 card" style="height:1000px; margin-top:180px;">
