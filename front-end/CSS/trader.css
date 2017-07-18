@@ -279,28 +279,70 @@
     height: 30% !important;
 }
 
-.item-type{
-    color: #757575;
+/* Stocks card */
+.card-body{
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
-.item-last-used{
-    color: #757575;
+.tab-toggle-container{
+    float: left;
+    width: 5%;
+    height: 35px;
+    margin-right: 2%;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #00ba30;
+    cursor: pointer;
 }
 
-.item-title{
-    font-size: 20px;
+.tab-toggle-arrow{
+    width: 20px;
+    margin-top: 7.5px;
 }
 
-.item-type{
-    font-size: 17px;
+/* Specific styling for table tabs */
+.table-tab{
+    float: left;
+    width: 19% !important;
+    height: 35px !important;
+    text-align: center;
 }
 
-.item-last-used{
-    font-size: 17px;
+.tab-text{
+    margin-top: 3.5px;
 }
 
-#item-more-wrapper{
-    padding: 2.7%;
+/* Table styling */
+.up-color{
+    color: #388E3C;
+}
+
+.down-color{
+    color: #D32F2F;
+}
+
+table{
+    width: 93%;
+    margin-top: 10px;
+    max-height: 210px;
+    margin: 0 auto;
+}
+
+tr{
+    height: 50px;
+}
+
+tbody{
+    display: block;
+    max-height: 160px;
+    overflow: auto;
+}
+
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
 }
 
 /* Screens smaller than 1200 */
@@ -373,5 +415,9 @@
     #card-container{
         width: 1200px;
         left: 50%;
+    }
+    /* Override media query style for tabs */
+    .table-tab{
+        width: 19% !important;
     }
 }

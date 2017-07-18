@@ -96,7 +96,7 @@
                     
                 });
                 
-                //Detect table mode button clicks
+                //Detect mode button clicks
                 $('#mode-1').click(function(){
                     modeClick(1);
                 });
@@ -108,6 +108,43 @@
                 });
                 $('#mode-4').click(function(){
                     modeClick(4);
+                });
+                
+                //Detect table mode buton clicks
+                $('#table-tab-toggle').click(function(){
+                    tabClick(0); 
+                });
+                $('#table-tab-1').click(function(){
+                    tabClick(1);
+                });
+                $('#table-tab-2').click(function(){
+                    tabClick(2);
+                });
+                $('#table-tab-3').click(function(){
+                    tabClick(3);
+                });
+                $('#table-tab-4').click(function(){
+                    tabClick(4);
+                });
+                
+                //Check for children modification of stock table
+                var $tbody = $('#stock-tbody');
+                var $thead = $('#stock-thead');
+
+                //Check if total children heights add up to more than max-height of tables(overflow)
+                $tbody.bind('DOMNodeInserted', function(){
+                    var childCount = $tbody.children().length;
+                    if(childCount > 3){
+                        //Overflow, remove scrollbar width from thead
+                        $thead.css('width', 'calc(100% - 1em)');
+                    }
+                });
+                $tbody.bind('DOMNodeRemoved', function(){
+                    var childCount = $tbody.children().length;
+                    if(childCount <= 3){
+                        //No overflow, add back width
+                        $thead.css('width', '');
+                    }
                 });
             });
             
@@ -137,6 +174,47 @@
                         $('#mode-2').removeClass('tab-mid-active');
                         $('#mode-3').removeClass('tab-mid-active');
                         $('#mode-4').addClass('tab-right-active');
+                        break;
+                }
+            }
+            
+            //Apply and remove proper classes to table tabs
+            var arrowUp = true;
+            function tabClick(tab){
+                switch(tab){
+                    case 0: 
+                        if(arrowUp){
+                            arrowUp = false;
+                            $('#table-toggle-img').attr('src', '/front-end/img/arrow-white.png');  
+                        }
+                        else{
+                            arrowUp = true;
+                            $('#table-toggle-img').attr('src', '/front-end/img/arrow-top-white.png');   
+                        }
+                        break;
+                    case 1: 
+                        $('#table-tab-1').addClass('tab-left-active');
+                        $('#table-tab-2').removeClass('tab-mid-active');
+                        $('#table-tab-3').removeClass('tab-mid-active');
+                        $('#table-tab-4').removeClass('tab-right-active');
+                        break;
+                    case 2: 
+                        $('#table-tab-1').removeClass('tab-left-active');
+                        $('#table-tab-2').addClass('tab-mid-active');
+                        $('#table-tab-3').removeClass('tab-mid-active');
+                        $('#table-tab-4').removeClass('tab-right-active');
+                        break;
+                    case 3: 
+                        $('#table-tab-1').removeClass('tab-left-active');
+                        $('#table-tab-2').removeClass('tab-mid-active');
+                        $('#table-tab-3').addClass('tab-mid-active');
+                        $('#table-tab-4').removeClass('tab-right-active');
+                        break;
+                    case 4:
+                        $('#table-tab-1').removeClass('tab-left-active');
+                        $('#table-tab-2').removeClass('tab-mid-active');
+                        $('#table-tab-3').removeClass('tab-mid-active');
+                        $('#table-tab-4').addClass('tab-right-active');
                         break;
                 }
             }
@@ -245,24 +323,120 @@
         
         <!-- Card section -->
         <div id="card-section">
-            <!-- Card -->
+            <!-- Stocks card -->
             <div id="card-container">
-                <div class="z-depth-1 card" style="height:1000px; margin-top:180px;">
+                <div class="z-depth-1 card" style="height:430px; margin-top:180px;">
                     <!-- Card header -->
                     <div class="custom-green-light card-header row" style="padding-left:2%; padding-right:2%; text-align:initial;">
                         <div class="col s10 valign-wrapper" style="height:100%;">
-                            <h4 class="card-header-text truncate">Stocks - Undervalued(Preset)</h4>
+                            <h4 class="card-header-text truncate" id="stocks-card-title">Stocks - Undervalued(Preset)</h4>
                         </div>
                         <div class="col s2 valign-wrapper" style="height:100%;">
                             <img class="responsive-img card-help" src="/front-end/img/Help.png" style="margin-left:82%; cursor: pointer;">
                         </div>
                     </div>
-                    <!-- Card content - screener items -->
-                    <div class="row" id="list-container" style="padding-left:1%; padding-right:1%;">
+                    <!-- Card content -->
+                    <div class="row card-body">
+                        <!-- Table modes -->
+                        <div class="row" style="width: 80%; float:left; margin-left: 3.3%; margin-top: 10px;">
+                            <div class="tab-toggle-container" id="table-tab-toggle">
+                                <img class="responsive-img tab-toggle-arrow" src="/front-end/img/arrow-top-white.png" id="table-toggle-img">
+                            </div>
+                            <!-- Make sure first tab has both classes so that it is first active and functions properly -->
+                            <div class="table-tab tab-left tab-left-active" id="table-tab-1">
+                                <p class="tab-text">Company</p>
+                            </div>
+                            <div class="table-tab tab-mid" id="table-tab-2">
+                                <p class="tab-text">Ticker</p>
+                            </div>
+                            <div class="table-tab tab-mid" id="table-tab-3">
+                                <p class="tab-text">Price</p>
+                            </div>
+                            <div class="table-tab tab-right" id="table-tab-4">
+                                <p class="tab-text">Change</p>
+                            </div>
+                        </div>
                         
+                        <!-- Table -->
+                        <table class="striped">
+                            <!-- Columns -->
+                            <thead id="stock-thead">
+                                <tr>
+                                    <th>Company</th>
+                                    <th>Ticker</th>
+                                    <th>Price</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <!-- Rows -->
+                            <tbody id="stock-tbody">
+                                <tr>
+                                    <td class="truncate">Apple Inc.</td>
+                                    <td>AAPL</td>
+                                    <td>$197.85</td>
+                                    <td class="up-color">$2.49/0.19%</td>
+                                </tr>
+                                <tr>
+                                    <td class="truncate">Microsoft Corporation</td>
+                                    <td>MSFT</td>
+                                    <td>$164.21</td>
+                                    <td class="down-color">$1.56/0.45%</td>
+                                </tr>
+                                <tr>
+                                    <td class="truncate">Microsoft Corporation</td>
+                                    <td>MSFT</td>
+                                    <td>$164.21</td>
+                                    <td class="down-color">$1.56/0.45%</td>
+                                </tr>
+                                <tr>
+                                    <td class="truncate">Microsoft Corporation</td>
+                                    <td>MSFT</td>
+                                    <td>$164.21</td>
+                                    <td class="down-color">$1.56/0.45%</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
+            
+            <!-- Chart card -->
+            <div id="card-container">
+                <div class="z-depth-1 card" style="height:auto; margin-top:30px;">
+                    <!-- Card header -->
+                    <div class="custom-green-light card-header row" style="padding-left:2%; padding-right:2%; text-align:initial;">
+                        <div class="col s10 valign-wrapper" style="height:100%;">
+                            <h4 class="card-header-text truncate" id="chart-title">Chart - AAPL</h4>
+                        </div>
+                        <div class="col s2 valign-wrapper" style="height:100%;">
+                            <img class="responsive-img card-help" src="/front-end/img/Help.png" style="margin-left:82%; cursor: pointer;">
+                        </div>
+                    </div>
+                    <!-- Card content -->
+                    <div class="row" style="height: 500px;">
+                        <!-- TradingView Widget BEGIN -->
+                        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                        <script type="text/javascript">
+                        new TradingView.widget({
+                          "autosize": true,
+                          "symbol": "NASDAQ:AAPL",
+                          "interval": "D",
+                          "timezone": "America/New_York",
+                          "theme": "White",
+                          "style": "3",
+                          "locale": "en",
+                          "toolbar_bg": "rgba(255, 255, 255, 1)",
+                          "enable_publishing": false,
+                          "withdateranges": true,
+                          "save_image": false,
+                          "hideideas": true
+                        });
+                        </script>
+                        <!-- TradingView Widget END -->
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </body>
 </html>
