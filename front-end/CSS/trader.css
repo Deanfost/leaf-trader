@@ -349,16 +349,26 @@
         padding-right: 14px;
     }
     #mode-tab-container{
-        padding-right: 14px;
+        padding-right: 16px;
     }
-    #card-container{
-        width: 1200px;
-        left: 50%;
+    .tab-left{
+        width: 260px !important;
     }
-}
-
-/* Ultra large displays wider than 2200 */
-@media only screen and (min-width: 2200px){
+    .tab-left-active{
+        width: 260px !important;
+    }
+    .tab-mid{
+        width: 260px !important;
+    }
+    .tab-mid-active{
+        width: 260px !important;
+    }
+    .tab-right{
+        width: 260px !important;
+    }
+    .tab-right-active{
+        width: 260px !important;
+    }
     #card-container{
         width: 1200px;
         left: 50%;
