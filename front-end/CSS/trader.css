@@ -280,7 +280,7 @@
 }
 
 /* Stocks card */
-.card-body{
+.stocks-card-body{
     padding-left: 1%;
     padding-right: 1%;
 }
@@ -343,6 +343,29 @@ thead, tbody tr {
     display:table;
     width:100%;
     table-layout:fixed;
+}
+
+.tabs{
+    overflow: hidden !important;
+}
+
+.tabs .indicator {
+    background-color: #fff !important;
+}
+
+.tabs .tab a.active {
+    color: white;
+    background-color: #00ba30;
+}
+
+.tabs .tab a:hover {
+    color: white;
+    background-color: #00ba30;
+}
+
+.tabs .tab a {
+    color: #EEEEEE;
+    background-color: #00ba30;
 }
 
 /* Screens smaller than 1200 */
