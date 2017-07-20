@@ -269,7 +269,7 @@
 }
 
 .card-header-text{
-    color:white;
+    color: white;
     float: left;
     width: 100%;
     font-size: 24px;
@@ -345,6 +345,7 @@ thead, tbody tr {
     table-layout:fixed;
 }
 
+/* Trader card */
 .tabs{
     overflow: hidden !important;
 }
@@ -368,6 +369,7 @@ thead, tbody tr {
     background-color: #00ba30;
 }
 
+/* Details card */
 .details-header-body{
     width: 70%;
     float: left;
@@ -376,10 +378,28 @@ thead, tbody tr {
 
 .details-stock-title{
     color: #848484;
-    margin-left: 4.7%;
-    margin-top: 3%;
+    margin-left: 4%;
+    margin-top: 3.2%;
     font-size: 28px;
     width: 90%;
+}
+
+.details-stock-price{
+    margin-left: 4%;
+    font-size: 36px;
+    width: auto;
+    color: #00ba30;
+    float: left;
+    margin-right: 5%;
+}
+
+.details-stock-change{
+    font-size: 26px;
+    width: auto;
+    color: #00d035;
+    float: left;
+    margin-top: 2.1%;
+    margin-right: 3%;
 }
 
 .details-range-section{
