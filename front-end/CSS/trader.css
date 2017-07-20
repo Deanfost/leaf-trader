@@ -368,6 +368,37 @@ thead, tbody tr {
     background-color: #00ba30;
 }
 
+.details-header-body{
+    width: 70%;
+    float: left;
+    height: 100%;
+}
+
+.details-stock-title{
+    color: #848484;
+    margin-left: 4.7%;
+    margin-top: 3%;
+    font-size: 28px;
+    width: 90%;
+}
+
+.details-range-section{
+    height: 200px;
+    float: left;
+    width: 70%;
+}
+
+.details-float-panel{
+    height: 320px;
+    background-color: white;
+    width: 27%;
+    float: right;
+    margin-right: 3%;
+    border-radius: 5px;
+    position: relative;
+    top: -120px;
+}
+
 /* Screens smaller than 1200 */
 @media only screen and (max-width: 1200px){
     body{
@@ -405,6 +436,15 @@ thead, tbody tr {
     }
     #card-section{
         margin-left: 150px;
+    }
+    .details-header-body{
+        width: 60%;
+    }
+    .details-range-section{
+        width: 60%;
+    }
+    .details-float-panel{
+        width: 37%;
     }
 }
 
