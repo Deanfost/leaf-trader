@@ -512,9 +512,9 @@ thead, tbody tr {
 }
 
 .details-market-img{
-    width: 1.5%;
+    width: 15px;
     float: left;
-    margin-left: 2%;    
+    margin-left: 2.5%;    
     height: auto;
 }
 

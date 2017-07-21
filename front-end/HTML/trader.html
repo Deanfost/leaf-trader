@@ -146,6 +146,10 @@
                         $thead.css('width', '');
                     }
                 });
+                
+                //Tick the market clock
+                tickClock();
+                
             });
             
             //Apply and remove proper classes to mode tabs
@@ -218,6 +222,58 @@
                         break;
                 }
             }
+            
+            //Market clock 
+            function tickClock(){
+                var time = new Date();
+                var h = time.getHours();
+                var m = time.getMinutes();
+                var s = time.getSeconds();
+                console.log(h + ', ' + m + ', ' + s);
+                
+                //If the market is open (9:30AM to 4:00PM)
+                if((h === 9 && m >= 30) || (h > 9 && h < 16)){
+                    //Less than 30 mins left
+                    if(h === 15 && m >= 30){
+                        $('#details-market-dot').attr('src', '/front-end/img/market-closing.png');
+                        var timeLeft = 60 - m;
+                        console.log('Market closing in ' + timeLeft + ' mins');
+                        if(timeLeft > 1){
+                            $('#details-market-info').text('Market open - closing in ' + timeLeft + ' minutes(4:00PM)');
+                        }
+                        else{
+                            $('#details-market-info').text('Market open - closing in ' + timeLeft + ' minute(4:00PM)');
+                        }
+                    }
+                    //Open with ample time left
+                    else{
+                        console.log('Market open');
+                        $('#details-market-dot').attr('src', '/front-end/img/market-open.png');
+                        $('#details-market-info').text('Market open - closing at 4:00PM');
+                    }
+                }
+                //Market is closed
+                else{
+                    console.log('Market closed');
+                    $('#details-market-dot').attr('src', '/front-end/img/market-closed.png');
+                    $('#details-market-info').text('Market closed - open at 9:00AM');
+                }
+                
+                //Set new tick interval
+                if(s === 0){
+                    //0 seconds until next minute, tick in 1 second
+                    console.log('Tick executed');
+                    console.log('Synchronized, ticking in 60 seconds...');
+                    setTimeout(tickClock, 60000);
+                }
+                else{
+                    //Determine amount of seconds until next minute, set timer
+                    var secondsLeft = 60 - s;
+                    console.log('Tick executed, syncronizing, ' + secondsLeft + ' seconds till next tick');
+                    setTimeout(tickClock, secondsLeft * 1000);
+                }
+            }
+            
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/trader.css">
     </head>
@@ -626,7 +682,7 @@
                         </div>
                         <!-- Market info -->
                         <div class="row details-market-info-row valign-wrapper">
-                            <img class="details-market-img" src="/front-end/img/market-closing.png">
+                            <img class="details-market-img" src="/front-end/img/market-closed.png" id="details-market-dot">
                             <h5 class="details-market-info" id="details-market-info">Market open - closing in 12 minutes(4:00PM)</h5>
                         </div>
                     </div>
