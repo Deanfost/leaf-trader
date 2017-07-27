@@ -373,6 +373,42 @@ thead, tbody tr {
     background-color: #00ba30;
 }
 
+.trader-header{
+    height: 80px;
+    width: 100%;
+    background-color: #ECECEC;
+}
+
+.trader-left-cell{
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+.trader-right-cell{
+    width: 30%;
+    float: right;
+    height: 100%;
+}
+
+.trader-cash{
+    color: #00ba30;
+    font-size: 34px;
+    float: left;
+    margin-left: 7%;
+}
+
+.trader-header-caption{
+    font-size: 16px;
+    color: #757575;
+}
+
+.trader-header-value{
+    font-size: 24px;
+    color: #1F1F1F;
+    margin-left: 5%;
+}
+
 /* Details card */
 .details-header-body{
     width: 69%;

@@ -256,7 +256,7 @@
                 else{
                     console.log('Market closed');
                     $('#details-market-dot').attr('src', '/front-end/img/market-closed.png');
-                    $('#details-market-info').text('Market closed - open at 9:00AM');
+                    $('#details-market-info').text('Market closed - open at 9:30AM');
                 }
                 
                 //Set new tick interval
@@ -505,7 +505,7 @@
                         </div>
                     </div>
                     <!-- Card content -->
-                    <div class="row" style="height: 270px; margin-top: 0;">
+                    <div class="row" style="height: 340px; margin-top: 0; padding: 0;">
                         <div class="row" style="margin: 0;">
                             <div class="col s12" style="padding: 0;">
                                 <ul class="tabs">
@@ -514,17 +514,31 @@
                                     <li class="tab col s4"><a href="#test1" style="font-weight: 500;">LIMIT ORDER</a></li>
                                 </ul>
                             </div>
-                            <!-- Buy order -->
-                            <div id="test1" class="col s12">Test 1
-                                
-                            </div>
-                            <!-- Sell Order -->
-                            <div id="test2" class="col s12">Test 2
-                                
-                            </div>
-                            <!-- Limit Order -->
-                            <div id="test3" class="col s12">Test 3
-                                
+                            <div class="row" style="margin: 0;">
+                                <!-- Buy order -->
+                                <div id="test3" class="col s12" style="padding: 0;">
+                                    <div class="row trader-header">
+                                        <div class="trader-left-cell valign-wrapper">
+                                            <h5 class="trader-cash">$32,045.23</h5>
+                                        </div>
+                                        <div class="trader-right-cell valign-wrapper">
+                                            <h5 class="trader-header-caption" style="margin-left: 34%;">Affordable Shares</h5>
+                                            <h5 class="trader-header-value">146</h5>
+                                        </div>
+                                        <div class="trader-right-cell valign-wrapper">
+                                            <h5 class="trader-header-caption" style="margin-left: 55%;">Shares Owned</h5>
+                                            <h5 class="trader-header-value">45</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Sell Order -->
+                                <div id="test2" class="col s12">
+
+                                </div>
+                                <!-- Limit Order -->
+                                <div id="test1" class="col s12">
+
+                                </div>
                             </div>
                         </div>
                     </div>
