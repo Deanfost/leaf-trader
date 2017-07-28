@@ -417,6 +417,11 @@ thead, tbody tr {
     margin-right: 10%;
 }
 
+.trader-body{
+    height: 235px;
+    width: 100%;
+}
+
 /* Details card */
 .details-header-body{
     width: 69%;
