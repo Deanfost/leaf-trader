@@ -380,15 +380,16 @@ thead, tbody tr {
 }
 
 .trader-left-cell{
-    width: 40%;
+    width: 30%;
     height: 100%;
     float: left;
 }
 
 .trader-right-cell{
-    width: 30%;
+    width: 70%;
     float: right;
     height: 100%;
+    text-align: right;
 }
 
 .trader-cash{
@@ -398,15 +399,24 @@ thead, tbody tr {
     margin-left: 7%;
 }
 
+.trader-header-mini{
+    width: 30%;
+    float: right;
+}
+
 .trader-header-caption{
     font-size: 16px;
     color: #757575;
+    float: left;
+    margin-right: 5%;
+    display: block;
 }
 
 .trader-header-value{
     font-size: 24px;
     color: #1F1F1F;
-    margin-left: 5%;
+    float: left;
+    margin-right: 5%;
 }
 
 /* Details card */
