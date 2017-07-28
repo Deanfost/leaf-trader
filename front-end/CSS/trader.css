@@ -385,38 +385,36 @@ thead, tbody tr {
     float: left;
 }
 
-.trader-right-cell{
-    width: 70%;
-    float: right;
-    height: 100%;
-    text-align: right;
-}
-
 .trader-cash{
     color: #00ba30;
     font-size: 34px;
     float: left;
-    margin-left: 7%;
+    margin-left: 10%;
 }
 
-.trader-header-mini{
+.trader-right-cell{
     width: 30%;
     float: right;
+    height: 100%;
 }
 
 .trader-header-caption{
     font-size: 16px;
     color: #757575;
-    float: left;
-    margin-right: 5%;
-    display: block;
+    width: 76%;
+    text-align: right;
 }
 
 .trader-header-value{
     font-size: 24px;
     color: #1F1F1F;
-    float: left;
-    margin-right: 5%;
+    width: auto;
+    text-align: right;
+    margin-left: 10%;
+}
+
+#shares-affordable{
+    margin-right: 10%;
 }
 
 /* Details card */
@@ -630,6 +628,15 @@ thead, tbody tr {
     #card-section{
         margin-left: 150px;
     }
+    .trader-left-cell{
+        width: 24%;
+    }
+    .trader-right-cell{
+        width: 38%;
+    }
+    #shares-affordable{
+        margin-right: 6.5%;
+    }
     .details-header-body{
         width: 59%;
     }
@@ -685,5 +692,8 @@ thead, tbody tr {
     /* Override media query style for tabs */
     .table-tab{
         width: 19% !important;
+    }
+    #shares-affordable{
+        margin-right: 11%;
     }
 }
