@@ -413,7 +413,7 @@ thead, tbody tr {
     margin-left: 10%;
 }
 
-#shares-affordable{
+.trader-rightmost{
     margin-right: 10%;
 }
 
@@ -422,30 +422,79 @@ thead, tbody tr {
     width: 100%;
 }
 
-.thirds-cell{
-    width: 33.3%;
+.trader-cell{
     float: left;
     height: 100%;
 }
 
-.thirds-top{
+.cell-top{
     height: 40%;
     width: 100%;
     margin: 0;
-    padding-left: 10%;
-    background-color: aqua;
+    padding-top: 25px;
 }
 
-.thirds-bottom{
+.cell-bottom{
     height: 60%;
     width: 100%;
     margin: 0;
-    background-color: aquamarine;
 }
 
 .body-header{
     font-size: 16px;
     color: #757575;
+}
+
+.trader-input{
+    height: 48px !important;
+    border-style: solid !important;
+    border-color: white !important;
+    border-width: 1px !important;
+    border-radius: 10px !important;
+    background-color: white !important;
+    width: 100% !important;
+    box-shadow: 0px 2.5px 6.5px #c9c9c9!important;
+    padding-left: 5% !important;
+    color: #00ba30;
+    margin-top: 10px !important;
+}
+
+.body-big-text{
+    font-size: 30px;
+    color: #1F1F1F;
+    margin-top: 17px;
+    width: auto;
+}
+
+.trader-blue{
+    color: #93A9F4;
+}
+
+.trader-orange{
+    color: #FFA726;
+}
+
+.trader-arrow{
+    width: 45px;
+    margin-top: 67px;
+    margin-left: 35%;
+}
+
+.trader-button{
+    height: 50px;
+    width: 20%;
+    background-color: #00d035;
+    text-align: center;
+    padding-top: 2px;
+    border-radius: 5px;
+    float: right;
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+.trader-button-text{
+    color: white;
+    font-size: 18px;
 }
 
 /* Details card */
@@ -665,7 +714,7 @@ thead, tbody tr {
     .trader-right-cell{
         width: 38%;
     }
-    #shares-affordable{
+    .trader-rightmost{
         margin-right: 6.5%;
     }
     .details-header-body{

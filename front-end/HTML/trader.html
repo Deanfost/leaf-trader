@@ -520,42 +520,123 @@
                                     <!-- Trader header -->
                                     <div class="row trader-header" style="margin: 0;">
                                         <div class="trader-left-cell valign-wrapper">
-                                            <h5 class="trader-cash" id="trader-balance">$32,045.23</h5>
+                                            <h5 class="trader-cash" id="trader-balance-1">$32,045.23</h5>
                                         </div>
                                         <div class="trader-right-cell valign-wrapper">
                                             <h5 class="trader-header-caption">Shares Affordable</h5>
-                                            <h5 class="trader-header-value" id="shares-affordable">167</h5>
+                                            <h5 class="trader-header-value trader-rightmost" id="shares-affordable-1">167</h5>
                                         </div>
                                         <div class="trader-right-cell valign-wrapper">
                                             <h5 class="trader-header-caption">Shares Owned</h5>
-                                            <h5 class="trader-header-value" id="shares-owned">45</h5>
+                                            <h5 class="trader-header-value" id="shares-owned-1">45</h5>
                                         </div>
                                     </div>
                                     <!-- Trader body -->
                                     <div class="row trader-body" style="margin: 0;">
                                         <div class="row" style="height: 60%; margin: 0;">
                                             <!-- Buy order -->
-                                            <div class="thirds-cell">
-                                                <div class="thirds-top">
+                                            <div class="trader-cell" style="width: 30%;">
+                                                <div class="cell-top" style="padding-left: 10%;">
                                                     <h5 class="body-header">Buy order</h5>
                                                 </div>
-                                                <div class="row thirds-bottom valign-wrapper">
-                                                
+                                                <div class="row cell-bottom" style="padding-left: 10%;">
+                                                    <form style="width: 80%;">
+                                                        <input id="buy-order" type="text" class="trader-input">
+                                                    </form>
                                                 </div>
                                             </div>
-                                            
+                                            <!-- Cost -->
+                                            <div class="trader-cell" style="width: 25%;">
+                                                <div class="cell-top">
+                                                    <h5 class="body-header">Cost</h5>
+                                                </div>
+                                                <div class="row cell-bottom">
+                                                    <h5 class="body-big-text truncate" id="buy-cost">$5,232.60</h5>
+                                                </div>
+                                            </div>
+                                            <!-- Arrow -->
+                                            <div class="trader-cell" style="width: 15%;">
+                                                <img src="/front-end/img/arrow-right.png" class="trader-arrow">
+                                            </div>
+                                            <!-- New balance -->
+                                            <div class="trader-cell" style="width: 30%;">
+                                                <div class="cell-top">
+                                                    <h5 class="body-header">New balance</h5>
+                                                </div>
+                                                <div class="row cell-bottom">
+                                                    <h5 class="body-big-text truncate trader-orange" id="buy-balance">$26,812.63</h5>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="row">
-                                        
+                                            <div class="trader-button z-depth-1 waves-effect waves-light" id="buy-shares">
+                                                <h5 class="trader-button-text">Buy shares</h5>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Sell Order -->
-                                <div id="test2" class="col s12">
-
+                                <div id="test2" class="col s12" style="padding: 0;">
+                                    <!-- Trader header -->
+                                    <div class="row trader-header" style="margin: 0;">
+                                        <div class="trader-left-cell valign-wrapper">
+                                            <h5 class="trader-cash" id="trader-balance-2">$32,045.23</h5>
+                                        </div>
+                                        <div class="trader-right-cell valign-wrapper">
+                                            <h5 class="trader-header-caption">Shares Value</h5>
+                                            <h5 class="trader-header-value trader-rightmost" id="shares-value-2">$4,756</h5>
+                                        </div>
+                                        <div class="trader-right-cell valign-wrapper">
+                                            <h5 class="trader-header-caption">Shares Owned</h5>
+                                            <h5 class="trader-header-value" id="shares-owned-2">45</h5>
+                                        </div>
+                                    </div>
+                                    <!-- Trader body -->
+                                    <div class="row trader-body" style="margin: 0;">
+                                        <div class="row" style="height: 60%; margin: 0;">
+                                            <!-- Buy order -->
+                                            <div class="trader-cell" style="width: 30%;">
+                                                <div class="cell-top" style="padding-left: 10%;">
+                                                    <h5 class="body-header">Sell order</h5>
+                                                </div>
+                                                <div class="row cell-bottom" style="padding-left: 10%;">
+                                                    <form style="width: 80%;">
+                                                        <input id="sell-order" type="text" class="trader-input">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <!-- Cost -->
+                                            <div class="trader-cell" style="width: 25%;">
+                                                <div class="cell-top">
+                                                    <h5 class="body-header">Revenue</h5>
+                                                </div>
+                                                <div class="row cell-bottom">
+                                                    <h5 class="body-big-text truncate" id="sell-turnout">$4,544.33</h5>
+                                                </div>
+                                            </div>
+                                            <!-- Arrow -->
+                                            <div class="trader-cell" style="width: 15%;">
+                                                <img src="/front-end/img/arrow-right.png" class="trader-arrow">
+                                            </div>
+                                            <!-- New balance -->
+                                            <div class="trader-cell" style="width: 30%;">
+                                                <div class="cell-top">
+                                                    <h5 class="body-header">New balance</h5>
+                                                </div>
+                                                <div class="row cell-bottom">
+                                                    <h5 class="body-big-text truncate trader-blue" id="sell-balance">$36,589.56</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="trader-button z-depth-1 waves-effect waves-light" id="buy-shares">
+                                                <h5 class="trader-button-text">Sell shares</h5>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- Limit Order --> 
-                                <div id="test1" class="col s12">
+                                <div id="test1" class="col s12" style="padding: 0;">
 
                                 </div>
                             </div>
