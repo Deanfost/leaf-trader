@@ -127,6 +127,14 @@
                     tabClick(4);
                 });
                 
+                //Detect trader tab clicks
+                $('#limit-buy-tab').click(function(){
+                    tabClick(5); 
+                });
+                $('#limit-sell-tab').click(function(){
+                    tabClick(6); 
+                });
+                
                 //Check for children modification of stock table
                 var $tbody = $('#stock-tbody');
                 var $thead = $('#stock-thead');
@@ -149,7 +157,6 @@
                 
                 //Tick the market clock
                 tickClock();
-                
             });
             
             //Apply and remove proper classes to mode tabs
@@ -186,6 +193,7 @@
             var arrowUp = true;
             function tabClick(tab){
                 switch(tab){
+                    //Stock table tabs
                     case 0: 
                         if(arrowUp){
                             arrowUp = false;
@@ -219,6 +227,15 @@
                         $('#table-tab-2').removeClass('tab-mid-active');
                         $('#table-tab-3').removeClass('tab-mid-active');
                         $('#table-tab-4').addClass('tab-right-active');
+                        break;
+                    //Trader limit tabs
+                    case 5: 
+                        $('#limit-buy-tab').addClass('trader-tab-left-active');
+                        $('#limit-sell-tab').removeClass('trader-tab-right-active');
+                        break;
+                    case 6: 
+                        $('#limit-buy-tab').removeClass('trader-tab-left-active');
+                        $('#limit-sell-tab').addClass('trader-tab-right-active');
                         break;
                 }
             }
@@ -524,11 +541,11 @@
                                         </div>
                                         <div class="trader-right-cell valign-wrapper">
                                             <h5 class="trader-header-caption">Shares Affordable</h5>
-                                            <h5 class="trader-header-value trader-rightmost" id="shares-affordable-1">167</h5>
+                                            <h5 class="trader-header-value trader-rightmost" id="shares-affordable-1">-</h5>
                                         </div>
                                         <div class="trader-right-cell valign-wrapper">
                                             <h5 class="trader-header-caption">Shares Owned</h5>
-                                            <h5 class="trader-header-value" id="shares-owned-1">45</h5>
+                                            <h5 class="trader-header-value" id="shares-owned-1">-</h5>
                                         </div>
                                     </div>
                                     <!-- Trader body -->
@@ -551,7 +568,7 @@
                                                     <h5 class="body-header">Cost</h5>
                                                 </div>
                                                 <div class="row cell-bottom">
-                                                    <h5 class="body-big-text truncate" id="buy-cost">$5,232.60</h5>
+                                                    <h5 class="body-big-text truncate" id="buy-cost">-</h5>
                                                 </div>
                                             </div>
                                             <!-- Arrow -->
@@ -564,7 +581,7 @@
                                                     <h5 class="body-header">New balance</h5>
                                                 </div>
                                                 <div class="row cell-bottom">
-                                                    <h5 class="body-big-text truncate trader-orange" id="buy-balance">$26,812.63</h5>
+                                                    <h5 class="body-big-text truncate trader-orange" id="buy-balance">-</h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -584,11 +601,11 @@
                                         </div>
                                         <div class="trader-right-cell valign-wrapper">
                                             <h5 class="trader-header-caption">Shares Value</h5>
-                                            <h5 class="trader-header-value trader-rightmost" id="shares-value-2">$4,756</h5>
+                                            <h5 class="trader-header-value trader-rightmost" id="shares-value-2">-</h5>
                                         </div>
                                         <div class="trader-right-cell valign-wrapper">
                                             <h5 class="trader-header-caption">Shares Owned</h5>
-                                            <h5 class="trader-header-value" id="shares-owned-2">45</h5>
+                                            <h5 class="trader-header-value" id="shares-owned-2">-</h5>
                                         </div>
                                     </div>
                                     <!-- Trader body -->
@@ -611,7 +628,7 @@
                                                     <h5 class="body-header">Revenue</h5>
                                                 </div>
                                                 <div class="row cell-bottom">
-                                                    <h5 class="body-big-text truncate" id="sell-turnout">$4,544.33</h5>
+                                                    <h5 class="body-big-text truncate" id="sell-turnout">-</h5>
                                                 </div>
                                             </div>
                                             <!-- Arrow -->
@@ -624,7 +641,7 @@
                                                     <h5 class="body-header">New balance</h5>
                                                 </div>
                                                 <div class="row cell-bottom">
-                                                    <h5 class="body-big-text truncate trader-blue" id="sell-balance">$36,589.56</h5>
+                                                    <h5 class="body-big-text truncate trader-blue" id="sell-balance">-</h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -637,7 +654,20 @@
                                 </div>
                                 <!-- Limit Order --> 
                                 <div id="test1" class="col s12" style="padding: 0;">
-
+                                    <!-- Trader header -->
+                                    <div class="row trader-header" style="margin: 0;">
+                                        <div class="trader-left-cell valign-wrapper">
+                                            <h5 class="trader-cash" id="trader-balance-3">$32,045.23</h5>
+                                        </div>
+                                        <div class="trader-right-cell valign-wrapper">
+                                            <div class="trader-tab-left trader-tab-left-active" id="limit-buy-tab">
+                                                <h5 class="trader-tab-text">Buy order</h5>
+                                            </div>
+                                            <div class="trader-tab-right" id="limit-sell-tab">
+                                                <h5 class="trader-tab-text">Sell order</h5>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -467,7 +467,7 @@ thead, tbody tr {
 }
 
 .trader-blue{
-    color: #93A9F4;
+    color: #03A9F4;
 }
 
 .trader-orange{
@@ -495,6 +495,62 @@ thead, tbody tr {
 .trader-button-text{
     color: white;
     font-size: 18px;
+}
+
+.trader-tab-left{
+    width: 45%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #e2e2e2;
+    color: #5F5F5F;
+    float: left;
+    height: 44px;
+    text-align: center;
+    padding-top: 2px;
+    cursor: pointer;
+}
+
+.trader-tab-left-active{
+    width: 45% !important;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    background-color: #00ba30 !important;
+    color: white !important;
+    float: left !important;
+    height: 44px;
+    text-align: center !important;
+    padding-top: 2px !important;
+    cursor: pointer !important;
+}
+
+.trader-tab-right{
+    width: 45%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #e2e2e2;
+    color: #5F5F5F;
+    float: left;
+    height: 44px;
+    text-align: center;
+    padding-top: 2px;
+    cursor: pointer;
+}
+
+.trader-tab-right-active{
+    width: 45% !important;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+    background-color: #00ba30 !important;
+    color: white !important;
+    float: left !important;
+    height: 44px !important;
+    text-align: center !important;
+    padding-top: 2px !important;
+    cursor: pointer !important;
+}
+
+.trader-tab-text{
+    font-size: 15px;
 }
 
 /* Details card */
