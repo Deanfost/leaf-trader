@@ -418,8 +418,9 @@ thead, tbody tr {
 }
 
 .trader-body{
-    height: 235px;
+    height: auto;
     width: 100%;
+    margin: 0;
 }
 
 .trader-cell{
@@ -551,6 +552,45 @@ thead, tbody tr {
 
 .trader-tab-text{
     font-size: 15px;
+}
+
+.trader-limit-card-left{
+    width: 25%;
+    height: 350px;
+    text-align: center;
+    float: left;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: 90px;
+    left: 3%;
+}
+
+.trader-limit-left-inner{
+    margin: 0;
+    height: 40%;
+    width: 100%;
+}
+
+.trader-limit-left-header{
+    font-size: 16px;
+    color: white;
+    float: left;
+    margin-left: 10%;
+}
+
+.trader-limit-lower-header{
+    width: 72%;
+    float: right;
+    height: 50%;
+    margin: 0;
+}
+
+.trader-limit-body{
+    overflow: hidden;
+    height: 300px;
+    margin: 0;
+    width: 72%;
+    float: right;
 }
 
 /* Details card */
@@ -772,6 +812,16 @@ thead, tbody tr {
     }
     .trader-rightmost{
         margin-right: 6.5%;
+    }
+    .trader-limit-card-left{
+        width: 30%;
+        left: 2.5%;
+    }
+    .trader-limit-lower-header{
+        width: 67.5%;
+    }
+    .trader-limit-body{
+        width: 67.5%;
     }
     .details-header-body{
         width: 59%;

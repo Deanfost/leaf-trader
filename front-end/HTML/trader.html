@@ -130,9 +130,11 @@
                 //Detect trader tab clicks
                 $('#limit-buy-tab').click(function(){
                     tabClick(5); 
+                    
                 });
                 $('#limit-sell-tab').click(function(){
                     tabClick(6); 
+                    
                 });
                 
                 //Check for children modification of stock table
@@ -289,6 +291,11 @@
                     console.log('Tick executed, syncronizing, ' + secondsLeft + ' seconds till next tick');
                     setTimeout(tickClock, secondsLeft * 1000);
                 }
+            }
+            
+            //Populate proper HTML into trader card body
+            function limitOrder(mode){
+                
             }
             
         </script>
@@ -522,8 +529,8 @@
                         </div>
                     </div>
                     <!-- Card content -->
-                    <div class="row" style="height: 340px; margin-top: 0; padding: 0;">
-                        <div class="row" style="margin: 0;">
+                    <div class="row" style="height: auto; margin: 0; padding: 0;">
+                        <div class="row" style="margin: 0; padding: 0">
                             <div class="col s12" style="padding: 0;">
                                 <ul class="tabs">
                                     <li class="tab col s4"><a href="#test3" style="font-weight: 500;">BUY ORDER</a></li>
@@ -585,7 +592,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row" style="margin-bottom: 25px;">
                                             <div class="trader-button z-depth-1 waves-effect waves-light" id="buy-shares">
                                                 <h5 class="trader-button-text">Buy shares</h5>
                                             </div>
@@ -645,7 +652,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row" style="margin-bottom: 25px;">
                                             <div class="trader-button z-depth-1 waves-effect waves-light" id="buy-shares">
                                                 <h5 class="trader-button-text">Sell shares</h5>
                                             </div>
@@ -653,13 +660,13 @@
                                     </div>
                                 </div>
                                 <!-- Limit Order --> 
-                                <div id="test1" class="col s12" style="padding: 0;">
+                                <div id="test1" class="col s12" style="padding: 0; margin: 0;">
                                     <!-- Trader header -->
-                                    <div class="row trader-header" style="margin: 0;">
-                                        <div class="trader-left-cell valign-wrapper">
+                                    <div class="row trader-header" style="margin: 0; height: 175px;">
+                                        <div class="trader-left-cell valign-wrapper" style="height: 50%;">
                                             <h5 class="trader-cash" id="trader-balance-3">$32,045.23</h5>
                                         </div>
-                                        <div class="trader-right-cell valign-wrapper">
+                                        <div class="trader-right-cell valign-wrapper" style="height: 50%;">
                                             <div class="trader-tab-left trader-tab-left-active" id="limit-buy-tab">
                                                 <h5 class="trader-tab-text">Buy order</h5>
                                             </div>
@@ -667,6 +674,36 @@
                                                 <h5 class="trader-tab-text">Sell order</h5>
                                             </div>
                                         </div>
+                                        <!-- Input card -->
+                                        <div class="trader-limit-card-left custom-green-light z-depth-1">
+                                            <div class="trader-limit-left-inner">
+                                                <div class="trader-limit-left-inner">
+                                                    <h5 class="trader-limit-left-header" style="margin-top: 35px;">Buy price</h5>
+                                                </div>
+                                                <div class="trader-limit-left-inner">
+                                                    <form style="width: 75%; margin-left: 10%;">
+                                                        <input id="limit-buy-price" type="text" class="trader-input">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="trader-limit-left-inner">
+                                                <div class="trader-limit-left-inner">
+                                                    <h5 class="trader-limit-left-header" style="margin-top: 35px;">Shares</h5>
+                                                </div>
+                                                <div class="trader-limit-left-inner">
+                                                    <form style="width: 75%; margin-left: 10%;">
+                                                        <input id="limit-buy-price" type="text" class="trader-input">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <div class="row trader-limit-lower-header">
+                                        
+                                        </div>
+                                    </div>
+                                    <!-- Trader body -->
+                                    <div class="row trader-limit-body" id="limit-body">
+                                        
                                     </div>
                                 </div>
                             </div>
