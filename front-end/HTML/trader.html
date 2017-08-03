@@ -127,14 +127,36 @@
                     tabClick(4);
                 });
                 
+                //Detect trader tab switch
+//                $('#buy-tab').click(function(){
+//                    //Animate the card's height
+//                    $('#trader-parent-body').animate({
+//                        height: 300
+//                    }, 200, null);
+//                });
+//                
+//                $('#sell-tab').click(function(){
+//                    //Animate the card's height
+//                    $('#trader-parent-body').animate({
+//                        height: 300
+//                    }, 200, null);
+//                });
+//                
+//                $('#limit-tab').click(function(){
+//                    //Animate the card's height
+//                    $('#trader-parent-body').animate({
+//                        height: 460
+//                    }, 200, null);
+//                });
+                    
                 //Detect trader tab clicks
                 $('#limit-buy-tab').click(function(){
                     tabClick(5); 
-                    
+                    limitOrder(1);
                 });
                 $('#limit-sell-tab').click(function(){
                     tabClick(6); 
-                    
+                    limitOrder(2);
                 });
                 
                 //Check for children modification of stock table
@@ -293,9 +315,31 @@
                 }
             }
             
-            //Populate proper HTML into trader card body
+            //Change labels and functionality
+            var limitMode = 1;
             function limitOrder(mode){
-                
+                switch(mode){
+                    case 1:
+                        //Switch limit orders to buy mode
+                        $('#input-label-1').text('Buy price');
+                        $('#input-label-2').text('Shares');
+                        $('#header-label-1').text('Shares Owned');
+                        $('#header-label-2').text('Shares Affordable');
+                        $('#body-label-1').text('Order cost');
+                        $('#body-label-2').text('New balance');
+                        limitMode = 1;
+                        break;
+                    case 2:
+                        //Switch limit orders to sell mode
+                        $('#input-label-1').text('Sell price');
+                        $('#input-label-2').text('Shares');
+                        $('#header-label-1').text('Shares Owned');
+                        $('#header-label-2').text('Shares Value');
+                        $('#body-label-1').text('Revenue');
+                        $('#body-label-2').text('New balance');
+                        limitMode = 2;
+                        break;
+                }
             }
             
         </script>
@@ -533,12 +577,12 @@
                         <div class="row" style="margin: 0; padding: 0">
                             <div class="col s12" style="padding: 0;">
                                 <ul class="tabs">
-                                    <li class="tab col s4"><a href="#test3" style="font-weight: 500;">BUY ORDER</a></li>
-                                    <li class="tab col s4"><a href="#test2" style="font-weight: 500;">SELL ORDER</a></li>
-                                    <li class="tab col s4"><a href="#test1" style="font-weight: 500;">LIMIT ORDER</a></li>
+                                    <li class="tab col s4"><a href="#test3" style="font-weight: 500;" id="buy-tab">BUY ORDER</a></li>
+                                    <li class="tab col s4"><a href="#test2" style="font-weight: 500;" id="sell-tab">SELL ORDER</a></li>
+                                    <li class="tab col s4"><a href="#test1" style="font-weight: 500;" id="limit-tab">LIMIT ORDER</a></li>
                                 </ul>
                             </div>
-                            <div class="row" style="margin: 0;">
+                            <div class="row" style="margin: 0; height: 300px; overflow: visible;" id="trader-parent-body">
                                 <!-- Buy order -->
                                 <div id="test3" class="col s12" style="padding: 0;">
                                     <!-- Trader header -->
@@ -546,12 +590,12 @@
                                         <div class="trader-left-cell valign-wrapper">
                                             <h5 class="trader-cash" id="trader-balance-1">$32,045.23</h5>
                                         </div>
-                                        <div class="trader-right-cell valign-wrapper">
-                                            <h5 class="trader-header-caption">Shares Affordable</h5>
+                                        <div class="trader-right-cell valign-wrapper" style="margin-left: 5%; margin-right:6%;">
+                                            <h5 class="trader-header-caption" style="width: 180px; min-width: 180px;">Shares Affordable</h5>
                                             <h5 class="trader-header-value trader-rightmost" id="shares-affordable-1">-</h5>
                                         </div>
                                         <div class="trader-right-cell valign-wrapper">
-                                            <h5 class="trader-header-caption">Shares Owned</h5>
+                                            <h5 class="trader-header-caption" style="width: 120px; min-width: 120px;">Shares Owned</h5>
                                             <h5 class="trader-header-value" id="shares-owned-1">-</h5>
                                         </div>
                                     </div>
@@ -606,12 +650,12 @@
                                         <div class="trader-left-cell valign-wrapper">
                                             <h5 class="trader-cash" id="trader-balance-2">$32,045.23</h5>
                                         </div>
-                                        <div class="trader-right-cell valign-wrapper">
-                                            <h5 class="trader-header-caption">Shares Value</h5>
+                                        <div class="trader-right-cell valign-wrapper" style="margin-right: 6%; margin-left: 5%;">
+                                            <h5 class="trader-header-caption" style="width: 120px; min-width: 120px;">Shares Value</h5>
                                             <h5 class="trader-header-value trader-rightmost" id="shares-value-2">-</h5>
                                         </div>
                                         <div class="trader-right-cell valign-wrapper">
-                                            <h5 class="trader-header-caption">Shares Owned</h5>
+                                            <h5 class="trader-header-caption" style="width: 120px; min-width: 120px;">Shares Owned</h5>
                                             <h5 class="trader-header-value" id="shares-owned-2">-</h5>
                                         </div>
                                     </div>
@@ -653,7 +697,7 @@
                                             </div>
                                         </div>
                                         <div class="row" style="margin-bottom: 25px;">
-                                            <div class="trader-button z-depth-1 waves-effect waves-light" id="buy-shares">
+                                            <div class="trader-button z-depth-1 waves-effect waves-light" id="sell-shares">
                                                 <h5 class="trader-button-text">Sell shares</h5>
                                             </div>
                                         </div>
@@ -666,7 +710,7 @@
                                         <div class="trader-left-cell valign-wrapper" style="height: 50%;">
                                             <h5 class="trader-cash" id="trader-balance-3">$32,045.23</h5>
                                         </div>
-                                        <div class="trader-right-cell valign-wrapper" style="height: 50%;">
+                                        <div class="trader-right-cell-limit valign-wrapper">
                                             <div class="trader-tab-left trader-tab-left-active" id="limit-buy-tab">
                                                 <h5 class="trader-tab-text">Buy order</h5>
                                             </div>
@@ -678,32 +722,76 @@
                                         <div class="trader-limit-card-left custom-green-light z-depth-1">
                                             <div class="trader-limit-left-inner">
                                                 <div class="trader-limit-left-inner">
-                                                    <h5 class="trader-limit-left-header" style="margin-top: 35px;">Buy price</h5>
+                                                    <h5 class="trader-limit-left-header" style="margin-top: 35px;" id="input-label-1">Buy price</h5>
                                                 </div>
                                                 <div class="trader-limit-left-inner">
                                                     <form style="width: 75%; margin-left: 10%;">
-                                                        <input id="limit-buy-price" type="text" class="trader-input">
+                                                        <input id="input-1" type="text" class="trader-input">
                                                     </form>
                                                 </div>
                                             </div>
                                             <div class="trader-limit-left-inner">
                                                 <div class="trader-limit-left-inner">
-                                                    <h5 class="trader-limit-left-header" style="margin-top: 35px;">Shares</h5>
+                                                    <h5 class="trader-limit-left-header" style="margin-top: 35px;" id="input-label-2">Shares</h5>
                                                 </div>
                                                 <div class="trader-limit-left-inner">
                                                     <form style="width: 75%; margin-left: 10%;">
-                                                        <input id="limit-buy-price" type="text" class="trader-input">
+                                                        <input id="input-2" type="text" class="trader-input">
                                                     </form>
                                                 </div>
                                             </div>
                                         </div> 
+                                        <!-- Lower part of grey header -->
                                         <div class="row trader-limit-lower-header">
-                                        
+                                            <div class="lower-header-cell">
+                                                <div class="row valign-wrapper lower-header-row" style="height: 40%;">
+                                                    <h5 class="lower-header-header" style="width: 120px;" id="header-label-1">Shares Owned</h5>
+                                                </div>
+                                                <div class="row lower-header-row" style="height: 60%;">
+                                                    <h5 class="lower-header-value" id="header-display-1">45</h5>
+                                                </div>
+                                            </div>
+                                            <div class="lower-header-cell">
+                                                <div class="row valign-wrapper lower-header-row" style="height: 40%;">
+                                                    <h5 class="lower-header-header" style="width: 150px;" id="header-label-2">Shares Affordable</h5>
+                                                </div>
+                                                <div class="row lower-header-row" style="height: 60%;">
+                                                    <h5 class="lower-header-value" id="header-display2">146</h5>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- Trader body -->
                                     <div class="row trader-limit-body" id="limit-body">
-                                        
+                                        <div class="row limit-top-body-row">
+                                            <!-- Cost/revenue -->
+                                            <div class="limit-body-cell" style="width: 40%;">
+                                                <div class="row body-cell-top-row">
+                                                    <h5 class="body-cell-header" style="width: 80px; min-width: 80px; margin-left: 13%;" id="body-label-1">Order Cost</h5>
+                                                </div>
+                                                <div class="row body-cell-bottom-row">
+                                                    <h5 class="body-cell-value" style="margin-left: 13%;" id="body-display-1">$8,170</h5>
+                                                </div>
+                                            </div>
+                                            <!-- Arrow -->
+                                            <div class="limit-body-cell" style="width: 20%;">
+                                                <img class="responsive-img" src="/front-end/img/arrow-right.png" style="margin-top: 85px; width: 50px;">
+                                            </div>
+                                            <!-- New balance -->
+                                            <div class="limit-body-cell" style="width: 40%;">
+                                                <div class="row body-cell-top-row">
+                                                    <h5 class="body-cell-header" style="width: 100px; min-width: 100px;" id="body-label-2">New Balance</h5>
+                                                </div>
+                                                <div class="row body-cell-bottom-row">
+                                                    <h5 class="body-cell-value trader-orange" id="body-display-2">$8,170</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row limit-lower-body-row">
+                                            <div class="trader-button z-depth-1 waves-effect waves-light" style="width: 30%; margin-right: 3%;" id="limit-button">
+                                                <h5 class="trader-button-text">Send order</h5>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
