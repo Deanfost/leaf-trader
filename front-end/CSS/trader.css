@@ -34,12 +34,14 @@
     margin-top: 12px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    z-index: 10000;
 }
 
 .search-bar-icon{
     width: 27px !important;
     margin-top: 11px ;
     margin-left: 26%;
+    z-index: 10000;
 }
 
 .search-bar-input-container{
@@ -47,6 +49,7 @@
     width: 70%;
     float: left;
     height: 50px;
+    z-index: 10000;
 }
 
 .search-bar{
@@ -60,6 +63,7 @@
     border-bottom-right-radius: 5px !important;
     border-top-right-radius: 5px !important;
     background-color: white !important;
+    z-index: 10000;
 }
 
 .search-button{
@@ -101,6 +105,7 @@
     text-align: center;
 /*    float: left;*/
     cursor: pointer;
+    z-index: -10;
 }
 
 .tab-left-active{
@@ -116,6 +121,7 @@
     text-align: center !important;
 /*    float: left !important;*/
     cursor: pointer !important;
+    z-index: -10 !important;
 }
 
 .tab-mid{
@@ -129,6 +135,7 @@
     text-align: center;
 /*    float: left;*/
     cursor: pointer;
+    z-index: -10;
 }
 
 .tab-mid-active{
@@ -142,6 +149,7 @@
     text-align: center !important;
 /*    float: left !important;*/
     cursor: pointer !important;
+    z-index: -10 !important;
 }
 
 .tab-right{
@@ -157,6 +165,7 @@
     text-align: center;
 /*    float: left;*/
     cursor: pointer;
+    z-index: -10;
 }
 
 .tab-right-active{
@@ -172,6 +181,7 @@
     text-align: center !important;
 /*    float: left !important;*/
     cursor: pointer !important;
+    z-index: -10 !important;
 }
 
 .toggle-text{

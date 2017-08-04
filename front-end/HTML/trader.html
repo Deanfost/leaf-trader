@@ -117,9 +117,9 @@
                 $('#table-tab-1').click(function(){
                     tabClick(1);
                 });
-                $('#table-tab-2').click(function(){
-                    tabClick(2);
-                });
+//                $('#table-tab-2').click(function(){
+//                    tabClick(2);
+//                });
                 $('#table-tab-3').click(function(){
                     tabClick(3);
                 });
@@ -179,12 +179,36 @@
                     }
                 });
                 
+                //Detect when trader limit input-1 loses focus
+                $('#input-1').focusout(function(){
+                    //Add dollar sign if needed
+                    var text = $(this).val();
+                    if(text.substr(0, 1) !== '$'){
+                        $(this).val("$" + text);
+                    }
+                });
+                
                 //Tick the market clock
                 tickClock();      
-            });
+                
+                //Init autocomplete for the search bar
+                $('input.autocomplete').autocomplete({
+                    data: {
+                        "Apple": null,
+                        "Microsoft": null,
+                        "Google": 'https://placehold.it/250x250', 
+                    },
+                    limit: 100,
+                    onAutocomplete: function(val) {
+                        // Callback when result is selected(init the search)
+                        
+                    },
+                    minLength: 1,});
+                });
             
-            //Apply and remove proper classes to mode tabs
+            //Apply and remove proper classes to mode tabs, scroll to top
             function modeClick(tab){
+                $('html, body').animate({scrollTop : 0}, 300);
                 switch(tab){
                     case 1:
                         $('#mode-1').addClass('tab-left-active');
@@ -453,7 +477,7 @@
                         <form style="width: 100%;">
                             <div class="search-bar-input-container">
                                 <div class="input field">
-                                    <input id="search" type="text" class="search-bar">
+                                    <input id="search" type="text" class="search-bar autocomplete">
                                 </div>
                             </div>
                         </form>
@@ -506,9 +530,11 @@
                             <div class="table-tab tab-left tab-left-active" id="table-tab-1">
                                 <p class="tab-text">Company</p>
                             </div>
+<!--
                             <div class="table-tab tab-mid" id="table-tab-2">
                                 <p class="tab-text">Ticker</p>
                             </div>
+-->
                             <div class="table-tab tab-mid" id="table-tab-3">
                                 <p class="tab-text">Price</p>
                             </div>
