@@ -180,7 +180,8 @@
                 });
                 
                 //Tick the market clock
-                tickClock();      
+                tickClock();   
+                setSliders(190, 290, 270, 200, 200, 200);
             });
             
             //Apply and remove proper classes to mode tabs
@@ -796,9 +797,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- Trader body -->
-                                    <div class="row trader-limit-body" id="limit-body">
                                         <div class="row limit-top-body-row">
                                             <!-- Cost/revenue -->
                                             <div class="limit-body-cell" style="width: 40%;">
@@ -823,6 +821,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        
+                                    </div>
+                                    <!-- Trader body -->
+                                    <div class="row trader-limit-body" id="limit-body">
+                                        
                                         <div class="row limit-lower-body-row">
                                             <div class="trader-button z-depth-1 waves-effect waves-light" style="width: 30%; margin-right: 3%;" id="limit-button">
                                                 <h5 class="trader-button-text">Send order</h5>

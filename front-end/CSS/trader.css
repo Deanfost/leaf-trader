@@ -859,6 +859,23 @@ thead, tbody tr {
     margin-left: 1%;
 }
 
+/* Hack for firefox */
+@-moz-document url-prefix() { 
+  .search-icon-wrapper {
+     height: 49.5px;
+  }
+}
+
+/* Hack for edge */
+@supports (-ms-ime-align: auto) {
+    .trader-limit-lower-header{
+        margin-top: -350px;
+    }
+    .limit-top-body-row{
+        margin-top: -0px;
+    }
+}
+
 /* Special font sizing for details panel for screens smaller than 1330 */
 @media only screen and (max-width: 1330px){
     .details-cell-title-left{
@@ -994,5 +1011,40 @@ thead, tbody tr {
     }
     #shares-affordable{
         margin-right: 11%;
+    }
+}
+
+/* Ultra large displays wider than 2200 */
+@media only screen and (min-width: 2200px){
+    #card-container{
+        width: 1200px;
+        left: 50%;
+    }
+    .search-outer-wrapper{
+        width: 1200px;
+        padding-right: 0;
+    }
+    #mode-tab-container{
+        width: 1200px;
+    }
+    .tab-left{
+        width: 25%;
+        margin-left: 5.2% !important;
+    }
+    .tab-left-active{
+        width: 25%;
+        margin-left: 5.2% !important;
+    }
+    .tab-mid{
+        width: 25%;
+    }
+    .tab-mid-active{
+        width: 25%;
+    }
+    .tab-right{
+        width: 25%;
+    }
+    .tab-right-active{
+        width: 25%;
     }
 }
