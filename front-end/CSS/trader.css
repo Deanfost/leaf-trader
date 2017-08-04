@@ -713,12 +713,48 @@ thead, tbody tr {
     font-size: 16px;
     color: #848484;
     margin-left: 4%;
-    margin-top: 24px;
+    margin-top: 16px;
 }
 
 .details-range-row{
-    height: 60px;
+    height: 80px;
     margin: 0;
+}
+
+.details-range-top{
+    height: 70%;
+    margin: 0;
+    text-align: center;
+    padding-top: 12.5px;
+}
+
+.details-range-box{
+    width: 92%;
+    background-color: #DDDDDD;
+    height: 70%;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.details-range-marker{
+    width: 1.5%;
+    height: 100%;
+    float: left;
+}
+
+.details-range-bottom{
+    height: 30%;
+    margin: 0;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.details-range-values{
+    font-size: 14px;
+    color: #1F1F1F;
+    width: 50%;
 }
 
 .details-float-panel{

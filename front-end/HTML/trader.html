@@ -180,7 +180,7 @@
                 });
                 
                 //Tick the market clock
-                tickClock();
+                tickClock();      
             });
             
             //Apply and remove proper classes to mode tabs
@@ -270,7 +270,7 @@
                 var h = time.getHours();
                 var m = time.getMinutes();
                 var s = time.getSeconds();
-                console.log(h + ', ' + m + ', ' + s);
+//                console.log(h + ', ' + m + ', ' + s);
                 
                 //If the market is open (9:30AM to 4:00PM)
                 if((h === 9 && m >= 30) || (h > 9 && h < 16)){
@@ -278,7 +278,7 @@
                     if(h === 15 && m >= 30){
                         $('#details-market-dot').attr('src', '/front-end/img/market-closing.png');
                         var timeLeft = 60 - m;
-                        console.log('Market closing in ' + timeLeft + ' mins');
+//                        console.log('Market closing in ' + timeLeft + ' mins');
                         if(timeLeft > 1){
                             $('#details-market-info').text('Market open - closing in ' + timeLeft + ' minutes(4:00PM)');
                         }
@@ -288,14 +288,14 @@
                     }
                     //Open with ample time left
                     else{
-                        console.log('Market open');
+//                        console.log('Market open');
                         $('#details-market-dot').attr('src', '/front-end/img/market-open.png');
                         $('#details-market-info').text('Market open - closing at 4:00PM');
                     }
                 }
                 //Market is closed
                 else{
-                    console.log('Market closed');
+//                    console.log('Market closed');
                     $('#details-market-dot').attr('src', '/front-end/img/market-closed.png');
                     $('#details-market-info').text('Market closed - open at 9:30AM');
                 }
@@ -303,19 +303,19 @@
                 //Set new tick interval
                 if(s === 0){
                     //0 seconds until next minute, tick in 1 second
-                    console.log('Tick executed');
-                    console.log('Synchronized, ticking in 60 seconds...');
+//                    console.log('Tick executed');
+//                    console.log('Synchronized, ticking in 60 seconds...');
                     setTimeout(tickClock, 60000);
                 }
                 else{
                     //Determine amount of seconds until next minute, set timer
                     var secondsLeft = 60 - s;
-                    console.log('Tick executed, syncronizing, ' + secondsLeft + ' seconds till next tick');
+//                    console.log('Tick executed, syncronizing, ' + secondsLeft + ' seconds till next tick');
                     setTimeout(tickClock, secondsLeft * 1000);
                 }
             }
             
-            //Change labels and functionality
+            //Change labels and functionality for trader limit section
             var limitMode = 1;
             function limitOrder(mode){
                 switch(mode){
@@ -339,6 +339,42 @@
                         $('#body-label-2').text('New balance');
                         limitMode = 2;
                         break;
+                }
+            }
+            
+            //Set range markers for details card
+            function setSliders(dayRange1, dayRange2, dayPos, yearRange1, yearRange2, yearPos){
+                //Set day slider range values
+                $('#day-low-range').text('$' + dayRange1);
+                $('#day-high-range').text('$' + dayRange2);
+                //Set day marker position
+                if(dayRange1 !== dayRange2){
+                    var diff1 = dayRange2 - dayRange1;
+                    var dayPosRelative = dayPos - dayRange1;
+                    var percentage1 = dayPosRelative/diff1;
+                    percentage1 *= 100;
+                    percentage1 -= .75;
+                    $('#day-marker').css('margin-left', percentage1 + '%');
+                }
+                else{
+                    $('#day-marker').css('width', '100%');
+                }
+               
+                //Set year slider range values
+                $('#year-low-range').text('$' + yearRange1);
+                $('#year-high-range').text('$' + yearRange2);
+                
+                //Set year marker position
+                if(yearRange1 !== yearRange2){
+                    var diff2 = yearRange2 - yearRange1;
+                    var yearPosRelative = yearPos - yearRange1;
+                    var percentage2 = yearPosRelative/diff2;
+                    percentage2 *= 100;
+                    percentage2 -= .75;
+                    $('#year-marker').css('margin-left', percentage2 + '%');
+                }
+                else{
+                    $('#year-marker').css('width', '100%');
                 }
             }
             
@@ -828,11 +864,27 @@
                         <div class="details-range-section">
                             <h5 class="details-range-header">Day's Range</h5>
                             <div class="row details-range-row">
-                            
+                                <div class="row details-range-top">
+                                    <div class="details-range-box">
+                                        <div class="details-range-marker custom-green-light" id="day-marker"></div>
+                                    </div>
+                                </div>
+                                <div class="row details-range-bottom valign-wrapper">
+                                    <h5 class="details-range-values" style="text-align: left;" id="day-low-range">$152.38</h5>
+                                    <h5 class="details-range-values" style="text-align: right;" id="day-high-range">$157.94</h5>
+                                </div>
                             </div>
                             <h5 class="details-range-header">Year Range</h5>
                             <div class="row details-range-row">
-                            
+                                <div class="row details-range-top">
+                                    <div class="details-range-box">
+                                        <div class="details-range-marker custom-green-light" id="year-marker"></div>
+                                    </div>
+                                </div>
+                                <div class="row details-range-bottom valign-wrapper">
+                                    <h5 class="details-range-values" style="text-align: left;" id="year-low-range">$124.68</h5>
+                                    <h5 class="details-range-values" style="text-align: right;" id="year-high-range">$197.09</h5>
+                                </div>
                             </div>
                         </div>
                         <!-- Stock details panel -->
