@@ -32,7 +32,7 @@ body{
     height: 100%;
     color: white;
     margin: 0;
-    padding-left: 2vw;
+    padding-left: 25px;
     float: left;
 }
 
@@ -44,49 +44,58 @@ body{
 }
 
 .nav-link{
-    width: 120px;
+    width: auto;
     height: 100%;
     color: white;
     margin: 0;
     float: right;
+    padding-right: 50px;
 }
 
 .nav-link-text{
-    font-size: 18px;
+    font-size: 16px;
     width: auto;
     float: left;
     margin: 0;
     cursor: pointer;
+    color: white;
+}
+
+.nav-link-text:hover, .nav-link-text:focus{
+    
 }
 
 .btn-sign-in{
-    width: 160px;
-    height: 40px;
-    border-radius: 10px;
+    width: 140px;
+    height: 35px;
+    border-radius: 5px;
     border-color: white;
     color: white;
     float: right;
     border-style: solid;
     border-width: 1px;
-    padding-left: 52px;
-    font-size: 18px;
-    margin-right: 4%;
-    margin-top: 1.7vh;
+    padding-top: 5px;
+    font-size: 16px;
+    margin-right: 3%;
+    margin-top: 15px;
+    cursor: pointer;
 }
 
 .btn-sign-up{
-    width: 160px;
-    height: 40px;
-    border-radius: 10px;
+    width: 140px;
+    height: 35px;
+    border-radius: 5px;
     border-color: white;
     color: #848484;
     float: right;
     border-width: 5px;
-    margin-top: 1.7vh;
-    padding-left: 52px;
-    font-size: 18px;
+    margin-top: 2vh;
+    padding-top: 5px;
+    font-size: 16px;
     background-color: white;
     margin-right: 45px;
+    margin-top: 15px;
+    cursor: pointer;
 }
 
 .inner-container{
@@ -94,11 +103,28 @@ body{
     height: 100%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .overview-section{
     width: 100%;
     height: 300px;
+}
+
+/* Displays under 1200px wide */
+@media only screen and (max-width:1000px){
+    .nav-link{
+        padding-right: 30px;
+    }
+    .btn-sign-in{
+        width: 120px;
+        padding-left: 34px;
+    }
+    .btn-sign-up{
+        width: 120px;
+        padding-left: 34px;
+    }
 }
 
 /* Ultra large displays wider than 2200 */
