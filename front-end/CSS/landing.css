@@ -1,6 +1,7 @@
 body{
     min-width: 1000px;
     text-align: center;
+    overflow-x: hidden;
 }
 
 .top-section{
@@ -14,9 +15,78 @@ body{
 
 .nav-bar{
     width: 100%;
-    height: 10vh;
+    height: 68px;
     margin: 0;
-    z-index: 100;
+}
+
+.nav-left{
+    width: 20%;
+    float: left;
+    margin: 0;
+    height: 100%;
+}
+
+.nav-title{
+    width: 160px;
+    font-size: 24px;
+    height: 100%;
+    color: white;
+    margin: 0;
+    padding-left: 2vw;
+    float: left;
+}
+
+.nav-right{
+    width: 80%;
+    float: right;
+    margin: 0;
+    height: 100%;
+}
+
+.nav-link{
+    width: 120px;
+    height: 100%;
+    color: white;
+    margin: 0;
+    float: right;
+}
+
+.nav-link-text{
+    font-size: 18px;
+    width: auto;
+    float: left;
+    margin: 0;
+    cursor: pointer;
+}
+
+.btn-sign-in{
+    width: 160px;
+    height: 40px;
+    border-radius: 10px;
+    border-color: white;
+    color: white;
+    float: right;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 52px;
+    font-size: 18px;
+    margin-right: 4%;
+    margin-top: 1.7vh;
+}
+
+.btn-sign-up{
+    width: 160px;
+    height: 40px;
+    border-radius: 10px;
+    border-color: white;
+    color: #848484;
+    float: right;
+    border-width: 5px;
+    margin-top: 1.7vh;
+    padding-left: 52px;
+    font-size: 18px;
+    background-color: white;
+    margin-right: 45px;
 }
 
 .inner-container{
@@ -24,7 +94,11 @@ body{
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+}
+
+.overview-section{
+    width: 100%;
+    height: 300px;
 }
 
 /* Ultra large displays wider than 2200 */
