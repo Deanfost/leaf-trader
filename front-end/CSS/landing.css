@@ -173,7 +173,17 @@ body{
     }
 }
 
-/* Ultra large displays wider than 2200 */
+/* Wide displays wider than 1800px wide */
+@media only screen and (min-width:1800px){
+    .top-header{
+        font-size: 38px;
+    }
+    .top-paragraph{
+        font-size: 22px;
+    }
+}
+
+/* Ultra wide displays wider than 2200 */
 @media only screen and (min-width: 2200px){
     .nav-bar{
         width: 1500px;
