@@ -11,12 +11,16 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    min-height: 600px;
 }
 
 .nav-bar{
-    width: 100%;
+    width: 90%;
     height: 68px;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nav-left{
@@ -62,39 +66,39 @@ body{
 }
 
 .nav-link-text:hover, .nav-link-text:focus{
-    
+    text-decoration: underline;
 }
 
 .btn-sign-in{
     width: 140px;
-    height: 35px;
+    height: 30px;
     border-radius: 5px;
     border-color: white;
     color: white;
     float: right;
     border-style: solid;
     border-width: 1px;
-    padding-top: 5px;
+    padding-top: 3px;
     font-size: 16px;
     margin-right: 3%;
-    margin-top: 15px;
+    margin-top: 17px;
     cursor: pointer;
 }
 
 .btn-sign-up{
     width: 140px;
-    height: 35px;
+    height: 30px;
     border-radius: 5px;
     border-color: white;
     color: #848484;
     float: right;
     border-width: 5px;
     margin-top: 2vh;
-    padding-top: 5px;
+    padding-top: 3px;
     font-size: 16px;
     background-color: white;
     margin-right: 45px;
-    margin-top: 15px;
+    margin-top: 17px;
     cursor: pointer;
 }
 
@@ -105,6 +109,39 @@ body{
     margin-right: auto;
     margin-bottom: 0;
     margin-top: 0;
+    text-align: center;
+}
+
+.top-header{
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-top: 15%;
+}
+
+.top-paragraph{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    width: 80%;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-get-started{
+    border-radius: 5px;
+    height: 50px;
+    width: 240px;
+    background-color: #41B946;
+    color: white;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
 }
 
 .overview-section{
@@ -119,11 +156,20 @@ body{
     }
     .btn-sign-in{
         width: 120px;
-        padding-left: 34px;
     }
     .btn-sign-up{
         width: 120px;
-        padding-left: 34px;
+    }
+    .top-header{
+        font-size: 34px
+    }
+    .top-paragraph{
+        font-size: 18px;
+    }
+    .btn-get-started{
+        width: 180px;
+        font-size: 16px;
+        padding-top: 14px;
     }
 }
 
