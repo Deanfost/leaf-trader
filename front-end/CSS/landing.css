@@ -191,7 +191,7 @@ body{
 
 .features-text-container{
     height: 100%;
-    margin-left: 200px;
+    margin-left: 180px;
 }
 
 .features-header{
@@ -200,7 +200,7 @@ body{
     width: 100%;
     height: auto;
     text-align: left;
-    padding-left: 4%;
+    padding-left: 5%;
     padding-top: 2%;
 }
 
@@ -210,12 +210,12 @@ body{
     width: 100%;
     height: auto;
     text-align: left;
-    padding-left: 4%;
+    padding-left: 5%;
     padding-top: .5%;
 }
 
 /* Displays under 1200px wide */
-@media only screen and (max-width:1000px){
+@media only screen and (max-width:1200px){
     .nav-link{
         padding-right: 30px;
     }
@@ -236,6 +236,27 @@ body{
         font-size: 16px;
         padding-top: 14px;
     }
+    .section-header{
+        font-size: 36px;
+    }
+    .section-line{
+        width: 80px;
+    }
+    .features-graphic-container{
+        width: 160px;
+        height: 160px;
+    }
+    .features-text-container{
+        margin-left: 160px;
+    }
+    .features-header{
+        font-size: 28px;
+        padding-left: 7%;
+    }
+    .features-paragraph{
+        font-size: 18px;
+        padding-left: 7%;
+    }
 }
 
 /* Wide displays wider than 1800px wide */
@@ -251,5 +272,26 @@ body{
     }
     .top-paragraph{
         font-size: 22px;
+    }
+    .section-header{
+        font-size: 37px;
+    }
+    .section-line{
+        width: 110px;
+    }
+    .features-graphic-container{
+        width: 190px;
+        height: 190px;
+    }
+    .features-text-container{
+        margin-left: 190px;
+    }
+    .features-header{
+        font-size: 29px;
+        padding-left: 4%;
+    }
+    .features-paragraph{
+        font-size: 19px;
+        padding-left: 4%;
     }
 }
