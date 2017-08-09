@@ -12,6 +12,7 @@ body{
     background-position: center;
     background-size: cover;
     min-height: 600px;
+    min-width: 1000px;
 }
 
 .nav-bar{
@@ -104,7 +105,6 @@ body{
 
 .inner-container{
     width: 70%;
-    height: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0;
@@ -151,7 +151,6 @@ body{
     width: 100%;
     text-align: center;
     height: auto;
-    margin-top: 90px;
 }
 
 .section-line{
@@ -166,7 +165,9 @@ body{
 
 .features-section{
     width: 100%;
-    height: 750px;
+    height: 1040px;
+    padding-top: 60px;
+    min-width: 1000px;
 }
 
 .features-row{
@@ -214,6 +215,68 @@ body{
     padding-top: .5%;
 }
 
+.team-section{
+    width: 100%;
+    height: 800px;
+    background-color: #F5F5F5;
+    padding-top: 60px;
+    min-width: 1000px;
+}
+
+.team-column{
+    width: 50%;
+    height: auto;
+    float: left;
+}
+
+.team-img{
+    width: 180px;
+    height: 180px;
+    float: left;
+}
+
+.team-name{
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-size: 28px;
+    color: #41B946;
+    margin-top: 60px;
+    margin-left: 220px;
+}
+
+.team-role{
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-size: 22px;
+    color: #848484;
+    margin-top: 10px;
+    margin-left: 220px;
+}
+
+.team-description{
+    width: 92%;
+    height: auto;
+    text-align: left;
+    font-size: 18px;
+    color: #848484;
+    margin-top: 40px;
+    float: left;
+}
+
+.footer-1{
+    width: 100%;
+    height: 140px;
+    background-color: #262626;
+}
+
+.footer-2{
+    width: 100%;
+    height: 60px;
+    background-color: #1E1E1E;
+}
+
 /* Displays under 1200px wide */
 @media only screen and (max-width:1200px){
     .nav-link{
@@ -224,6 +287,9 @@ body{
     }
     .btn-sign-up{
         width: 120px;
+    }
+    .inner-container{
+        width: 80%;
     }
     .top-header{
         font-size: 34px
@@ -256,6 +322,16 @@ body{
     .features-paragraph{
         font-size: 18px;
         padding-left: 7%;
+    }
+    .team-img{
+        width: 140px;
+        height: 140px;
+    }
+    .team-name{
+        margin-left: 165px;
+    }
+    .team-role{
+        margin-left: 165px;
     }
 }
 
