@@ -18,7 +18,7 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
         <!--On DOM ready -->
         <script>
-            $(document).ready(function(){
+            $(document).ready(function(){                
                 //Scroll to respective page sections
                 $('#btn-overview').click(function(){
                     $('html, body').animate({scrollTop: '0px'}, 400); 
@@ -41,6 +41,38 @@
                 
                 //Init modal
                 $('.modal').modal();
+                
+                //Animate the top section
+                var $navBar = $('.nav-bar');
+                var $topHeader = $('.top-header');
+                var $topParagraph = $('.top-paragraph');
+                var $getStartedBtn = $('.btn-get-started');
+                
+                setTimeout(function(){
+                    $navBar.animate({
+                        opacity: 1, 
+                        top: 0
+                    }, 350, null); 
+                }, 300);
+                
+                setTimeout(function(){
+                    $topHeader.animate({
+                        opacity: 1, 
+                        marginTop: '15%'
+                    }, 550, null);
+                }, 350);
+                
+                setTimeout(function(){
+                    $topParagraph.animate({
+                        opacity: 1
+                    }, 600, null);
+                }, 400);
+                
+                setTimeout(function(){
+                    $getStartedBtn.animate({
+                        opacity: 1 
+                    }, 650, null);
+                }, 450);
             });
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/landing.css">
