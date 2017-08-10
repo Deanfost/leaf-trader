@@ -1,7 +1,6 @@
 body{
     min-width: 1000px;
     text-align: center;
-    overflow-x: hidden;
 }
 
 .top-section{
@@ -94,7 +93,7 @@ body{
     padding-top: 3px;
     font-size: 16px;
     background-color: white;
-    margin-right: 45px;
+    margin-right: 25px;
     margin-top: 17px;
     cursor: pointer;
 }
