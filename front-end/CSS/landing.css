@@ -260,10 +260,36 @@ body{
     float: left;
 }
 
+.back-to-top-container{
+    width: 100%;
+    text-align: center;
+    height: auto;
+    position: absolute;
+}
+
+.back-to-top{
+    background-color: #41B946;
+    border-radius: 100px;
+    width: 75px;
+    height: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -37px;
+    cursor: pointer;
+}
+
+.back-to-top-img{
+    width: 35px;
+    height: 35px;
+    margin-top: 21px;
+}
+
 .footer-1{
     width: 100%;
     height: 140px;
     background-color: #262626;
+    z-index: -100;
 }
 
 .footer-1-cell{
@@ -338,7 +364,6 @@ body{
     float: right;
     margin-right: 5%;
     color: white;
-    cursor: pointer;
 }
 
 /* Displays under 1300px wide */
@@ -397,6 +422,16 @@ body{
     }
     .team-role{
         margin-left: 165px;
+    }
+    .back-to-top{
+        width: 60px;
+        height: 60px;
+        top: -31px;
+    }
+    .back-to-top-img{
+        width: 25px;
+        height: 25px;
+        margin-top: 19px;
     }
     .footer-1-header{
         font-size: 18px;

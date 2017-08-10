@@ -19,7 +19,42 @@
         <!--On DOM ready -->
         <script>
             $(document).ready(function(){
+                //Scroll to respective page sections
+                $('#btn-overview').click(function(){
+                    $('html, body').animate({scrollTop: '0px'}, 400); 
+                });
                 
+                $('#btn-features').click(function(){
+                    var offset = $('.features-section').offset().top;
+                    $('html, body').animate({scrollTop: offset + 10}, 400); 
+                });
+            
+                $('#btn-team').click(function(){
+                    var offset = $('.team-section').offset().top;
+                    $('html, body').animate({scrollTop: offset + 10}, 400); 
+                });
+                
+                //Scroll to top of the page
+                $('#btn-top').click(function(){
+                    $('html, body').animate({scrollTop: '0px'}, 500); 
+                });
+                
+                //Init scrollFire to animate elements
+                var options = [
+                    {selector: '.top-section', offset: 0, callback: function(){
+                        
+                    }},
+                    {selector: '.features-section', offset: 750, callback: function(){
+                        
+                    }},
+                    {selector: '.team-section', offset: 800, callback: function(){
+                        
+                    }}
+                ];
+                Materialize.scrollFire(options);
+                
+                //Init modal
+                $('.modal').modal();
             });
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/landing.css">
@@ -34,15 +69,15 @@
                 <div class="nav-right">
                     <a class="btn-sign-up waves-effect">Sign up</a>
                     <a class="btn-sign-in waves-effect">Sign in</a>
-                    <div class="nav-link valign-wrapper"><h5 class="nav-link-text">Team</h5></div>
-                    <div class="nav-link valign-wrapper"><h5 class="nav-link-text">Features</h5></div>
-                    <div class="nav-link valign-wrapper"><h5 class="nav-link-text">Overview</h5></div>
+                    <div class="nav-link valign-wrapper" id="btn-team"><h5 class="nav-link-text">Team</h5></div>
+                    <div class="nav-link valign-wrapper" id="btn-features"><h5 class="nav-link-text">Features</h5></div>
+                    <div class="nav-link valign-wrapper" id="btn-overview"><h5 class="nav-link-text">Overview</h5></div>
                 </div>
             </div>
             <div class="inner-container">
                 <h5 class="top-header">Dip your toes in the water.</h5>
                 <h5 class="top-paragraph">Before you make the leap into the market, see what it's like first. Learn the essentials of trading and take the next step to financial independence.</h5>
-                <div class="btn-get-started center-align waves-effect">Get started</div>
+                <div class="btn-get-started center-align waves-effect" id="btn-get-started">Get started</div>
             </div>
         </section>
         <section class="features-section">
@@ -95,11 +130,14 @@
                     <h5 class="team-description">Dean is a Computer Science student at the University of Maryland. A passionate developer since age 15, he first started out making 2D games with his best friend in high school. Since then, he has aquired a love for design and mobile development, with his current focus on web technologies. Believe it or not, this is his first website. He aims to learn as much as he can on full-stack development, with an ultimate goal of working for SpaceX.</h5>
                 </div>
             </div>
-            
-            
         </section>
         <footer>
             <div class="footer-1">
+                <div class="back-to-top-container">
+                    <div class="back-to-top z-depth-1" id="btn-top">
+                        <img src="/front-end/img/arrow-top-white.png" class="back-to-top-img">
+                    </div>
+                </div>
                 <div class="footer-1-cell" style="width: 160px; margin-left: 5%;">
                     <h5 class="footer-1-header">Framework</h5>
                     <h5 class="footer-1-content"><a href="http://www.materializecss.com" style="color: white;">materializecss.com</a></h5>
@@ -119,7 +157,17 @@
                 <!-- TODO - Link the sign-in/sign-up to the right page -->
                 <h5 class="footer-2-action valign-wrapper" id="footer-sign-in">Sign in</h5>
                 <h5 class="footer-2-action valign-wrapper" id="footer-sign-up">Sign up</h5>
-                <h5 class="footer-2-disclaimer valign-wrapper">Disclaimer</h5>
+                <h5 class="footer-2-disclaimer valign-wrapper"><a style="color: white;" href="#modal1">Disclaimer</a></h5>
+                
+                <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4 style="text-align: left;">Disclaimer</h4>
+                  <p style="text-align: left; color: #848484;">It should be noted that this is a student project. As such, no information presented on this website should be taken as financial or trading advice. By using this site, you agree to these conditions. For legitimate trading advice or training, please use an accredited website, book, or other source.</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-action modal-close waves-effect waves-light btn-flat" style="color: #41B946;">Got it</a>
+                </div>
+                </div>
             </div>
         </footer>
     </body> 
