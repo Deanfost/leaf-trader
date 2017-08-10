@@ -26,12 +26,12 @@
                 
                 $('#btn-features').click(function(){
                     var offset = $('.features-section').offset().top;
-                    $('html, body').animate({scrollTop: offset + 10}, 400); 
+                    $('html, body').animate({scrollTop: offset - 70}, 400); 
                 });
             
                 $('#btn-team').click(function(){
                     var offset = $('.team-section').offset().top;
-                    $('html, body').animate({scrollTop: offset + 10}, 400); 
+                    $('html, body').animate({scrollTop: offset - 70}, 400); 
                 });
                 
                 //Scroll to top of the page
@@ -73,12 +73,40 @@
                         opacity: 1 
                     }, 650, null);
                 }, 450);
+                
+                //Detect scroll
+                $(window).scroll(function(){
+                    //Determine whether or not to reveal fixed nav
+                    var scroll = $(document).scrollTop();
+                    if(scroll >= 100){
+                        $('.nav-bar-fixed-wrapper').css('opacity', '1');
+                    }
+                    else{
+                        $('.nav-bar-fixed-wrapper').css('opacity', '0');
+                    }
+                });
             });
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/landing.css">
     </head>
     
     <body>
+        <!-- Initially hidden fixed nav bar-->
+        <div class="nav-bar-fixed-wrapper z-depth-3">
+            <div class="row nav-bar">
+                <div class="nav-left">
+                    <h5 class="nav-title valign-wrapper">Leaf Trader</h5>
+                </div>
+                <div class="nav-right">
+                    <a class="btn-sign-up waves-effect">Sign up</a>
+                    <a class="btn-sign-in waves-effect">Sign in</a>
+                    <div class="nav-link valign-wrapper" id="btn-team"><h5 class="nav-link-text">Team</h5></div>
+                    <div class="nav-link valign-wrapper" id="btn-features"><h5 class="nav-link-text">Features</h5></div>
+                    <div class="nav-link valign-wrapper" id="btn-overview"><h5 class="nav-link-text">Overview</h5></div>
+                </div>
+            </div>
+        </div>
+        <!-- Top section and nav bar -->
         <section class="top-section z-depth-1">
             <div class="row nav-bar">
                 <div class="nav-left">
@@ -98,6 +126,7 @@
                 <div class="btn-get-started center-align waves-effect" id="btn-get-started">Get started</div>
             </div>
         </section>
+        <!-- Features section-->
         <section class="features-section">
             <h5 class="section-header">Features</h5>
             <div class="section-line"></div>
@@ -131,6 +160,7 @@
                 </div>
             </div>
         </section>
+        <!-- Team section -->
         <section class="team-section">
             <h5 class="section-header">Team</h5>
             <div class="section-line"></div>
@@ -149,6 +179,7 @@
                 </div>
             </div>
         </section>
+        <!-- Footer -->
         <footer>
             <div class="footer-1">
                 <div class="footer-container">
