@@ -5,7 +5,7 @@ body{
 
 .top-section{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-image: url('/front-end/img/new-york-cover.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -323,6 +323,14 @@ body{
     cursor: pointer;
 }
 
+#footer-sign-in{
+    width: 42px;
+}
+
+#footer-sign-up{    
+    width: 47px;
+}
+
 .footer-2-disclaimer{
     width: 66px;
     height: 38px;
@@ -390,6 +398,29 @@ body{
     .team-role{
         margin-left: 165px;
     }
+    .footer-1-header{
+        font-size: 18px;
+    }
+    .footer-1-content{
+        font-size: 14px;
+    }
+    .footer-2-title{
+        font-size: 18px;
+        width: 92px;
+    }
+    .footer-2-action{
+        font-size: 12px;
+    }
+    #footer-sign-in{
+        width: 36px;
+    }
+    #footer-sign-up{
+        width: 40px;
+    }
+    .footer-2-disclaimer{
+        font-size: 12px;
+        width: 56px;
+    }
 }
 
 /* Wide displays wider than 1800px wide */
@@ -440,5 +471,28 @@ body{
     }
     .team-description{
         font-size: 19px;
+    }
+    .footer-1-header{
+        font-size: 21px;
+    }
+    .footer-1-content{
+        font-size: 17px;
+    }
+    .footer-2-title{
+        font-size: 21px;
+        width: 107px;
+    }
+    .footer-2-action{
+        font-size: 15px;
+    }
+    #footer-sign-in{
+        width: 45px;
+    }
+    #footer-sign-up{
+        width: 50px;
+    }
+    .footer-2-disclaimer{
+        font-size: 15px;
+        width: 76px;
     }
 }
