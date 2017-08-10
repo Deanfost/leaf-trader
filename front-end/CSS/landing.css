@@ -1,5 +1,4 @@
 body{
-    min-width: 1000px;
     text-align: center;
 }
 
@@ -20,7 +19,6 @@ body{
     background-position: center;
     background-size: cover;
     min-height: 600px;
-    min-width: 1000px;
 }
 
 .nav-bar{
@@ -177,7 +175,6 @@ body{
     width: 100%;
     height: 1040px;
     padding-top: 60px;
-    min-width: 1000px;
 }
 
 .features-row{
@@ -230,7 +227,6 @@ body{
     height: 800px;
     background-color: #F5F5F5;
     padding-top: 60px;
-    min-width: 1000px;
 }
 
 .team-column{
@@ -388,8 +384,13 @@ body{
     color: white;
 }
 
-/* Displays under 1300px wide */
-@media only screen and (max-width:1300px){
+/* Mobile devices and screens smaller than 1300px wide */
+@media only screen and (max-width: 999px){
+    
+}
+
+/* Displays between 1000px and 1300px wide */
+@media only screen and (min-width: 1000px) and (max-width: 1300px){
     .nav-link{
         padding-right: 30px;
     }
