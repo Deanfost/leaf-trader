@@ -99,12 +99,21 @@ body{
     color: #555;
     float: right;
     border-width: 5px;
-    margin-top: 2vh;
     padding-top: 3px;
     font-size: 16px;
     background-color: white;
     margin-right: 25px;
     margin-top: 17px;
+    cursor: pointer;
+}
+
+.mobile-nav-img{
+    width: 35px;
+    height: 35px;
+    float: right;
+    margin-right: 25px;
+    margin-top: 16px;
+    display: none;
     cursor: pointer;
 }
 
@@ -384,8 +393,90 @@ body{
     color: white;
 }
 
-/* Mobile devices and screens smaller than 1300px wide */
-@media only screen and (max-width: 999px){
+/* Mobile devices smaller than 800px wide */
+@media only screen and (max-width: 799px){
+    
+}
+
+/* Mobile devices and screens between 1000px and 800px wide */
+@media only screen and (max-width: 999px) and (min-width: 800px){
+    .nav-bar{
+        width: 100%;
+    }
+    .nav-bar-fixed-wrapper{
+        width: 100%;
+    }
+    .top-section{
+        min-height: 0px;
+    }
+    .nav-link{
+        display: none;
+    }
+    .btn-sign-in{
+        display: none;
+    }
+    .btn-sign-up{
+        display: none;
+    }
+    .mobile-nav-img{
+        display: block;
+    }
+    .top-header{
+        font-size: 30px;
+    }
+    .top-paragraph{
+        font-size: 18px;
+        margin-top: 4%;
+    }
+    .btn-get-started{
+        width: 150px;
+        font-size: 14px;
+        padding-top: 15px;
+    }
+    .inner-container{
+        width: 85%;
+    }
+    .section-header{
+        font-size: 34px;
+    }
+    .section-line{
+        width: 70px;
+    }
+    .features-section{
+        height: 900px;
+    }
+    .features-graphic-container{
+        width: 150px;
+        height: 150px;
+        padding: 30px;
+    }
+    .features-text-container{
+        margin-left: 150px;
+    }
+    .features-header{
+        font-size: 26px;
+    }
+    .features-paragraph{
+        font-size: 17px;
+    }
+    .team-section{
+        height: 680px;
+    }
+    .team-img{
+        width: 130px;
+        height: 130px;
+    }
+    .team-name{
+        margin-top: 40px;
+        margin-left: 150px;
+    }
+    .team-role{
+        margin-left: 150px;
+        font-size: 18px;
+    }
+    .team-description{
+        font-size: 16px;
+    }
     
 }
 
@@ -442,6 +533,7 @@ body{
     }
     .team-name{
         margin-left: 165px;
+        margin-top: 42px;
     }
     .team-role{
         margin-left: 165px;
