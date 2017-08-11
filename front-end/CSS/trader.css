@@ -105,7 +105,7 @@
     text-align: center;
 /*    float: left;*/
     cursor: pointer;
-    z-index: -10;
+/*    z-index: -10;*/
 }
 
 .tab-left-active{
@@ -121,7 +121,7 @@
     text-align: center !important;
 /*    float: left !important;*/
     cursor: pointer !important;
-    z-index: -10 !important;
+/*    z-index: -10 !important;*/
 }
 
 .tab-mid{
@@ -135,7 +135,7 @@
     text-align: center;
 /*    float: left;*/
     cursor: pointer;
-    z-index: -10;
+/*    z-index: -10;*/
 }
 
 .tab-mid-active{
@@ -149,7 +149,7 @@
     text-align: center !important;
 /*    float: left !important;*/
     cursor: pointer !important;
-    z-index: -10 !important;
+/*    z-index: -10 !important;*/
 }
 
 .tab-right{
@@ -165,7 +165,7 @@
     text-align: center;
 /*    float: left;*/
     cursor: pointer;
-    z-index: -10;
+/*    z-index: -10;*/
 }
 
 .tab-right-active{
@@ -181,7 +181,7 @@
     text-align: center !important;
 /*    float: left !important;*/
     cursor: pointer !important;
-    z-index: -10 !important;
+/*    z-index: -10 !important;*/
 }
 
 .toggle-text{

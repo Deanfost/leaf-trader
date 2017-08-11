@@ -197,14 +197,31 @@
                         "Apple": null,
                         "Microsoft": null,
                         "Google": 'https://placehold.it/250x250', 
+                        "a": null, 
+                        "aaalala": null,
+                        "aa": null, 
+                        "aaaaaaasdfsdfsdfsdfdfsfd": null, 
+                        "aasdf": null
                     },
                     limit: 100,
                     onAutocomplete: function(val) {
-                        // Callback when result is selected(init the search)
-                        
+                        // Callback when result is selected(init the search, add back the mode-tab z-depth)
+                        $('#mode-1').css('z-index', '0');
+                        $('#mode-2').css('z-index', '0');
+                        $('#mode-3').css('z-index', '0');
+                        $('#mode-4').css('z-index', '0');
                     },
                     minLength: 1,});
+                
+                //Determine if the search-bar has focus
+                $('#search').focusin(function(){
+                    //Lower the z-index of mode-tabs to make sure the autocomplete can be seen
+                    $('#mode-1').css('z-index', '-10');
+                    $('#mode-2').css('z-index', '-10');
+                    $('#mode-3').css('z-index', '-10');
+                    $('#mode-4').css('z-index', '-10');
                 });
+            });
             
             //Apply and remove proper classes to mode tabs, scroll to top
             function modeClick(tab){
