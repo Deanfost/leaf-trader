@@ -426,7 +426,7 @@ body{
     }
     .top-paragraph{
         font-size: 18px;
-        margin-top: 4%;
+        margin-top: 3%;
     }
     .btn-get-started{
         width: 150px;
@@ -477,7 +477,45 @@ body{
     .team-description{
         font-size: 16px;
     }
-    
+    .back-to-top-container{
+        width: 100%;
+    }
+    .back-to-top{
+        width: 65px;
+        height: 65px;
+        top: -33px;
+    }
+    .back-to-top-img{
+        width: 25px;
+        height: 25px;
+        margin-top: 21px;
+    }
+    .footer-container{
+        width: 100%;
+    }
+    .footer-1-header{
+        font-size: 19px;
+    }
+    .footer-1-content{
+        font-size: 14px;
+    }
+    .footer-2-title{
+        font-size: 19px;
+        width: 98px;
+    }
+    .footer-2-action{
+        font-size: 13px;
+    }
+    #footer-sign-in{
+        width: 40px;
+    }
+    #footer-sign-up{
+        width: 45px;
+    }
+    .footer-2-disclaimer{
+        font-size: 13px;
+        width: 63px;
+    }
 }
 
 /* Displays between 1000px and 1300px wide */
