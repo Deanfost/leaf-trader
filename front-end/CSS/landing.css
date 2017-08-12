@@ -440,10 +440,38 @@ body{
         width: 50px;
     }
     .features-section{
-        height: 1600px;
+        height: auto;
     }
     .features-graphic-container{
-        
+        display: none;
+    }
+    .features-text-container{
+        margin-left: 0px;
+        width: 100%;
+    }
+    .features-header{
+        text-align: center;
+        padding: 0;
+    }
+    .features-paragraph{
+        text-align: center;
+        padding: 0;
+    }
+    .team-section{
+        height: 1150px;
+    }
+    .team-column{
+        width: 100%;
+        margin-bottom: 60px;
+    }
+    .team-name{
+        margin-left: 210px;
+    }
+    .team-role{
+        margin-left: 210px;
+    }
+    .team-description{
+        width: 100%;
     }
 }
 
