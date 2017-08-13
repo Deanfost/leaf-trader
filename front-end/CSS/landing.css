@@ -452,26 +452,42 @@ body{
     .features-header{
         text-align: center;
         padding: 0;
+        font-size: 25px;
     }
     .features-paragraph{
         text-align: center;
         padding: 0;
+        font-size: 16px;
     }
     .team-section{
-        height: 1150px;
+        height: auto;
     }
     .team-column{
         width: 100%;
         margin-bottom: 60px;
+        text-align: center;
+    }
+    .team-img{
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
     }
     .team-name{
-        margin-left: 210px;
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        margin-top: 20px;
+        font-size: 28px;
     }
     .team-role{
-        margin-left: 210px;
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 22px;
     }
     .team-description{
         width: 100%;
+        font-size: 18px;
     }
 }
 
