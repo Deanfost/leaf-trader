@@ -490,10 +490,12 @@ body{
         font-size: 18px;
     }
     .footer-1{
-        height: 400px;
+        height: 300px;
     }
     .back-to-top-container{
-        width: 85%;
+        width: 100%;
+        position: relative;
+        height: 50px;
     }
     .footer-container{
         width: 85%;
@@ -520,14 +522,17 @@ body{
         margin-top: 20px;
     }
     .footer-2-title{
-        font-size: 19px;
-        width: 98px;
+        display: none;
+    }
+    .footer-2-line{
+        display: none;
     }
     .footer-2-action{
         font-size: 13px;
     }
     #footer-sign-in{
         width: 40px;
+        margin-left: 0;
     }
     #footer-sign-up{
         width: 45px;
@@ -535,6 +540,7 @@ body{
     .footer-2-disclaimer{
         font-size: 13px;
         width: 63px;
+        margin-right: 0;
     }
 }
 
