@@ -85,6 +85,11 @@
                         $('.nav-bar-fixed-wrapper').css('opacity', '0');
                     }
                 });
+                
+                //Detect mobile nav click
+                $('.mobile-nav-img').click(function(){
+                     
+                });
             });
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/landing.css">
@@ -98,7 +103,13 @@
                     <h5 class="nav-title valign-wrapper">Leaf Trader</h5>
                 </div>
                 <div class="nav-right">
-                    <img src="/front-end/img/menu.png" class="mobile-nav-img"><!-- Normally hidden -->
+                    <!-- Mobile nav dropdown -->
+                    <div class="mobile-dropdown">
+                        <img src="/front-end/img/menu.png" class="mobile-nav-img">
+                        <div id="dropdown-menu" class="dropdown-content">
+                            
+                        </div>
+                    </div>
                     <a class="btn-sign-up waves-effect">Sign up</a>
                     <a class="btn-sign-in waves-effect">Sign in</a>
                     <div class="nav-link valign-wrapper" id="btn-team"><h5 class="nav-link-text">Team</h5></div>
@@ -218,6 +229,7 @@
             </div>
         </footer>
         
+        <!-- Disclaimer modal -->
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <h4 style="text-align: left;">Disclaimer</h4>
