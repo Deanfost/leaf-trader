@@ -40,6 +40,16 @@ body{
     height: 100%;
 }
 
+.mobile-nav{
+    width: 35px;
+    height: 35px;
+    float: left;
+    margin-left: 25px;
+    margin-top: 15px;
+    cursor: pointer;
+    display: none;
+}
+
 .nav-title{
     width: 160px;
     font-size: 24px;
@@ -105,24 +115,6 @@ body{
     margin-right: 25px;
     margin-top: 17px;
     cursor: pointer;
-}
-
-.mobile-dropdown{
-    display: inline-block;
-}
-
-.mobile-nav-img{
-    width: 35px;
-    height: 35px;
-    float: right;
-    margin-right: 25px;
-    margin-top: 15px;
-    display: none;
-    cursor: pointer;
-}
-
-.dropdown-content{
-    
 }
 
 .inner-container{
@@ -413,6 +405,21 @@ body{
         height: 550px;
         min-height: 0px;
     }
+    .nav-left{
+        width: 100%;
+    }
+    .mobile-nav{
+        display: block;
+    }
+    .nav-title{
+        float: left;
+        padding: 0;
+        width: 123px;
+        margin-left: 25px;
+    }
+    .nav-right{
+        display: none;
+    }
     .nav-link{
         display: none;
     }
@@ -421,9 +428,6 @@ body{
     }
     .btn-sign-up{
         display: none;
-    }
-    .mobile-nav-img{
-        display: block;
     }
     .inner-container{
         width: 85%;
@@ -567,13 +571,10 @@ body{
         display: none;
     }
     .btn-sign-in{
-        display: none;
+        width: 100px;
     }
     .btn-sign-up{
-        display: none;
-    }
-    .mobile-nav-img{
-        display: block;
+        width: 100px;
     }
     .inner-container{
         width: 85%;
