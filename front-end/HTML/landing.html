@@ -84,7 +84,21 @@
                     }
                 });
                 
-                function sectionScroll(section){
+                //Detect button clicks
+                $('#btn-get-started').click(function(){
+                    window.location.href = "/front-end/HTML/sign-up.html"; 
+                });
+                
+                $('#footer-sign-in').click(function(){
+                    window.location.href = "/front-end/HTML/sign-in.html";
+                });
+                
+                $('#footer-sign-up').click(function(){
+                    window.location.href = "/front-end/HTML/sign-up.html";
+                });
+            });
+            
+            function sectionScroll(section){
                     switch(section){
                         //Overview section
                         case 0:
@@ -102,7 +116,6 @@
                             break;
                     }
                 }
-            });
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/landing.css">
     </head>
@@ -116,8 +129,8 @@
                     <h5 class="nav-title valign-wrapper">Leaf Trader</h5>
                 </div>
                 <div class="nav-right">
-                    <a class="btn-sign-up waves-effect">Sign up</a>
-                    <a class="btn-sign-in waves-effect">Sign in</a>
+                    <a class="btn-sign-up waves-effect" href="sign-up.html">Sign up</a>
+                    <a class="btn-sign-in waves-effect" href="sign-in.html">Sign in</a>
                     <div class="nav-link valign-wrapper" id="btn-team"><h5 class="nav-link-text">Team</h5></div>
                     <div class="nav-link valign-wrapper" id="btn-features"><h5 class="nav-link-text">Features</h5></div>
                     <div class="nav-link valign-wrapper" id="btn-overview"><h5 class="nav-link-text">Overview</h5></div>
@@ -132,8 +145,8 @@
                     <h5 class="nav-title valign-wrapper">Leaf Trader</h5>
                 </div>
                 <div class="nav-right">
-                    <a class="btn-sign-up waves-effect">Sign up</a>
-                    <a class="btn-sign-in waves-effect">Sign in</a>
+                    <a class="btn-sign-up waves-effect" href="sign-up.html">Sign up</a>
+                    <a class="btn-sign-in waves-effect" href="sign-in.html">Sign in</a>
                     <div class="nav-link valign-wrapper" id="btn-team"><h5 class="nav-link-text">Team</h5></div>
                     <div class="nav-link valign-wrapper" id="btn-features"><h5 class="nav-link-text">Features</h5></div>
                     <div class="nav-link valign-wrapper" id="btn-overview"><h5 class="nav-link-text">Overview</h5></div>
@@ -239,7 +252,9 @@
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <h4 style="text-align: left;">Disclaimer</h4>
-                <p style="text-align: left; color: #848484;">It should be noted that this is a student project, and meant for demonstration purposes only. While this is a working web app, the information presented on this site should not be taken as legitimate financial or trading advice. For actual counselling or training, we urge you to seek other sources such accredited websites, books, or mentors. </p>
+                <p style="text-align: left; color: #848484;">It should be noted that this is a student project, and meant for demonstration purposes only. While this is a working web app, the information presented on this site should not be taken as legitimate financial or trading advice. For actual counselling or training, we urge you to seek other sources such accredited websites, books, or mentors.
+                </p>
+                <p style="text-align: left; color: #848484;">Note - For the best experience, we recommend Google Chrome or Mozilla Firefox.</p>
             </div>
             <div class="modal-footer">
                 <a href="#!" class="modal-action modal-close waves-effect waves-light btn-flat" style="color: #41B946;">Got it</a>
