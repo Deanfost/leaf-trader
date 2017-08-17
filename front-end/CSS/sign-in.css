@@ -4,7 +4,7 @@ body{
 }
 
 .content-container{
-    width: 85%;
+    width: 80%;
     height: 750px;
     margin-left: auto;
     margin-right: auto;
@@ -76,6 +76,24 @@ body{
     color: #525252;
 }
 
+.auth-card{
+    height: 645px;
+    width: 85%;
+    background-color: white;
+    float: right;
+    position: relative;
+    top: -80px;
+    border-radius: 5px;
+}
+
+.auth-inner-container{
+    width: 70%;
+    height: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 87px;
+}
+
 .container-bottom{
     height: 24%;
     width: 100%;
@@ -89,6 +107,12 @@ body{
         margin-bottom: 50px;
         width: 95%;
     }
+    .disclaimer{
+        width: 90%;
+    }
+    .auth-card{
+        width: 95%;
+    }
 }
 
 /* Wide displays wider than 1800px wide */
@@ -97,5 +121,11 @@ body{
         width: 1400px;
         margin-top: 100px;
         margin-bottom: 100px;
+    }
+    .disclaimer{
+        width: 90%;
+    }
+    .auth-card{
+        width: 80%;
     }
 }
