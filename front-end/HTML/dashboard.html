@@ -19,46 +19,11 @@
         <!--On DOM ready -->
         <script>
             $(document).ready(function(){
-                //Resize the toggle bar on DOM ready
-                var windowWidth = window.innerWidth;
-                //Viewports greater than 1200px wide
-                if(windowWidth >= 1200){
-                    var toggleBarWidth = $('#toggle-bar').width();
-                    var diff = windowWidth - toggleBarWidth - 300;
-                    $('#toggle-bar').width(toggleBarWidth + diff);
-                }
-                //Viewports smaller than 1200px wide
-                else if(windowWidth < 1200 & windowWidth >= 1000){
-                    var toggleBarWidth = $('#toggle-bar').width();
-                    var diff = windowWidth - toggleBarWidth - 150;
-                    $('#toggle-bar').width(toggleBarWidth + diff);
-                }
-                
-                //Resize the toggle bar on resize
-                $(window).resize(function() {
-                    var windowWidth = window.innerWidth;
-                    //Viewports greater than 1200px wide
-                    if(windowWidth >= 1200){
-                        var toggleBarWidth = $('#toggle-bar').width();
-                        var diff = windowWidth - toggleBarWidth - 300;
-                        $('#toggle-bar').width(toggleBarWidth + diff);
-                    }
-                    //Viewports smaller than 1200px wide
-                    else if(windowWidth < 1200 & windowWidth >= 1000){
-                        var toggleBarWidth = $('#toggle-bar').width();
-                        var diff = windowWidth - toggleBarWidth - 150;
-                        $('#toggle-bar').width(toggleBarWidth + diff);
-                    }
-                });
                 
                 //Horizontally scroll the fixed side nav and toggle bar correctly
                 var origPos1 = $('#side-nav').position();
                 $(window).scroll(function(){
                     $('#side-nav').css('left', origPos1.left - $(this).scrollLeft());
-                });
-                var origPos2 = $('#toggle-bar').position();
-                $(window).scroll(function(){
-                    $('#toggle-bar').css('left', origPos2.left - $(this).scrollLeft());
                 });
                 
                 //Display modal when clicking on card help button
@@ -70,7 +35,7 @@
                     $(this).addClass('grey lighten-4');
                 });
                 $('.sidenav-option').mouseleave(function(){
-                    if($(this).attr('id') !== 'nav-item-3'){
+                    if($(this).attr('id') !== 'nav-item-1'){
                         $(this).removeClass('grey lighten-4');
                     }
                 });
@@ -97,7 +62,7 @@
                 });
             });
         </script>
-        <link rel="stylesheet" type="text/css" href="/front-end/CSS/screener-saved.css">
+        <link rel="stylesheet" type="text/css" href="/front-end/CSS/dashboard.css">
     </head>
     
     <body>
@@ -105,11 +70,11 @@
             <!-- Side nav -->
             <div class="z-depth-1" id="side-nav">
                 <!-- Sidenav header -->
-                <div class="col s12 sidenav-top orange z-depth-1" style="text-align:center;" id="sidenav-header">
+                <div class="col s12 sidenav-top light-blue darken-1 z-depth-1" style="text-align:center;" id="sidenav-header">
                     <div class="valign-wrapper" style="display:inline-block; position:realtive; transform:translateY(50%); width:auto;">
                         <a href="landing.html">
                             <div class="valign-wrapper">
-                                <img class="responsive-img circle z-depth-1" src="/front-end/img/logo-orange.png" style="margin-right:4%;" id="sidenav-img">
+                                <img class="responsive-img circle z-depth-1" src="/front-end/img/logo-blue.png" style="margin-right:4%;" id="sidenav-img">
                                 <h5 style="color:white;" id="sidenav-title">Leaf Trader</h5>
                             </div>
                         </a>
@@ -117,10 +82,10 @@
                 </div>
                 <!-- Sidenav items -->
                 <div class="col s12" style="text-align:center; padding-right:0%; padding-left:0%; padding-top:.5%;" id="sidenav-item-wrapper">
-                    <div class="valign-wrapper sidenav-option" id="nav-item-1">
+                    <div class="valign-wrapper grey lighten-4 sidenav-option" id="nav-item-1">
                         <div class="valign-wrapper sidenav-item-wrapper">
-                            <img class="responsive-img sidenav-item-img" src="/front-end/img/bullish.png">
-                            <h5 class="sidenav-item">Dashboard</h5>
+                            <img class="responsive-img sidenav-item-img" src="/front-end/img/bullish-blue.png">
+                            <h5 class="sidenav-item" style="color: #03A9F4;">Dashboard</h5>
                         </div>
                     </div>
                     <div class="valign-wrapper sidenav-option" id="nav-item-2">
@@ -129,10 +94,10 @@
                             <h5 class="sidenav-item">Trader</h5>
                         </div>
                     </div>
-                    <div class="valign-wrapper grey lighten-4 sidenav-option" id="nav-item-3">
+                    <div class="valign-wrapper sidenav-option" id="nav-item-3">
                         <div class="valign-wrapper sidenav-item-wrapper">
-                            <img class="responsive-img sidenav-item-img" src="/front-end/img/filter-orange.png">
-                            <h5 class="sidenav-item" style="color:#ffa726;">Screeners</h5>
+                            <img class="responsive-img sidenav-item-img" src="/front-end/img/filter.png">
+                            <h5 class="sidenav-item">Screeners</h5>
                         </div>
                     </div>
                     <div class="valign-wrapper sidenav-option" id="nav-item-4">
@@ -149,7 +114,7 @@
                     </div>
                 </div>  
                 <!-- Sidenav footer --> 
-                <div class="col s12 orange valign-wrapper" id="sidenav-footer">
+                <div class="col s12 light-blue darken-1 valign-wrapper" id="sidenav-footer">
                     <div class="valign-wrapper" style="margin:auto; width:40%;" id="sidenav-attr-wrapper">
                         <img class="responsive-img" src="/front-end/img/note.png" id="sidenav-attr-img" style="margin-right:2%;">
                         <h5 id="sidenav-attr" style="color:white;">Resources</h5>
@@ -158,50 +123,36 @@
             </div>
         </div>
         
-        <!-- Toggle bar -->
-        <div class="z-depth-1 orange valign-wrapper row" id="toggle-bar">
-            <!-- Left toggle button -->
-            <a class="toggle-active valign-wrapper" href="screener-saved.html">
-                <h5 class="toggle-text" style="margin: 0 auto; color:#4B4B4B;">Saved</h5>
-            </a>
-            <!-- Right toggle button -->
-            <a class="toggle-inactive valign-wrapper" href="screener-create.html">
-               <h5 class="toggle-text" style="margin: 0 auto; color:#fff;">Create</h5>
-            </a>
-        </div>
-        
         <!-- Card -->
         <div id="card-section">
             <div id="card-container">
                 <div class="z-depth-1 card">
                     <!-- Card header -->
-                    <div class="orange lighten-1 card-header row" style="padding-left:2%; padding-right:2%; text-align:initial;">
+                    <div class="light-blue card-header row" style="padding-left:2%; padding-right:2%; text-align:initial;">
                         <div class="col s10 valign-wrapper" style="height:100%;">
-                            <h4 id="card-title">Your Screeners</h4>
+                            <h4 id="card-title">Porfolio</h4>
                         </div>
                         <div class="col s2 valign-wrapper" style="height:100%;">
                             <img class="responsive-img" id="card-help" src="/front-end/img/Help.png" style="margin-left:82%; cursor: pointer;">
                         </div>
                     </div>
-                    <!-- Card content - screener items go in here -->
-                    <div class="row" id="list-container" style="padding-left:1%; padding-right:1%;">
-                        <div class="list-item col s12">
- 
+                    <!-- Card content -->
+                    <div class="row">
+                        <div class="card-extended-header">
+                            <div class="extended-header-container">
+                                <div class="extended-column">
+                                    <h5 class="extended-header-header">Net worth</h5>
+                                    <h5 class="extended-header-content" id="net-worth">$134,568</h5>
+                                </div>
+                                <div class="extended-column">
+                                    <h5 class="extended-header-header">Cash</h5>
+                                    <h5 class="extended-header-content" id="cash">$32,645</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Dropdown Structure(Use item-dropdown-preset for preset screeners, and item-dropdown-custom for custom screeners) -->
-        <ul id='item-dropdown-preset' class='dropdown-content'>
-            <li><a href="#!" style="color: #ffa726;">Edit</a></li>
-            <li><a href="#!" style="color: #ffa726;">Deselect</a></li>
-        </ul>
-        <ul id='item-dropdown-custom' class='dropdown-content'>
-            <li><a href="#!" style="color: #ffa726;">Edit</a></li>
-            <li><a href="#!" style="color: #ffa726;">Deselect</a></li>
-            <li><a href="#!" style="color: #ffa726;">Duplicate</a></li>
-            <li><a href="#!" style="color: #ffa726;">Delete</a></li>
-        </ul>
     </body>
 </html>
