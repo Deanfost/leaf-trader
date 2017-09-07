@@ -1,25 +1,3 @@
-/* .item-title, .item-type, and .item-last-used are classes that get applied to list-item html when it is appended inside #list-container */
-.toggle-active{
-    border-style: solid;
-    border-color: white;
-    background-color: white;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    width: 25%;
-    height: 50%;
-    margin-left:25%;
-}
-
-.toggle-inactive{
-    border-style: solid;
-    border-color: #FFB74D;
-    background-color: #FFB74D;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    width: 25%;
-    height: 50%;
-}
-
 #side-nav{
     height: 100vh;
     width: 300px;
@@ -159,7 +137,7 @@
 }
 
 .graph-card{
-    width: 80%;
+    width: 85%;
     height: 400px;
     background-color: white;
     position: relative;
@@ -171,18 +149,56 @@
 }
 
 .graph-content{
-    height: 300px;
+    height: 330px;
     width: 100%;
 }
 
 .graph-button-row{
     width: 100%;
-    height: 100px;
+    height: 70px;
 }
 
 .graph-button-section{
     width: 50%;
     height: 100%;
+    float: left;
+}
+
+.button-section-inner{
+    width: 80%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-section-title{
+    height: auto;
+    width: 85%;
+    text-align: center;
+    font-size: 19px;
+    color: white;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-section-arrow{
+    width: 15%;
+    height: 100%;
+    float: left;
+}
+
+.detail-row{
+    width: 80%;
+    height: auto;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.detail-column{
+    width: 50%;
+    height: 100px;
     float: left;
 }
 
