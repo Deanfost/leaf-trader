@@ -134,6 +134,11 @@
     text-align: center;
     color: white;
     font-size: 36px;
+    margin-top: 0;
+}
+
+.grey-section{
+    background-color: #F9F9F9;
 }
 
 .graph-card{
@@ -194,12 +199,73 @@
     background-color: black;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    top: -85px;
 }
 
 .detail-column{
     width: 50%;
     height: 100px;
     float: left;
+}
+
+.pl-num-arrow-container{
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+.pl-number{
+    color: #03a9f4;
+    font-size: 30px;
+    width: 40%;
+    height: auto;
+    float: left;
+    text-align: right;
+    margin-top: 0;
+}
+
+.pl-arrow-container{
+    width: 20%;
+    height: auto;
+    float: left;
+    text-align: center;
+}
+
+.pl-arrow{
+    width: 30px;
+    height: auto;
+}
+
+.pl-percent{
+    float: left;
+    width: 40%;
+    font-size: 30px;
+    text-align: left;
+    color: #757575;
+    margin-top: 0;
+}
+
+.section-header-row{
+    width: 100%;
+    height: 60px;
+    position: relative;
+    margin-top: 40px;
+}
+
+.section-header-header{
+    width: auto;
+    height: 100%;
+    font-size: 20px;
+    color: #757575;
+    float: left;
+    margin-left: 3%;
+}
+
+.section-header-help{
+    width: 36px;
+    height: auto;
+    float: right;
 }
 
 /* Screens smaller than 1200 */
