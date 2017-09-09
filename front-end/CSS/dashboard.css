@@ -139,18 +139,20 @@
 
 .grey-section{
     background-color: #F9F9F9;
+    height: 673px;
+    padding-top: 300px;
 }
 
 .graph-card{
     width: 85%;
     height: 400px;
     background-color: white;
-    position: relative;
-    top: -120px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
     overflow: hidden;
+    position: relative;
+    top: 20px;
 }
 
 .graph-content{
@@ -196,16 +198,13 @@
 .detail-row{
     width: 80%;
     height: auto;
-    background-color: black;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
-    top: -85px;
 }
 
 .detail-column{
     width: 50%;
-    height: 100px;
+    height: auto;
     float: left;
 }
 
@@ -249,19 +248,17 @@
 .section-header-row{
     width: 100%;
     height: 60px;
-    margin-top: 40px;
+    margin-top: 110px;
     margin-bottom: 0;
 }
 
 .section-header-header{
-    width: auto;
-    height: auto;
     font-size: 22px;
     color: #757575;
-    float: left;
     margin-left: 3%;
-    position: relative;
-    top: -60px;
+    margin-top: 0;
+    width: auto;
+    float: left;
 }
 
 .section-header-help{
@@ -272,14 +269,18 @@
 
 .gainer-loser-container{
     width: 100%;
-    height: 150px;
-    margin-bottom: 40px;
-    padding-left: 10%;
-    padding-right: 10%;
+    height: auto;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
 }
 
 .gainer-loser-card{
-    
+    width: 160px;
+    height: 160px;
+    border-radius: 5px;
+    background-color: white;
+    display: inline-block;
+    margin: 0 auto;
 }
 
 /* Screens smaller than 1200 */
