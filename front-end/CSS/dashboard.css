@@ -149,7 +149,7 @@
     background-color: white;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
     position: relative;
     top: 20px;
@@ -270,16 +270,18 @@
 .gainer-loser-container{
     width: 100%;
     height: auto;
-    padding-left: 7.5%;
-    padding-right: 7.5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .gainer-loser-card{
     width: 160px;
     height: 160px;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: white;
-    display: inline-block;
+    float: left;
     margin: 0 auto;
 }
 
