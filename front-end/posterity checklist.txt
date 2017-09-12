@@ -1,7 +1,10 @@
 Front-end
 
 Add onboarding
+Add help button functionality
+Add resources functionality
 Attribute to materialize
 Localize all libraries
 Change project tree index names
 Add website icon
+Figure out page indexing?(when i search for our website, it will show the website tree, or when searching for a specific page, etc)
