@@ -126,14 +126,14 @@
     width: 100%;
     text-align: center;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .extended-header-content{
     width: 100%;
     text-align: center;
     color: white;
-    font-size: 36px;
+    font-size: 32px;
     margin-top: 0;
 }
 
@@ -153,17 +153,17 @@
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    top: 20px;
+    top: 17px;
 }
 
 .graph-content{
-    height: 330px;
+    height: 340px;
     width: 100%;
 }
 
 .graph-button-row{
     width: 100%;
-    height: 70px;
+    height: 60px;
 }
 
 .graph-button-section{
@@ -183,7 +183,7 @@
     height: auto;
     width: 85%;
     text-align: center;
-    font-size: 19px;
+    font-size: 18px;
     color: white;
     float: left;
     margin-left: auto;
@@ -217,7 +217,7 @@
 
 .pl-number{
     color: #03a9f4;
-    font-size: 30px;
+    font-size: 28px;
     width: 40%;
     height: auto;
     float: left;
@@ -233,14 +233,14 @@
 }
 
 .pl-arrow{
-    width: 30px;
+    width: 25px;
     height: auto;
 }
 
 .pl-percent{
     float: left;
     width: 40%;
-    font-size: 30px;
+    font-size: 28px;
     text-align: left;
     color: #757575;
     margin-top: 0;
@@ -280,8 +280,8 @@
 }
 
 .gainer-loser-card{
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     border-radius: 10px;
     background-color: white;
     float: left;
@@ -292,7 +292,7 @@
     width: 100%;
     height: 33.33%;
     margin: 0;
-    font-size: 24px;
+    font-size: 22px;
     text-align: center;
     padding-top: 18%;
 /*    background-color: blue;*/
@@ -302,9 +302,9 @@
     width: 100%;
     height: 33.33%;
     margin: 0;
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
-    padding-top: 10%;
+    padding-top: 11%;
 /*    background-color: orange;*/
 }
 
@@ -312,9 +312,9 @@
     width: 100%;
     height: 33.33%;
     margin: 0;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
-    padding-top: 0%;
+    padding-top: 2%;
 /*    background-color: purple;*/
 }
 

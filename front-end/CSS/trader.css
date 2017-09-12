@@ -500,6 +500,7 @@ thead, tbody tr {
     float: right;
     margin-right: 2.7%;
     cursor: pointer;
+    margin-top: 20px;   
 }
 
 .trader-button-text{
