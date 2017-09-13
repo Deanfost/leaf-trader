@@ -8,4 +8,4 @@ This is a project developed by two college students who love creating.
 Dean Foster - github.com/Deanfost
 
 ### Back-end Developer
-Rishub Nahar = github.com/Rishub21
+Rishub Nahar - github.com/Rishub21
