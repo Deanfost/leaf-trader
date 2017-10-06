@@ -342,6 +342,38 @@
     margin-bottom: 25px;
 }
 
+table{
+    width: 94%;
+    margin-top: 20px;
+    max-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr{
+    height: 50px;
+}
+
+tbody{
+    display: block;
+    max-height: 350px;
+    overflow: auto;
+}
+
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+
+/* Colors for change in tables*/
+.up-color{
+    color: #4CAF50;
+}
+
+.down-color{
+    color: #D32F2F;
+}
 
 /* Screens smaller than 1200 */
 @media only screen and (max-width: 1200px){
