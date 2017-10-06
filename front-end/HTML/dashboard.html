@@ -60,7 +60,28 @@
                     //Sign out
                     
                 });
-            });
+                
+                //Check for children modification of tables
+                    var $tbody1 = $('#holdings-tbody');
+                    var $thead1 = $('#holdings-thead');
+
+                    //Check if total children heights add up to more than max-height of tables(overflow)
+                    $tbody1.bind('DOMNodeInserted', function(){
+                        var childCount = $tbody1.children().length;
+                        if(childCount > 6){
+                            //Overflow, remove scrollbar width from thead
+                            $thead1.css('width', 'calc(100% - 1em)');
+                        }
+                    });
+                    $tbody1.bind('DOMNodeRemoved', function(){
+                        var childCount = $tbody1.children().length;
+                        if(childCount <= 6){
+                            //No overflow, add back width
+                            $thead1.css('width', '');
+                        }
+                    });
+                });    
+            
         </script>
         <link rel="stylesheet" type="text/css" href="/front-end/CSS/dashboard.css">
     </head>
@@ -133,7 +154,7 @@
                             <h4 id="card-title">Porfolio</h4>
                         </div>
                         <div class="col s2 valign-wrapper" style="height:100%;">
-                            <img class="responsive-img" id="card-help" src="/front-end/img/Help.png" style="margin-left:82%; cursor: pointer;">
+                            <img class="responsive-img" id="card-help" src="/front-end/img/Help.png" style="cursor: pointer;">
                         </div>
                     </div>
                     <!-- Card content -->
@@ -156,13 +177,13 @@
                                 <div class="graph-button-row">
                                     <div class="graph-button-section valign-wrapper" style="background-color: #03a9f4;">
                                         <div class="button-section-inner valign-wrapper">
-                                            <div class="button-section-title">Performance - Weekly</div>
+                                            <div class="button-section-title" id="perf-label">Performance - Weekly</div>
                                             <div class="button-section-arrow valign-wrapper">
-                                                <img src="/front-end/img/arrow-white.png" style="width: 22px; height: auto;">
+                                                <img src="/front-end/img/arrow-white.png" style="width: 22px; height: auto;" id="perf-dropdown">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="graph-button-section valign-wrapper" style="background-color: #ECECEC; cursor: pointer;">
+                                    <div class="graph-button-section valign-wrapper" style="background-color: #ECECEC; cursor: pointer;" id="sectors-button">
                                         <div class="button-section-title" style="color: #757575;">Sectors</div>
                                     </div>
                                 </div>
@@ -172,15 +193,15 @@
                             <div class="detail-row">
                                 <div class="detail-column">
                                     <h5 class="extended-header-header" style="color: #757575;">Profit Loss</h5>
-                                    <h5 class="pl-number">+$1,454</h5>
+                                    <h5 class="pl-number" id="pl-number">+$1,454</h5>
                                     <div class="pl-arrow-container">
                                         <img class="pl-arrow" src="/front-end/img/arrow-green.png">
                                     </div>
-                                    <h5 class="pl-percent">1.06%</h5>
+                                    <h5 class="pl-percent" id="pl-percent">1.06%</h5>
                                 </div>
                                 <div class="detail-column">
                                     <h5 class="extended-header-header" style="color: #757575;">Investments</h5>
-                                    <h5 class="extended-header-content" style="color: #03a9f4; font-size: 28px;">32 Stocks</h5>
+                                    <h5 class="extended-header-content" style="color: #03a9f4; font-size: 28px;" id="investments">32 Stocks</h5>
                                 </div>
                             </div>
                             <div class="row section-header-row">
@@ -188,30 +209,31 @@
                             </div>
                             <div class="gainer-loser-container row">
                                 <div class="gainer-loser-card z-depth-1">
-                                    <h5 class="gl-card-ticker card-green-dark">AAPL</h5>
-                                    <h5 class="gl-card-price">$197.08</h5>
-                                    <h5 class="gl-card-change card-green-light">+0.19%</h5>
+                                    <h5 class="gl-card-ticker card-green-dark" id="card-ticker-1">AAPL</h5>
+                                    <h5 class="gl-card-price" id="card-price-1">$197.08</h5>
+                                    <h5 class="gl-card-change card-green-light" id="card-change-1">+0.19%</h5>
                                 </div>
                                 <div class="gainer-loser-card z-depth-1">
-                                    <h5 class="gl-card-ticker card-green-dark">AAPL</h5>
-                                    <h5 class="gl-card-price">$197.08</h5>
-                                    <h5 class="gl-card-change card-green-light">+0.19%</h5>
+                                    <h5 class="gl-card-ticker card-green-dark" id="card-ticker-2">AAPL</h5>
+                                    <h5 class="gl-card-price" id="card-price-2">$197.08</h5>
+                                    <h5 class="gl-card-change card-green-light" id="card-change-2">+0.19%</h5>
                                 </div>
                                 <div class="gainer-loser-card z-depth-1">
-                                    <h5 class="gl-card-ticker card-green-dark">AAPL</h5>
-                                    <h5 class="gl-card-price">$197.08</h5>
-                                    <h5 class="gl-card-change card-green-light">+0.19%</h5>
+                                    <h5 class="gl-card-ticker card-green-dark" id="card-ticker-3">AAPL</h5>
+                                    <h5 class="gl-card-price" id="card-price-3">$197.08</h5>
+                                    <h5 class="gl-card-change card-green-light" id="card-change-3">+0.19%</h5>
                                 </div>
+                                
                                 <div class="gainer-loser-card z-depth-1">
-                                    <h5 class="gl-card-ticker card-green-dark">AAPL</h5>
-                                    <h5 class="gl-card-price">$197.08</h5>
-                                    <h5 class="gl-card-change card-green-light">+0.19%</h5>
+                                    <h5 class="gl-card-ticker card-green-dark" id="card-ticker-4">AAPL</h5>
+                                    <h5 class="gl-card-price" id="card-price-4">$197.08</h5>
+                                    <h5 class="gl-card-change card-green-light" id="card-change-4">+0.19%</h5>
                                 </div>
                             </div>
                         </section>
                         <div class="row">
                             <h5 class="section-header-header" style="color: #03A9F4;">Stock Info</h5>
-                            <img class="section-header-help" src="/front-end/img/help-blue.png">
+                            <img class="section-header-help" src="/front-end/img/help-blue.png" id="stock-info-help">
                         </div>
                         <div class="overview-widget-container">
                             <!-- TradingView Widget BEGIN -->
@@ -266,12 +288,12 @@
                         </div>
                         <div class="row">
                             <h5 class="section-header-header" style="color: #03A9F4;">All Holdings</h5>
-                            <img class="section-header-help" src="/front-end/img/help-blue.png">
+                            <img class="section-header-help" src="/front-end/img/help-blue.png" id="holdings-info-help">
                         </div>
                         <div class="row">
                         <table class="striped">
                                 <!-- Columns -->
-                                <thead id="thead-1">
+                                <thead id="holdings-thead">
                                   <tr>
                                     <th>Stock</th>
                                     <th>Shares</th>
@@ -280,7 +302,7 @@
                                   </tr>
                                 </thead>
                                 <!-- Rows -->
-                                <tbody id="preset-tbody">
+                                <tbody id="holdings-tbody">
                                     <tr>
                                         <td class="truncate">APPL</td>
                                         <td>45</td>
@@ -293,8 +315,6 @@
                                         <td class="down-color">$4,901.82</td>
                                         <td class="down-color">$41,242.25</td>
                                     </tr>
-                                    
-                                   
                                 </tbody>
                             </table>
                         </div>

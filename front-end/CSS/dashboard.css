@@ -101,6 +101,7 @@
 
 #card-help{
     height: 35px;
+    margin-left: 80%;
 }
 
 .card-extended-header{
@@ -273,15 +274,15 @@
 .gainer-loser-container{
     width: 100%;
     height: auto;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 12%;
+    padding-right: 12%;
     display: flex;
     justify-content: space-between;
 }
 
 .gainer-loser-card{
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     border-radius: 10px;
     background-color: white;
     float: left;
@@ -406,6 +407,17 @@ thead, tbody tr {
     #card-section{
         margin-left: 150px;
     }
+    #card-help{
+        margin-left: 75%;
+    }
+    .gainer-loser-container{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .gainer-loser-card{
+        width: 130px;
+        height: 130px;
+    }
 }
 
 /* Large displays wider than 1710 */
@@ -414,6 +426,14 @@ thead, tbody tr {
         width: 1200px;
         left: 50%;
     }
+    .gainer-loser-container{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .gainer-loser-card{
+        width: 150px;
+        height: 150px;
+    }
 }
 
 /* Ultra large displays wider than 2200 */
@@ -421,5 +441,13 @@ thead, tbody tr {
     #card-container{
         width: 1200px;
         left: 50%;
+    }
+    .gainer-loser-container{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    .gainer-loser-card{
+        width: 160px;
+        height: 160px;
     }
 }
