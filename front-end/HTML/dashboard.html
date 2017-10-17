@@ -16,10 +16,10 @@
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
         <!--On DOM ready -->
         <script>
             $(document).ready(function(){
-                
                 //Horizontally scroll the fixed side nav and toggle bar correctly
                 var origPos1 = $('#side-nav').position();
                 $(window).scroll(function(){
@@ -80,6 +80,9 @@
                             $thead1.css('width', '');
                         }
                     });
+                
+                //Init Chart.js
+                
                 });    
             
         </script>
@@ -172,7 +175,9 @@
                             </div>
                             <div class="graph-card z-depth-1">
                                 <div class="graph-content">
-
+                                    <canvas id="myChart">
+                                    
+                                    </canvas>
                                 </div>
                                 <div class="graph-button-row">
                                     <div class="graph-button-section valign-wrapper" style="background-color: #03a9f4;">
@@ -195,7 +200,7 @@
                                     <h5 class="extended-header-header" style="color: #757575;">Profit Loss</h5>
                                     <h5 class="pl-number" id="pl-number">+$1,454</h5>
                                     <div class="pl-arrow-container">
-                                        <img class="pl-arrow" src="/front-end/img/arrow-green.png">
+                                        <img class="pl-arrow" src="/front-end/img/arrow-green.png" id="pl-arrow">
                                     </div>
                                     <h5 class="pl-percent" id="pl-percent">1.06%</h5>
                                 </div>
